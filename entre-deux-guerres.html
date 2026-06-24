@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1919–1939 — L'Entre-deux-guerres · Dossier complet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E4DBC5; --card:#EFE8D6; --card-2:#E9E0CB;
+  --ink:#232820; --ink-soft:#56594B;
+  --central:#5C6A50; --allied:#8A3324; --slate:#3C5A68; --brass:#947726;
+  --rule:rgba(35,40,32,.18); --rule-strong:rgba(35,40,32,.4);
+  --shadow:0 1px 0 rgba(35,40,32,.06), 0 8px 24px -16px rgba(35,40,32,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Spectral",Georgia,serif;font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+.contours{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5}
+.wrap{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:0 22px 120px}
+
+.eyebrow{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;line-height:1.08;text-transform:uppercase}
+h2{font-size:clamp(1.5rem,4.4vw,2.15rem);margin:0 0 .15em}
+h3{font-size:1.18rem;font-weight:500;letter-spacing:.04em;margin:1.7em 0 .4em}
+p{margin:0 0 1em}
+a{color:var(--slate);text-decoration-thickness:1px;text-underline-offset:2px}
+strong{font-weight:600}
+em{color:var(--ink-soft)}
+.lead{font-size:1.08rem}
+
+/* cover */
+.cover{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
+.stamp{display:inline-block;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--allied);border:1.5px solid var(--allied);padding:5px 11px;transform:rotate(-2.5deg);margin-bottom:26px;opacity:.85}
+.cover h1{font-size:clamp(2.4rem,9vw,4.8rem);font-weight:700;margin:0;line-height:.95}
+.cover .years{color:var(--allied)}
+.cover .sub{font-family:"Oswald",sans-serif;font-weight:400;letter-spacing:.16em;text-transform:uppercase;font-size:clamp(.85rem,2.6vw,1.05rem);color:var(--ink-soft);margin-top:14px}
+.cover .dek{margin-top:26px;max-width:60ch;font-size:1.06rem}
+.metarow{display:flex;flex-wrap:wrap;gap:26px;margin-top:30px;padding-top:22px;border-top:1px solid var(--rule)}
+.metarow .stat{min-width:120px}
+.metarow .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.9rem;line-height:1;color:var(--ink)}
+.metarow .lab{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
+
+/* toc */
+.toc{margin:34px 0 8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.toc a{background:var(--card);text-decoration:none;color:var(--ink);padding:16px 16px;display:block;transition:background .15s}
+.toc a:hover,.toc a:focus-visible{background:var(--card-2)}
+.toc .n{font-family:"Cutive Mono",monospace;color:var(--allied);font-size:.75rem;letter-spacing:.1em}
+.toc .t{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.98rem;letter-spacing:.03em;display:block;margin-top:4px}
+
+/* parts */
+.part{padding-top:56px;scroll-margin-top:16px}
+.part-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:22px}
+.part-num{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(2.2rem,7vw,3.4rem);color:var(--allied);line-height:.8}
+.part-titles{flex:1}
+.part-titles .eyebrow{display:block;margin-bottom:4px}
+
+/* dossier accordion */
+details.dossier{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--central);margin:14px 0;box-shadow:var(--shadow)}
+details.dossier[data-side="allied"]{border-left-color:var(--allied)}
+details.dossier[data-side="slate"]{border-left-color:var(--slate)}
+details.dossier[data-side="brass"]{border-left-color:var(--brass)}
+details.dossier>summary{cursor:pointer;list-style:none;padding:15px 18px;display:flex;align-items:center;gap:12px;font-family:"Oswald",sans-serif;font-weight:500;letter-spacing:.03em;font-size:1.05rem;text-transform:uppercase}
+details.dossier>summary::-webkit-details-marker{display:none}
+details.dossier>summary .chev{margin-left:auto;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.12em;color:var(--ink-soft);border:1px solid var(--rule);padding:3px 8px;white-space:nowrap;transition:.18s}
+details.dossier[open]>summary .chev{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+details.dossier>summary .tag{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;color:#fff;background:var(--central)}
+details.dossier[data-side="allied"]>summary .tag{background:var(--allied)}
+details.dossier[data-side="slate"]>summary .tag{background:var(--slate)}
+details.dossier[data-side="brass"]>summary .tag{background:var(--brass)}
+.dossier-body{padding:2px 18px 18px;border-top:1px solid var(--rule)}
+.dossier-body p:first-child{margin-top:14px}
+
+/* timeline (signature) */
+.timeline{position:relative;margin:30px 0 10px;padding:8px 0}
+.timeline::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:0;border-left:2px dashed var(--rule-strong);transform:translateX(-50%)}
+.tl-year{position:relative;text-align:center;margin:26px 0 14px;z-index:2}
+.tl-year span{font-family:"Oswald",sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.12em;background:var(--ink);color:var(--paper);padding:5px 16px;display:inline-block}
+.tl-event{position:relative;width:50%;padding:0 30px 0 0;margin:10px 0;z-index:2}
+.tl-event.right{margin-left:50%;padding:0 0 0 30px}
+.tl-event::before{content:"";position:absolute;top:18px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2.5px solid var(--central)}
+.tl-event.left::before{right:-6px}
+.tl-event.right::before{left:-6px}
+.tl-event[data-c="allied"]::before{border-color:var(--allied)}
+.tl-event[data-c="slate"]::before{border-color:var(--slate)}
+.tl-card{background:var(--card);border:1px solid var(--rule);padding:0;box-shadow:var(--shadow)}
+.tl-card>summary{list-style:none;cursor:pointer;padding:12px 14px;display:block}
+.tl-card>summary::-webkit-details-marker{display:none}
+.tl-card .date{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;color:var(--allied);text-transform:uppercase}
+.tl-card .ti{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.98rem;letter-spacing:.02em;margin-top:3px;display:block}
+.tl-card .detail{padding:0 14px 14px;font-size:.94rem;line-height:1.55;color:var(--ink)}
+.tl-card[open] .ti{color:var(--allied)}
+
+/* regimes comparison */
+.regimes{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:14px;margin:22px 0}
+.regime{background:var(--card);border:1px solid var(--rule);border-top:4px solid var(--brass);padding:17px 16px;box-shadow:var(--shadow)}
+.regime[data-c="allied"]{border-top-color:var(--allied)}
+.regime[data-c="central"]{border-top-color:var(--central)}
+.regime[data-c="slate"]{border-top-color:var(--slate)}
+.regime .rname{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;font-size:1.08rem;letter-spacing:.03em}
+.regime .rmeta{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin:5px 0 11px;line-height:1.5}
+.regime ul{margin:0;padding-left:1.05em;font-size:.9rem;line-height:1.5}
+.regime li{margin:.3em 0}
+
+/* casualty/data chart */
+.chart{margin:22px 0;border:1px solid var(--rule);background:var(--card);padding:20px 18px;box-shadow:var(--shadow)}
+.bar-row{display:grid;grid-template-columns:118px 1fr 70px;align-items:center;gap:10px;margin:9px 0;font-size:.9rem}
+.bar-row .name{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.04em;text-align:right;color:var(--ink)}
+.bar-track{height:18px;background:var(--card-2);position:relative;border:1px solid var(--rule)}
+.bar-fill{height:100%;background:var(--allied);width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.bar-row .val{font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+.chart .ctitle{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.03em;font-size:1rem;margin-bottom:14px}
+.chart .note{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.05em;color:var(--ink-soft);margin-top:14px;line-height:1.5}
+
+/* note callout */
+.note-box{background:var(--card-2);border-left:4px solid var(--brass);padding:14px 16px;margin:16px 0;font-size:.96rem}
+.note-box .lab{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:5px}
+
+/* quiz */
+.quiz{background:var(--card);border:1px dashed var(--rule-strong);padding:20px 18px;margin:26px 0;box-shadow:var(--shadow)}
+.quiz-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.quiz-head .lab{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--allied)}
+.quiz-head .score{margin-left:auto;font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+.q{margin:18px 0;padding-top:16px;border-top:1px solid var(--rule)}
+.q:first-of-type{border-top:none;padding-top:4px}
+.q .qtext{font-family:"Oswald",sans-serif;font-weight:400;font-size:1.04rem;letter-spacing:.01em;margin-bottom:11px;text-transform:none}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{text-align:left;font-family:"Spectral",serif;font-size:.96rem;color:var(--ink);background:var(--paper);border:1px solid var(--rule);padding:10px 13px;cursor:pointer;transition:.12s;line-height:1.4}
+.opt:hover:not(:disabled){border-color:var(--ink);background:var(--card-2)}
+.opt:disabled{cursor:default}
+.opt.correct{background:#5C6A50;color:#fff;border-color:#4a553f}
+.opt.wrong{background:#8A3324;color:#fff;border-color:#6f2a1d}
+.opt.dim{opacity:.5}
+.explain{display:none;margin-top:11px;padding:11px 13px;background:var(--card-2);border-left:3px solid var(--brass);font-size:.9rem;line-height:1.55}
+.explain.show{display:block}
+.explain .e-lab{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
+
+/* flip cards */
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:22px 0}
+.flip{background:var(--card);border:1px solid var(--rule);padding:0;cursor:pointer;min-height:118px;display:flex;flex-direction:column;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:inherit}
+.flip .face{padding:15px 15px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.flip .q-face{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.98rem;letter-spacing:.02em}
+.flip .a-face{display:none;font-size:.9rem;line-height:1.5}
+.flip.flipped .q-face{display:none}
+.flip.flipped .a-face{display:block}
+.flip .hint{font-family:"Cutive Mono",monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding:8px 15px;border-top:1px solid var(--rule)}
+.flip.flipped .hint{color:var(--brass)}
+
+footer{margin-top:72px;padding-top:24px;border-top:2px solid var(--ink);font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.06em;color:var(--ink-soft);line-height:1.7}
+
+:focus-visible{outline:2.5px solid var(--slate);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+@media(max-width:640px){
+  body{font-size:17px}
+  .timeline::before{left:13px}
+  .tl-event,.tl-event.right{width:100%;margin-left:0;padding:0 0 0 34px}
+  .tl-event.left::before,.tl-event.right::before{left:8px;right:auto}
+  .tl-year{text-align:left}
+  .bar-row{grid-template-columns:92px 1fr 58px}
+  .bar-row .name{font-size:.64rem}
+  .metarow{gap:18px}
+}
+</style>
+</head>
+<body>
+
+<svg class="contours" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g fill="none" stroke="#232820" stroke-width="1" opacity="0.06">
+    <path d="M-50,200 C200,140 380,300 600,250 S1000,140 1260,230"/>
+    <path d="M-50,260 C220,210 400,360 620,310 S1010,210 1260,300"/>
+    <path d="M-50,520 C180,460 420,600 640,540 S1030,440 1260,520"/>
+    <path d="M-50,580 C200,540 430,660 650,610 S1040,520 1260,600"/>
+    <path d="M-50,900 C240,840 400,980 620,930 S1010,830 1260,910"/>
+    <path d="M-50,960 C220,920 420,1040 640,1000 S1030,900 1260,980"/>
+    <path d="M-50,1240 C200,1180 410,1320 630,1270 S1020,1180 1260,1260"/>
+    <path d="M-50,1300 C220,1260 430,1380 650,1340 S1040,1250 1260,1330"/>
+    <circle cx="600" cy="400" r="120"/><circle cx="600" cy="400" r="180"/><circle cx="600" cy="400" r="250"/>
+  </g>
+</svg>
+
+<div class="wrap">
+
+  <!-- COVER -->
+  <header class="cover">
+    <span class="stamp">Dossier · Histoire &amp; Géopolitique · Fiche de révision</span>
+    <h1>L'Entre-deux-<br>guerres <span class="years">1919–1939</span></h1>
+    <div class="sub">De l'espoir de paix à la marche à la guerre</div>
+    <p class="dek">Vingt ans séparent les deux guerres mondiales. Une période qui s'ouvre dans l'espoir — la paix, la démocratie, la Société des Nations — et s'achève dans la catastrophe&nbsp;: crise économique mondiale, montée des totalitarismes, effondrement de la sécurité collective. La grande question de ce dossier&nbsp;: <em>pourquoi la paix de 1919 a-t-elle échoué&nbsp;?</em></p>
+    <div class="metarow">
+      <div class="stat"><div class="num">20</div><div class="lab">Années sans guerre</div></div>
+      <div class="stat"><div class="num">1929</div><div class="lab">Le krach</div></div>
+      <div class="stat"><div class="num">3</div><div class="lab">Régimes totalitaires</div></div>
+      <div class="stat"><div class="num">1939</div><div class="lab">La rupture</div></div>
+    </div>
+
+    <nav class="toc" aria-label="Sommaire">
+      <a href="#p1"><span class="n">PARTIE I</span><span class="t">Sortir de la guerre · 1919–24</span></a>
+      <a href="#p2"><span class="n">PARTIE II</span><span class="t">L'illusion des années 1920</span></a>
+      <a href="#p3"><span class="n">PARTIE III</span><span class="t">Crise &amp; totalitarismes</span></a>
+      <a href="#p4"><span class="n">PARTIE IV</span><span class="t">La marche à la guerre</span></a>
+    </nav>
+  </header>
+
+  <!-- PARTIE I -->
+  <section class="part" id="p1">
+    <div class="part-head">
+      <div class="part-num">I</div>
+      <div class="part-titles">
+        <span class="eyebrow">1919–1924</span>
+        <h2>Sortir de la guerre&nbsp;: un monde fragile</h2>
+      </div>
+    </div>
+
+    <p class="lead">La guerre est finie, mais ses plaies sont béantes. L'Europe sort traumatisée, ruinée, endeuillée. On veut croire que c'était «&nbsp;<strong>la der des ders</strong>&nbsp;» — la dernière des guerres — et l'on fonde de grands espoirs sur de jeunes démocraties et sur une organisation inédite, la <strong>Société des Nations</strong>. Mais sous cette façade, tout est instable.</p>
+
+    <h3>L'héritage empoisonné de la guerre</h3>
+    <p>Le conflit a laissé des sociétés <strong>endeuillées et brutalisées</strong>&nbsp;: des millions de morts, d'invalides et de «&nbsp;gueules cassées&nbsp;», des économies ruinées et endettées (notamment auprès des États-Unis). La violence de masse a banalisé la brutalité dans la vie politique. Beaucoup d'anciens combattants peinent à se réinsérer, et un sentiment d'humiliation domine chez les vaincus, surtout en Allemagne après le «&nbsp;Diktat&nbsp;» de Versailles.</p>
+
+    <h3>L'espoir et ses limites&nbsp;: la SDN</h3>
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">1920</span> La Société des Nations &amp; la sécurité collective <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Imaginée par le président américain <strong>Wilson</strong>, la <strong>SDN</strong> (siège à Genève) doit garantir la paix par la <strong>sécurité collective</strong>&nbsp;: une agression contre un membre serait l'affaire de tous. C'est une idée neuve et porteuse d'espoir.</p>
+        <p>Mais elle naît affaiblie&nbsp;: les <strong>États-Unis refusent d'y adhérer</strong> (le Sénat rejette le traité), l'URSS et les vaincus en sont d'abord exclus, elle n'a <strong>pas d'armée</strong> et fonctionne à l'<strong>unanimité</strong>. Autant de faiblesses qui la rendront impuissante face aux dictatures.</p>
+      </div>
+    </details>
+
+    <h3>Les premières crises (1919–1923)</h3>
+    <details class="dossier" data-side="allied">
+      <summary><span class="tag">1919–23</span> Allemagne&nbsp;: une démocratie sous pression <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>La jeune <strong>République de Weimar</strong> est fragile dès sa naissance. Elle affronte des tentatives de coups de force des deux bords&nbsp;: insurrection <strong>spartakiste</strong> (communiste) en 1919, putsch de Kapp (extrême droite) en 1920, et le <strong>putsch manqué de Hitler à Munich</strong> en 1923 (après quoi il rédige <em>Mein Kampf</em> en prison).</p>
+        <p>Surtout, en 1923, l'incapacité à payer les réparations provoque l'<strong>occupation de la Ruhr</strong> par la France et la Belgique, et une <strong>hyperinflation</strong> vertigineuse&nbsp;: le mark s'effondre, les économies des Allemands sont anéanties. Un traumatisme durable.</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="allied">
+      <summary><span class="tag">1917–22</span> La naissance de l'URSS <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>En Russie, la révolution bolchevique a porté <strong>Lénine</strong> au pouvoir. Après une terrible <strong>guerre civile</strong> (Rouges contre Blancs) et le «&nbsp;communisme de guerre&nbsp;», l'<strong>URSS</strong> est officiellement fondée en 1922. Un régime d'un type nouveau&nbsp;: parti unique, économie dirigée, projet révolutionnaire mondial (le <strong>Komintern</strong>, 1919).</p>
+        <p>Pour les démocraties libérales, cette «&nbsp;menace rouge&nbsp;» est une hantise&nbsp;; pour une partie des ouvriers et des intellectuels, l'URSS est au contraire une espérance. Cette fracture pèsera sur toute la période.</p>
+      </div>
+    </details>
+
+    <div class="note-box">
+      <span class="lab">À retenir</span>
+      Le paradoxe des années 1919–1924&nbsp;: un <strong>discours de paix</strong> (« der des ders », SDN) qui masque une réalité d'<strong>instabilité</strong> (crises, putschs, hyperinflation, fracture entre démocraties et URSS). La paix repose sur des bases bien fragiles.
+    </div>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie I</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Pourquoi la SDN est-elle affaiblie dès sa création&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Parce qu'elle dispose d'une armée trop puissante</button>
+          <button class="opt">Parce que l'Allemagne la dirige</button>
+          <button class="opt">Parce que les États-Unis n'y adhèrent pas, sans armée et statuant à l'unanimité</button>
+          <button class="opt">Parce qu'elle siège à Berlin</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Pensée par Wilson, la SDN est paralysée par l'absence des États-Unis, le manque de force armée et la règle de l'unanimité — d'où son impuissance future face aux dictatures.</div>
+      </div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Que se passe-t-il en Allemagne en 1923&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Hitler devient chancelier</button>
+          <button class="opt">Occupation de la Ruhr et hyperinflation</button>
+          <button class="opt">Signature du traité de Versailles</button>
+          <button class="opt">Création de la Société des Nations</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Face au défaut de paiement des réparations, la France et la Belgique occupent la Ruhr&nbsp;; s'ensuit une hyperinflation qui ruine les Allemands — un traumatisme durable pour Weimar.</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Que signifie l'expression « la der des ders »&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">L'espoir que cette guerre soit la dernière de toutes</button>
+          <button class="opt">Le nom d'un traité de paix</button>
+          <button class="opt">Une bataille de 1919</button>
+          <button class="opt">Le surnom de la SDN</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>« La dernière des dernières »&nbsp;: l'illusion, après 1918, que l'humanité ne connaîtrait plus jamais une telle guerre. Vingt ans plus tard, l'espoir sera démenti.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIE II -->
+  <section class="part" id="p2">
+    <div class="part-head">
+      <div class="part-num">II</div>
+      <div class="part-titles">
+        <span class="eyebrow">1924–1929</span>
+        <h2>L'illusion des années 1920</h2>
+      </div>
+    </div>
+
+    <p class="lead">Au milieu des années 1920, tout semble s'arranger. L'économie repart, la diplomatie se réchauffe, on danse au son du jazz&nbsp;: ce sont les «&nbsp;<strong>Années folles</strong>&nbsp;». Mais cette prospérité et cette détente sont <strong>en trompe-l'œil</strong>&nbsp;: elles reposent sur des fondations fragiles, et déjà une première dictature s'est installée en Italie.</p>
+
+    <h3>La prospérité et le modèle américain</h3>
+    <p>Les <strong>États-Unis</strong> sortent grands gagnants de la guerre et imposent leur modèle&nbsp;: production de masse (<strong>fordisme</strong>, <strong>taylorisme</strong>), consommation de masse (automobile, électroménager), crédit, publicité. C'est l'<em>American way of life</em>. En Europe, après la stabilisation monétaire, la croissance revient et une intense effervescence culturelle s'empare des villes (cinéma, jazz, avant-gardes artistiques).</p>
+
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">1924–28</span> La détente diplomatique <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Une série d'accords semble enterrer les rancœurs&nbsp;: le <strong>plan Dawes</strong> (1924) rééchelonne les réparations grâce à des prêts américains&nbsp;; les <strong>accords de Locarno</strong> (1925) scellent une réconciliation franco-allemande portée par <strong>Briand</strong> et <strong>Stresemann</strong>&nbsp;; l'Allemagne entre à la <strong>SDN</strong> (1926)&nbsp;; enfin le <strong>pacte Briand-Kellogg</strong> (1928) voit de nombreux États «&nbsp;renoncer à la guerre&nbsp;». On parle d'un «&nbsp;esprit de Genève&nbsp;».</p>
+      </div>
+    </details>
+
+    <div class="note-box">
+      <span class="lab">Le piège caché</span>
+      Toute la reprise repose sur une <strong>chaîne de prêts américains</strong>&nbsp;: les États-Unis prêtent à l'Allemagne, qui paie ses réparations aux Alliés, qui remboursent leurs dettes de guerre aux États-Unis. Si ce maillon américain lâche, <strong>toute la chaîne s'effondre</strong>. C'est exactement ce qui se produira en 1929.
+    </div>
+
+    <h3>L'ombre au tableau&nbsp;: le premier fascisme</h3>
+    <details class="dossier" data-side="central">
+      <summary><span class="tag">1922</span> Mussolini &amp; le fascisme italien <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Dans une Italie frustrée par la paix («&nbsp;victoire mutilée&nbsp;») et terrifiée par l'agitation sociale, <strong>Benito Mussolini</strong> et ses «&nbsp;chemises noires&nbsp;» prennent le pouvoir après la <strong>Marche sur Rome</strong> (1922). En quelques années (1925–26), il transforme l'Italie en <strong>dictature</strong>&nbsp;: parti unique, presse muselée, culte du «&nbsp;Duce&nbsp;», embrigadement de la jeunesse.</p>
+        <p>Le <strong>fascisme</strong> est le premier régime de ce type&nbsp;: il servira de matrice et d'inspiration à d'autres mouvements autoritaires en Europe — au premier rang desquels le nazisme allemand.</p>
+      </div>
+    </details>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie II</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Sur quoi repose, fragilement, la prospérité des années 1920&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Sur l'or des colonies allemandes</button>
+          <button class="opt">Sur une chaîne de prêts américains</button>
+          <button class="opt">Sur les réparations payées par la France</button>
+          <button class="opt">Sur le commerce avec l'URSS</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>USA → prêts à l'Allemagne → réparations aux Alliés → remboursement des dettes aux USA. Quand les États-Unis cesseront de prêter (1929), toute la chaîne s'effondrera.</div>
+      </div>
+      <div class="q" data-q data-correct="3">
+        <div class="qtext">Quel événement amène Mussolini au pouvoir en 1922&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Le pacte Briand-Kellogg</button>
+          <button class="opt">Le plan Dawes</button>
+          <button class="opt">Les accords de Locarno</button>
+          <button class="opt">La Marche sur Rome</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>La Marche sur Rome (1922) porte Mussolini au pouvoir&nbsp;; il instaure une dictature fasciste vers 1925-26 — le premier régime fasciste, modèle pour d'autres.</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Que symbolisent les accords de Locarno (1925)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Une réconciliation franco-allemande (Briand–Stresemann)</button>
+          <button class="opt">Une alliance militaire contre l'URSS</button>
+          <button class="opt">La fin de la Société des Nations</button>
+          <button class="opt">Le réarmement de l'Allemagne</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Locarno incarne la détente des années 1920 et le rapprochement franco-allemand. L'Allemagne entrera à la SDN l'année suivante. Tout cela s'effondrera après 1929.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIE III -->
+  <section class="part" id="p3">
+    <div class="part-head">
+      <div class="part-num">III</div>
+      <div class="part-titles">
+        <span class="eyebrow">1929–1936</span>
+        <h2>La grande rupture&nbsp;: crise &amp; totalitarismes</h2>
+      </div>
+    </div>
+
+    <p class="lead">En octobre 1929, le krach de Wall Street fait basculer le monde dans la plus grave <strong>crise économique</strong> du siècle. La misère et le chômage de masse <strong>discréditent les démocraties libérales</strong> et nourrissent les extrêmes. C'est sur ce terreau que s'épanouissent les <strong>régimes totalitaires</strong>.</p>
+
+    <h3>Le krach de 1929 et la Grande Dépression</h3>
+    <details class="dossier" data-side="allied">
+      <summary><span class="tag">Oct. 1929</span> Le mécanisme de la crise <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Après des années de <strong>spéculation</strong> boursière et de <strong>surproduction</strong>, la Bourse de New York s'effondre&nbsp;: c'est le <strong>krach</strong> (« jeudi noir » du 24 octobre 1929). Les banques font faillite, le crédit se tarit, les entreprises ferment. La crise, partie des États-Unis, se propage au monde entier <strong>par la chaîne des prêts</strong>&nbsp;: en rapatriant leurs capitaux, les Américains entraînent l'effondrement de l'économie européenne, surtout allemande.</p>
+        <p>Résultat&nbsp;: <strong>chômage de masse</strong>, baisse des prix (déflation), effondrement du commerce mondial (chacun se protège derrière des barrières douanières) et misère sociale généralisée.</p>
+      </div>
+    </details>
+
+    <div class="chart" aria-label="Chômeurs en Allemagne 1928-1932">
+      <div class="ctitle">Le chômage en Allemagne (en millions)</div>
+      <div class="bar-row"><span class="name">1928</span><span class="bar-track"><span class="bar-fill" data-w="23"></span></span><span class="val">~1,4 M</span></div>
+      <div class="bar-row"><span class="name">1929</span><span class="bar-track"><span class="bar-fill" data-w="32"></span></span><span class="val">~1,9 M</span></div>
+      <div class="bar-row"><span class="name">1930</span><span class="bar-track"><span class="bar-fill" data-w="50"></span></span><span class="val">~3,0 M</span></div>
+      <div class="bar-row"><span class="name">1931</span><span class="bar-track"><span class="bar-fill" data-w="75"></span></span><span class="val">~4,5 M</span></div>
+      <div class="bar-row"><span class="name">1932</span><span class="bar-track"><span class="bar-fill" data-w="100"></span></span><span class="val">~6,0 M</span></div>
+      <div class="note">Estimations arrondies. La crise est mondiale (≈13 M de chômeurs aux États-Unis en 1932). En Allemagne, cette explosion du chômage nourrit directement la montée du parti nazi&nbsp;: en 1932, le NSDAP devient le premier parti du pays.</div>
+    </div>
+
+    <h3>Des réponses opposées à la crise</h3>
+    <p>Face au désastre, les États réagissent différemment. Aux États-Unis, <strong>Roosevelt</strong> lance en 1933 le <strong>New Deal</strong>&nbsp;: un interventionnisme massif de l'État (grands travaux, aides sociales, régulation) pour relancer l'économie tout en sauvant la démocratie. En France, c'est le <strong>Front populaire</strong> (1936, Léon Blum) qui apporte des réformes sociales (congés payés, semaine de 40&nbsp;heures). Mais ailleurs, la crise sert de tremplin aux <strong>dictatures</strong>.</p>
+
+    <h3>La montée des totalitarismes</h3>
+    <p>Le terme <strong>totalitarisme</strong> désigne des régimes d'un type nouveau qui veulent contrôler la société <em>tout entière</em>. Trois en sont l'incarnation&nbsp;:</p>
+
+    <div class="regimes">
+      <div class="regime" data-c="brass">
+        <div class="rname">Fascisme</div>
+        <div class="rmeta">Italie · Mussolini · dès 1922</div>
+        <ul>
+          <li>Culte du chef (le « Duce »)</li>
+          <li>Nationalisme &amp; expansion</li>
+          <li>Encadrement de la jeunesse</li>
+          <li>Le modèle d'origine</li>
+        </ul>
+      </div>
+      <div class="regime" data-c="central">
+        <div class="rname">Nazisme</div>
+        <div class="rmeta">Allemagne · Hitler · 1933</div>
+        <ul>
+          <li><strong>Racisme &amp; antisémitisme</strong></li>
+          <li>« Espace vital » (Lebensraum)</li>
+          <li>Revanche contre Versailles</li>
+          <li>Anticommunisme radical</li>
+        </ul>
+      </div>
+      <div class="regime" data-c="allied">
+        <div class="rname">Stalinisme</div>
+        <div class="rmeta">URSS · Staline · dès 1928</div>
+        <ul>
+          <li>Collectivisation forcée</li>
+          <li>Industrialisation (plans)</li>
+          <li>Goulag &amp; Grande Terreur</li>
+          <li>Au nom du communisme</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <span class="lab">Points communs &amp; différence clé</span>
+      <strong>Points communs</strong> (les critères du totalitarisme)&nbsp;: un <strong>parti unique</strong>, un <strong>chef charismatique</strong>, une <strong>idéologie officielle</strong>, la <strong>propagande</strong> et l'embrigadement, la <strong>terreur</strong> et la police politique, le contrôle de toute la société.<br>
+      <strong>Différence majeure</strong>&nbsp;: le nazisme et le fascisme reposent sur l'<em>inégalité</em> (la nation, la « race »)&nbsp;; le communisme stalinien se réclame, lui, de l'<em>égalité</em> et de la classe ouvrière — même si, dans les faits, sa pratique de la terreur est tout aussi implacable.
+    </div>
+
+    <details class="dossier" data-side="central">
+      <summary><span class="tag">1933–34</span> Comment Hitler installe sa dictature <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Nommé <strong>chancelier</strong> le 30 janvier 1933, Hitler établit très vite un régime de parti unique&nbsp;: après l'<strong>incendie du Reichstag</strong>, il fait voter les <strong>pleins pouvoirs</strong>, interdit les autres partis, met au pas la société (<em>Gleichschaltung</em>), élimine ses rivaux (<strong>Nuit des Longs Couteaux</strong>, 1934), puis cumule tous les pouvoirs comme «&nbsp;<strong>Führer</strong>&nbsp;». Les <strong>lois de Nuremberg</strong> (1935) institutionnalisent l'antisémitisme&nbsp;; la <strong>Nuit de Cristal</strong> (1938) marque une nouvelle escalade des persécutions.</p>
+      </div>
+    </details>
+
+    <div class="flips" aria-label="Cartes à mémoriser — touche pour révéler">
+      <button class="flip" data-flip><div class="face q-face">Qu'est-ce qu'un régime totalitaire&nbsp;?</div><div class="face a-face">Un régime à parti unique qui veut contrôler toute la société&nbsp;: idéologie officielle, chef, propagande, terreur et police politique.</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">Krach de 1929 → montée du nazisme&nbsp;: le lien&nbsp;?</div><div class="face a-face">La crise provoque un chômage massif en Allemagne&nbsp;; la misère discrédite Weimar et fait du parti nazi le 1er parti dès 1932.</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">Le New Deal, c'est quoi&nbsp;?</div><div class="face a-face">La réponse de Roosevelt (1933) à la crise&nbsp;: un interventionnisme massif de l'État pour relancer l'économie et sauver la démocratie américaine.</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">Différence nazisme / stalinisme&nbsp;?</div><div class="face a-face">Le nazisme se fonde sur l'inégalité (race, nation)&nbsp;; le stalinisme se réclame de l'égalité (classe). Mais terreur de masse dans les deux cas.</div><div class="hint">Toucher pour révéler</div></button>
+    </div>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie III</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Comment la crise de 1929 se propage-t-elle des États-Unis au monde&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Par une guerre commerciale avec l'URSS</button>
+          <button class="opt">Par l'effondrement de la SDN</button>
+          <button class="opt">Par le rapatriement des capitaux américains (la chaîne des prêts)</button>
+          <button class="opt">Par les réparations allemandes</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>En rappelant leurs capitaux, les États-Unis brisent la chaîne de prêts qui soutenait l'économie européenne&nbsp;; l'Allemagne, la plus dépendante, est la plus durement frappée.</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Quels sont les critères communs aux régimes totalitaires&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Parti unique, chef, idéologie, propagande, terreur</button>
+          <button class="opt">Élections libres et multipartisme</button>
+          <button class="opt">Séparation des pouvoirs et presse libre</button>
+          <button class="opt">Neutralité et désarmement</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Le totalitarisme se reconnaît à un parti unique, un chef charismatique, une idéologie officielle, la propagande/l'embrigadement et la terreur policière — un contrôle de toute la société.</div>
+      </div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Sur quoi repose l'idéologie nazie&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">L'égalité des classes sociales</button>
+          <button class="opt">Le racisme, l'antisémitisme et l'« espace vital »</button>
+          <button class="opt">Le pacifisme et le libre-échange</button>
+          <button class="opt">La défense de la Société des Nations</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Le nazisme repose sur le racisme et l'antisémitisme, la conquête d'un « espace vital » (Lebensraum), la revanche contre Versailles et un anticommunisme radical.</div>
+      </div>
+      <div class="q" data-q data-correct="3">
+        <div class="qtext">En URSS, que recouvre le stalinisme dans les années 1930&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Une démocratie parlementaire</button>
+          <button class="opt">Un retour au tsarisme</button>
+          <button class="opt">Une économie libérale de marché</button>
+          <button class="opt">Collectivisation, plans, Goulag et Grande Terreur</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Staline impose la collectivisation forcée des campagnes, une industrialisation par plans, le système concentrationnaire du Goulag et la Grande Terreur (purges, procès de Moscou).</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIE IV -->
+  <section class="part" id="p4">
+    <div class="part-head">
+      <div class="part-num">IV</div>
+      <div class="part-titles">
+        <span class="eyebrow">1931–1939</span>
+        <h2>La marche à la guerre</h2>
+      </div>
+    </div>
+
+    <p class="lead">Dans les années 1930, les dictatures multiplient les <strong>agressions</strong>, tandis que la SDN se montre impuissante et que les démocraties, affaiblies et pacifistes, reculent&nbsp;: c'est la politique d'<strong>apaisement</strong>. De crise en crise, l'<strong>engrenage</strong> conduit, presque inexorablement, à un nouveau conflit mondial.</p>
+
+    <h3>L'engrenage des agressions</h3>
+    <p>Touche un événement pour en déplier le détail. <span class="eyebrow">Marqueurs&nbsp;: <span style="color:var(--allied)">●</span> Crises &amp; agressions · <span style="color:var(--central)">●</span> Régimes &amp; dictatures · <span style="color:var(--slate)">●</span> Diplomatie &amp; économie</span></p>
+
+    <div class="timeline">
+      <div class="tl-year"><span>1931–33</span></div>
+
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">1931</span><span class="ti">Le Japon envahit la Mandchourie</span></summary>
+          <div class="detail">Première grande agression de la décennie. La <strong>SDN condamne mais ne fait rien</strong>&nbsp;: le Japon quitte l'organisation. La sécurité collective montre déjà son impuissance.</div>
+        </details>
+      </div>
+
+      <div class="tl-event right" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">Janv. 1933</span><span class="ti">Hitler chancelier</span></summary>
+          <div class="detail">L'arrivée des nazis au pouvoir change tout. L'Allemagne se réarme bientôt et <strong>quitte la SDN</strong> (1933). Le principal moteur de la marche à la guerre est en place.</div>
+        </details>
+      </div>
+
+      <div class="tl-event left" data-c="slate">
+        <details class="tl-card">
+          <summary><span class="date">1933</span><span class="ti">Le New Deal de Roosevelt</span></summary>
+          <div class="detail">Aux États-Unis, la démocratie répond à la crise par l'intervention de l'État — un contre-modèle aux dictatures, qui sauve le régime américain sans pour autant peser sur la scène européenne (isolationnisme).</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1935–36</span></div>
+
+      <div class="tl-event right" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">1935</span><span class="ti">L'Allemagne réarme ouvertement</span></summary>
+          <div class="detail">Hitler rétablit le <strong>service militaire</strong> et reconstitue une armée, en violation de Versailles. La même année, les <strong>lois de Nuremberg</strong> institutionnalisent l'antisémitisme.</div>
+        </details>
+      </div>
+
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">1935</span><span class="ti">L'Italie envahit l'Éthiopie</span></summary>
+          <div class="detail">Mussolini agresse l'Éthiopie. Les <strong>sanctions de la SDN sont inefficaces</strong>&nbsp;: l'organisation est définitivement <strong>discréditée</strong>. L'Italie se rapproche de l'Allemagne.</div>
+        </details>
+      </div>
+
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">Mars 1936</span><span class="ti">Remilitarisation de la Rhénanie</span></summary>
+          <div class="detail">Hitler envoie ses troupes dans la zone démilitarisée, en violation de Versailles et de Locarno. <strong>Coup de poker</strong>&nbsp;: les démocraties ne réagissent pas. Une occasion manquée de l'arrêter.</div>
+        </details>
+      </div>
+
+      <div class="tl-event left" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">Oct. 1936</span><span class="ti">L'Axe Rome-Berlin</span></summary>
+          <div class="detail">Les deux dictatures se rapprochent officiellement (puis pacte Anti-Komintern). Les régimes fasciste et nazi font désormais front commun.</div>
+        </details>
+      </div>
+
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">1936–39</span><span class="ti">La guerre d'Espagne</span></summary>
+          <div class="detail">Franco (soutenu par Hitler et Mussolini) renverse la République (soutenue par l'URSS), tandis que les démocraties pratiquent la <strong>non-intervention</strong>. Une véritable <strong>répétition générale</strong> de la guerre à venir (bombardement de <strong>Guernica</strong>, 1937).</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1938</span></div>
+
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">Mars 1938</span><span class="ti">L'Anschluss</span></summary>
+          <div class="detail">L'Allemagne <strong>annexe l'Autriche</strong>. Encore une fois, les démocraties laissent faire.</div>
+        </details>
+      </div>
+
+      <div class="tl-event right" data-c="slate">
+        <details class="tl-card">
+          <summary><span class="date">Sept. 1938</span><span class="ti">Les accords de Munich</span></summary>
+          <div class="detail">Pour éviter la guerre, la France (Daladier) et le Royaume-Uni (Chamberlain) <strong>abandonnent les Sudètes tchécoslovaques</strong> à Hitler. C'est l'<strong>apogée de l'apaisement</strong> — un soulagement de courte durée, payé par la trahison d'un allié.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1939</span></div>
+
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">Mars 1939</span><span class="ti">Le coup de Prague</span></summary>
+          <div class="detail">Hitler s'empare du <strong>reste de la Tchécoslovaquie</strong>, prouvant que Munich n'était qu'un leurre. <strong>L'apaisement est mort</strong>&nbsp;: la France et le Royaume-Uni garantissent désormais la Pologne.</div>
+        </details>
+      </div>
+
+      <div class="tl-event right" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">23 août 1939</span><span class="ti">Le pacte germano-soviétique</span></summary>
+          <div class="detail">Coup de théâtre&nbsp;: les ennemis idéologiques que sont Hitler et Staline signent un <strong>pacte de non-agression</strong> (Molotov-Ribbentrop), avec un protocole secret partageant la Pologne. Hitler a les mains libres à l'Est.</div>
+        </details>
+      </div>
+
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">1ᵉʳ sept. 1939</span><span class="ti">L'invasion de la Pologne</span></summary>
+          <div class="detail">L'Allemagne envahit la Pologne. Le 3 septembre, la <strong>France et le Royaume-Uni déclarent la guerre</strong>&nbsp;: la <strong>Seconde Guerre mondiale</strong> commence. L'entre-deux-guerres s'achève.</div>
+        </details>
+      </div>
+    </div>
+
+    <h3>Pourquoi les démocraties ont-elles reculé&nbsp;?</h3>
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">Analyse</span> Les ressorts de l'apaisement <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Plusieurs raisons expliquent la passivité des démocraties&nbsp;: un <strong>pacifisme</strong> profond, traumatisme de 1914-18 («&nbsp;plus jamais ça&nbsp;»)&nbsp;; un <strong>épuisement économique</strong> dû à la crise&nbsp;; la <strong>peur du communisme</strong>, qui pousse certains à voir en Hitler un rempart&nbsp;; et de fortes <strong>divisions internes</strong>. Beaucoup espéraient «&nbsp;acheter la paix&nbsp;» par des concessions — ils n'ont fait qu'enhardir l'agresseur.</p>
+      </div>
+    </details>
+
+    <div class="note-box">
+      <span class="lab">Synthèse&nbsp;: pourquoi la paix a échoué</span>
+      L'entre-deux-guerres est l'histoire d'un <strong>échec</strong>&nbsp;: celui de la paix de 1919 (humiliations et frustrations non résolues), celui de la <strong>sécurité collective</strong> (une SDN impuissante), aggravé par la <strong>crise de 1929</strong> et la <strong>montée des totalitarismes</strong>. La conjonction de ces facteurs a rendu possible — puis inévitable — une seconde guerre mondiale, plus terrible encore que la première.
+    </div>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie IV</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Qu'est-ce que la politique d'apaisement&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Une alliance militaire des démocraties contre Hitler</button>
+          <button class="opt">La volonté des démocraties d'éviter la guerre par des concessions</button>
+          <button class="opt">Le programme économique de Roosevelt</button>
+          <button class="opt">Un traité signé à Locarno</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Par pacifisme, épuisement et peur du communisme, la France et le Royaume-Uni cèdent aux exigences d'Hitler (apogée&nbsp;: Munich, 1938) — ce qui ne fait que l'encourager.</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Que décident les accords de Munich (1938)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Abandonner les Sudètes tchécoslovaques à l'Allemagne</button>
+          <button class="opt">Déclarer la guerre à l'Allemagne</button>
+          <button class="opt">Exclure l'Italie de la SDN</button>
+          <button class="opt">Rendre l'Alsace-Lorraine à l'Allemagne</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Pour préserver la paix, Daladier et Chamberlain livrent les Sudètes à Hitler. C'est l'apogée de l'apaisement — un répit illusoire, suivi six mois plus tard par le coup de Prague.</div>
+      </div>
+      <div class="q" data-q data-correct="3">
+        <div class="qtext">Pourquoi le pacte germano-soviétique (août 1939) est-il une surprise&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Parce qu'il crée la Société des Nations</button>
+          <button class="opt">Parce qu'il rend l'Alsace à la France</button>
+          <button class="opt">Parce qu'il met fin à la crise économique</button>
+          <button class="opt">Parce qu'il unit deux ennemis idéologiques, Hitler et Staline</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Nazis et communistes étaient des adversaires irréductibles&nbsp;; leur pacte de non-agression (avec partage secret de la Pologne) stupéfie le monde et donne à Hitler les mains libres pour attaquer.</div>
+      </div>
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Quel événement marque la fin de l'entre-deux-guerres&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Le krach de 1929</button>
+          <button class="opt">L'arrivée d'Hitler au pouvoir</button>
+          <button class="opt">L'invasion de la Pologne (sept. 1939)</button>
+          <button class="opt">Les accords de Munich</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Le 1er septembre 1939, l'Allemagne envahit la Pologne&nbsp;; la France et le Royaume-Uni déclarent la guerre le 3. La Seconde Guerre mondiale commence.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    DOSSIER — L'ENTRE-DEUX-GUERRES 1919–1939 · Fiche de révision interactive<br>
+    Histoire &amp; géopolitique · Sortir de la guerre ▸ Années 1920 ▸ Crise &amp; totalitarismes ▸ Marche à la guerre<br>
+    Conçu pour révision à l'écran et sur mobile — sections dépliables, frise cliquable, auto-tests.
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  document.querySelectorAll("[data-quiz]").forEach(function(quiz){
+    var scoreEl = quiz.querySelector("[data-score]");
+    var questions = quiz.querySelectorAll("[data-q]");
+    var total = questions.length;
+    var answered = 0, correctCount = 0;
+    scoreEl.textContent = "0 / " + total;
+    questions.forEach(function(q){
+      var correct = parseInt(q.getAttribute("data-correct"), 10);
+      var opts = Array.prototype.slice.call(q.querySelectorAll(".opt"));
+      var explain = q.querySelector(".explain");
+      var locked = false;
+      opts.forEach(function(opt, idx){
+        opt.addEventListener("click", function(){
+          if (locked) return;
+          locked = true; answered++;
+          if (idx === correct) correctCount++;
+          opts.forEach(function(o, i){
+            o.disabled = true;
+            if (i === correct) o.classList.add("correct");
+            else if (i === idx) o.classList.add("wrong");
+            else o.classList.add("dim");
+          });
+          if (explain) explain.classList.add("show");
+          scoreEl.textContent = correctCount + " / " + total + (answered === total ? "  ✓ terminé" : "");
+        });
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-flip]").forEach(function(card){
+    card.setAttribute("aria-pressed","false");
+    card.addEventListener("click", function(){
+      var on = card.classList.toggle("flipped");
+      card.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  });
+
+  var bars = document.querySelectorAll(".bar-fill");
+  var filled = false;
+  function fill(){ if(filled) return; filled = true; bars.forEach(function(b){ b.style.width = (b.getAttribute("data-w")||0) + "%"; }); }
+  var chart = document.querySelector(".chart");
+  if (chart && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ fill(); io.disconnect(); } });
+    }, {threshold:0.12});
+    io.observe(chart);
+    setTimeout(fill, 2000);
+  } else { fill(); }
+})();
+</script>
+</body>
+</html>
