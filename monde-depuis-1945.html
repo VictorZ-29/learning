@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Depuis 1945 — Guerre froide &amp; construction européenne · Dossier complet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E4DBC5; --card:#EFE8D6; --card-2:#E9E0CB;
+  --ink:#232820; --ink-soft:#56594B;
+  --central:#5C6A50; --allied:#8A3324; --slate:#3C5A68; --brass:#947726;
+  --rule:rgba(35,40,32,.18); --rule-strong:rgba(35,40,32,.4);
+  --shadow:0 1px 0 rgba(35,40,32,.06), 0 8px 24px -16px rgba(35,40,32,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Spectral",Georgia,serif;font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+.contours{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5}
+.wrap{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:0 22px 120px}
+
+.eyebrow{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;line-height:1.08;text-transform:uppercase}
+h2{font-size:clamp(1.5rem,4.4vw,2.15rem);margin:0 0 .15em}
+h3{font-size:1.18rem;font-weight:500;letter-spacing:.04em;margin:1.7em 0 .4em}
+p{margin:0 0 1em}
+a{color:var(--slate);text-decoration-thickness:1px;text-underline-offset:2px}
+strong{font-weight:600}
+em{color:var(--ink-soft)}
+.lead{font-size:1.08rem}
+
+.cover{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
+.stamp{display:inline-block;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--allied);border:1.5px solid var(--allied);padding:5px 11px;transform:rotate(-2.5deg);margin-bottom:26px;opacity:.85}
+.cover h1{font-size:clamp(2.5rem,9vw,5rem);font-weight:700;margin:0;line-height:.95}
+.cover .years{color:var(--allied)}
+.cover .sub{font-family:"Oswald",sans-serif;font-weight:400;letter-spacing:.16em;text-transform:uppercase;font-size:clamp(.85rem,2.6vw,1.05rem);color:var(--ink-soft);margin-top:14px}
+.cover .dek{margin-top:26px;max-width:60ch;font-size:1.06rem}
+.metarow{display:flex;flex-wrap:wrap;gap:26px;margin-top:30px;padding-top:22px;border-top:1px solid var(--rule)}
+.metarow .stat{min-width:118px}
+.metarow .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.9rem;line-height:1;color:var(--ink)}
+.metarow .lab{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
+
+.toc{margin:34px 0 8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.toc a{background:var(--card);text-decoration:none;color:var(--ink);padding:16px 16px;display:block;transition:background .15s}
+.toc a:hover,.toc a:focus-visible{background:var(--card-2)}
+.toc .n{font-family:"Cutive Mono",monospace;color:var(--allied);font-size:.75rem;letter-spacing:.1em}
+.toc .t{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.95rem;letter-spacing:.03em;display:block;margin-top:4px}
+
+.part{padding-top:56px;scroll-margin-top:16px}
+.part-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:22px}
+.part-num{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(2.2rem,7vw,3.4rem);color:var(--allied);line-height:.8}
+.part-titles{flex:1}
+.part-titles .eyebrow{display:block;margin-bottom:4px}
+
+details.dossier{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--central);margin:14px 0;box-shadow:var(--shadow)}
+details.dossier[data-side="allied"]{border-left-color:var(--allied)}
+details.dossier[data-side="slate"]{border-left-color:var(--slate)}
+details.dossier[data-side="brass"]{border-left-color:var(--brass)}
+details.dossier>summary{cursor:pointer;list-style:none;padding:15px 18px;display:flex;align-items:center;gap:12px;font-family:"Oswald",sans-serif;font-weight:500;letter-spacing:.03em;font-size:1.05rem;text-transform:uppercase}
+details.dossier>summary::-webkit-details-marker{display:none}
+details.dossier>summary .chev{margin-left:auto;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.12em;color:var(--ink-soft);border:1px solid var(--rule);padding:3px 8px;white-space:nowrap;transition:.18s}
+details.dossier[open]>summary .chev{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+details.dossier>summary .tag{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;color:#fff;background:var(--central)}
+details.dossier[data-side="allied"]>summary .tag{background:var(--allied)}
+details.dossier[data-side="slate"]>summary .tag{background:var(--slate)}
+details.dossier[data-side="brass"]>summary .tag{background:var(--brass)}
+.dossier-body{padding:2px 18px 18px;border-top:1px solid var(--rule)}
+.dossier-body p:first-child{margin-top:14px}
+
+.timeline{position:relative;margin:30px 0 10px;padding:8px 0}
+.timeline::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:0;border-left:2px dashed var(--rule-strong);transform:translateX(-50%)}
+.tl-year{position:relative;text-align:center;margin:26px 0 14px;z-index:2}
+.tl-year span{font-family:"Oswald",sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.12em;background:var(--ink);color:var(--paper);padding:5px 16px;display:inline-block}
+.tl-event{position:relative;width:50%;padding:0 30px 0 0;margin:10px 0;z-index:2}
+.tl-event.right{margin-left:50%;padding:0 0 0 30px}
+.tl-event::before{content:"";position:absolute;top:18px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2.5px solid var(--central)}
+.tl-event.left::before{right:-6px}
+.tl-event.right::before{left:-6px}
+.tl-event[data-c="allied"]::before{border-color:var(--allied)}
+.tl-event[data-c="slate"]::before{border-color:var(--slate)}
+.tl-card{background:var(--card);border:1px solid var(--rule);padding:0;box-shadow:var(--shadow)}
+.tl-card>summary{list-style:none;cursor:pointer;padding:12px 14px;display:block}
+.tl-card>summary::-webkit-details-marker{display:none}
+.tl-card .date{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;color:var(--allied);text-transform:uppercase}
+.tl-card .ti{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.98rem;letter-spacing:.02em;margin-top:3px;display:block}
+.tl-card .detail{padding:0 14px 14px;font-size:.94rem;line-height:1.55;color:var(--ink)}
+.tl-card[open] .ti{color:var(--allied)}
+
+.regimes{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px;margin:22px 0}
+.regime{background:var(--card);border:1px solid var(--rule);border-top:4px solid var(--brass);padding:17px 16px;box-shadow:var(--shadow)}
+.regime[data-c="allied"]{border-top-color:var(--allied)}
+.regime[data-c="central"]{border-top-color:var(--central)}
+.regime[data-c="slate"]{border-top-color:var(--slate)}
+.regime .rname{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;font-size:1.08rem;letter-spacing:.03em}
+.regime .rmeta{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin:5px 0 11px;line-height:1.5}
+.regime ul{margin:0;padding-left:1.05em;font-size:.9rem;line-height:1.5}
+.regime li{margin:.3em 0}
+
+.chart{margin:22px 0;border:1px solid var(--rule);background:var(--card);padding:20px 18px;box-shadow:var(--shadow)}
+.bar-row{display:grid;grid-template-columns:140px 1fr 80px;align-items:center;gap:10px;margin:9px 0;font-size:.9rem}
+.bar-row .name{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.04em;text-align:right;color:var(--ink)}
+.bar-track{height:18px;background:var(--card-2);position:relative;border:1px solid var(--rule)}
+.bar-fill{height:100%;background:var(--slate);width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.bar-row .val{font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+.chart .ctitle{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.03em;font-size:1rem;margin-bottom:14px}
+.chart .note{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.05em;color:var(--ink-soft);margin-top:14px;line-height:1.5}
+
+.note-box{background:var(--card-2);border-left:4px solid var(--brass);padding:14px 16px;margin:16px 0;font-size:.96rem}
+.note-box .lab{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:5px}
+
+.quiz{background:var(--card);border:1px dashed var(--rule-strong);padding:20px 18px;margin:26px 0;box-shadow:var(--shadow)}
+.quiz-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.quiz-head .lab{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--allied)}
+.quiz-head .score{margin-left:auto;font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+.q{margin:18px 0;padding-top:16px;border-top:1px solid var(--rule)}
+.q:first-of-type{border-top:none;padding-top:4px}
+.q .qtext{font-family:"Oswald",sans-serif;font-weight:400;font-size:1.04rem;letter-spacing:.01em;margin-bottom:11px;text-transform:none}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{text-align:left;font-family:"Spectral",serif;font-size:.96rem;color:var(--ink);background:var(--paper);border:1px solid var(--rule);padding:10px 13px;cursor:pointer;transition:.12s;line-height:1.4}
+.opt:hover:not(:disabled){border-color:var(--ink);background:var(--card-2)}
+.opt:disabled{cursor:default}
+.opt.correct{background:#5C6A50;color:#fff;border-color:#4a553f}
+.opt.wrong{background:#8A3324;color:#fff;border-color:#6f2a1d}
+.opt.dim{opacity:.5}
+.explain{display:none;margin-top:11px;padding:11px 13px;background:var(--card-2);border-left:3px solid var(--brass);font-size:.9rem;line-height:1.55}
+.explain.show{display:block}
+.explain .e-lab{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
+
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:22px 0}
+.flip{background:var(--card);border:1px solid var(--rule);padding:0;cursor:pointer;min-height:118px;display:flex;flex-direction:column;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:inherit}
+.flip .face{padding:15px 15px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.flip .q-face{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.98rem;letter-spacing:.02em}
+.flip .a-face{display:none;font-size:.9rem;line-height:1.5}
+.flip.flipped .q-face{display:none}
+.flip.flipped .a-face{display:block}
+.flip .hint{font-family:"Cutive Mono",monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding:8px 15px;border-top:1px solid var(--rule)}
+.flip.flipped .hint{color:var(--brass)}
+
+footer{margin-top:72px;padding-top:24px;border-top:2px solid var(--ink);font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.06em;color:var(--ink-soft);line-height:1.7}
+
+:focus-visible{outline:2.5px solid var(--slate);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+@media(max-width:640px){
+  body{font-size:17px}
+  .timeline::before{left:13px}
+  .tl-event,.tl-event.right{width:100%;margin-left:0;padding:0 0 0 34px}
+  .tl-event.left::before,.tl-event.right::before{left:8px;right:auto}
+  .tl-year{text-align:left}
+  .bar-row{grid-template-columns:84px 1fr 58px}
+  .bar-row .name{font-size:.62rem}
+  .metarow{gap:18px}
+}
+</style>
+</head>
+<body>
+
+<svg class="contours" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g fill="none" stroke="#232820" stroke-width="1" opacity="0.06">
+    <path d="M-50,200 C200,140 380,300 600,250 S1000,140 1260,230"/>
+    <path d="M-50,260 C220,210 400,360 620,310 S1010,210 1260,300"/>
+    <path d="M-50,520 C180,460 420,600 640,540 S1030,440 1260,520"/>
+    <path d="M-50,580 C200,540 430,660 650,610 S1040,520 1260,600"/>
+    <path d="M-50,900 C240,840 400,980 620,930 S1010,830 1260,910"/>
+    <path d="M-50,960 C220,920 420,1040 640,1000 S1030,900 1260,980"/>
+    <path d="M-50,1240 C200,1180 410,1320 630,1270 S1020,1180 1260,1260"/>
+    <path d="M-50,1300 C220,1260 430,1380 650,1340 S1040,1250 1260,1330"/>
+    <circle cx="600" cy="400" r="120"/><circle cx="600" cy="400" r="180"/><circle cx="600" cy="400" r="250"/>
+  </g>
+</svg>
+
+<div class="wrap">
+
+  <!-- COVER -->
+  <header class="cover">
+    <span class="stamp">Dossier · Histoire &amp; Géopolitique · Fiche de révision</span>
+    <h1>Le Monde depuis <span class="years">1945</span></h1>
+    <div class="sub">Guerre froide · deux blocs · construction européenne</div>
+    <p class="dek">Au sortir de la guerre, le monde se réorganise autour de <strong>deux superpuissances</strong> rivales — les États-Unis et l'URSS — et bascule dans un demi-siècle de <strong>guerre froide</strong>. Au même moment, une Europe meurtrie invente un projet inédit pour ne plus jamais se faire la guerre&nbsp;: la <strong>construction européenne</strong>, de la CECA à l'Union européenne. Deux histoires entremêlées, qui dessinent encore notre monde.</p>
+    <div class="metarow">
+      <div class="stat"><div class="num">2</div><div class="lab">Superpuissances</div></div>
+      <div class="stat"><div class="num">~45 ans</div><div class="lab">De guerre froide</div></div>
+      <div class="stat"><div class="num">1957</div><div class="lab">Traité de Rome</div></div>
+      <div class="stat"><div class="num">1989</div><div class="lab">Chute du Mur</div></div>
+    </div>
+
+    <nav class="toc" aria-label="Sommaire">
+      <a href="#p1"><span class="n">PARTIE I</span><span class="t">Naissance de deux blocs</span></a>
+      <a href="#p2"><span class="n">PARTIE II</span><span class="t">La guerre froide</span></a>
+      <a href="#p3"><span class="n">PARTIE III</span><span class="t">USA &amp; URSS&nbsp;: deux modèles</span></a>
+      <a href="#p4"><span class="n">PARTIE IV</span><span class="t">La construction européenne</span></a>
+      <a href="#p5"><span class="n">PARTIE V</span><span class="t">La fin &amp; le monde d'après</span></a>
+    </nav>
+  </header>
+
+  <!-- PARTIE I -->
+  <section class="part" id="p1">
+    <div class="part-head">
+      <div class="part-num">I</div>
+      <div class="part-titles">
+        <span class="eyebrow">1945–1947</span>
+        <h2>1945&nbsp;: la naissance de deux blocs</h2>
+      </div>
+    </div>
+
+    <p class="lead">En 1945, l'Europe est ruinée et a perdu sa place de centre du monde. Deux <strong>«&nbsp;Grands&nbsp;»</strong> la dépassent désormais&nbsp;: les <strong>États-Unis</strong> et l'<strong>URSS</strong>, vainqueurs mais porteurs de modèles opposés. Leur alliance de guerre ne survit pas à la paix&nbsp;: en deux ans, le monde se coupe en deux.</p>
+
+    <h3>De l'alliance à la rupture</h3>
+    <p>Tout oppose les deux vainqueurs&nbsp;: d'un côté la <strong>démocratie libérale</strong> et le <strong>capitalisme</strong>, de l'autre le <strong>communisme</strong> et l'<strong>économie planifiée</strong>. Dès 1946, Churchill dénonce le «&nbsp;<strong>rideau de fer</strong>&nbsp;» qui coupe l'Europe en deux. À l'Est, l'URSS impose des régimes communistes (les «&nbsp;<strong>démocraties populaires</strong>&nbsp;») dans les pays qu'elle a libérés.</p>
+
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">1947 · Ouest</span> Doctrine Truman &amp; plan Marshall <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Les États-Unis ripostent par une stratégie d'<strong>endiguement</strong> (<em>containment</em>) du communisme. La <strong>doctrine Truman</strong> (1947) promet d'aider tout pays menacé. Le <strong>plan Marshall</strong> (1947) offre une aide économique massive pour reconstruire l'Europe — et l'ancrer dans le camp occidental. L'URSS interdit à ses satellites de l'accepter.</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="allied">
+      <summary><span class="tag">1947 · Est</span> Doctrine Jdanov &amp; Kominform <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>L'URSS réplique par la <strong>doctrine Jdanov</strong> (1947), qui divise le monde en deux camps&nbsp;: le camp «&nbsp;impérialiste&nbsp;» (les États-Unis) et le camp «&nbsp;anti-impérialiste&nbsp;» (l'URSS). Elle crée le <strong>Kominform</strong> pour coordonner les partis communistes. La cassure est consommée&nbsp;: <strong>la guerre froide commence</strong>.</p>
+      </div>
+    </details>
+
+    <div class="note-box">
+      <span class="lab">À retenir</span>
+      <strong>1947</strong> est l'année de la rupture&nbsp;: à la stratégie américaine (Truman + Marshall) répond la riposte soviétique (Jdanov + Kominform). Le monde se structure en <strong>deux blocs</strong> antagonistes — c'est le point de départ de la guerre froide.
+    </div>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie I</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Que désigne le « rideau de fer »&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">La ligne de front de la Seconde Guerre mondiale</button>
+          <button class="opt">La frontière idéologique qui coupe l'Europe en deux blocs</button>
+          <button class="opt">Le mur de Berlin uniquement</button>
+          <button class="opt">Une barrière douanière de la CEE</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Image popularisée par Churchill (1946)&nbsp;: une frontière imaginaire sépare l'Europe de l'Ouest (libérale) de l'Europe de l'Est (sous domination soviétique).</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Quel est l'objectif du plan Marshall (1947)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Reconstruire l'Europe et l'ancrer dans le camp occidental</button>
+          <button class="opt">Désarmer l'Allemagne</button>
+          <button class="opt">Créer l'Union européenne</button>
+          <button class="opt">Soutenir les partis communistes</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Aide économique américaine massive pour relancer l'Europe — et la maintenir hors de l'influence soviétique. L'URSS l'interdit à ses satellites&nbsp;: la coupure se confirme.</div>
+      </div>
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Qu'est-ce que l'« endiguement » (containment)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">L'union économique de l'Europe</button>
+          <button class="opt">La politique soviétique d'expansion</button>
+          <button class="opt">La stratégie américaine pour contenir l'expansion du communisme</button>
+          <button class="opt">Le désarmement nucléaire</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>L'endiguement est la doctrine américaine (doctrine Truman) visant à bloquer toute extension de l'influence communiste dans le monde.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIE II -->
+  <section class="part" id="p2">
+    <div class="part-head">
+      <div class="part-num">II</div>
+      <div class="part-titles">
+        <span class="eyebrow">1947–1991</span>
+        <h2>La guerre froide&nbsp;: un monde bipolaire</h2>
+      </div>
+    </div>
+
+    <p class="lead">La <strong>guerre froide</strong> est un affrontement <strong>indirect</strong> et <strong>total</strong> (idéologique, économique, militaire, scientifique, culturel) entre les deux Grands et leurs blocs — mais <strong>sans guerre directe</strong> entre eux. La raison&nbsp;: l'<strong>équilibre de la terreur</strong>, la peur d'une destruction mutuelle par l'arme nucléaire. Le philosophe Raymond Aron résumait&nbsp;: «&nbsp;<em>paix impossible, guerre improbable</em>&nbsp;».</p>
+
+    <h3>Deux blocs, deux alliances</h3>
+    <p>Chaque camp se dote d'une alliance militaire&nbsp;: à l'Ouest, l'<strong>OTAN</strong> (1949) autour des États-Unis&nbsp;; à l'Est, le <strong>pacte de Varsovie</strong> (1955) autour de l'URSS. Toute l'Europe — et bientôt le monde entier — se trouve sommée de choisir un camp.</p>
+
+    <h3>La chronologie de la guerre froide</h3>
+    <p>Touche un événement pour en déplier le détail. <span class="eyebrow">Marqueurs&nbsp;: <span style="color:var(--allied)">●</span> Bloc de l'Est / URSS · <span style="color:var(--slate)">●</span> Bloc de l'Ouest / USA · <span style="color:var(--central)">●</span> Crises &amp; tournants</span></p>
+
+    <div class="timeline">
+      <div class="tl-year"><span>1947</span></div>
+      <div class="tl-event left" data-c="slate">
+        <details class="tl-card">
+          <summary><span class="date">1947 · Ouest</span><span class="ti">Truman &amp; plan Marshall</span></summary>
+          <div class="detail">Les États-Unis lancent l'endiguement et l'aide à l'Europe. Le bloc occidental se structure.</div>
+        </details>
+      </div>
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">1947 · Est</span><span class="ti">Jdanov &amp; Kominform</span></summary>
+          <div class="detail">L'URSS réplique&nbsp;: le monde est divisé en deux camps. La guerre froide commence.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1948–49</span></div>
+      <div class="tl-event left" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">1948–49</span><span class="ti">Le blocus de Berlin</span></summary>
+          <div class="detail">Première grande crise. L'URSS bloque l'accès à Berlin-Ouest&nbsp;; les Occidentaux ravitaillent la ville par un gigantesque <strong>pont aérien</strong>. L'URSS recule.</div>
+        </details>
+      </div>
+      <div class="tl-event right" data-c="slate">
+        <details class="tl-card">
+          <summary><span class="date">1949</span><span class="ti">L'OTAN &amp; les deux Allemagnes</span></summary>
+          <div class="detail">Création de l'<strong>OTAN</strong> (alliance militaire occidentale). L'Allemagne est coupée en deux&nbsp;: la <strong>RFA</strong> (à l'Ouest) et la <strong>RDA</strong> (à l'Est). La même année, l'URSS obtient l'arme atomique.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1950–55</span></div>
+      <div class="tl-event left" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">1950–53</span><span class="ti">La guerre de Corée</span></summary>
+          <div class="detail">Premier grand conflit «&nbsp;par procuration&nbsp;»&nbsp;: la Corée du Nord communiste contre la Corée du Sud soutenue par l'ONU et les États-Unis. La péninsule reste coupée en deux.</div>
+        </details>
+      </div>
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">1955</span><span class="ti">Le pacte de Varsovie</span></summary>
+          <div class="detail">En réponse à l'OTAN, l'URSS fédère ses satellites dans une alliance militaire. Les deux blocs sont désormais structurés et armés.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1956–62</span></div>
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">1956</span><span class="ti">Déstalinisation &amp; Budapest</span></summary>
+          <div class="detail">Khrouchtchev dénonce les crimes de Staline (<strong>déstalinisation</strong>). Mais quand la Hongrie tente de s'émanciper, l'URSS <strong>écrase l'insurrection de Budapest</strong> par les chars.</div>
+        </details>
+      </div>
+      <div class="tl-event right" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">1961</span><span class="ti">Le mur de Berlin</span></summary>
+          <div class="detail">Pour stopper la fuite des Allemands de l'Est vers l'Ouest, la RDA érige le <strong>mur de Berlin</strong>. Il devient le symbole même de la division du monde.</div>
+        </details>
+      </div>
+      <div class="tl-event left" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">1962</span><span class="ti">La crise de Cuba</span></summary>
+          <div class="detail">L'URSS installe des missiles à Cuba&nbsp;: le monde frôle la <strong>guerre nucléaire</strong>. Après quelques jours de tension extrême, Khrouchtchev recule. C'est l'<strong>apogée</strong> de la guerre froide — et le début d'un apaisement.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1968–79</span></div>
+      <div class="tl-event right" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">Années 1960–70</span><span class="ti">La Détente</span></summary>
+          <div class="detail">Après Cuba, les deux Grands cherchent à éviter l'affrontement direct&nbsp;: c'est la <strong>coexistence pacifique</strong> et la <strong>Détente</strong> (négociations sur les armes, accords d'Helsinki en 1975).</div>
+        </details>
+      </div>
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">1968</span><span class="ti">Le Printemps de Prague</span></summary>
+          <div class="detail">La Tchécoslovaquie tente un «&nbsp;socialisme à visage humain&nbsp;». L'URSS envoie les chars&nbsp;: elle réaffirme son contrôle sur le bloc de l'Est.</div>
+        </details>
+      </div>
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">1979</span><span class="ti">L'URSS envahit l'Afghanistan</span></summary>
+          <div class="detail">L'invasion soviétique relance les tensions&nbsp;: c'est la «&nbsp;<strong>guerre fraîche</strong>&nbsp;». L'Ouest (Reagan) réarme et durcit le ton.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1985–91</span></div>
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">1985</span><span class="ti">Gorbatchev&nbsp;: perestroïka &amp; glasnost</span></summary>
+          <div class="detail">À la tête de l'URSS, Gorbatchev lance des réformes&nbsp;: <strong>perestroïka</strong> (restructuration économique) et <strong>glasnost</strong> (transparence). Ces réformes vont, sans le vouloir, précipiter la chute du système.</div>
+        </details>
+      </div>
+      <div class="tl-event right" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">9 nov. 1989</span><span class="ti">La chute du mur de Berlin</span></summary>
+          <div class="detail">Le mur tombe&nbsp;: les régimes communistes d'Europe de l'Est s'effondrent les uns après les autres. C'est la <strong>fin symbolique</strong> de la guerre froide.</div>
+        </details>
+      </div>
+      <div class="tl-event left" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">1991</span><span class="ti">La dissolution de l'URSS</span></summary>
+          <div class="detail">L'URSS éclate et disparaît. Les États-Unis restent <strong>seule superpuissance</strong>. La guerre froide est terminée&nbsp;: le monde bipolaire a vécu.</div>
+        </details>
+      </div>
+    </div>
+
+    <details class="dossier" data-side="brass">
+      <summary><span class="tag">Dimension mondiale</span> Tiers-Monde &amp; conflits « par procuration » <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>La guerre froide est <strong>mondiale</strong>. Avec la <strong>décolonisation</strong>, de nouveaux pays naissent&nbsp;: c'est le <strong>Tiers-Monde</strong>. Certains refusent de choisir un camp&nbsp;: c'est le <strong>non-alignement</strong> (conférence de Bandung, 1955). Faute de pouvoir s'affronter directement, les deux Grands se livrent des <strong>guerres «&nbsp;par procuration&nbsp;»</strong> (Corée, Vietnam, etc.), en soutenant des camps rivaux à travers le monde.</p>
+      </div>
+    </details>
+
+    <div class="flips" aria-label="Cartes à mémoriser — touche pour révéler">
+      <button class="flip" data-flip><div class="face q-face">Pourquoi « froide »&nbsp;?</div><div class="face a-face">Parce que les deux Grands ne se font jamais la guerre directement&nbsp;: l'arme nucléaire rend tout affrontement direct suicidaire (équilibre de la terreur).</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">OTAN vs Pacte de Varsovie&nbsp;?</div><div class="face a-face">OTAN (1949) = alliance militaire de l'Ouest (USA). Pacte de Varsovie (1955) = alliance militaire de l'Est (URSS).</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">L'apogée de la guerre froide&nbsp;?</div><div class="face a-face">La crise de Cuba (1962)&nbsp;: le monde frôle la guerre nucléaire. Elle ouvre ensuite la période de Détente.</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">La fin de la guerre froide&nbsp;?</div><div class="face a-face">Chute du mur de Berlin (1989) puis dissolution de l'URSS (1991). Les États-Unis restent seule superpuissance.</div><div class="hint">Toucher pour révéler</div></button>
+    </div>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie II</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Pourquoi la guerre froide ne dégénère-t-elle jamais en guerre directe entre les deux Grands&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Parce qu'ils sont alliés</button>
+          <button class="opt">Parce que l'ONU l'interdit</button>
+          <button class="opt">À cause de l'équilibre de la terreur (l'arme nucléaire)</button>
+          <button class="opt">Parce qu'ils n'ont pas d'armée</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>La peur d'une destruction mutuelle par les armes nucléaires (équilibre de la terreur) empêche tout affrontement direct&nbsp;: « paix impossible, guerre improbable » (Aron).</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Quel événement symbolise l'apogée de la guerre froide&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">La crise de Cuba (1962)</button>
+          <button class="opt">Le plan Marshall</button>
+          <button class="opt">La chute du mur de Berlin</button>
+          <button class="opt">Le traité de Rome</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>En 1962, les missiles soviétiques à Cuba amènent le monde au bord de la guerre nucléaire. Après le recul de l'URSS, s'ouvre la période de Détente.</div>
+      </div>
+      <div class="q" data-q data-correct="3">
+        <div class="qtext">Que symbolise le mur de Berlin (1961)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">La réconciliation des deux Allemagnes</button>
+          <button class="opt">La fin de la guerre froide</button>
+          <button class="opt">La création de l'OTAN</button>
+          <button class="opt">La division du monde en deux blocs</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Érigé pour empêcher la fuite des Allemands de l'Est, le mur devient le symbole de la coupure entre les deux blocs. Sa chute en 1989 annoncera la fin de la guerre froide.</div>
+      </div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Quelles réformes Gorbatchev lance-t-il à partir de 1985&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Le containment et le plan Marshall</button>
+          <button class="opt">La perestroïka et la glasnost</button>
+          <button class="opt">La doctrine Jdanov</button>
+          <button class="opt">Le pacte de Varsovie</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Perestroïka (restructuration) et glasnost (transparence) visaient à réformer l'URSS&nbsp;; elles ont en réalité précipité l'effondrement du bloc communiste.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIE III -->
+  <section class="part" id="p3">
+    <div class="part-head">
+      <div class="part-num">III</div>
+      <div class="part-titles">
+        <span class="eyebrow">Les deux superpuissances</span>
+        <h2>USA &amp; URSS&nbsp;: deux modèles face à face</h2>
+      </div>
+    </div>
+
+    <p class="lead">Derrière la rivalité, ce sont <strong>deux modèles de société</strong> qui s'affrontent et veulent s'imposer au monde. Chacun se présente comme l'avenir de l'humanité&nbsp;; chacun a ses réussites… et ses zones d'ombre.</p>
+
+    <div class="regimes">
+      <div class="regime" data-c="slate">
+        <div class="rname">Le bloc de l'Ouest</div>
+        <div class="rmeta">Modèle américain · leader&nbsp;: USA</div>
+        <ul>
+          <li>Démocratie libérale, pluralisme</li>
+          <li>Capitalisme, économie de marché</li>
+          <li>Société de consommation (<em>American way of life</em>)</li>
+          <li>Puissance culturelle (cinéma, musique)</li>
+        </ul>
+      </div>
+      <div class="regime" data-c="allied">
+        <div class="rname">Le bloc de l'Est</div>
+        <div class="rmeta">Modèle soviétique · leader&nbsp;: URSS</div>
+        <ul>
+          <li>Parti unique communiste</li>
+          <li>Économie planifiée, propriété collective</li>
+          <li>Égalité affichée, contrôle de l'État</li>
+          <li>Propagande &amp; encadrement</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Aux États-Unis&nbsp;: prospérité et tensions</h3>
+    <p>Les États-Unis connaissent une prospérité éclatante (comme l'Europe de l'Ouest avec les «&nbsp;<strong>Trente Glorieuses</strong>&nbsp;»). Mais le modèle a ses contradictions&nbsp;: dans les années 1950, la peur du communisme déclenche le <strong>maccarthysme</strong> («&nbsp;chasse aux sorcières&nbsp;»)&nbsp;; et la <strong>ségrégation raciale</strong> provoque le grand <strong>mouvement des droits civiques</strong> (Martin Luther King) dans les années 1960.</p>
+
+    <h3>En URSS&nbsp;: puissance et répression</h3>
+    <p>L'URSS affiche ses réussites&nbsp;: industrialisation, et surtout la <strong>conquête spatiale</strong> (premier satellite <em>Spoutnik</em> en 1957, premier homme dans l'espace, Gagarine, en 1961). Mais le régime reste une <strong>dictature</strong>&nbsp;: répression, contrôle de la population, et <strong>domination des pays satellites</strong> (chars à Budapest en 1956, à Prague en 1968). À partir des années 1970, l'économie planifiée <strong>s'essouffle</strong> (pénuries, retard technologique).</p>
+
+    <div class="note-box">
+      <span class="lab">À retenir</span>
+      La rivalité dépasse la politique&nbsp;: c'est une compétition <strong>totale</strong>. Course aux <strong>armements</strong>, course à l'<strong>espace</strong>, compétition <strong>sportive, culturelle et idéologique</strong> — chaque camp veut prouver la supériorité de son modèle, partout et sur tous les terrains.
+    </div>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie III</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Qu'est-ce que le maccarthysme&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Un mouvement pour les droits civiques</button>
+          <button class="opt">La « chasse aux sorcières » anticommuniste aux États-Unis (années 1950)</button>
+          <button class="opt">Un programme spatial soviétique</button>
+          <button class="opt">Une alliance militaire</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Le maccarthysme désigne la traque des supposés communistes aux États-Unis dans les années 1950 — une « chasse aux sorcières » qui révèle les tensions internes du modèle américain.</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Quelle grande réussite symbolise la puissance soviétique en 1957&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Le lancement de Spoutnik (premier satellite)</button>
+          <button class="opt">Le plan Marshall</button>
+          <button class="opt">La chute du mur de Berlin</button>
+          <button class="opt">Le traité de Rome</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Spoutnik (1957) lance la « course à l'espace ». Suivra Gagarine, premier homme dans l'espace (1961). L'URSS veut prouver la supériorité de son modèle.</div>
+      </div>
+      <div class="q" data-q data-correct="3">
+        <div class="qtext">Comment l'URSS maintient-elle son contrôle sur les pays de l'Est&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Par des élections libres</button>
+          <button class="opt">Par le plan Marshall</button>
+          <button class="opt">En les laissant indépendants</button>
+          <button class="opt">Par la force (chars à Budapest en 1956, à Prague en 1968)</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Quand un pays satellite tente de s'émanciper, l'URSS intervient militairement&nbsp;: Budapest (1956), Prague (1968). C'est la réalité de la domination soviétique.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIE IV — L'EUROPE -->
+  <section class="part" id="p4">
+    <div class="part-head">
+      <div class="part-num">IV</div>
+      <div class="part-titles">
+        <span class="eyebrow">1951 → aujourd'hui · zoom</span>
+        <h2>La construction européenne</h2>
+      </div>
+    </div>
+
+    <p class="lead">Pendant que le monde se divise, une Europe ruinée par deux guerres tente un pari inédit&nbsp;: s'<strong>unir pour ne plus jamais se faire la guerre</strong>. L'idée est simple et radicale&nbsp;: lier si étroitement les économies des anciens ennemis — surtout la France et l'Allemagne — que la guerre entre eux deviendrait <strong>matériellement impossible</strong>.</p>
+
+    <h3>Pourquoi construire l'Europe&nbsp;?</h3>
+    <p>Trois moteurs&nbsp;: la <strong>réconciliation</strong> (en finir avec l'antagonisme franco-allemand), la <strong>prospérité</strong> (reconstruire ensemble, créer un grand marché), et la <strong>guerre froide</strong> (faire de l'Europe de l'Ouest un ensemble stable et prospère, soutenu par les États-Unis). Des hommes — les «&nbsp;<strong>pères de l'Europe</strong>&nbsp;» comme <strong>Jean Monnet</strong> et <strong>Robert Schuman</strong> — en font un projet concret.</p>
+
+    <h3>Les grandes étapes</h3>
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">1951</span> La CECA&nbsp;: le premier pas <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Tout commence par la <strong>déclaration Schuman</strong> (9 mai 1950, aujourd'hui «&nbsp;journée de l'Europe&nbsp;»). Elle débouche sur la <strong>CECA</strong> (Communauté européenne du charbon et de l'acier, 1951)&nbsp;: <strong>six pays</strong> mettent en commun leur charbon et leur acier — les matières premières de la guerre. L'idée géniale&nbsp;: en contrôler ensemble la production, c'est rendre la guerre impossible.</p>
+        <p>Les <strong>Six</strong> fondateurs&nbsp;: <strong>France, RFA, Italie</strong> et le <strong>Benelux</strong> (Belgique, Pays-Bas, Luxembourg).</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">1957</span> La CEE &amp; le traité de Rome <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Fort de ce succès, on élargit l'ambition à toute l'économie. Le <strong>traité de Rome</strong> (1957) crée la <strong>CEE</strong> (Communauté économique européenne) entre les mêmes Six. Objectif&nbsp;: un <strong>marché commun</strong> — libre circulation des marchandises, des personnes, des capitaux — et des politiques communes, comme la <strong>PAC</strong> (politique agricole commune).</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="brass">
+      <summary><span class="tag">1992</span> Maastricht&nbsp;: la naissance de l'Union européenne <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Après l'<strong>Acte unique</strong> (1986, qui parachève le marché unique), le <strong>traité de Maastricht</strong> (1992) franchit une étape décisive&nbsp;: il transforme la CEE en <strong>Union européenne (UE)</strong>, crée une <strong>citoyenneté européenne</strong> et prépare la <strong>monnaie unique</strong>. L'<strong>euro</strong> entre en circulation en <strong>2002</strong>.</p>
+        <p>La construction n'est plus seulement économique&nbsp;: elle devient aussi <strong>politique</strong>.</p>
+      </div>
+    </details>
+
+    <h3>De 6 à 27&nbsp;: une Europe qui s'élargit</h3>
+    <p>D'abord à Six, la Communauté s'agrandit régulièrement. Après la chute du communisme, elle s'ouvre largement aux pays de l'Est (grand élargissement de 2004). En 2020, le départ du Royaume-Uni (<strong>Brexit</strong>) la ramène à <strong>27 membres</strong>.</p>
+
+    <div class="chart" aria-label="Nombre de pays membres de la construction européenne">
+      <div class="ctitle">Nombre d'États membres</div>
+      <div class="bar-row"><span class="name">1957 (Rome)</span><span class="bar-track"><span class="bar-fill" data-w="21"></span></span><span class="val">6</span></div>
+      <div class="bar-row"><span class="name">1973</span><span class="bar-track"><span class="bar-fill" data-w="32"></span></span><span class="val">9</span></div>
+      <div class="bar-row"><span class="name">1986</span><span class="bar-track"><span class="bar-fill" data-w="43"></span></span><span class="val">12</span></div>
+      <div class="bar-row"><span class="name">1995</span><span class="bar-track"><span class="bar-fill" data-w="54"></span></span><span class="val">15</span></div>
+      <div class="bar-row"><span class="name">2004</span><span class="bar-track"><span class="bar-fill" data-w="89"></span></span><span class="val">25</span></div>
+      <div class="bar-row"><span class="name">2013</span><span class="bar-track"><span class="bar-fill" data-w="100"></span></span><span class="val">28</span></div>
+      <div class="bar-row"><span class="name">2020 (Brexit)</span><span class="bar-track"><span class="bar-fill" data-w="96"></span></span><span class="val">27</span></div>
+      <div class="note">Le grand élargissement de 2004 (10 pays, surtout d'Europe de l'Est) marque la réunification du continent après la guerre froide. Le Brexit (2020) ramène l'UE à 27 membres.</div>
+    </div>
+
+    <div class="flips" aria-label="Cartes à mémoriser — touche pour révéler">
+      <button class="flip" data-flip><div class="face q-face">L'idée fondatrice de l'Europe&nbsp;?</div><div class="face a-face">Lier les économies des anciens ennemis (France/Allemagne) pour rendre la guerre matériellement impossible.</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">CECA (1951) ?</div><div class="face a-face">La mise en commun du charbon et de l'acier entre 6 pays&nbsp;: le tout premier pas de la construction européenne.</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">Traité de Rome (1957) ?</div><div class="face a-face">Crée la CEE et le marché commun (libre circulation) entre les Six. Avec la PAC pour l'agriculture.</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">Traité de Maastricht (1992) ?</div><div class="face a-face">Crée l'Union européenne, la citoyenneté européenne et prépare l'euro (en circulation en 2002).</div><div class="hint">Toucher pour révéler</div></button>
+    </div>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie IV · L'Europe</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Quelle est l'idée fondatrice de la construction européenne&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Concurrencer militairement l'URSS</button>
+          <button class="opt">Recréer un empire colonial</button>
+          <button class="opt">Lier les économies pour rendre la guerre impossible</button>
+          <button class="opt">Imposer une monnaie unique mondiale</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Lier si étroitement les économies des anciens ennemis (surtout France et Allemagne) que la guerre entre eux deviendrait matériellement impossible. C'est tout le sens de la CECA.</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Que met en commun la CECA (1951)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Le charbon et l'acier</button>
+          <button class="opt">L'armée et la diplomatie</button>
+          <button class="opt">La monnaie</button>
+          <button class="opt">L'agriculture uniquement</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>La CECA met en commun le charbon et l'acier — les matières premières de l'industrie de guerre — entre les six pays fondateurs.</div>
+      </div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Que crée le traité de Rome (1957)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">L'Union européenne et l'euro</button>
+          <button class="opt">La CEE et le marché commun</button>
+          <button class="opt">L'OTAN</button>
+          <button class="opt">La CECA</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Le traité de Rome crée la CEE (Communauté économique européenne) et son marché commun (libre circulation), entre les Six. L'UE, elle, naîtra à Maastricht en 1992.</div>
+      </div>
+      <div class="q" data-q data-correct="3">
+        <div class="qtext">Que crée le traité de Maastricht (1992)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">La CECA</button>
+          <button class="opt">Le plan Marshall</button>
+          <button class="opt">Le marché commun</button>
+          <button class="opt">L'Union européenne (et prépare l'euro)</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Maastricht transforme la CEE en Union européenne, instaure une citoyenneté européenne et prépare la monnaie unique. L'euro circulera dès 2002.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIE V -->
+  <section class="part" id="p5">
+    <div class="part-head">
+      <div class="part-num">V</div>
+      <div class="part-titles">
+        <span class="eyebrow">1989–1991 → aujourd'hui</span>
+        <h2>La fin de la guerre froide &amp; le monde d'après</h2>
+      </div>
+    </div>
+
+    <p class="lead">À la fin des années 1980, le bloc de l'Est s'effondre à toute vitesse. La <strong>chute du mur de Berlin</strong> (1989) puis la <strong>disparition de l'URSS</strong> (1991) referment la parenthèse bipolaire — et ouvrent un monde nouveau, dominé un temps par une seule puissance.</p>
+
+    <h3>L'effondrement du bloc soviétique</h3>
+    <p>Affaiblie par sa crise économique et libérée par les réformes de Gorbatchev, l'Europe de l'Est se soulève en 1989&nbsp;: les régimes communistes tombent les uns après les autres, presque sans violence. L'Allemagne est <strong>réunifiée</strong> en 1990. En 1991, l'<strong>URSS se dissout</strong>&nbsp;: quinze États indépendants naissent, dont la Russie. La guerre froide est finie.</p>
+
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">Années 1990</span> Un monde « unipolaire » <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Les <strong>États-Unis</strong> restent la <strong>seule superpuissance</strong>&nbsp;: on parle d'«&nbsp;<strong>hyperpuissance</strong>&nbsp;» et d'un monde «&nbsp;unipolaire&nbsp;». La <strong>mondialisation</strong> s'accélère (libéralisation des échanges, diffusion du modèle libéral). Mais ce moment ne dure pas&nbsp;: de nouvelles puissances émergent (la <strong>Chine</strong> notamment) et de nouvelles menaces apparaissent (conflits régionaux, terrorisme). Le monde évolue vers le <strong>multipolaire</strong>.</p>
+      </div>
+    </details>
+
+    <div class="note-box">
+      <span class="lab">Synthèse&nbsp;: ce que devient le monde</span>
+      Depuis 1945, le monde est passé d'un ordre <strong>bipolaire</strong> (guerre froide) à un moment <strong>unipolaire</strong> (domination américaine des années 1990), pour glisser aujourd'hui vers un ordre <strong>multipolaire</strong>. Au cœur de l'Europe, la <strong>construction européenne</strong> a réussi son pari initial&nbsp;: la paix entre ses membres et un grand ensemble économique — même si son avenir politique reste un chantier permanent.
+    </div>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie V</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Quel événement marque la fin symbolique de la guerre froide&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Le traité de Rome</button>
+          <button class="opt">La chute du mur de Berlin (1989)</button>
+          <button class="opt">La crise de Cuba</button>
+          <button class="opt">Le plan Marshall</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>La chute du mur (1989) entraîne l'effondrement des régimes communistes de l'Est. La dissolution de l'URSS (1991) met officiellement fin à la guerre froide.</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Que devient le monde dans les années 1990&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Unipolaire, dominé par les États-Unis (« hyperpuissance »)</button>
+          <button class="opt">Toujours bipolaire</button>
+          <button class="opt">Dominé par la Chine</button>
+          <button class="opt">Sans aucune grande puissance</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Avec la disparition de l'URSS, les États-Unis restent seule superpuissance&nbsp;: c'est le moment « unipolaire ». Il s'efface peu à peu au profit d'un monde multipolaire.</div>
+      </div>
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Quel pari initial la construction européenne a-t-elle réussi&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Devenir une superpuissance militaire</button>
+          <button class="opt">Remplacer l'ONU</button>
+          <button class="opt">Garantir la paix entre ses membres et créer un grand ensemble économique</button>
+          <button class="opt">Imposer une langue commune</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>L'objectif fondateur — rendre la guerre impossible entre ses membres tout en bâtissant la prospérité — est atteint. Son approfondissement politique, lui, reste un débat permanent.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    DOSSIER — LE MONDE DEPUIS 1945 · Fiche de révision interactive<br>
+    Histoire &amp; géopolitique · Deux blocs ▸ Guerre froide ▸ USA &amp; URSS ▸ Construction européenne ▸ Le monde d'après<br>
+    Conçu pour révision à l'écran et sur mobile — sections dépliables, frise cliquable, auto-tests.
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  document.querySelectorAll("[data-quiz]").forEach(function(quiz){
+    var scoreEl = quiz.querySelector("[data-score]");
+    var questions = quiz.querySelectorAll("[data-q]");
+    var total = questions.length;
+    var answered = 0, correctCount = 0;
+    scoreEl.textContent = "0 / " + total;
+    questions.forEach(function(q){
+      var correct = parseInt(q.getAttribute("data-correct"), 10);
+      var opts = Array.prototype.slice.call(q.querySelectorAll(".opt"));
+      var explain = q.querySelector(".explain");
+      var locked = false;
+      opts.forEach(function(opt, idx){
+        opt.addEventListener("click", function(){
+          if (locked) return;
+          locked = true; answered++;
+          if (idx === correct) correctCount++;
+          opts.forEach(function(o, i){
+            o.disabled = true;
+            if (i === correct) o.classList.add("correct");
+            else if (i === idx) o.classList.add("wrong");
+            else o.classList.add("dim");
+          });
+          if (explain) explain.classList.add("show");
+          scoreEl.textContent = correctCount + " / " + total + (answered === total ? "  ✓ terminé" : "");
+        });
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-flip]").forEach(function(card){
+    card.setAttribute("aria-pressed","false");
+    card.addEventListener("click", function(){
+      var on = card.classList.toggle("flipped");
+      card.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  });
+
+  var bars = document.querySelectorAll(".bar-fill");
+  var filled = false;
+  function fill(){ if(filled) return; filled = true; bars.forEach(function(b){ b.style.width = (b.getAttribute("data-w")||0) + "%"; }); }
+  var chart = document.querySelector(".chart");
+  if (chart && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ fill(); io.disconnect(); } });
+    }, {threshold:0.12});
+    io.observe(chart);
+    setTimeout(fill, 2000);
+  } else { fill(); }
+})();
+</script>
+</body>
+</html>

@@ -45,6 +45,22 @@ window.FICHES = [
     categorie: "Histoire & Géopolitique",
     description: "De l'espoir de paix à la marche à la guerre : SDN, krach de 1929, montée des totalitarismes, apaisement. Frise « engrenage », comparaison des régimes et quiz.",
     date: "2026-06"
+  },
+
+  {
+    titre: "La Seconde Guerre mondiale 1939–1945",
+    fichier: "seconde-guerre-mondiale.html",
+    categorie: "Histoire & Géopolitique",
+    description: "La guerre la plus meurtrière de l'histoire : embrasement, victoire alliée, guerre d'anéantissement (Shoah), une partie détaillée sur la France, bilan et nouvel ordre mondial.",
+    date: "2026-06"
+  },
+
+  {
+    titre: "Le Monde depuis 1945",
+    fichier: "monde-depuis-1945.html",
+    categorie: "Histoire & Géopolitique",
+    description: "Guerre froide, les deux blocs (USA/URSS) et la construction européenne (CECA, CEE, UE). Frise des crises, comparaison des modèles, étapes de l'Europe et quiz.",
+    date: "2026-06"
   }
 
   // ,{ titre: "...", fichier: "...", categorie: "...", description: "...", date: "..." }
