@@ -61,6 +61,22 @@ window.FICHES = [
     categorie: "Histoire & Géopolitique",
     description: "Guerre froide, les deux blocs (USA/URSS) et la construction européenne (CECA, CEE, UE). Frise des crises, comparaison des modèles, étapes de l'Europe et quiz.",
     date: "2026-06"
+  },
+
+  {
+    titre: "La conjugaison italienne",
+    fichier: "conjugaison-italienne.html",
+    categorie: "Langues",
+    description: "Tous les tableaux : trois groupes, auxiliaires essere/avere, temps composés, verbes irréguliers et mémo des terminaisons. Code couleur par groupe et encadrés « pièges franco-italiens ». Sans quiz, conçue pour la révision à l'écran.",
+    date: "2026-06"
+  },
+
+  {
+    titre: "Les mots les plus utiles en conversation",
+    fichier: "mots-utiles-italien.html",
+    categorie: "Langues",
+    description: "Les petits mots qui font sonner l'italien comme on le parle : connecteurs (quindi, allora, magari…), mots de remplissage, réactions et formules de politesse. Pour chaque mot, un exemple et son registre — formel, neutre ou familier. 194 entrées, sans quiz.",
+    date: "2026-06"
   }
 
   // ,{ titre: "...", fichier: "...", categorie: "...", description: "...", date: "..." }
