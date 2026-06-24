@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1914–1918 — La Grande Guerre · Dossier complet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E4DBC5;
+  --card:#EFE8D6;
+  --card-2:#E9E0CB;
+  --ink:#232820;
+  --ink-soft:#56594B;
+  --central:#5C6A50;
+  --allied:#8A3324;
+  --slate:#3C5A68;
+  --brass:#947726;
+  --rule:rgba(35,40,32,.18);
+  --rule-strong:rgba(35,40,32,.4);
+  --shadow:0 1px 0 rgba(35,40,32,.06), 0 8px 24px -16px rgba(35,40,32,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Spectral",Georgia,serif;
+  font-size:18px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+  overflow-x:hidden;
+}
+/* faint topographic / contour backdrop */
+.contours{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  opacity:.5;
+}
+.wrap{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:0 22px 120px}
+
+/* ---------- type ---------- */
+.eyebrow{
+  font-family:"Cutive Mono",monospace;
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-soft);
+}
+h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;line-height:1.08;text-transform:uppercase}
+h2{font-size:clamp(1.5rem,4.4vw,2.15rem);margin:0 0 .15em}
+h3{font-size:1.18rem;font-weight:500;letter-spacing:.04em;margin:1.7em 0 .4em}
+p{margin:0 0 1em}
+a{color:var(--slate);text-decoration-thickness:1px;text-underline-offset:2px}
+strong{font-weight:600}
+em{color:var(--ink-soft)}
+.lead{font-size:1.08rem}
+
+/* ---------- cover ---------- */
+.cover{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
+.stamp{
+  display:inline-block;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--allied);border:1.5px solid var(--allied);
+  padding:5px 11px;transform:rotate(-2.5deg);margin-bottom:26px;opacity:.85;
+}
+.cover h1{
+  font-size:clamp(2.6rem,11vw,5.4rem);font-weight:700;margin:0;line-height:.92;
+}
+.cover .years{color:var(--allied)}
+.cover .sub{
+  font-family:"Oswald",sans-serif;font-weight:400;letter-spacing:.16em;text-transform:uppercase;
+  font-size:clamp(.85rem,2.6vw,1.05rem);color:var(--ink-soft);margin-top:14px;
+}
+.cover .dek{margin-top:26px;max-width:60ch;font-size:1.06rem}
+.metarow{
+  display:flex;flex-wrap:wrap;gap:26px;margin-top:30px;padding-top:22px;border-top:1px solid var(--rule);
+}
+.metarow .stat{min-width:120px}
+.metarow .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.9rem;line-height:1;color:var(--ink)}
+.metarow .lab{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
+
+/* ---------- table of contents ---------- */
+.toc{margin:34px 0 8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.toc a{
+  background:var(--card);text-decoration:none;color:var(--ink);padding:16px 16px;display:block;
+  transition:background .15s;
+}
+.toc a:hover,.toc a:focus-visible{background:var(--card-2)}
+.toc .n{font-family:"Cutive Mono",monospace;color:var(--allied);font-size:.75rem;letter-spacing:.1em}
+.toc .t{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.98rem;letter-spacing:.03em;display:block;margin-top:4px}
+
+/* ---------- parts ---------- */
+.part{padding-top:56px;scroll-margin-top:16px}
+.part-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:22px}
+.part-num{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(2.2rem,7vw,3.4rem);color:var(--allied);line-height:.8}
+.part-titles{flex:1}
+.part-titles .eyebrow{display:block;margin-bottom:4px}
+
+/* ---------- dossier (accordion) ---------- */
+details.dossier{
+  background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--central);
+  margin:14px 0;box-shadow:var(--shadow);
+}
+details.dossier[data-side="allied"]{border-left-color:var(--allied)}
+details.dossier[data-side="slate"]{border-left-color:var(--slate)}
+details.dossier>summary{
+  cursor:pointer;list-style:none;padding:15px 18px;display:flex;align-items:center;gap:12px;
+  font-family:"Oswald",sans-serif;font-weight:500;letter-spacing:.03em;font-size:1.05rem;text-transform:uppercase;
+}
+details.dossier>summary::-webkit-details-marker{display:none}
+details.dossier>summary .chev{
+  margin-left:auto;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.12em;color:var(--ink-soft);
+  border:1px solid var(--rule);padding:3px 8px;white-space:nowrap;transition:.18s;
+}
+details.dossier[open]>summary .chev{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+details.dossier>summary .tag{
+  font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:2px 7px;border-radius:2px;color:#fff;background:var(--central);
+}
+details.dossier[data-side="allied"]>summary .tag{background:var(--allied)}
+details.dossier[data-side="slate"]>summary .tag{background:var(--slate)}
+.dossier-body{padding:2px 18px 18px;border-top:1px solid var(--rule)}
+.dossier-body p:first-child{margin-top:14px}
+
+/* ---------- the front-line timeline (signature) ---------- */
+.timeline{position:relative;margin:30px 0 10px;padding:8px 0}
+.timeline::before{
+  content:"";position:absolute;top:0;bottom:0;left:50%;width:0;
+  border-left:2px dashed var(--rule-strong);transform:translateX(-50%);
+}
+.tl-year{
+  position:relative;text-align:center;margin:26px 0 14px;z-index:2;
+}
+.tl-year span{
+  font-family:"Oswald",sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.12em;
+  background:var(--ink);color:var(--paper);padding:5px 16px;display:inline-block;
+}
+.tl-event{position:relative;width:50%;padding:0 30px 0 0;margin:10px 0;z-index:2}
+.tl-event.right{margin-left:50%;padding:0 0 0 30px}
+.tl-event::before{
+  content:"";position:absolute;top:18px;width:11px;height:11px;border-radius:50%;
+  background:var(--paper);border:2.5px solid var(--central);
+}
+.tl-event.left::before{right:-6px}
+.tl-event.right::before{left:-6px}
+.tl-event[data-c="allied"]::before{border-color:var(--allied)}
+.tl-event[data-c="slate"]::before{border-color:var(--slate)}
+.tl-card{
+  background:var(--card);border:1px solid var(--rule);padding:0;box-shadow:var(--shadow);
+}
+.tl-card>summary{
+  list-style:none;cursor:pointer;padding:12px 14px;display:block;
+}
+.tl-card>summary::-webkit-details-marker{display:none}
+.tl-card .date{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;color:var(--allied);text-transform:uppercase}
+.tl-card .ti{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.98rem;letter-spacing:.02em;margin-top:3px;display:block}
+.tl-card .detail{padding:0 14px 14px;font-size:.94rem;line-height:1.55;color:var(--ink)}
+.tl-card[open] .ti{color:var(--allied)}
+
+/* ---------- alliance diagram ---------- */
+.blocs{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;margin:24px 0;border:1px solid var(--rule);box-shadow:var(--shadow)}
+.bloc{padding:20px 18px;background:var(--card)}
+.bloc.central{border-right:1px solid var(--rule)}
+.bloc h4{font-family:"Oswald",sans-serif;text-transform:uppercase;font-weight:600;letter-spacing:.05em;margin:0 0 4px;font-size:1.1rem}
+.bloc.central h4{color:var(--central)}
+.bloc.entente h4{color:var(--allied)}
+.bloc .who{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px}
+.bloc ul{margin:0;padding-left:1.1em;font-size:.96rem}
+.bloc li{margin:.25em 0}
+.vs{display:flex;align-items:center;justify-content:center;padding:0 4px;background:var(--ink)}
+.vs span{font-family:"Oswald",sans-serif;color:var(--paper);font-weight:700;font-size:1.1rem;letter-spacing:.08em;writing-mode:vertical-rl;text-orientation:mixed}
+
+/* ---------- casualty chart ---------- */
+.chart{margin:22px 0;border:1px solid var(--rule);background:var(--card);padding:20px 18px;box-shadow:var(--shadow)}
+.bar-row{display:grid;grid-template-columns:130px 1fr 64px;align-items:center;gap:10px;margin:9px 0;font-size:.9rem}
+.bar-row .name{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.04em;text-align:right;color:var(--ink)}
+.bar-track{height:18px;background:var(--card-2);position:relative;border:1px solid var(--rule)}
+.bar-fill{height:100%;background:var(--central);width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.bar-fill.allied{background:var(--allied)}
+.bar-fill.slate{background:var(--slate)}
+.bar-row .val{font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+.chart .note{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.05em;color:var(--ink-soft);margin-top:14px;line-height:1.5}
+
+/* ---------- empires panel ---------- */
+.empires{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:22px 0}
+.empire{background:var(--card);padding:16px 15px}
+.empire .name{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;font-size:1rem;letter-spacing:.03em}
+.empire .fate{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--allied);margin:5px 0 9px}
+.empire p{font-size:.88rem;line-height:1.5;margin:0}
+
+/* ---------- key terms callout ---------- */
+.note-box{background:var(--card-2);border-left:4px solid var(--brass);padding:14px 16px;margin:16px 0;font-size:.96rem}
+.note-box .lab{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:5px}
+
+/* ---------- quiz ---------- */
+.quiz{background:var(--card);border:1px dashed var(--rule-strong);padding:20px 18px;margin:26px 0;box-shadow:var(--shadow)}
+.quiz-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.quiz-head .lab{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--allied)}
+.quiz-head .score{margin-left:auto;font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+.q{margin:18px 0;padding-top:16px;border-top:1px solid var(--rule)}
+.q:first-of-type{border-top:none;padding-top:4px}
+.q .qtext{font-family:"Oswald",sans-serif;font-weight:400;font-size:1.04rem;letter-spacing:.01em;margin-bottom:11px;text-transform:none}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{
+  text-align:left;font-family:"Spectral",serif;font-size:.96rem;color:var(--ink);
+  background:var(--paper);border:1px solid var(--rule);padding:10px 13px;cursor:pointer;
+  transition:.12s;line-height:1.4;
+}
+.opt:hover:not(:disabled){border-color:var(--ink);background:var(--card-2)}
+.opt:disabled{cursor:default}
+.opt.correct{background:#5C6A50;color:#fff;border-color:#4a553f}
+.opt.wrong{background:#8A3324;color:#fff;border-color:#6f2a1d}
+.opt.dim{opacity:.5}
+.explain{display:none;margin-top:11px;padding:11px 13px;background:var(--card-2);border-left:3px solid var(--brass);font-size:.9rem;line-height:1.55}
+.explain.show{display:block}
+.explain .e-lab{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
+
+/* ---------- flip cards (active recall) ---------- */
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:22px 0}
+.flip{
+  background:var(--card);border:1px solid var(--rule);padding:0;cursor:pointer;min-height:118px;
+  display:flex;flex-direction:column;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:inherit;
+}
+.flip .face{padding:15px 15px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.flip .q-face{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.98rem;letter-spacing:.02em}
+.flip .a-face{display:none;font-size:.9rem;line-height:1.5}
+.flip.flipped .q-face{display:none}
+.flip.flipped .a-face{display:block}
+.flip .hint{font-family:"Cutive Mono",monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding:8px 15px;border-top:1px solid var(--rule)}
+.flip.flipped .hint{color:var(--brass)}
+
+/* ---------- map figure ---------- */
+figure{margin:22px 0;border:1px solid var(--rule);background:var(--card);box-shadow:var(--shadow)}
+figure svg{display:block;width:100%;height:auto}
+figcaption{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.06em;color:var(--ink-soft);padding:10px 14px;border-top:1px solid var(--rule);line-height:1.5}
+
+/* ---------- footer ---------- */
+footer{margin-top:72px;padding-top:24px;border-top:2px solid var(--ink);font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.06em;color:var(--ink-soft);line-height:1.7}
+
+/* ---------- focus & motion ---------- */
+:focus-visible{outline:2.5px solid var(--slate);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;transition:none!important}
+}
+
+/* ---------- responsive ---------- */
+@media(max-width:640px){
+  body{font-size:17px}
+  .timeline::before{left:13px}
+  .tl-event,.tl-event.right{width:100%;margin-left:0;padding:0 0 0 34px}
+  .tl-event.left::before,.tl-event.right::before{left:8px;right:auto}
+  .tl-year{text-align:left;padding-left:0}
+  .blocs{grid-template-columns:1fr}
+  .bloc.central{border-right:none;border-bottom:1px solid var(--rule)}
+  .vs{padding:8px}
+  .vs span{writing-mode:horizontal-tb}
+  .bar-row{grid-template-columns:96px 1fr 54px}
+  .bar-row .name{font-size:.64rem}
+  .metarow{gap:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- contour backdrop -->
+<svg class="contours" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g fill="none" stroke="#232820" stroke-width="1" opacity="0.06">
+    <path d="M-50,200 C200,140 380,300 600,250 S1000,140 1260,230"/>
+    <path d="M-50,260 C220,210 400,360 620,310 S1010,210 1260,300"/>
+    <path d="M-50,520 C180,460 420,600 640,540 S1030,440 1260,520"/>
+    <path d="M-50,580 C200,540 430,660 650,610 S1040,520 1260,600"/>
+    <path d="M-50,900 C240,840 400,980 620,930 S1010,830 1260,910"/>
+    <path d="M-50,960 C220,920 420,1040 640,1000 S1030,900 1260,980"/>
+    <path d="M-50,1240 C200,1180 410,1320 630,1270 S1020,1180 1260,1260"/>
+    <path d="M-50,1300 C220,1260 430,1380 650,1340 S1040,1250 1260,1330"/>
+    <circle cx="600" cy="400" r="120"/>
+    <circle cx="600" cy="400" r="180"/>
+    <circle cx="600" cy="400" r="250"/>
+  </g>
+</svg>
+
+<div class="wrap">
+
+  <!-- ================= COVER ================= -->
+  <header class="cover">
+    <span class="stamp">Dossier · Histoire &amp; Géopolitique · Fiche de révision</span>
+    <h1>La Grande<br>Guerre <span class="years">1914–1918</span></h1>
+    <div class="sub">Causes · Étincelle · Conflit · Bilan &amp; après-guerre</div>
+    <p class="dek">Comment un attentat dans les Balkans a-t-il embrasé le monde&nbsp;? Ce dossier reconstitue l'enchaînement complet&nbsp;: l'Europe des alliances et des rivalités d'avant 1914, l'engrenage de l'été 1914, les quatre années de guerre totale, puis la paix qui a redessiné le monde — et préparé la suivante.</p>
+    <div class="metarow">
+      <div class="stat"><div class="num">+30</div><div class="lab">Nations engagées</div></div>
+      <div class="stat"><div class="num">~18 M</div><div class="lab">Morts (estim.)</div></div>
+      <div class="stat"><div class="num">4</div><div class="lab">Empires effondrés</div></div>
+      <div class="stat"><div class="num">1551</div><div class="lab">Jours de conflit</div></div>
+    </div>
+
+    <nav class="toc" aria-label="Sommaire">
+      <a href="#p1"><span class="n">PARTIE I</span><span class="t">Le monde avant 1914</span></a>
+      <a href="#p2"><span class="n">PARTIE II</span><span class="t">L'étincelle · été 1914</span></a>
+      <a href="#p3"><span class="n">PARTIE III</span><span class="t">La guerre · 1914–1918</span></a>
+      <a href="#p4"><span class="n">PARTIE IV</span><span class="t">Bilan &amp; après-guerre</span></a>
+    </nav>
+  </header>
+
+  <!-- ================= PARTIE I ================= -->
+  <section class="part" id="p1">
+    <div class="part-head">
+      <div class="part-num">I</div>
+      <div class="part-titles">
+        <span class="eyebrow">Les causes profondes</span>
+        <h2>Le monde avant 1914&nbsp;: une poudrière</h2>
+      </div>
+    </div>
+
+    <p class="lead">L'Europe de la <em>Belle Époque</em> paraît prospère et confiante, mais elle est traversée par quatre forces qui s'additionnent. On les retient avec l'acronyme <strong>M.A.I.N.</strong>&nbsp;: <strong>M</strong>ilitarisme, <strong>A</strong>lliances, <strong>I</strong>mpérialisme, <strong>N</strong>ationalisme. Aucune ne déclenche la guerre à elle seule&nbsp;; ensemble, elles transforment une crise régionale en conflit continental.</p>
+
+    <h3>Le système d'alliances&nbsp;: deux blocs face à face</h3>
+    <p>Depuis la fin du XIX<sup>e</sup> siècle, les grandes puissances se sont liées par des traités défensifs. Au lieu de contenir les conflits, ce réseau garantit qu'une étincelle locale entraînera mécaniquement tout le monde.</p>
+
+    <div class="blocs">
+      <div class="bloc central">
+        <h4>Triple Alliance</h4>
+        <div class="who">Puissances centrales · dès 1882</div>
+        <ul>
+          <li><strong>Empire allemand</strong></li>
+          <li><strong>Autriche-Hongrie</strong></li>
+          <li><strong>Italie</strong> <em>(change de camp en 1915)</em></li>
+          <li>+ Empire ottoman &amp; Bulgarie ensuite</li>
+        </ul>
+      </div>
+      <div class="vs"><span>VS</span></div>
+      <div class="bloc entente">
+        <h4>Triple Entente</h4>
+        <div class="who">Les Alliés · 1904–1907</div>
+        <ul>
+          <li><strong>France</strong></li>
+          <li><strong>Royaume-Uni</strong></li>
+          <li><strong>Russie</strong></li>
+          <li>+ Serbie, Belgique, Italie (1915), États-Unis (1917)…</li>
+        </ul>
+      </div>
+    </div>
+    <p>L'Entente se tisse par étapes&nbsp;: alliance franco-russe (1894), <em>Entente cordiale</em> franco-britannique (1904), accord anglo-russe (1907). En face, l'Allemagne de Guillaume II est solidement liée à l'Autriche-Hongrie.</p>
+
+    <h3>Les autres ferments du conflit</h3>
+
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">Impérialisme</span> Les rivalités coloniales <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Les puissances européennes se disputent colonies, marchés et prestige. Ces tensions débordent en Europe&nbsp;: les <strong>crises marocaines</strong> (Tanger 1905, Agadir 1911) opposent directement la France et l'Allemagne et rapprochent Paris de Londres. Chaque crise diplomatique laisse une rancœur et renforce la logique des blocs.</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="allied">
+      <summary><span class="tag">Nationalisme</span> Revanche, panslavisme &amp; Balkans <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Le nationalisme prend plusieurs visages. En France, le <strong>revanchisme</strong>&nbsp;: depuis la défaite de 1871, on rêve de reprendre l'<strong>Alsace-Lorraine</strong> à l'Allemagne. En Allemagne, le <strong>pangermanisme</strong> exalte la puissance du Reich. Dans les Balkans, le <strong>panslavisme</strong> (soutenu par la Russie) pousse les peuples slaves, dont la Serbie, à vouloir s'émanciper de l'Autriche-Hongrie.</p>
+        <p>Cette région est si instable qu'on la surnomme la <strong>« poudrière des Balkans »</strong>. Les deux <strong>guerres balkaniques</strong> (1912–1913) y ont déjà redessiné les frontières et exacerbé les ambitions serbes, au grand dam de Vienne.</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="central">
+      <summary><span class="tag">Militarisme</span> La course aux armements <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Les États se préparent ouvertement à la guerre&nbsp;: budgets militaires en hausse, service militaire de masse, états-majors influents. La <strong>course navale</strong> anglo-allemande (les cuirassés <em>dreadnoughts</em>) est emblématique. L'Allemagne a même préparé un plan d'attaque clé en main, le <strong>plan Schlieffen</strong>, qui prévoit d'écraser rapidement la France avant de se retourner contre la Russie.</p>
+        <p>Un climat idéologique accompagne ce militarisme&nbsp;: une partie des élites voit la guerre comme inévitable, voire purificatrice — un état d'esprit que la suite démentira tragiquement.</p>
+      </div>
+    </details>
+
+    <div class="note-box">
+      <span class="lab">À retenir</span>
+      Causes <strong>profondes</strong> (structurelles, lentes)&nbsp;: M.A.I.N. — alliances, impérialisme, nationalismes, militarisme. Cause <strong>immédiate</strong> (l'étincelle)&nbsp;: l'attentat de Sarajevo. Ne pas confondre ce qui rend la guerre <em>possible</em> et ce qui la <em>déclenche</em>.
+    </div>
+
+    <!-- QUIZ I -->
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie I</span><span class="score" data-score>0 / 0</span></div>
+
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Que désigne l'acronyme M.A.I.N. utilisé pour les causes de la guerre&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Marne, Alliances, Italie, Nationalisme</button>
+          <button class="opt">Marines, Aviation, Infanterie, Navale</button>
+          <button class="opt">Militarisme, Alliances, Impérialisme, Nationalisme</button>
+          <button class="opt">Maroc, Autriche, Italie, Norvège</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Militarisme, Alliances, Impérialisme, Nationalisme — les quatre causes profondes, par opposition à la cause immédiate qu'est l'attentat de Sarajevo.</div>
+      </div>
+
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Quels pays forment la Triple Alliance en 1914 (avant le revirement italien)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">France, Royaume-Uni, Russie</button>
+          <button class="opt">Allemagne, Autriche-Hongrie, Italie</button>
+          <button class="opt">Allemagne, Russie, Empire ottoman</button>
+          <button class="opt">Royaume-Uni, France, Italie</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Triple Alliance = Allemagne + Autriche-Hongrie + Italie (dès 1882). L'Italie basculera dans le camp adverse en 1915. France/UK/Russie forment, eux, la Triple Entente.</div>
+      </div>
+
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Pourquoi parle-t-on de la « poudrière des Balkans »&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Nationalismes rivaux et frontières instables y rendaient un embrasement très probable</button>
+          <button class="opt">On y fabriquait la poudre à canon de l'Europe</button>
+          <button class="opt">C'était la région la plus pacifique du continent</button>
+          <button class="opt">L'Allemagne y avait toutes ses colonies</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Tensions entre nationalismes slaves, ambitions serbes et déclin austro-hongrois et ottoman — aggravées par les guerres balkaniques de 1912–1913 — faisaient de la région le point d'embrasement le plus probable.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PARTIE II ================= -->
+  <section class="part" id="p2">
+    <div class="part-head">
+      <div class="part-num">II</div>
+      <div class="part-titles">
+        <span class="eyebrow">La cause immédiate · été 1914</span>
+        <h2>L'étincelle&nbsp;: Sarajevo et l'engrenage</h2>
+      </div>
+    </div>
+
+    <p class="lead">Tout bascule en cinq semaines. Un double meurtre à Sarajevo enclenche une réaction en chaîne diplomatique — la <strong>crise de juillet</strong> — où chaque puissance, prisonnière de ses alliances et de ses calendriers de mobilisation, fait un pas de plus vers l'irréparable.</p>
+
+    <details class="dossier" data-side="allied">
+      <summary><span class="tag">28 juin</span> L'attentat de Sarajevo <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>À Sarajevo (Bosnie, alors austro-hongroise), l'archiduc <strong>François-Ferdinand</strong>, héritier du trône d'Autriche-Hongrie, et son épouse Sophie sont assassinés par <strong>Gavrilo Princip</strong>, un jeune nationaliste serbe de Bosnie lié à une société secrète (la <strong>Main noire</strong>). Vienne y voit la main de la Serbie et l'occasion de l'écraser.</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="central">
+      <summary><span class="tag">5–28 juil.</span> La crise de juillet &amp; le « chèque en blanc » <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>L'Allemagne assure l'Autriche-Hongrie de son soutien inconditionnel&nbsp;: c'est le <strong>« chèque en blanc »</strong>. Forte de cet appui, Vienne adresse à la Serbie un <strong>ultimatum</strong> volontairement inacceptable (23 juillet). La Serbie accepte presque toutes les conditions — mais pas toutes. Le 28 juillet, l'<strong>Autriche-Hongrie déclare la guerre à la Serbie</strong>.</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">29 juil.–4 août</span> L'engrenage des mobilisations <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>La mécanique des alliances s'emballe&nbsp;: la <strong>Russie mobilise</strong> pour défendre la Serbie slave. L'Allemagne déclare alors la guerre à la Russie (1<sup>er</sup> août), puis à la <strong>France</strong> (3 août). Appliquant le plan Schlieffen, elle envahit la <strong>Belgique neutre</strong> — ce qui fait entrer le <strong>Royaume-Uni</strong> dans la guerre (4 août). En une semaine, les principales puissances européennes sont en guerre.</p>
+      </div>
+    </details>
+
+    <div class="note-box">
+      <span class="lab">Le mécanisme</span>
+      Une crise <em>locale</em> (Autriche ⟶ Serbie) devient <em>continentale</em> par effet domino des alliances&nbsp;: chaque mobilisation en déclenche une autre. Les calendriers militaires rigides (mobiliser, c'est presque déjà faire la guerre) laissent très peu de place à la diplomatie.
+    </div>
+
+    <!-- QUIZ II -->
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie II</span><span class="score" data-score>0 / 0</span></div>
+
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Qui est assassiné à Sarajevo le 28 juin 1914&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Le Kaiser Guillaume II</button>
+          <button class="opt">L'archiduc François-Ferdinand, héritier d'Autriche-Hongrie</button>
+          <button class="opt">Le tsar Nicolas II</button>
+          <button class="opt">Le président français Raymond Poincaré</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>François-Ferdinand et son épouse, tués par Gavrilo Princip. Cet attentat est la cause <em>immédiate</em> du conflit.</div>
+      </div>
+
+      <div class="q" data-q data-correct="3">
+        <div class="qtext">Qu'est-ce qui fait entrer le Royaume-Uni dans la guerre&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">L'assassinat de Sarajevo</button>
+          <button class="opt">Le naufrage du Lusitania</button>
+          <button class="opt">La mobilisation russe</button>
+          <button class="opt">L'invasion allemande de la Belgique neutre</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Le Royaume-Uni garantissait la neutralité belge. L'invasion de la Belgique (plan Schlieffen) le 4 août 1914 le fait entrer en guerre contre l'Allemagne.</div>
+      </div>
+
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Le « chèque en blanc » désigne&nbsp;:</div>
+        <div class="opts">
+          <button class="opt">Le soutien inconditionnel promis par l'Allemagne à l'Autriche-Hongrie</button>
+          <button class="opt">Une réparation financière imposée à la Serbie</button>
+          <button class="opt">Le traité de paix de 1919</button>
+          <button class="opt">Le plan d'invasion de la Russie</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Berlin promet un appui total à Vienne, qui ose alors lancer son ultimatum à la Serbie. Sans ce « chèque en blanc », l'Autriche aurait sans doute été plus prudente.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PARTIE III ================= -->
+  <section class="part" id="p3">
+    <div class="part-head">
+      <div class="part-num">III</div>
+      <div class="part-titles">
+        <span class="eyebrow">Le conflit · 1914–1918</span>
+        <h2>Quatre années de guerre totale</h2>
+      </div>
+    </div>
+
+    <p class="lead">La guerre devait être courte&nbsp;: «&nbsp;les soldats rentreront pour Noël&nbsp;». Elle durera <strong>quatre ans</strong>. Après une brève <strong>guerre de mouvement</strong>, le front se fige en une interminable <strong>guerre de position</strong> dans les tranchées — première <strong>guerre industrielle et totale</strong> de l'histoire, où l'arrière (usines, femmes, économie, propagande) est mobilisé autant que le front.</p>
+
+    <h3>Chronologie de la guerre</h3>
+    <p>Touche un événement pour en déplier le détail. <span class="eyebrow">Marqueurs&nbsp;: <span style="color:var(--central)">●</span> Puissances centrales · <span style="color:var(--allied)">●</span> Alliés · <span style="color:var(--slate)">●</span> Tournant mondial</span></p>
+
+    <div class="timeline">
+      <div class="tl-year"><span>1914</span></div>
+
+      <div class="tl-event left" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">Août 1914</span><span class="ti">Plan Schlieffen &amp; ruée allemande</span></summary>
+          <div class="detail">L'Allemagne envahit la Belgique et le nord de la France pour encercler Paris. L'avance est foudroyante mais épuise les troupes.</div>
+        </details>
+      </div>
+
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">6–12 sept. 1914</span><span class="ti">Le « Miracle de la Marne »</span></summary>
+          <div class="detail">Joffre stoppe l'avance allemande aux portes de Paris. Le général Gallieni réquisitionne les fameux <em>taxis de la Marne</em> pour transporter des renforts. Le plan Schlieffen échoue&nbsp;: la guerre éclair est morte.</div>
+        </details>
+      </div>
+
+      <div class="tl-event left" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">Août 1914</span><span class="ti">Tannenberg (front oriental)</span></summary>
+          <div class="detail">À l'Est, l'Allemagne écrase l'armée russe. Hindenburg et Ludendorff y bâtissent leur prestige. Le front oriental restera plus mobile que l'Ouest.</div>
+        </details>
+      </div>
+
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">Fin 1914</span><span class="ti">La « course à la mer » &amp; les tranchées</span></summary>
+          <div class="detail">Les deux camps tentent de se déborder jusqu'à la mer du Nord. Le front se fige de la Suisse à la Manche&nbsp;: début de la <strong>guerre de position</strong> et des tranchées.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1915</span></div>
+
+      <div class="tl-event left" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">Avril 1915</span><span class="ti">Premiers gaz à Ypres</span></summary>
+          <div class="detail">L'Allemagne emploie massivement le <strong>gaz de combat</strong> (chlore, puis gaz moutarde). Nouvelle escalade dans l'horreur technologique.</div>
+        </details>
+      </div>
+
+      <div class="tl-event right" data-c="slate">
+        <details class="tl-card">
+          <summary><span class="date">1915</span><span class="ti">Dardanelles / Gallipoli &amp; entrée de l'Italie</span></summary>
+          <div class="detail">L'échec allié dans les Dardanelles (contre l'Empire ottoman) révèle Mustafa Kemal (futur Atatürk). L'<strong>Italie</strong> rejoint l'Entente (traité de Londres). La guerre se mondialise&nbsp;: Ottomans, colonies, Afrique, Pacifique.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1916</span></div>
+
+      <div class="tl-event left" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">Févr.–déc. 1916</span><span class="ti">Verdun — « On ne passe pas »</span></summary>
+          <div class="detail">Bataille-symbole de l'enfer des tranchées. Falkenhayn veut «&nbsp;saigner à blanc&nbsp;» l'armée française&nbsp;; Pétain organise la résistance. ~700&nbsp;000 pertes des deux côtés pour quelques kilomètres.</div>
+        </details>
+      </div>
+
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">Juill.–nov. 1916</span><span class="ti">La Somme &amp; les premiers chars</span></summary>
+          <div class="detail">Offensive franco-britannique. Le 1<sup>er</sup> jour est le plus meurtrier de l'histoire de l'armée britannique. Apparition des premiers <strong>chars d'assaut</strong>. ~1 million de pertes.</div>
+        </details>
+      </div>
+
+      <div class="tl-event left" data-c="slate">
+        <details class="tl-card">
+          <summary><span class="date">Mai–juin 1916</span><span class="ti">Jutland — la grande bataille navale</span></summary>
+          <div class="detail">Le plus grand affrontement naval de la guerre. Indécis tactiquement, mais la flotte allemande reste ensuite bloquée au port&nbsp;: le <strong>blocus britannique</strong> étrangle l'économie allemande.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1917</span></div>
+
+      <div class="tl-event right" data-c="slate">
+        <details class="tl-card">
+          <summary><span class="date">Avril 1917</span><span class="ti">Entrée des États-Unis</span></summary>
+          <div class="detail">Provoquée par la <strong>guerre sous-marine à outrance</strong> allemande et le <strong>télégramme Zimmermann</strong> (l'Allemagne propose au Mexique des territoires américains). L'arrivée massive des troupes américaines (1918) fera pencher la balance.</div>
+        </details>
+      </div>
+
+      <div class="tl-event left" data-c="slate">
+        <details class="tl-card">
+          <summary><span class="date">1917</span><span class="ti">Révolutions russes &amp; sortie de la Russie</span></summary>
+          <div class="detail">Le tsar abdique (février), puis les <strong>bolcheviks de Lénine</strong> prennent le pouvoir (octobre) et cherchent la paix. Par le traité de <strong>Brest-Litovsk</strong> (mars 1918), la Russie quitte la guerre&nbsp;: l'Allemagne libère ses troupes de l'Est.</div>
+        </details>
+      </div>
+
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">Printemps 1917</span><span class="ti">Chemin des Dames &amp; mutineries</span></summary>
+          <div class="detail">L'offensive Nivelle, désastreuse, provoque des <strong>mutineries</strong> dans l'armée française. Pétain rétablit l'ordre et améliore les conditions des soldats. Le moral, partout, est au plus bas.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1918</span></div>
+
+      <div class="tl-event left" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">Mars–juill. 1918</span><span class="ti">Offensives du printemps (dernier pari)</span></summary>
+          <div class="detail">Ludendorff lance tout pour gagner <em>avant</em> que les Américains n'arrivent en masse. Gains spectaculaires… mais l'Allemagne s'épuise définitivement.</div>
+        </details>
+      </div>
+
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">Été–automne 1918</span><span class="ti">Contre-offensive alliée &amp; effondrement</span></summary>
+          <div class="detail">Sous le commandement unique du maréchal <strong>Foch</strong>, chars, aviation et renforts américains brisent le front. Les alliés de l'Allemagne (Bulgarie, Empire ottoman, Autriche-Hongrie) capitulent un à un.</div>
+        </details>
+      </div>
+
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">11 nov. 1918</span><span class="ti">L'Armistice de Rethondes</span></summary>
+          <div class="detail">Guillaume II abdique, l'Allemagne devient une république. L'armistice est signé dans le <strong>wagon de Foch</strong> à Rethondes&nbsp;: les armes se taisent à la 11<sup>e</sup> heure du 11<sup>e</sup> jour du 11<sup>e</sup> mois.</div>
+        </details>
+      </div>
+    </div>
+
+    <h3>La guerre des tranchées &amp; la guerre totale</h3>
+    <p>Sur le front occidental, des centaines de kilomètres de <strong>tranchées</strong> se font face, séparées par le <em>no man's land</em>. La vie y est faite de boue, de rats, de pluies d'obus et d'assauts meurtriers pour quelques mètres. C'est aussi une <strong>guerre totale</strong>&nbsp;: les usines tournent pour l'armement, les <strong>femmes</strong> remplacent les hommes au travail, l'État dirige l'économie, la <strong>propagande</strong> (le «&nbsp;bourrage de crâne&nbsp;») mobilise les esprits, et les colonies fournissent hommes et matières premières.</p>
+
+    <div class="flips" aria-label="Cartes à mémoriser — touche pour révéler">
+      <button class="flip" data-flip><div class="face q-face">Qu'est-ce que le « no man's land »&nbsp;?</div><div class="face a-face">La zone dévastée et exposée entre les tranchées ennemies, sous le feu des deux camps.</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">Pourquoi « guerre totale »&nbsp;?</div><div class="face a-face">Toute la société (industrie, femmes, économie, propagande, colonies) est mobilisée au service de l'effort de guerre, pas seulement les soldats.</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">Trois technologies nouvelles du conflit&nbsp;?</div><div class="face a-face">Gaz de combat, chars d'assaut, aviation militaire (et sous-marins, artillerie lourde, mitrailleuses).</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">Pourquoi 1917 est-elle « l'année charnière »&nbsp;?</div><div class="face a-face">Entrée des États-Unis + sortie de la Russie révolutionnaire&nbsp;: la donne stratégique mondiale bascule.</div><div class="hint">Toucher pour révéler</div></button>
+    </div>
+
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">Aller plus loin</span> Les autres fronts &amp; la dimension mondiale <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Le front occidental est décisif, mais la guerre est <strong>mondiale</strong>&nbsp;: <strong>front oriental</strong> (Russie), <strong>front italien</strong> (désastre de Caporetto en 1917), <strong>Balkans</strong> et <strong>Salonique</strong>, <strong>Empire ottoman</strong> (Dardanelles, Mésopotamie, révolte arabe), <strong>Afrique</strong> et <strong>Pacifique</strong> (le Japon, allié de l'Entente, saisit des possessions allemandes).</p>
+        <p>Cette guerre est aussi le théâtre de violences extrêmes contre les civils, dont le <strong>génocide arménien</strong> perpétré par l'Empire ottoman à partir de 1915.</p>
+      </div>
+    </details>
+
+    <!-- QUIZ III -->
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie III</span><span class="score" data-score>0 / 0</span></div>
+
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Que marque le « Miracle de la Marne » (sept. 1914)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">La capitulation de la France</button>
+          <button class="opt">L'entrée en guerre des États-Unis</button>
+          <button class="opt">L'échec du plan Schlieffen et la fin de la guerre éclair</button>
+          <button class="opt">Le début de la révolution russe</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Joffre arrête l'avance allemande&nbsp;: la guerre de mouvement s'enlise et laisse place à la guerre de position (tranchées).</div>
+      </div>
+
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Verdun (1916) est restée le symbole&nbsp;:</div>
+        <div class="opts">
+          <button class="opt">De l'enfer des tranchées et de la guerre d'usure</button>
+          <button class="opt">D'une victoire éclair allemande</button>
+          <button class="opt">De la première bataille navale</button>
+          <button class="opt">De la signature de la paix</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Dix mois de combats, ~700&nbsp;000 pertes, pour un terrain quasi inchangé&nbsp;: c'est l'image même de la guerre d'attrition.</div>
+      </div>
+
+      <div class="q" data-q data-correct="3">
+        <div class="qtext">Quels deux événements font de 1917 « l'année charnière »&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">L'attentat de Sarajevo et la mobilisation russe</button>
+          <button class="opt">Verdun et la Somme</button>
+          <button class="opt">L'armistice et le traité de Versailles</button>
+          <button class="opt">L'entrée des États-Unis et la sortie de la Russie révolutionnaire</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Les USA apportent des moyens décisifs côté allié&nbsp;; la Russie, en pleine révolution, signe Brest-Litovsk et quitte la guerre. L'équilibre mondial bascule.</div>
+      </div>
+
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Où et quand l'armistice est-il signé&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">À Versailles, le 28 juin 1919</button>
+          <button class="opt">À Rethondes, le 11 novembre 1918</button>
+          <button class="opt">À Sarajevo, le 28 juin 1914</button>
+          <button class="opt">À Brest-Litovsk, en mars 1918</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>L'armistice est signé dans le wagon de Foch à Rethondes le 11 novembre 1918. Le traité de Versailles (la <em>paix</em>) viendra, lui, en 1919.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PARTIE IV ================= -->
+  <section class="part" id="p4">
+    <div class="part-head">
+      <div class="part-num">IV</div>
+      <div class="part-titles">
+        <span class="eyebrow">Le bilan &amp; l'après-guerre</span>
+        <h2>Une paix qui redessine le monde</h2>
+      </div>
+    </div>
+
+    <p class="lead">La guerre laisse une Europe exsangue et un monde transformé&nbsp;: des millions de morts, quatre empires effondrés, des frontières entièrement redessinées et un sentiment d'humiliation en Allemagne qui contiendra, en germe, le conflit suivant.</p>
+
+    <h3>Le bilan humain&nbsp;: une saignée</h3>
+    <p>Environ <strong>9 à 10 millions de soldats</strong> tués et plus de 20 millions de blessés — dont les «&nbsp;<strong>gueules cassées</strong>&nbsp;» et d'innombrables traumatisés. En comptant les civils, le total des morts approche <strong>18 millions</strong>. La <strong>grippe espagnole</strong> (1918–1919), propagée par la guerre, fera des dizaines de millions de victimes supplémentaires dans le monde.</p>
+
+    <div class="chart" aria-label="Morts militaires estimés par pays">
+      <div class="bar-row"><span class="name">Allemagne</span><span class="bar-track"><span class="bar-fill central" data-w="100"></span></span><span class="val">~2,0 M</span></div>
+      <div class="bar-row"><span class="name">Russie</span><span class="bar-track"><span class="bar-fill slate" data-w="90"></span></span><span class="val">~1,8 M</span></div>
+      <div class="bar-row"><span class="name">France</span><span class="bar-track"><span class="bar-fill allied" data-w="70"></span></span><span class="val">~1,4 M</span></div>
+      <div class="bar-row"><span class="name">Autriche-H.</span><span class="bar-track"><span class="bar-fill central" data-w="60"></span></span><span class="val">~1,2 M</span></div>
+      <div class="bar-row"><span class="name">Emp. britan.</span><span class="bar-track"><span class="bar-fill allied" data-w="50"></span></span><span class="val">~1,0 M</span></div>
+      <div class="bar-row"><span class="name">Emp. ottoman</span><span class="bar-track"><span class="bar-fill central" data-w="40"></span></span><span class="val">~0,8 M</span></div>
+      <div class="bar-row"><span class="name">Italie</span><span class="bar-track"><span class="bar-fill allied" data-w="33"></span></span><span class="val">~0,65 M</span></div>
+      <div class="bar-row"><span class="name">États-Unis</span><span class="bar-track"><span class="bar-fill slate" data-w="6"></span></span><span class="val">~0,12 M</span></div>
+      <div class="note">Morts militaires, estimations arrondies (les chiffres varient selon les sources). Échelle relative à l'Allemagne. Les pertes civiles, considérables, ne sont pas comptées ici.</div>
+    </div>
+
+    <h3>Les traités de paix (1919–1920)</h3>
+    <p>La <strong>conférence de Paris</strong> (1919) réunit les vainqueurs. L'Allemagne, exclue des négociations, doit signer&nbsp;:</p>
+
+    <details class="dossier" data-side="allied">
+      <summary><span class="tag">28 juin 1919</span> Le traité de Versailles <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Imposé à l'Allemagne, il est ressenti comme un <strong>« Diktat »</strong>&nbsp;:</p>
+        <p>• <strong>Article 231</strong>&nbsp;: l'Allemagne est déclarée seule responsable de la guerre.<br>
+        • <strong>Réparations</strong> financières colossales.<br>
+        • <strong>Pertes territoriales</strong>&nbsp;: retour de l'Alsace-Lorraine à la France, «&nbsp;couloir de Dantzig&nbsp;» donné à la Pologne, perte de toutes les colonies.<br>
+        • <strong>Restrictions militaires</strong>&nbsp;: armée limitée à 100&nbsp;000 hommes, pas d'aviation, Rhénanie démilitarisée.</p>
+        <p>Cette humiliation nourrira un profond ressentiment, exploité plus tard par les nationalistes.</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">1919–1920</span> Les autres traités <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Chaque puissance vaincue a le sien&nbsp;: <strong>Saint-Germain</strong> (Autriche), <strong>Trianon</strong> (Hongrie, amputée des deux tiers de son territoire), <strong>Neuilly</strong> (Bulgarie), <strong>Sèvres</strong> puis <strong>Lausanne</strong> (Empire ottoman, dont naît la Turquie). Ensemble, ils démantèlent les empires vaincus.</p>
+      </div>
+    </details>
+
+    <h3>La carte recomposée&nbsp;: quatre empires disparaissent</h3>
+    <div class="empires">
+      <div class="empire"><div class="name">Allemand</div><div class="fate">Devient une république</div><p>Le Reich impérial s'effondre&nbsp;; naissance de la fragile République de Weimar.</p></div>
+      <div class="empire"><div class="name">Austro-hongrois</div><div class="fate">Démembré</div><p>Éclate en plusieurs États&nbsp;: Autriche, Hongrie, Tchécoslovaquie, Yougoslavie…</p></div>
+      <div class="empire"><div class="name">Russe</div><div class="fate">Devient l'URSS</div><p>La révolution bolchevique met fin au tsarisme et fonde l'État soviétique.</p></div>
+      <div class="empire"><div class="name">Ottoman</div><div class="fate">Disparaît</div><p>Démantelé&nbsp;: la Turquie en émerge&nbsp;; le Proche-Orient passe sous mandats franco-britanniques.</p></div>
+    </div>
+    <p>De nouveaux États naissent au nom du <strong>« droit des peuples à disposer d'eux-mêmes »</strong> défendu par le président américain <strong>Wilson</strong> (ses «&nbsp;14 points&nbsp;»)&nbsp;: Pologne, Tchécoslovaquie, Yougoslavie, pays baltes… Au Proche-Orient, les anciennes provinces ottomanes sont partagées entre la France (Syrie, Liban) et le Royaume-Uni (Irak, Palestine), dessinant des frontières lourdes de conséquences encore aujourd'hui.</p>
+
+    <div class="note-box">
+      <span class="lab">L'illusion d'une paix durable</span>
+      La <strong>Société des Nations</strong> (SDN), imaginée par Wilson pour garantir la paix, naît affaiblie&nbsp;: les <strong>États-Unis eux-mêmes refusent d'y adhérer</strong>. Combinée à l'humiliation allemande et au chaos économique, cette paix fragile contient déjà <strong>les germes de la Seconde Guerre mondiale</strong>.
+    </div>
+
+    <h3>Pourquoi cette guerre change tout</h3>
+    <p>1914–1918 met fin au monde d'avant&nbsp;: l'Europe perd sa domination mondiale au profit des <strong>États-Unis</strong> (devenus créanciers et grande puissance) et du <strong>Japon</strong>. Elle banalise la <strong>violence de masse</strong>, fait surgir l'<strong>URSS</strong>, recompose le <strong>Proche-Orient</strong>, et laisse une «&nbsp;<strong>génération perdue</strong>&nbsp;». Une paix mal réglée, et vingt ans plus tard, la catastrophe recommence.</p>
+
+    <!-- QUIZ IV -->
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie IV</span><span class="score" data-score>0 / 0</span></div>
+
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Que prévoit l'article 231 du traité de Versailles&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">La création de la Société des Nations</button>
+          <button class="opt">Le retour de l'Alsace-Lorraine</button>
+          <button class="opt">La responsabilité de l'Allemagne dans le déclenchement de la guerre</button>
+          <button class="opt">La fin de l'Empire ottoman</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>L'article 231 fait porter à l'Allemagne la responsabilité de la guerre — fondement moral des réparations et source d'un ressentiment durable.</div>
+      </div>
+
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Combien d'empires s'effondrent à l'issue de la guerre&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Deux</button>
+          <button class="opt">Quatre (allemand, austro-hongrois, russe, ottoman)</button>
+          <button class="opt">Six</button>
+          <button class="opt">Aucun</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Les empires allemand, austro-hongrois, russe et ottoman disparaissent&nbsp;: la carte de l'Europe et du Proche-Orient est entièrement redessinée.</div>
+      </div>
+
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Pourquoi la paix de 1919 est-elle souvent jugée fragile&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Humiliation allemande + SDN affaiblie (sans les USA) + nationalismes non résolus</button>
+          <button class="opt">Parce que l'Allemagne avait gagné la guerre</button>
+          <button class="opt">Parce qu'aucun traité n'a été signé</button>
+          <button class="opt">Parce que la Russie dominait l'Europe</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Le ressentiment allemand, une Société des Nations sans les États-Unis et des tensions nationales non réglées préparent le terrain de la Seconde Guerre mondiale.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    DOSSIER — LA GRANDE GUERRE 1914–1918 · Fiche de révision interactive<br>
+    Histoire &amp; géopolitique · Causes profondes ▸ Étincelle ▸ Conflit ▸ Bilan<br>
+    Conçu pour révision à l'écran et sur mobile — sections dépliables, frise cliquable, auto-tests.
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- Quiz logic ---- */
+  document.querySelectorAll("[data-quiz]").forEach(function(quiz){
+    var scoreEl = quiz.querySelector("[data-score]");
+    var questions = quiz.querySelectorAll("[data-q]");
+    var total = questions.length;
+    var answered = 0, correctCount = 0;
+    scoreEl.textContent = "0 / " + total;
+
+    questions.forEach(function(q){
+      var correct = parseInt(q.getAttribute("data-correct"), 10);
+      var opts = Array.prototype.slice.call(q.querySelectorAll(".opt"));
+      var explain = q.querySelector(".explain");
+      var locked = false;
+
+      opts.forEach(function(opt, idx){
+        opt.addEventListener("click", function(){
+          if (locked) return;
+          locked = true;
+          answered++;
+          var good = (idx === correct);
+          if (good) correctCount++;
+          opts.forEach(function(o, i){
+            o.disabled = true;
+            if (i === correct) o.classList.add("correct");
+            else if (i === idx) o.classList.add("wrong");
+            else o.classList.add("dim");
+          });
+          if (explain) explain.classList.add("show");
+          scoreEl.textContent = correctCount + " / " + total +
+            (answered === total ? "  ✓ terminé" : "");
+        });
+      });
+    });
+  });
+
+  /* ---- Flip cards ---- */
+  document.querySelectorAll("[data-flip]").forEach(function(card){
+    card.setAttribute("aria-pressed","false");
+    card.addEventListener("click", function(){
+      var on = card.classList.toggle("flipped");
+      card.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  });
+
+  /* ---- Animate casualty bars when scrolled into view ---- */
+  var bars = document.querySelectorAll(".bar-fill");
+  var filled = false;
+  function fill(){ if(filled) return; filled = true; bars.forEach(function(b){ b.style.width = (b.getAttribute("data-w")||0) + "%"; }); }
+  var chart = document.querySelector(".chart");
+  if (chart && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ fill(); io.disconnect(); } });
+    }, {threshold:0.12});
+    io.observe(chart);
+    // safety net: fill anyway after a short delay (e.g. if user jumps straight here)
+    setTimeout(fill, 2000);
+  } else { fill(); }
+})();
+</script>
+</body>
+</html>
