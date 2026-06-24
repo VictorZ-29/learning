@@ -37,6 +37,14 @@ window.FICHES = [
     categorie: "Histoire & Géopolitique",
     description: "Causes profondes, étincelle de 1914, les quatre années de guerre, bilan et après-guerre. Frise interactive, dossiers dépliables et quiz.",
     date: "2026-06"
+  },
+
+  {
+    titre: "L'Entre-deux-guerres 1919–1939",
+    fichier: "entre-deux-guerres.html",
+    categorie: "Histoire & Géopolitique",
+    description: "De l'espoir de paix à la marche à la guerre : SDN, krach de 1929, montée des totalitarismes, apaisement. Frise « engrenage », comparaison des régimes et quiz.",
+    date: "2026-06"
   }
 
   // ,{ titre: "...", fichier: "...", categorie: "...", description: "...", date: "..." }
