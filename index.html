@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Cabinet — Fiches de révision</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E4DBC5; --card:#EFE8D6; --card-2:#E9E0CB;
+  --ink:#232820; --ink-soft:#56594B;
+  --central:#5C6A50; --allied:#8A3324; --slate:#3C5A68; --brass:#947726;
+  --rule:rgba(35,40,32,.18); --rule-strong:rgba(35,40,32,.4);
+  --shadow:0 1px 0 rgba(35,40,32,.06), 0 8px 24px -16px rgba(35,40,32,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Spectral",Georgia,serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+.contours{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5}
+.wrap{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:0 22px 120px}
+
+.eyebrow{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;line-height:1.08;text-transform:uppercase}
+p{margin:0 0 1em}
+
+/* ---------- cover ---------- */
+.cover{padding:62px 0 26px;border-bottom:2px solid var(--ink)}
+.stamp{display:inline-block;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--allied);border:1.5px solid var(--allied);padding:5px 11px;transform:rotate(-2.5deg);margin-bottom:24px;opacity:.85}
+.cover h1{font-size:clamp(2.8rem,12vw,5.6rem);font-weight:700;margin:0;line-height:.92}
+.cover h1 .accent{color:var(--allied)}
+.cover .sub{font-family:"Oswald",sans-serif;font-weight:400;letter-spacing:.16em;text-transform:uppercase;font-size:clamp(.85rem,2.6vw,1.05rem);color:var(--ink-soft);margin-top:14px}
+.cover .dek{margin-top:24px;max-width:58ch;font-size:1.05rem}
+.metarow{display:flex;flex-wrap:wrap;gap:30px;margin-top:28px;padding-top:22px;border-top:1px solid var(--rule)}
+.metarow .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.9rem;line-height:1}
+.metarow .lab{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
+
+/* ---------- search ---------- */
+.search{margin-top:28px;position:relative}
+.search input{
+  width:100%;font-family:"Spectral",serif;font-size:1rem;color:var(--ink);
+  background:var(--card);border:1px solid var(--rule-strong);padding:13px 15px 13px 40px;
+}
+.search input::placeholder{color:var(--ink-soft)}
+.search .ic{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink-soft);font-family:"Cutive Mono",monospace;font-size:.95rem}
+.search input:focus{outline:2.5px solid var(--slate);outline-offset:2px}
+
+/* ---------- category section ---------- */
+.cat-section{padding-top:42px}
+.cat-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--rule);padding-bottom:8px;margin-bottom:18px}
+.cat-head h2{font-size:1.15rem;font-weight:500;letter-spacing:.05em}
+.cat-head .count{font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.1em;color:var(--ink-soft);margin-left:auto}
+
+/* ---------- cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.card{
+  display:flex;flex-direction:column;background:var(--card);border:1px solid var(--rule);
+  border-left:4px solid var(--brass);padding:17px 17px 15px;text-decoration:none;color:inherit;
+  box-shadow:var(--shadow);transition:transform .15s,border-color .15s;min-height:152px;
+}
+.card[data-c="allied"]{border-left-color:var(--allied)}
+.card[data-c="slate"]{border-left-color:var(--slate)}
+.card[data-c="central"]{border-left-color:var(--central)}
+.card:hover,.card:focus-visible{transform:translateY(-2px);border-color:var(--ink);outline:none}
+.card:focus-visible{outline:2.5px solid var(--slate);outline-offset:2px}
+.card .tag{font-family:"Cutive Mono",monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--brass);align-self:flex-start;padding:2px 7px;border-radius:2px;margin-bottom:11px}
+.card[data-c="allied"] .tag{background:var(--allied)}
+.card[data-c="slate"] .tag{background:var(--slate)}
+.card[data-c="central"] .tag{background:var(--central)}
+.card h3{font-size:1.12rem;font-weight:500;letter-spacing:.02em;margin:0 0 7px;line-height:1.15}
+.card .desc{font-size:.9rem;line-height:1.5;color:var(--ink-soft);margin:0 0 14px;flex:1}
+.card .foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--rule);padding-top:10px;margin-top:auto}
+.card .date{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)}
+.card .open{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.card:hover .open,.card:focus-visible .open{color:var(--allied)}
+
+/* ---------- empty / error states ---------- */
+.state{margin-top:42px;background:var(--card-2);border-left:4px solid var(--brass);padding:20px 20px;font-size:.96rem}
+.state .lab{font-family:"Cutive Mono",monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:7px}
+.state code{font-family:"Cutive Mono",monospace;font-size:.82rem;background:var(--paper);padding:1px 5px;border:1px solid var(--rule)}
+.hidden{display:none!important}
+
+footer{margin-top:72px;padding-top:24px;border-top:2px solid var(--ink);font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.06em;color:var(--ink-soft);line-height:1.8}
+
+:focus-visible{outline:2.5px solid var(--slate);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media(max-width:560px){body{font-size:17px}.metarow{gap:20px}}
+</style>
+</head>
+<body>
+
+<svg class="contours" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g fill="none" stroke="#232820" stroke-width="1" opacity="0.06">
+    <path d="M-50,200 C200,140 380,300 600,250 S1000,140 1260,230"/>
+    <path d="M-50,260 C220,210 400,360 620,310 S1010,210 1260,300"/>
+    <path d="M-50,520 C180,460 420,600 640,540 S1030,440 1260,520"/>
+    <path d="M-50,580 C200,540 430,660 650,610 S1040,520 1260,600"/>
+    <path d="M-50,900 C240,840 400,980 620,930 S1010,830 1260,910"/>
+    <path d="M-50,960 C220,920 420,1040 640,1000 S1030,900 1260,980"/>
+    <circle cx="600" cy="430" r="120"/><circle cx="600" cy="430" r="190"/><circle cx="600" cy="430" r="270"/>
+  </g>
+</svg>
+
+<div class="wrap">
+  <header class="cover">
+    <span class="stamp">Cabinet d'archives · Collection interactive</span>
+    <h1>Le <span class="accent">Cabinet</span></h1>
+    <div class="sub">Fiches de révision · Histoire · Sciences · Langues</div>
+    <p class="dek">Une collection de fiches interactives qui s'étoffe au fil des révisions. Choisis un dossier pour l'ouvrir — ou cherche par titre, matière ou mot-clé.</p>
+    <div class="metarow">
+      <div class="stat"><div class="num" id="stat-fiches">—</div><div class="lab">Fiches</div></div>
+      <div class="stat"><div class="num" id="stat-cats">—</div><div class="lab">Matières</div></div>
+    </div>
+    <div class="search">
+      <span class="ic" aria-hidden="true">⌕</span>
+      <input type="search" id="search" placeholder="Rechercher une fiche…" aria-label="Rechercher une fiche">
+    </div>
+  </header>
+
+  <main id="catalogue" aria-live="polite"></main>
+  <div id="noresult" class="state hidden"><span class="lab">Aucun résultat</span>Aucune fiche ne correspond à cette recherche.</div>
+
+  <footer>
+    LE CABINET — INDEX DES FICHES DE RÉVISION<br>
+    Pour ajouter une fiche : déposer le fichier .html dans le dossier, puis ajouter une entrée dans fiches.js
+  </footer>
+</div>
+
+<script src="fiches.js"></script>
+<script>
+(function(){
+  "use strict";
+  var catalogue = document.getElementById("catalogue");
+
+  // map a subject label to one of the accent colours by keyword
+  function colourFor(cat){
+    var c = (cat||"").toLowerCase();
+    if (/(hist|géo|geo|politiq|guerre)/.test(c)) return "allied";
+    if (/(phys|math|chim|scien|bio|ingé|inge|nucl)/.test(c)) return "slate";
+    if (/(lang|ital|angl|espagn|allem|philo|littér|litter|français|francais)/.test(c)) return "central";
+    return "brass";
+  }
+  function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m];}); }
+  function frDate(d){
+    if(!d) return "";
+    var m=/^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(d);
+    if(!m) return d;
+    var mois=["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."];
+    return (m[3]?m[3]+" ":"")+mois[+m[2]-1]+" "+m[1];
+  }
+
+  function showState(html){
+    catalogue.innerHTML = '<div class="state">'+html+'</div>';
+    document.getElementById("stat-fiches").textContent = "0";
+    document.getElementById("stat-cats").textContent = "0";
+  }
+
+  // ---- guard: manifest present? ----
+  if (typeof window.FICHES === "undefined" || !Array.isArray(window.FICHES)){
+    showState('<span class="lab">Manifeste introuvable</span>Le fichier <code>fiches.js</code> est manquant ou mal formé. Vérifie qu\'il est bien déposé à côté de cette page.');
+    return;
+  }
+  if (window.FICHES.length === 0){
+    showState('<span class="lab">Collection vide</span>Aucune fiche pour l\'instant. Ajoute une entrée dans <code>fiches.js</code> pour la voir apparaître ici.');
+    return;
+  }
+
+  // ---- group by category, preserving first-seen order ----
+  var groups = {}, order = [];
+  window.FICHES.forEach(function(f){
+    var cat = f.categorie || "Divers";
+    if (!groups[cat]){ groups[cat] = []; order.push(cat); }
+    groups[cat].push(f);
+  });
+
+  // ---- render ----
+  order.forEach(function(cat){
+    var section = document.createElement("section");
+    section.className = "cat-section";
+    section.setAttribute("data-cat", cat);
+
+    var head = document.createElement("div");
+    head.className = "cat-head";
+    head.innerHTML = '<h2>'+esc(cat)+'</h2><span class="count">'+groups[cat].length+' fiche'+(groups[cat].length>1?'s':'')+'</span>';
+    section.appendChild(head);
+
+    var grid = document.createElement("div");
+    grid.className = "grid";
+
+    groups[cat].forEach(function(f){
+      var a = document.createElement("a");
+      a.className = "card";
+      a.href = f.fichier || "#";
+      a.setAttribute("data-c", colourFor(cat));
+      a.setAttribute("data-search", ((f.titre||"")+" "+(f.description||"")+" "+cat).toLowerCase());
+      a.innerHTML =
+        '<span class="tag">'+esc(cat)+'</span>'+
+        '<h3>'+esc(f.titre||"Sans titre")+'</h3>'+
+        '<p class="desc">'+esc(f.description||"")+'</p>'+
+        '<div class="foot"><span class="date">'+esc(frDate(f.date))+'</span><span class="open">Ouvrir →</span></div>';
+      grid.appendChild(a);
+    });
+
+    section.appendChild(grid);
+    catalogue.appendChild(section);
+  });
+
+  document.getElementById("stat-fiches").textContent = window.FICHES.length;
+  document.getElementById("stat-cats").textContent = order.length;
+
+  // ---- live search ----
+  var input = document.getElementById("search");
+  var noresult = document.getElementById("noresult");
+  input.addEventListener("input", function(){
+    var q = input.value.trim().toLowerCase();
+    var anyVisible = false;
+    document.querySelectorAll(".cat-section").forEach(function(sec){
+      var visibleInSec = 0;
+      sec.querySelectorAll(".card").forEach(function(card){
+        var match = !q || card.getAttribute("data-search").indexOf(q) !== -1;
+        card.classList.toggle("hidden", !match);
+        if (match){ visibleInSec++; anyVisible = true; }
+      });
+      sec.classList.toggle("hidden", visibleInSec === 0);
+    });
+    noresult.classList.toggle("hidden", anyVisible);
+  });
+})();
+</script>
+</body>
+</html>
