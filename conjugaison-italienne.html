@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La conjugaison italienne · Fiche de référence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ECE5D3; --card:#F4EFE2; --card-2:#E7DEC9;
+  --ink:#23221C; --ink-soft:#595645;
+  --g-are:#3B6E55; --g-ere:#9C3A2A; --g-ire:#2E5C72; --g-isc:#2F6D76;
+  --gold:#8C6E1C; --rule:rgba(35,34,28,.16); --rule-strong:rgba(35,34,28,.34);
+  --shadow:0 1px 0 rgba(35,34,28,.05), 0 10px 26px -18px rgba(35,34,28,.55);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Spectral",Georgia,serif; font-size:18px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px 120px}
+
+/* ---- type ---- */
+.eyebrow{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-soft)}
+h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;
+  line-height:1.08;text-transform:uppercase}
+h2{font-size:clamp(1.55rem,4.6vw,2.25rem);margin:0 0 .12em}
+h3{font-size:1.06rem;font-weight:500;letter-spacing:.05em;color:var(--ink);
+  margin:1.9em 0 .55em;display:flex;align-items:baseline;gap:.55rem}
+h3::after{content:"";flex:1;height:1px;background:var(--rule)}
+p{margin:0 0 1em}
+strong{font-weight:600}
+em{color:var(--ink-soft)}
+a{color:var(--g-ire);text-decoration-thickness:1px;text-underline-offset:2px}
+.lead{font-size:1.07rem}
+
+/* ---- sticky top bar ---- */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(236,229,211,.93);
+  backdrop-filter:saturate(1.1) blur(6px);border-bottom:1px solid var(--rule)}
+.topbar-in{max-width:920px;margin:0 auto;padding:9px 22px;display:flex;
+  align-items:center;gap:14px}
+.tb-title{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;
+  letter-spacing:.06em;font-size:.92rem}
+.tb-title b{color:var(--g-ere)}
+.tb-flag{display:inline-block;width:26px;height:13px;margin-right:9px;vertical-align:-1px;
+  border:1px solid var(--rule);background:linear-gradient(90deg,
+  var(--g-are) 0 33.3%,#f4efe2 33.3% 66.6%,var(--g-ere) 66.6% 100%)}
+details.menu{margin-left:auto;position:relative}
+details.menu>summary{list-style:none;cursor:pointer;font-family:"Cutive Mono",monospace;
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);
+  border:1px solid var(--rule-strong);padding:6px 11px;user-select:none}
+details.menu>summary::-webkit-details-marker{display:none}
+details.menu[open]>summary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.menu-panel{position:absolute;right:0;top:calc(100% + 7px);min-width:230px;
+  background:var(--card);border:1px solid var(--rule-strong);box-shadow:var(--shadow);
+  padding:5px;display:grid;gap:1px}
+.menu-panel a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);
+  padding:9px 11px;font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;
+  font-size:.84rem;letter-spacing:.03em}
+.menu-panel a:hover,.menu-panel a:focus-visible{background:var(--card-2)}
+.menu-panel .n{font-family:"Cutive Mono",monospace;color:var(--g-ere);font-size:.72rem}
+
+/* ---- cover ---- */
+.cover{padding:54px 0 26px;border-bottom:2px solid var(--ink)}
+.stamp{display:inline-block;font-family:"Cutive Mono",monospace;font-size:.68rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--g-ere);
+  border:1.5px solid var(--g-ere);padding:5px 11px;transform:rotate(-2deg);
+  margin-bottom:26px;opacity:.9}
+.cover h1{font-size:clamp(2.5rem,10.5vw,5.2rem);font-weight:700;margin:0;line-height:.9}
+.cover h1 .it{color:var(--g-ere)}
+.cover .sub{font-family:"Oswald",sans-serif;font-weight:400;letter-spacing:.13em;
+  text-transform:uppercase;font-size:clamp(.85rem,2.5vw,1.02rem);color:var(--ink-soft);margin-top:14px}
+.cover .dek{margin-top:24px;max-width:62ch;font-size:1.05rem}
+.meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:28px;padding-top:22px;border-top:1px solid var(--rule)}
+.meta .stat{min-width:108px}
+.meta .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.85rem;line-height:1;color:var(--ink)}
+.meta .lab{font-family:"Cutive Mono",monospace;font-size:.63rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
+
+/* ---- signature: paradigm fan ---- */
+.fan{display:grid;grid-template-columns:auto 1fr;gap:0;margin:34px 0 4px;border:1px solid var(--rule);
+  background:var(--card);box-shadow:var(--shadow)}
+.fan-stem{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:22px 26px;border-right:1px solid var(--rule);background:var(--card-2)}
+.fan-stem .lab{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+.fan-stem .stem{font-family:"Oswald",sans-serif;font-weight:700;font-size:2.4rem;color:var(--g-are);letter-spacing:.02em}
+.fan-rows{display:grid;grid-template-columns:1fr;padding:6px 0}
+.fan-row{display:grid;grid-template-columns:74px 64px 1fr;align-items:baseline;gap:8px;
+  padding:6px 18px;border-bottom:1px solid var(--rule)}
+.fan-row:last-child{border-bottom:none}
+.fan-row .pr{font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+.fan-row .en{font-family:"Cutive Mono",monospace;font-size:.8rem;color:var(--g-are);font-weight:700}
+.fan-row .fm{font-size:1.02rem}
+.fan-cap{font-family:"Cutive Mono",monospace;font-size:.64rem;letter-spacing:.05em;
+  color:var(--ink-soft);margin:.7em 0 0;line-height:1.5}
+
+/* ---- how-to + legend ---- */
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);margin:30px 0 6px}
+.howto .cell{background:var(--card);padding:15px 16px}
+.howto .k{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px}
+.howto p{font-size:.92rem;margin:0;line-height:1.5}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 2px}
+.chip{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:5px 10px;border:1px solid var(--rule);background:var(--card);
+  display:inline-flex;align-items:center;gap:8px}
+.chip .dot{width:11px;height:11px;border-radius:2px;display:inline-block}
+.chip.g-are .dot{background:var(--g-are)} .chip.g-ere .dot{background:var(--g-ere)}
+.chip.g-ire .dot{background:var(--g-ire)} .chip.g-isc .dot{background:var(--g-isc)}
+
+/* ---- parts ---- */
+.part{padding-top:58px;scroll-margin-top:64px}
+.part-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--ink);
+  padding-bottom:11px;margin-bottom:20px}
+.pnum{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(2rem,6.5vw,3.1rem);
+  color:var(--g-ere);line-height:.8}
+.part-titles{flex:1}
+.part-titles .eyebrow{display:block;margin-bottom:4px}
+
+/* ---- conjugation tables ---- */
+.scroller{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);
+  background:var(--card);box-shadow:var(--shadow);margin:14px 0 6px}
+table.conj{border-collapse:collapse;width:100%;min-width:520px}
+table.conj.matrix{min-width:660px}
+table.conj th,table.conj td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--rule);
+  white-space:nowrap}
+table.conj thead th{vertical-align:bottom;border-bottom:2px solid var(--rule-strong);
+  background:var(--card)}
+table.conj .corner{background:var(--card-2);border-bottom:2px solid var(--rule-strong)}
+.vh-it{display:block;font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;
+  font-size:.98rem;letter-spacing:.02em}
+.vh-fr{display:block;font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.06em;
+  color:var(--ink-soft);margin-top:2px;text-transform:lowercase}
+thead th.g-are .vh-it{color:var(--g-are)} thead th.g-are{border-bottom-color:var(--g-are)}
+thead th.g-ere .vh-it{color:var(--g-ere)} thead th.g-ere{border-bottom-color:var(--g-ere)}
+thead th.g-ire .vh-it{color:var(--g-ire)} thead th.g-ire{border-bottom-color:var(--g-ire)}
+thead th.g-isc .vh-it{color:var(--g-isc)} thead th.g-isc{border-bottom-color:var(--g-isc)}
+.isc{font-family:"Cutive Mono",monospace;font-size:.52rem;letter-spacing:.04em;
+  vertical-align:super;margin-left:3px;opacity:.85}
+.ph{font-family:"Cutive Mono",monospace;font-size:.78rem;color:var(--ink-soft);
+  position:sticky;left:0;background:var(--card);z-index:2}
+.ph-col{font-family:"Cutive Mono",monospace;font-size:.74rem;letter-spacing:.04em;
+  color:var(--ink-soft);text-transform:none}
+.rh{position:sticky;left:0;background:var(--card);z-index:2;border-right:1px solid var(--rule)}
+.v-it{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.92rem;letter-spacing:.02em}
+.v-fr{font-family:"Cutive Mono",monospace;font-size:.58rem;color:var(--ink-soft)}
+.dag{color:var(--g-are);font-size:.7em}
+table.conj td{font-size:1.01rem}
+table.conj tbody tr:hover td{background:var(--card-2)}
+table.conj tbody tr:hover .ph,table.conj tbody tr:hover .rh{background:var(--card-2)}
+table.conj td sup{color:var(--g-ere);font-size:.65em}
+.fnote{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.03em;
+  color:var(--ink-soft);line-height:1.55;margin:.4em 0 1.2em}
+
+/* ---- examples ---- */
+.ex{display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem;font-size:.96rem;
+  margin:.5em 0 .9em;padding-left:13px;border-left:2px solid var(--g-are)}
+.ex .it{font-style:italic;color:var(--ink)}
+.ex .arrow{color:var(--ink-soft)}
+.ex .fr{color:var(--ink-soft)}
+
+/* ---- callouts ---- */
+.note{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--gold);
+  padding:14px 16px;margin:16px 0;font-size:.95rem;box-shadow:var(--shadow)}
+.note--piege{border-left-color:var(--g-ere)}
+.note--ortho{border-left-color:var(--g-ire)}
+.note--retenir{border-left-color:var(--g-are)}
+.note--reflexe{border-left-color:var(--gold);background:var(--card-2)}
+.note-lab{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;display:block;margin-bottom:6px}
+.note--piege .note-lab{color:var(--g-ere)} .note--ortho .note-lab{color:var(--g-ire)}
+.note--retenir .note-lab{color:var(--g-are)} .note--reflexe .note-lab{color:var(--gold)}
+.note-body p:last-child{margin-bottom:0}
+.note-body p{margin:0 0 .55em}
+.note ol{margin:.2em 0 0;padding-left:1.2em} .note li{margin:.3em 0}
+.kbd{font-family:"Cutive Mono",monospace;font-size:.88em;background:var(--paper);
+  border:1px solid var(--rule);padding:0 5px;border-radius:2px}
+
+/* ---- back-to-top link ---- */
+.totop{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);text-decoration:none;display:inline-block;margin-top:26px}
+.totop:hover{color:var(--ink)}
+
+/* ---- footer ---- */
+footer{margin-top:74px;padding-top:24px;border-top:2px solid var(--ink);
+  font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.05em;
+  color:var(--ink-soft);line-height:1.75}
+footer a{color:var(--ink-soft)}
+
+/* ---- a11y + motion ---- */
+:focus-visible{outline:2.5px solid var(--g-ire);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* ---- responsive ---- */
+.scroll-hint{display:none}
+@media(max-width:680px){
+  body{font-size:17px}
+  .meta{gap:16px}
+  .fan{grid-template-columns:1fr}
+  .fan-stem{border-right:none;border-bottom:1px solid var(--rule);padding:16px}
+  .fan-row{grid-template-columns:66px 56px 1fr;padding:6px 14px}
+  .tb-title{font-size:.8rem}
+  .tb-flag{width:22px;height:11px;margin-right:6px}
+  .scroll-hint{display:block;font-family:"Cutive Mono",monospace;font-size:.6rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:14px 0 -2px}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><span class="tb-title"><span class="tb-flag" aria-hidden="true"></span>La conjugaison <b>italienne</b></span><details class="menu"><summary>Sommaire ▾</summary><div class="menu-panel"><a href="#systeme"><span class="n">1</span>Le système verbal</a><a href="#reguliers"><span class="n">2</span>Verbes réguliers</a><a href="#auxiliaires"><span class="n">3</span>Essere &amp; avere</a><a href="#composes"><span class="n">4</span>Temps composés</a><a href="#irreguliers"><span class="n">5</span>Verbes irréguliers</a><a href="#contrastes"><span class="n">6</span>Contrastes FR / IT</a><a href="#memo"><span class="n">7</span>Mémo des terminaisons</a></div></details></div></div>
+<div class="wrap">
+<header class="cover" id="top"><span class="stamp">Langue italienne · Français langue de contraste · Fiche de référence</span><h1>La conjugaison<br><span class="it">italienne</span></h1><div class="sub">La coniugazione italiana · tableaux complets · temps composés · verbes irréguliers</div><p class="dek">L’italien et le français partagent la même charpente héritée du latin : mêmes modes, mêmes oppositions de temps, et un couple d’auxiliaires <em>essere / avere</em> qui calque presque exactement <em>être / avoir</em>. Toute la difficulté pour un francophone tient à une poignée de décalages — signalés ici par les encadrés <strong>Piège franco-italien</strong>.</p><div class="meta"><div class="stat"><div class="num">3</div><div class="lab">Groupes · -are -ere -ire</div></div><div class="stat"><div class="num">4</div><div class="lab">Verbes modèles</div></div><div class="stat"><div class="num">2</div><div class="lab">Auxiliaires</div></div><div class="stat"><div class="num">16</div><div class="lab">Verbes irréguliers</div></div></div><div class="fan"><div class="fan-stem"><span class="lab">radical</span><span class="stem">parl-</span></div><div class="fan-rows"><div class="fan-row"><span class="pr">io</span><span class="en">-o</span><span class="fm">parlo</span></div><div class="fan-row"><span class="pr">tu</span><span class="en">-i</span><span class="fm">parli</span></div><div class="fan-row"><span class="pr">lui/lei</span><span class="en">-a</span><span class="fm">parla</span></div><div class="fan-row"><span class="pr">noi</span><span class="en">-iamo</span><span class="fm">parliamo</span></div><div class="fan-row"><span class="pr">voi</span><span class="en">-ate</span><span class="fm">parlate</span></div><div class="fan-row"><span class="pr">loro</span><span class="en">-ano</span><span class="fm">parlano</span></div></div></div><p class="fan-cap">Un radical, six désinences — la terminaison suffit, le pronom sujet est superflu (<em>parlo</em> = je parle).</p><div class="howto"><div class="cell"><span class="k">Ordre des personnes</span><p>Toujours <strong>io, tu, lui/lei, noi, voi, loro</strong> (je, tu, il/elle, nous, vous, ils/elles).</p></div><div class="cell"><span class="k">Deux verbes en -ire</span><p>Type <strong>partire</strong> (sans infixe) et type <strong>finire</strong> (infixe <span class="kbd">-isc-</span>).</p></div><div class="cell"><span class="k">Pronom omis</span><p>La désinence porte la personne ; <em>io</em> ne sert qu’à l’emphase.</p></div><div class="cell"><span class="k">Vouvoiement</span><p>Politesse à la <strong>3<sup>e</sup> personne</strong> (<em>Lei</em>) : <em>Lei come sta ?</em></p></div></div><div class="legend"><span class="chip g-are"><span class="dot"></span>1<sup>er</sup> · -are</span><span class="chip g-ere"><span class="dot"></span>2<sup>e</sup> · -ere</span><span class="chip g-ire"><span class="dot"></span>3<sup>e</sup> · -ire</span><span class="chip g-isc"><span class="dot"></span>3<sup>e</sup> · -ire (-isc-)</span></div></header><section class="part" id="systeme"><div class="part-head"><div class="pnum">I</div><div class="part-titles"><span class="eyebrow">Architecture</span><h2>Le système verbal italien</h2></div></div><p class="lead">Les verbes se classent selon la terminaison de l’infinitif. Pour chaque temps, une seule série de désinences régit tout le groupe : c’est elle qu’il faut mémoriser (voir le <a href="#memo">mémo final</a>).</p><h3>Les trois groupes</h3><div class="scroller"><table class="conj matrix ">
+<thead><tr><th class="corner" scope="col"></th><th scope="col" class="ph-col">1<sup>er</sup> · -are</th><th scope="col" class="ph-col">2<sup>e</sup> · -ere</th><th scope="col" class="ph-col">3<sup>e</sup> · -ire</th></tr></thead>
+<tbody>
+<tr><th scope="row" class="rh">Modèle</th><td><strong>parlare</strong></td><td><strong>credere</strong></td><td><strong>partire</strong> / <strong>finire</strong></td></tr>
+<tr><th scope="row" class="rh">Traduction</th><td>parler</td><td>croire</td><td>partir / finir</td></tr>
+<tr><th scope="row" class="rh">Radical</th><td><span class="kbd">parl-</span></td><td><span class="kbd">cred-</span></td><td><span class="kbd">part-</span> / <span class="kbd">fin-</span></td></tr>
+</tbody></table></div><aside class="note note--ortho"><span class="note-lab">Le 3<sup>e</sup> groupe — deux conjugaisons</span><div class="note-body"><p>Sans infixe : <em>partire, dormire, sentire</em>. Avec l’infixe <span class='kbd'>-isc-</span> aux trois personnes du singulier et à la 3<sup>e</sup> du pluriel : <em>finire, capire, preferire</em>.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="reguliers"><div class="part-head"><div class="pnum">II</div><div class="part-titles"><span class="eyebrow">Le cœur du système</span><h2>Verbes réguliers</h2></div></div><p class="lead">Tableaux comparés des quatre modèles. Les en-têtes sont <span style="color:var(--g-are)">colorés par groupe</span> ; sur mobile, les tableaux défilent latéralement.</p><h3>Indicatif · présent <span style='font-family:Cutive Mono,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)'>(presente)</span></h3><div class="scroller"><table class="conj">
+<thead><tr><th class="corner" scope="col"></th><th scope="col" class="g-are"><span class="vh-it">parlare</span><span class="vh-fr">parler</span></th><th scope="col" class="g-ere"><span class="vh-it">credere</span><span class="vh-fr">croire</span></th><th scope="col" class="g-ire"><span class="vh-it">partire</span><span class="vh-fr">partir</span></th><th scope="col" class="g-isc"><span class="vh-it">finire<span class="isc">·isc</span></span><span class="vh-fr">finir</span></th></tr></thead>
+<tbody>
+<tr><th scope="row" class="ph">io</th><td>parlo</td><td>credo</td><td>parto</td><td>finisco</td></tr>
+<tr><th scope="row" class="ph">tu</th><td>parli</td><td>credi</td><td>parti</td><td>finisci</td></tr>
+<tr><th scope="row" class="ph">lui/lei</th><td>parla</td><td>crede</td><td>parte</td><td>finisce</td></tr>
+<tr><th scope="row" class="ph">noi</th><td>parliamo</td><td>crediamo</td><td>partiamo</td><td>finiamo</td></tr>
+<tr><th scope="row" class="ph">voi</th><td>parlate</td><td>credete</td><td>partite</td><td>finite</td></tr>
+<tr><th scope="row" class="ph">loro</th><td>parlano</td><td>credono</td><td>partono</td><td>finiscono</td></tr>
+</tbody></table></div><p class="ex"><span class="it">Ogni giorno parlo con i miei colleghi.</span><span class="arrow">→</span><span class="fr">Chaque jour, je parle avec mes collègues.</span></p><h3>Indicatif · imparfait <span style='font-family:Cutive Mono,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)'>(imperfetto)</span></h3><div class="scroller"><table class="conj">
+<thead><tr><th class="corner" scope="col"></th><th scope="col" class="g-are"><span class="vh-it">parlare</span><span class="vh-fr">parler</span></th><th scope="col" class="g-ere"><span class="vh-it">credere</span><span class="vh-fr">croire</span></th><th scope="col" class="g-ire"><span class="vh-it">partire</span><span class="vh-fr">partir</span></th><th scope="col" class="g-isc"><span class="vh-it">finire<span class="isc">·isc</span></span><span class="vh-fr">finir</span></th></tr></thead>
+<tbody>
+<tr><th scope="row" class="ph">io</th><td>parlavo</td><td>credevo</td><td>partivo</td><td>finivo</td></tr>
+<tr><th scope="row" class="ph">tu</th><td>parlavi</td><td>credevi</td><td>partivi</td><td>finivi</td></tr>
+<tr><th scope="row" class="ph">lui/lei</th><td>parlava</td><td>credeva</td><td>partiva</td><td>finiva</td></tr>
+<tr><th scope="row" class="ph">noi</th><td>parlavamo</td><td>credevamo</td><td>partivamo</td><td>finivamo</td></tr>
+<tr><th scope="row" class="ph">voi</th><td>parlavate</td><td>credevate</td><td>partivate</td><td>finivate</td></tr>
+<tr><th scope="row" class="ph">loro</th><td>parlavano</td><td>credevano</td><td>partivano</td><td>finivano</td></tr>
+</tbody></table></div><p class="ex"><span class="it">Da bambino parlavo soltanto francese.</span><span class="arrow">→</span><span class="fr">Enfant, je ne parlais que le français.</span></p><h3>Indicatif · passé simple <span style='font-family:Cutive Mono,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)'>(passato remoto)</span></h3><div class="scroller"><table class="conj">
+<thead><tr><th class="corner" scope="col"></th><th scope="col" class="g-are"><span class="vh-it">parlare</span><span class="vh-fr">parler</span></th><th scope="col" class="g-ere"><span class="vh-it">credere</span><span class="vh-fr">croire</span></th><th scope="col" class="g-ire"><span class="vh-it">partire</span><span class="vh-fr">partir</span></th><th scope="col" class="g-isc"><span class="vh-it">finire<span class="isc">·isc</span></span><span class="vh-fr">finir</span></th></tr></thead>
+<tbody>
+<tr><th scope="row" class="ph">io</th><td>parlai</td><td>credei<sup>∗</sup></td><td>partii</td><td>finii</td></tr>
+<tr><th scope="row" class="ph">tu</th><td>parlasti</td><td>credesti</td><td>partisti</td><td>finisti</td></tr>
+<tr><th scope="row" class="ph">lui/lei</th><td>parlò</td><td>credé<sup>∗</sup></td><td>partì</td><td>finì</td></tr>
+<tr><th scope="row" class="ph">noi</th><td>parlammo</td><td>credemmo</td><td>partimmo</td><td>finimmo</td></tr>
+<tr><th scope="row" class="ph">voi</th><td>parlaste</td><td>credeste</td><td>partiste</td><td>finiste</td></tr>
+<tr><th scope="row" class="ph">loro</th><td>parlarono</td><td>crederono<sup>∗</sup></td><td>partirono</td><td>finirono</td></tr>
+</tbody></table></div>
+<p class="fnote"><sup>∗</sup> De nombreux verbes en -ere admettent la variante en -etti : <em>credetti, credette, credettero</em>.</p><p class="ex"><span class="it">Nel 1990 si trasferì a Roma.</span><span class="arrow">→</span><span class="fr">En 1990, il s’installa à Rome.</span></p><h3>Indicatif · futur simple <span style='font-family:Cutive Mono,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)'>(futuro semplice)</span></h3><div class="scroller"><table class="conj">
+<thead><tr><th class="corner" scope="col"></th><th scope="col" class="g-are"><span class="vh-it">parlare</span><span class="vh-fr">parler</span></th><th scope="col" class="g-ere"><span class="vh-it">credere</span><span class="vh-fr">croire</span></th><th scope="col" class="g-ire"><span class="vh-it">partire</span><span class="vh-fr">partir</span></th><th scope="col" class="g-isc"><span class="vh-it">finire<span class="isc">·isc</span></span><span class="vh-fr">finir</span></th></tr></thead>
+<tbody>
+<tr><th scope="row" class="ph">io</th><td>parlerò</td><td>crederò</td><td>partirò</td><td>finirò</td></tr>
+<tr><th scope="row" class="ph">tu</th><td>parlerai</td><td>crederai</td><td>partirai</td><td>finirai</td></tr>
+<tr><th scope="row" class="ph">lui/lei</th><td>parlerà</td><td>crederà</td><td>partirà</td><td>finirà</td></tr>
+<tr><th scope="row" class="ph">noi</th><td>parleremo</td><td>crederemo</td><td>partiremo</td><td>finiremo</td></tr>
+<tr><th scope="row" class="ph">voi</th><td>parlerete</td><td>crederete</td><td>partirete</td><td>finirete</td></tr>
+<tr><th scope="row" class="ph">loro</th><td>parleranno</td><td>crederanno</td><td>partiranno</td><td>finiranno</td></tr>
+</tbody></table></div><aside class="note note--piege"><span class="note-lab">Piège franco-italien · le a qui devient e</span><div class="note-body"><p>Au futur et au conditionnel, le 1<sup>er</sup> groupe change le <strong>a</strong> du radical en <strong>e</strong> : <em>parlare → parler-ò, parler-ei</em>. C’est le seul piège interne du futur régulier — et la raison pour laquelle <span class='kbd'>-are</span> et <span class='kbd'>-ere</span> partagent les mêmes désinences (<span class='kbd'>-er-</span>).</p></div></aside><h3>Subjonctif · présent <span style='font-family:Cutive Mono,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)'>(congiuntivo presente)</span></h3><div class="scroller"><table class="conj">
+<thead><tr><th class="corner" scope="col">(che)</th><th scope="col" class="g-are"><span class="vh-it">parlare</span><span class="vh-fr">parler</span></th><th scope="col" class="g-ere"><span class="vh-it">credere</span><span class="vh-fr">croire</span></th><th scope="col" class="g-ire"><span class="vh-it">partire</span><span class="vh-fr">partir</span></th><th scope="col" class="g-isc"><span class="vh-it">finire<span class="isc">·isc</span></span><span class="vh-fr">finir</span></th></tr></thead>
+<tbody>
+<tr><th scope="row" class="ph">io</th><td>parli</td><td>creda</td><td>parta</td><td>finisca</td></tr>
+<tr><th scope="row" class="ph">tu</th><td>parli</td><td>creda</td><td>parta</td><td>finisca</td></tr>
+<tr><th scope="row" class="ph">lui/lei</th><td>parli</td><td>creda</td><td>parta</td><td>finisca</td></tr>
+<tr><th scope="row" class="ph">noi</th><td>parliamo</td><td>crediamo</td><td>partiamo</td><td>finiamo</td></tr>
+<tr><th scope="row" class="ph">voi</th><td>parliate</td><td>crediate</td><td>partiate</td><td>finiate</td></tr>
+<tr><th scope="row" class="ph">loro</th><td>parlino</td><td>credano</td><td>partano</td><td>finiscano</td></tr>
+</tbody></table></div><p class="ex"><span class="it">Penso che tu parli benissimo l’italiano.</span><span class="arrow">→</span><span class="fr">Je pense que tu parles très bien l’italien.</span></p><h3>Subjonctif · imparfait <span style='font-family:Cutive Mono,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)'>(congiuntivo imperfetto)</span></h3><div class="scroller"><table class="conj">
+<thead><tr><th class="corner" scope="col">(che)</th><th scope="col" class="g-are"><span class="vh-it">parlare</span><span class="vh-fr">parler</span></th><th scope="col" class="g-ere"><span class="vh-it">credere</span><span class="vh-fr">croire</span></th><th scope="col" class="g-ire"><span class="vh-it">partire</span><span class="vh-fr">partir</span></th><th scope="col" class="g-isc"><span class="vh-it">finire<span class="isc">·isc</span></span><span class="vh-fr">finir</span></th></tr></thead>
+<tbody>
+<tr><th scope="row" class="ph">io</th><td>parlassi</td><td>credessi</td><td>partissi</td><td>finissi</td></tr>
+<tr><th scope="row" class="ph">tu</th><td>parlassi</td><td>credessi</td><td>partissi</td><td>finissi</td></tr>
+<tr><th scope="row" class="ph">lui/lei</th><td>parlasse</td><td>credesse</td><td>partisse</td><td>finisse</td></tr>
+<tr><th scope="row" class="ph">noi</th><td>parlassimo</td><td>credessimo</td><td>partissimo</td><td>finissimo</td></tr>
+<tr><th scope="row" class="ph">voi</th><td>parlaste</td><td>credeste</td><td>partiste</td><td>finiste</td></tr>
+<tr><th scope="row" class="ph">loro</th><td>parlassero</td><td>credessero</td><td>partissero</td><td>finissero</td></tr>
+</tbody></table></div><p class="ex"><span class="it">Vorrei che tu parlassi più lentamente.</span><span class="arrow">→</span><span class="fr">Je voudrais que tu parles plus lentement.</span></p><h3>Conditionnel · présent <span style='font-family:Cutive Mono,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)'>(condizionale presente)</span></h3><div class="scroller"><table class="conj">
+<thead><tr><th class="corner" scope="col"></th><th scope="col" class="g-are"><span class="vh-it">parlare</span><span class="vh-fr">parler</span></th><th scope="col" class="g-ere"><span class="vh-it">credere</span><span class="vh-fr">croire</span></th><th scope="col" class="g-ire"><span class="vh-it">partire</span><span class="vh-fr">partir</span></th><th scope="col" class="g-isc"><span class="vh-it">finire<span class="isc">·isc</span></span><span class="vh-fr">finir</span></th></tr></thead>
+<tbody>
+<tr><th scope="row" class="ph">io</th><td>parlerei</td><td>crederei</td><td>partirei</td><td>finirei</td></tr>
+<tr><th scope="row" class="ph">tu</th><td>parleresti</td><td>crederesti</td><td>partiresti</td><td>finiresti</td></tr>
+<tr><th scope="row" class="ph">lui/lei</th><td>parlerebbe</td><td>crederebbe</td><td>partirebbe</td><td>finirebbe</td></tr>
+<tr><th scope="row" class="ph">noi</th><td>parleremmo</td><td>crederemmo</td><td>partiremmo</td><td>finiremmo</td></tr>
+<tr><th scope="row" class="ph">voi</th><td>parlereste</td><td>credereste</td><td>partireste</td><td>finireste</td></tr>
+<tr><th scope="row" class="ph">loro</th><td>parlerebbero</td><td>crederebbero</td><td>partirebbero</td><td>finirebbero</td></tr>
+</tbody></table></div><p class="ex"><span class="it">Parlerei volentieri con il direttore.</span><span class="arrow">→</span><span class="fr">Je parlerais volontiers avec le directeur.</span></p><h3>Impératif <span style='font-family:Cutive Mono,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)'>(imperativo)</span></h3><div class="scroller"><table class="conj">
+<thead><tr><th class="corner" scope="col"></th><th scope="col" class="g-are"><span class="vh-it">parlare</span><span class="vh-fr">parler</span></th><th scope="col" class="g-ere"><span class="vh-it">credere</span><span class="vh-fr">croire</span></th><th scope="col" class="g-ire"><span class="vh-it">partire</span><span class="vh-fr">partir</span></th><th scope="col" class="g-isc"><span class="vh-it">finire<span class="isc">·isc</span></span><span class="vh-fr">finir</span></th></tr></thead>
+<tbody>
+<tr><th scope="row" class="ph">(tu)</th><td>parla</td><td>credi</td><td>parti</td><td>finisci</td></tr>
+<tr><th scope="row" class="ph">(Lei)</th><td>parli</td><td>creda</td><td>parta</td><td>finisca</td></tr>
+<tr><th scope="row" class="ph">(noi)</th><td>parliamo</td><td>crediamo</td><td>partiamo</td><td>finiamo</td></tr>
+<tr><th scope="row" class="ph">(voi)</th><td>parlate</td><td>credete</td><td>partite</td><td>finite</td></tr>
+<tr><th scope="row" class="ph">(loro)</th><td>parlino</td><td>credano</td><td>partano</td><td>finiscano</td></tr>
+</tbody></table></div><aside class="note note--piege"><span class="note-lab">Piège franco-italien · l’impératif négatif (tu)</span><div class="note-body"><p>À la forme négative, le <em>tu</em> de l’impératif devient <strong>non + infinitif</strong> : <em>Non parlare !</em> (ne parle pas), <em>Non partire !</em> (ne pars pas).</p><p>Au vouvoiement, on garde le subjonctif : <em>Non parli !</em> (ne parlez pas).</p></div></aside><h3>Modes impersonnels <span style='font-family:Cutive Mono,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)'>(modi indefiniti)</span></h3><div class="scroller"><table class="conj">
+<thead><tr><th class="corner" scope="col"></th><th scope="col" class="g-are"><span class="vh-it">parlare</span><span class="vh-fr">parler</span></th><th scope="col" class="g-ere"><span class="vh-it">credere</span><span class="vh-fr">croire</span></th><th scope="col" class="g-ire"><span class="vh-it">partire</span><span class="vh-fr">partir</span></th><th scope="col" class="g-isc"><span class="vh-it">finire<span class="isc">·isc</span></span><span class="vh-fr">finir</span></th></tr></thead>
+<tbody>
+<tr><th scope="row" class="ph">Infinitif</th><td>parlare</td><td>credere</td><td>partire</td><td>finire</td></tr>
+<tr><th scope="row" class="ph">Participe passé</th><td>parlato</td><td>creduto</td><td>partito</td><td>finito</td></tr>
+<tr><th scope="row" class="ph">Gérondif</th><td>parlando</td><td>credendo</td><td>partendo</td><td>finendo</td></tr>
+</tbody></table></div><aside class="note note--ortho"><span class="note-lab">Orthographe · particularités du 1<sup>er</sup> groupe</span><div class="note-body"><p><span class='kbd'>-care / -gare</span> : on ajoute un <strong>h</strong> devant <em>e</em> et <em>i</em> pour garder le son dur — <em>cercare → cerchi, cercherò</em> ; <em>pagare → paghi, pagherò</em>.</p><p><span class='kbd'>-ciare / -giare / -sciare</span> : le <strong>i</strong> tombe devant <em>e</em> et <em>i</em> — <em>cominciare → cominci, comincerò</em> ; <em>mangiare → mangi, mangerò</em>.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="auxiliaires"><div class="part-head"><div class="pnum">III</div><div class="part-titles"><span class="eyebrow">Les deux verbes-clés</span><h2>Les auxiliaires : essere et avere</h2></div></div><p class="lead">Irréguliers, et indispensables à <strong>tous</strong> les temps composés. À mémoriser en priorité — le reste de la conjugaison composée en découle.</p><h3>essere <span style='font-family:Cutive Mono,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)'>(être)</span></h3><div class="scroller"><table class="conj matrix ">
+<thead><tr><th class="corner" scope="col"></th><th scope="col" class="ph-col">Présent</th><th scope="col" class="ph-col">Imparfait</th><th scope="col" class="ph-col">P. remoto</th><th scope="col" class="ph-col">Futur</th><th scope="col" class="ph-col">Subj. prés.</th><th scope="col" class="ph-col">Subj. imp.</th><th scope="col" class="ph-col">Cond.</th></tr></thead>
+<tbody>
+<tr><th scope="row" class="rh">io</th><td>sono</td><td>ero</td><td>fui</td><td>sarò</td><td>sia</td><td>fossi</td><td>sarei</td></tr>
+<tr><th scope="row" class="rh">tu</th><td>sei</td><td>eri</td><td>fosti</td><td>sarai</td><td>sia</td><td>fossi</td><td>saresti</td></tr>
+<tr><th scope="row" class="rh">lui/lei</th><td>è</td><td>era</td><td>fu</td><td>sarà</td><td>sia</td><td>fosse</td><td>sarebbe</td></tr>
+<tr><th scope="row" class="rh">noi</th><td>siamo</td><td>eravamo</td><td>fummo</td><td>saremo</td><td>siamo</td><td>fossimo</td><td>saremmo</td></tr>
+<tr><th scope="row" class="rh">voi</th><td>siete</td><td>eravate</td><td>foste</td><td>sarete</td><td>siate</td><td>foste</td><td>sareste</td></tr>
+<tr><th scope="row" class="rh">loro</th><td>sono</td><td>erano</td><td>furono</td><td>saranno</td><td>siano</td><td>fossero</td><td>sarebbero</td></tr>
+</tbody></table></div>
+<p class="fnote">Impératif : <em>sii, sia, siamo, siate, siano</em> · Participe passé : <em>stato</em> · Gérondif : <em>essendo</em>.</p><h3>avere <span style='font-family:Cutive Mono,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)'>(avoir)</span></h3><div class="scroller"><table class="conj matrix ">
+<thead><tr><th class="corner" scope="col"></th><th scope="col" class="ph-col">Présent</th><th scope="col" class="ph-col">Imparfait</th><th scope="col" class="ph-col">P. remoto</th><th scope="col" class="ph-col">Futur</th><th scope="col" class="ph-col">Subj. prés.</th><th scope="col" class="ph-col">Subj. imp.</th><th scope="col" class="ph-col">Cond.</th></tr></thead>
+<tbody>
+<tr><th scope="row" class="rh">io</th><td>ho</td><td>avevo</td><td>ebbi</td><td>avrò</td><td>abbia</td><td>avessi</td><td>avrei</td></tr>
+<tr><th scope="row" class="rh">tu</th><td>hai</td><td>avevi</td><td>avesti</td><td>avrai</td><td>abbia</td><td>avessi</td><td>avresti</td></tr>
+<tr><th scope="row" class="rh">lui/lei</th><td>ha</td><td>aveva</td><td>ebbe</td><td>avrà</td><td>abbia</td><td>avesse</td><td>avrebbe</td></tr>
+<tr><th scope="row" class="rh">noi</th><td>abbiamo</td><td>avevamo</td><td>avemmo</td><td>avremo</td><td>abbiamo</td><td>avessimo</td><td>avremmo</td></tr>
+<tr><th scope="row" class="rh">voi</th><td>avete</td><td>avevate</td><td>aveste</td><td>avrete</td><td>abbiate</td><td>aveste</td><td>avreste</td></tr>
+<tr><th scope="row" class="rh">loro</th><td>hanno</td><td>avevano</td><td>ebbero</td><td>avranno</td><td>abbiano</td><td>avessero</td><td>avrebbero</td></tr>
+</tbody></table></div>
+<p class="fnote">Impératif : <em>abbi, abbia, abbiamo, abbiate, abbiano</em> · Participe passé : <em>avuto</em> · Gérondif : <em>avendo</em>.</p><p class="ex"><span class="it">Ieri sono stato a Milano e ho avuto una bella sorpresa.</span><span class="arrow">→</span><span class="fr">Hier, j’ai été (je suis allé) à Milan et j’ai eu une belle surprise.</span></p><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="composes"><div class="part-head"><div class="pnum">IV</div><div class="part-titles"><span class="eyebrow">Auxiliaire + participe passé</span><h2>Les temps composés</h2></div></div><p class="lead">Comme en français : <strong>auxiliaire conjugué + participe passé</strong>. Il suffit donc de connaître <em>essere / avere</em> et le participe passé du verbe. Ci-dessous, un verbe avec <em>avere</em> (parlare) et un verbe avec <em>essere</em> (andare), à la 1<sup>re</sup> du singulier.</p><div class="scroller"><table class="conj matrix ">
+<thead><tr><th class="corner" scope="col">Temps composé</th><th scope="col" class="ph-col">avec <em>avere</em></th><th scope="col" class="ph-col">avec <em>essere</em></th></tr></thead>
+<tbody>
+<tr><th scope="row" class="rh"><span class="v-it">Passato prossimo</span> <span class="v-fr">passé composé</span></th><td>ho parlato</td><td>sono andato/a</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">Trapassato prossimo</span> <span class="v-fr">plus-que-parfait</span></th><td>avevo parlato</td><td>ero andato/a</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">Trapassato remoto</span> <span class="v-fr">passé antérieur</span></th><td>ebbi parlato</td><td>fui andato/a</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">Futuro anteriore</span> <span class="v-fr">futur antérieur</span></th><td>avrò parlato</td><td>sarò andato/a</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">Condizionale passato</span> <span class="v-fr">conditionnel passé</span></th><td>avrei parlato</td><td>sarei andato/a</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">Congiuntivo passato</span> <span class="v-fr">subjonctif passé</span></th><td>abbia parlato</td><td>sia andato/a</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">Congiuntivo trapassato</span> <span class="v-fr">subjonctif p.-q.-p.</span></th><td>avessi parlato</td><td>fossi andato/a</td></tr>
+</tbody></table></div><h3>Choix de l’auxiliaire</h3><aside class="note note--retenir"><span class="note-lab">avere — la plupart des transitifs</span><div class="note-body"><p><em>Ho mangiato la pizza.</em> → J’ai mangé la pizza.</p></div></aside><aside class="note note--retenir"><span class="note-lab">essere — mouvement, changement d’état, pronominaux</span><div class="note-body"><p>Beaucoup d’intransitifs (<em>andare, venire, partire, arrivare, nascere, morire</em>), les verbes pronominaux, les impersonnels, et <em>essere</em> lui-même.</p><p><em>Sono andato al cinema.</em> → Je suis allé au cinéma.</p></div></aside><aside class="note note--piege"><span class="note-lab">Piège franco-italien · accord et divergences</span><div class="note-body"><p>Avec <em>essere</em>, le participe <strong>s’accorde</strong> en genre et en nombre, comme avec <em>être</em> : <em>Maria è partita</em> ; <em>I ragazzi sono partiti</em>.</p><p><em>essere</em> se conjugue avec lui-même : <em>Sono stato malato</em> → j’ai été malade (français : <em>avoir</em>).</p><p>Les modaux <em>dovere / potere / volere</em> prennent l’auxiliaire du verbe qui suit : <em>Sono dovuto partire</em> (j’ai dû partir) mais <em>Ho dovuto lavorare</em> (j’ai dû travailler).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="irreguliers"><div class="part-head"><div class="pnum">V</div><div class="part-titles"><span class="eyebrow">Seize verbes essentiels</span><h2>Verbes irréguliers</h2></div></div><p class="lead">Ces seize verbes couvrent l’immense majorité des irrégularités courantes. Bonne nouvelle : à l’imparfait, presque tous sont réguliers — seuls <em>fare</em> (facevo), <em>dire</em> (dicevo) et <em>bere</em> (bevevo) gardent un radical latin.</p><h3>Présent de l’indicatif</h3><p class="scroll-hint">Tableau défilable →</p><div class="scroller"><table class="conj matrix ">
+<thead><tr><th class="corner" scope="col">Verbe</th><th scope="col" class="ph-col">io</th><th scope="col" class="ph-col">tu</th><th scope="col" class="ph-col">lui/lei</th><th scope="col" class="ph-col">noi</th><th scope="col" class="ph-col">voi</th><th scope="col" class="ph-col">loro</th></tr></thead>
+<tbody>
+<tr><th scope="row" class="rh"><span class="v-it">andare</span> <span class="v-fr">aller</span></th><td>vado</td><td>vai</td><td>va</td><td>andiamo</td><td>andate</td><td>vanno</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">dare</span> <span class="v-fr">donner</span></th><td>do</td><td>dai</td><td>dà</td><td>diamo</td><td>date</td><td>danno</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">fare</span> <span class="v-fr">faire</span></th><td>faccio</td><td>fai</td><td>fa</td><td>facciamo</td><td>fate</td><td>fanno</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">stare</span> <span class="v-fr">rester</span></th><td>sto</td><td>stai</td><td>sta</td><td>stiamo</td><td>state</td><td>stanno</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">bere</span> <span class="v-fr">boire</span></th><td>bevo</td><td>bevi</td><td>beve</td><td>beviamo</td><td>bevete</td><td>bevono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">dovere</span> <span class="v-fr">devoir</span></th><td>devo</td><td>devi</td><td>deve</td><td>dobbiamo</td><td>dovete</td><td>devono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">potere</span> <span class="v-fr">pouvoir</span></th><td>posso</td><td>puoi</td><td>può</td><td>possiamo</td><td>potete</td><td>possono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">sapere</span> <span class="v-fr">savoir</span></th><td>so</td><td>sai</td><td>sa</td><td>sappiamo</td><td>sapete</td><td>sanno</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">volere</span> <span class="v-fr">vouloir</span></th><td>voglio</td><td>vuoi</td><td>vuole</td><td>vogliamo</td><td>volete</td><td>vogliono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">rimanere</span> <span class="v-fr">rester</span></th><td>rimango</td><td>rimani</td><td>rimane</td><td>rimaniamo</td><td>rimanete</td><td>rimangono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">tenere</span> <span class="v-fr">tenir</span></th><td>tengo</td><td>tieni</td><td>tiene</td><td>teniamo</td><td>tenete</td><td>tengono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">vedere</span> <span class="v-fr">voir</span></th><td>vedo</td><td>vedi</td><td>vede</td><td>vediamo</td><td>vedete</td><td>vedono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">venire</span> <span class="v-fr">venir</span></th><td>vengo</td><td>vieni</td><td>viene</td><td>veniamo</td><td>venite</td><td>vengono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">dire</span> <span class="v-fr">dire</span></th><td>dico</td><td>dici</td><td>dice</td><td>diciamo</td><td>dite</td><td>dicono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">uscire</span> <span class="v-fr">sortir</span></th><td>esco</td><td>esci</td><td>esce</td><td>usciamo</td><td>uscite</td><td>escono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">salire</span> <span class="v-fr">monter</span></th><td>salgo</td><td>sali</td><td>sale</td><td>saliamo</td><td>salite</td><td>salgono</td></tr>
+</tbody></table></div><h3>Présent du subjonctif</h3><p class="scroll-hint">Tableau défilable →</p><div class="scroller"><table class="conj matrix ">
+<thead><tr><th class="corner" scope="col">Verbe</th><th scope="col" class="ph-col">(che) io</th><th scope="col" class="ph-col">tu</th><th scope="col" class="ph-col">lui/lei</th><th scope="col" class="ph-col">noi</th><th scope="col" class="ph-col">voi</th><th scope="col" class="ph-col">loro</th></tr></thead>
+<tbody>
+<tr><th scope="row" class="rh"><span class="v-it">andare</span> <span class="v-fr">aller</span></th><td>vada</td><td>vada</td><td>vada</td><td>andiamo</td><td>andiate</td><td>vadano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">dare</span> <span class="v-fr">donner</span></th><td>dia</td><td>dia</td><td>dia</td><td>diamo</td><td>diate</td><td>diano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">fare</span> <span class="v-fr">faire</span></th><td>faccia</td><td>faccia</td><td>faccia</td><td>facciamo</td><td>facciate</td><td>facciano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">stare</span> <span class="v-fr">rester</span></th><td>stia</td><td>stia</td><td>stia</td><td>stiamo</td><td>stiate</td><td>stiano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">bere</span> <span class="v-fr">boire</span></th><td>beva</td><td>beva</td><td>beva</td><td>beviamo</td><td>beviate</td><td>bevano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">dovere</span> <span class="v-fr">devoir</span></th><td>debba</td><td>debba</td><td>debba</td><td>dobbiamo</td><td>dobbiate</td><td>debbano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">potere</span> <span class="v-fr">pouvoir</span></th><td>possa</td><td>possa</td><td>possa</td><td>possiamo</td><td>possiate</td><td>possano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">sapere</span> <span class="v-fr">savoir</span></th><td>sappia</td><td>sappia</td><td>sappia</td><td>sappiamo</td><td>sappiate</td><td>sappiano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">volere</span> <span class="v-fr">vouloir</span></th><td>voglia</td><td>voglia</td><td>voglia</td><td>vogliamo</td><td>vogliate</td><td>vogliano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">rimanere</span> <span class="v-fr">rester</span></th><td>rimanga</td><td>rimanga</td><td>rimanga</td><td>rimaniamo</td><td>rimaniate</td><td>rimangano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">tenere</span> <span class="v-fr">tenir</span></th><td>tenga</td><td>tenga</td><td>tenga</td><td>teniamo</td><td>teniate</td><td>tengano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">vedere</span> <span class="v-fr">voir</span></th><td>veda</td><td>veda</td><td>veda</td><td>vediamo</td><td>vediate</td><td>vedano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">venire</span> <span class="v-fr">venir</span></th><td>venga</td><td>venga</td><td>venga</td><td>veniamo</td><td>veniate</td><td>vengano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">dire</span> <span class="v-fr">dire</span></th><td>dica</td><td>dica</td><td>dica</td><td>diciamo</td><td>diciate</td><td>dicano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">uscire</span> <span class="v-fr">sortir</span></th><td>esca</td><td>esca</td><td>esca</td><td>usciamo</td><td>usciate</td><td>escano</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">salire</span> <span class="v-fr">monter</span></th><td>salga</td><td>salga</td><td>salga</td><td>saliamo</td><td>saliate</td><td>salgano</td></tr>
+</tbody></table></div><h3>Passé simple <span style='font-family:Cutive Mono,monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)'>(passato remoto)</span></h3><p class="scroll-hint">Tableau défilable →</p><div class="scroller"><table class="conj matrix ">
+<thead><tr><th class="corner" scope="col">Verbe</th><th scope="col" class="ph-col">io</th><th scope="col" class="ph-col">tu</th><th scope="col" class="ph-col">lui/lei</th><th scope="col" class="ph-col">noi</th><th scope="col" class="ph-col">voi</th><th scope="col" class="ph-col">loro</th></tr></thead>
+<tbody>
+<tr><th scope="row" class="rh"><span class="v-it">andare<sup class="dag">†</sup></span> <span class="v-fr">aller</span></th><td>andai</td><td>andasti</td><td>andò</td><td>andammo</td><td>andaste</td><td>andarono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">dare</span> <span class="v-fr">donner</span></th><td>diedi</td><td>desti</td><td>diede</td><td>demmo</td><td>deste</td><td>diedero</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">fare</span> <span class="v-fr">faire</span></th><td>feci</td><td>facesti</td><td>fece</td><td>facemmo</td><td>faceste</td><td>fecero</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">stare</span> <span class="v-fr">rester</span></th><td>stetti</td><td>stesti</td><td>stette</td><td>stemmo</td><td>steste</td><td>stettero</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">bere</span> <span class="v-fr">boire</span></th><td>bevvi</td><td>bevesti</td><td>bevve</td><td>bevemmo</td><td>beveste</td><td>bevvero</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">dovere</span> <span class="v-fr">devoir</span></th><td>dovetti</td><td>dovesti</td><td>dovette</td><td>dovemmo</td><td>doveste</td><td>dovettero</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">potere</span> <span class="v-fr">pouvoir</span></th><td>potei</td><td>potesti</td><td>poté</td><td>potemmo</td><td>poteste</td><td>poterono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">sapere</span> <span class="v-fr">savoir</span></th><td>seppi</td><td>sapesti</td><td>seppe</td><td>sapemmo</td><td>sapeste</td><td>seppero</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">volere</span> <span class="v-fr">vouloir</span></th><td>volli</td><td>volesti</td><td>volle</td><td>volemmo</td><td>voleste</td><td>vollero</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">rimanere</span> <span class="v-fr">rester</span></th><td>rimasi</td><td>rimanesti</td><td>rimase</td><td>rimanemmo</td><td>rimaneste</td><td>rimasero</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">tenere</span> <span class="v-fr">tenir</span></th><td>tenni</td><td>tenesti</td><td>tenne</td><td>tenemmo</td><td>teneste</td><td>tennero</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">vedere</span> <span class="v-fr">voir</span></th><td>vidi</td><td>vedesti</td><td>vide</td><td>vedemmo</td><td>vedeste</td><td>videro</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">venire</span> <span class="v-fr">venir</span></th><td>venni</td><td>venisti</td><td>venne</td><td>venimmo</td><td>veniste</td><td>vennero</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">dire</span> <span class="v-fr">dire</span></th><td>dissi</td><td>dicesti</td><td>disse</td><td>dicemmo</td><td>diceste</td><td>dissero</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">uscire<sup class="dag">†</sup></span> <span class="v-fr">sortir</span></th><td>uscii</td><td>uscisti</td><td>uscì</td><td>uscimmo</td><td>usciste</td><td>uscirono</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">salire<sup class="dag">†</sup></span> <span class="v-fr">monter</span></th><td>salii</td><td>salisti</td><td>salì</td><td>salimmo</td><td>saliste</td><td>salirono</td></tr>
+</tbody></table></div>
+<p class="fnote"><sup>†</sup> Réguliers, donnés pour mémoire. La plupart des autres suivent le schéma <em>1<sup>re</sup>/3<sup>e</sup> sing. et 3<sup>e</sup> plur. irrégulières, le reste régulier</em> (<em>feci, facesti, fece … fecero</em>).</p><h3>Radical du futur, participe passé, auxiliaire, impératif</h3><p class="scroll-hint">Tableau défilable →</p><div class="scroller"><table class="conj matrix ">
+<thead><tr><th class="corner" scope="col">Verbe</th><th scope="col" class="ph-col">Rad. futur</th><th scope="col" class="ph-col">Part. passé</th><th scope="col" class="ph-col">Aux.</th><th scope="col" class="ph-col">Impératif (tu / Lei)</th></tr></thead>
+<tbody>
+<tr><th scope="row" class="rh"><span class="v-it">andare</span> <span class="v-fr">aller</span></th><td><span class="kbd">andr-</span></td><td><em>andato</em></td><td>essere</td><td>va’ / vada</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">dare</span> <span class="v-fr">donner</span></th><td><span class="kbd">dar-</span></td><td><em>dato</em></td><td>avere</td><td>da’ / dia</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">fare</span> <span class="v-fr">faire</span></th><td><span class="kbd">far-</span></td><td><em>fatto</em></td><td>avere</td><td>fa’ / faccia</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">stare</span> <span class="v-fr">rester</span></th><td><span class="kbd">star-</span></td><td><em>stato</em></td><td>essere</td><td>sta’ / stia</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">bere</span> <span class="v-fr">boire</span></th><td><span class="kbd">berr-</span></td><td><em>bevuto</em></td><td>avere</td><td>bevi / beva</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">dovere</span> <span class="v-fr">devoir</span></th><td><span class="kbd">dovr-</span></td><td><em>dovuto</em></td><td>av. / ess.</td><td>—</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">potere</span> <span class="v-fr">pouvoir</span></th><td><span class="kbd">potr-</span></td><td><em>potuto</em></td><td>av. / ess.</td><td>—</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">sapere</span> <span class="v-fr">savoir</span></th><td><span class="kbd">sapr-</span></td><td><em>saputo</em></td><td>avere</td><td>sappi / sappia</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">volere</span> <span class="v-fr">vouloir</span></th><td><span class="kbd">vorr-</span></td><td><em>voluto</em></td><td>av. / ess.</td><td>—</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">rimanere</span> <span class="v-fr">rester</span></th><td><span class="kbd">rimarr-</span></td><td><em>rimasto</em></td><td>essere</td><td>rimani / rimanga</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">tenere</span> <span class="v-fr">tenir</span></th><td><span class="kbd">terr-</span></td><td><em>tenuto</em></td><td>avere</td><td>tieni / tenga</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">vedere</span> <span class="v-fr">voir</span></th><td><span class="kbd">vedr-</span></td><td><em>visto</em></td><td>avere</td><td>vedi / veda</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">venire</span> <span class="v-fr">venir</span></th><td><span class="kbd">verr-</span></td><td><em>venuto</em></td><td>essere</td><td>vieni / venga</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">dire</span> <span class="v-fr">dire</span></th><td><span class="kbd">dir-</span></td><td><em>detto</em></td><td>avere</td><td>di’ / dica</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">uscire</span> <span class="v-fr">sortir</span></th><td><span class="kbd">uscir-</span></td><td><em>uscito</em></td><td>essere</td><td>esci / esca</td></tr>
+<tr><th scope="row" class="rh"><span class="v-it">salire</span> <span class="v-fr">monter</span></th><td><span class="kbd">salir-</span></td><td><em>salito</em></td><td>ess. / av.</td><td>sali / salga</td></tr>
+</tbody></table></div>
+<p class="fnote">Le radical du futur reçoit <span class='kbd'>-ò, -ai, -à, -emo, -ete, -anno</span> ; celui du conditionnel <span class='kbd'>-ei, -esti, -ebbe, -emmo, -este, -ebbero</span>. Ex. : <em>andrò … andrei</em> ; <em>verrò … verrei</em>.</p><aside class="note note--retenir"><span class="note-lab">À retenir · phrases-types</span><div class="note-body"><p><em>Domani vado a Roma e faccio una passeggiata.</em> → Demain je vais à Rome et je fais une promenade.</p><p><em>Non posso venire stasera, devo lavorare.</em> → Je ne peux pas venir ce soir, je dois travailler.</p><p><em>Bevo un caffè e poi esco.</em> → Je bois un café puis je sors.</p><p><em>Dico sempre la verità.</em> → Je dis toujours la vérité.</p><p><em>Vorrei rimanere ancora un po’.</em> → Je voudrais rester encore un peu.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="contrastes"><div class="part-head"><div class="pnum">VI</div><div class="part-titles"><span class="eyebrow">Ce qui piège un francophone</span><h2>Contrastes avec le français</h2></div></div><p class="lead">La <em>forme</em> est presque toujours transparente ; l’essentiel des difficultés tient à une poignée de décalages d’<strong>emploi</strong>.</p><h3>Les temps du passé</h3><p><strong>Imparfait = imperfetto</strong> : emplois identiques (description, habitude, arrière-plan).</p><p class="ex"><span class="it">Mentre mangiavo, ho ricevuto una chiamata.</span><span class="arrow">→</span><span class="fr">Pendant que je mangeais, j’ai reçu un appel.</span></p><p><strong>Passé composé = passato prossimo</strong> : à l’oral, l’italien l’emploie là où le français hésiterait entre passé composé et passé simple. <strong>Passé simple = passato remoto</strong>, mais bien plus vivant : courant à l’écrit narratif et à l’oral dans le Centre-Sud, là où le français le réserve à la littérature.</p><h3>Le subjonctif, plus exigeant qu’en français</h3><aside class="note note--piege"><span class="note-lab">Piège franco-italien · penso che + subjonctif</span><div class="note-body"><p>Après les verbes d’opinion à la forme affirmative, l’italien impose le subjonctif là où le français garde l’indicatif :</p><p><em>Penso che <strong>sia</strong> vero.</em> → Je pense que c’est vrai.</p><p><em>Credo che <strong>abbia</strong> ragione.</em> → Je crois qu’il a raison.</p><p>Aussi après <em>volere, sperare, benché, sebbene, prima che, affinché, è possibile che…</em> — un domaine bien plus large qu’en français.</p></div></aside><h3>Le « futur dans le passé »</h3><aside class="note note--piege"><span class="note-lab">Piège franco-italien · conditionnel passé</span><div class="note-body"><p>Pour un futur vu depuis le passé, l’italien emploie le <strong>conditionnel passé</strong>, là où le français emploie le conditionnel présent :</p><p><em>Ha detto che <strong>sarebbe venuto</strong>.</em> → Il a dit qu’il viendrait.</p><p><em>Pensavo che <strong>avrebbe telefonato</strong>.</em> → Je pensais qu’il téléphonerait.</p></div></aside><h3>Autres décalages utiles</h3><p>« <strong>Être en train de</strong> » se rend par <em>stare</em> + gérondif : <em>Sto mangiando</em> (je suis en train de manger), <em>Stavo leggendo</em> (j’étais en train de lire).</p><p><strong>Futur de probabilité</strong> : le futur exprime une supposition au présent. <em>Saranno le tre</em> → Il doit être trois heures. <em>Quanti anni avrà ?</em> → Quel âge peut-il bien avoir ?</p><p><strong>Pronom sujet omis</strong> : <em>Parlo, mangio, dormo</em> → Je parle, je mange, je dors. Le <strong>vouvoiement</strong> se fait à la 3<sup>e</sup> personne (<em>Lei</em>) : <em>Lei come sta ?</em> → Comment allez-vous ?</p><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="memo"><div class="part-head"><div class="pnum">VII</div><div class="part-titles"><span class="eyebrow">Sur une page</span><h2>Mémo express : terminaisons régulières</h2></div></div><p class="lead">Le cœur de la conjugaison régulière. Ordre : io, tu, lui/lei, noi, voi, loro.</p><div class="scroller"><table class="conj matrix" style="min-width:600px">
+<thead><tr><th class="corner" scope="col">Temps</th><th scope="col" class="g-are"><span class="vh-it" style="font-size:.9rem">-are</span></th><th scope="col" class="g-ere"><span class="vh-it" style="font-size:.9rem">-ere</span></th><th scope="col" class="g-ire"><span class="vh-it" style="font-size:.9rem">-ire</span></th></tr></thead><tbody>
+<tr><th scope="row" class="rh">Présent (indic.)</th><td><span class="kbd">-o, -i, -a, -iamo, -ate, -ano</span></td><td><span class="kbd">-o, -i, -e, -iamo, -ete, -ono</span></td><td><span class="kbd">-o, -i, -e, -iamo, -ite, -ono</span></td></tr>
+<tr><th scope="row" class="rh">Présent <span class="kbd">-isc-</span></th><td colspan="3" style="color:var(--g-isc)"><span class="kbd" style="border-color:var(--g-isc)">-isco, -isci, -isce, -iamo, -ite, -iscono</span> &nbsp;<span class="v-fr">(type finire)</span></td></tr>
+<tr><th scope="row" class="rh">Imparfait</th><td><span class="kbd">-avo, -avi, -ava, -avamo, -avate, -avano</span></td><td><span class="kbd">-evo, -evi, -eva, -evamo, -evate, -evano</span></td><td><span class="kbd">-ivo, -ivi, -iva, -ivamo, -ivate, -ivano</span></td></tr>
+<tr><th scope="row" class="rh">Passé simple</th><td><span class="kbd">-ai, -asti, -ò, -ammo, -aste, -arono</span></td><td><span class="kbd">-ei, -esti, -é, -emmo, -este, -erono</span></td><td><span class="kbd">-ii, -isti, -ì, -immo, -iste, -irono</span></td></tr>
+<tr><th scope="row" class="rh">Futur</th><td colspan="2" style="text-align:center"><span class="kbd">-erò, -erai, -erà, -eremo, -erete, -eranno</span></td><td><span class="kbd">-irò, -irai, -irà, -iremo, -irete, -iranno</span></td></tr>
+<tr><th scope="row" class="rh">Conditionnel</th><td colspan="2" style="text-align:center"><span class="kbd">-erei, -eresti, -erebbe, -eremmo, -ereste, -erebbero</span></td><td><span class="kbd">-irei, -iresti, -irebbe, -iremmo, -ireste, -irebbero</span></td></tr>
+<tr><th scope="row" class="rh">Subj. présent</th><td><span class="kbd">-i, -i, -i, -iamo, -iate, -ino</span></td><td><span class="kbd">-a, -a, -a, -iamo, -iate, -ano</span></td><td><span class="kbd">-a, -a, -a, -iamo, -iate, -ano</span></td></tr>
+<tr><th scope="row" class="rh">Subj. imparfait</th><td><span class="kbd">-assi, -assi, -asse, -assimo, -aste, -assero</span></td><td><span class="kbd">-essi, -essi, -esse, -essimo, -este, -essero</span></td><td><span class="kbd">-issi, -issi, -isse, -issimo, -iste, -issero</span></td></tr>
+<tr><th scope="row" class="rh">Impératif</th><td><span class="kbd">–, -a, -i, -iamo, -ate, -ino</span></td><td><span class="kbd">–, -i, -a, -iamo, -ete, -ano</span></td><td><span class="kbd">–, -i, -a, -iamo, -ite, -ano</span></td></tr>
+</tbody></table></div><aside class="note note--reflexe"><span class="note-lab">Le réflexe · trois automatismes</span><div class="note-body"><ol><li><strong>Futur &amp; conditionnel</strong> : 1<sup>er</sup> groupe, le <em>a</em> → <em>e</em> (<em>parler-ò</em>). C’est pourquoi -are et -ere partagent les mêmes désinences.</li><li><strong>Subjonctif</strong> : le 1<sup>er</sup> groupe bascule sur <span class='kbd'>-i</span>, les 2<sup>e</sup>/3<sup>e</sup> sur <span class='kbd'>-a</span> (croisement avec l’indicatif présent).</li><li><strong>Temps composés</strong> : auxiliaire + participe passé ; accord avec <em>essere</em> comme en français avec <em>être</em>.</li></ol></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><footer>Fiche de référence — conjugaison italienne · français langue de contraste.<br>Verbes modèles : parlare · credere · partire · finire. Pour révision sur écran, ordinateur ou téléphone.</footer>
+</div>
+<script>
+// Close the table-of-contents menu after picking a destination.
+document.querySelectorAll('.menu-panel a').forEach(function(a){
+  a.addEventListener('click', function(){
+    var d = document.querySelector('details.menu'); if (d) d.open = false;
+  });
+});
+// Click-away closes the menu.
+document.addEventListener('click', function(e){
+  var d = document.querySelector('details.menu');
+  if (d && d.open && !d.contains(e.target)) d.open = false;
+});
+</script>
+</body>
+</html>
