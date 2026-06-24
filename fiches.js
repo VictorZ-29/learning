@@ -77,6 +77,14 @@ window.FICHES = [
     categorie: "Langues",
     description: "Les petits mots qui font sonner l'italien comme on le parle : connecteurs (quindi, allora, magari…), mots de remplissage, réactions et formules de politesse. Pour chaque mot, un exemple et son registre — formel, neutre ou familier. 194 entrées, sans quiz.",
     date: "2026-06"
+  },
+
+  {
+    titre: "Les prépositions (simples & articulées)",
+    fichier: "prepositions-italien.html",
+    categorie: "Langues",
+    description: "di, a, da, in, su, con, per, tra/fra et toutes leurs formes contractées (nel, sul, della, agli…) dans un tableau couleur. Emplois de chaque préposition avec exemple, et le chapitre qui règle le casse-tête : article ou pas (a Roma, in Italia, nel Lazio).",
+    date: "2026-06"
   }
 
   // ,{ titre: "...", fichier: "...", categorie: "...", description: "...", date: "..." }
