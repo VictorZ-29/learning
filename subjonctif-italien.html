@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le subjonctif italien · quand l’employer · Fiche de référence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ECE5D3; --card:#F4EFE2; --card-2:#E7DEC9;
+  --ink:#23221C; --ink-soft:#595645;
+  --g-are:#3B6E55; --g-ere:#9C3A2A; --g-ire:#2E5C72; --g-isc:#2F6D76;
+  --gold:#8C6E1C; --rule:rgba(35,34,28,.16); --rule-strong:rgba(35,34,28,.34);
+  --shadow:0 1px 0 rgba(35,34,28,.05), 0 10px 26px -18px rgba(35,34,28,.55);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Spectral",Georgia,serif; font-size:18px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px 120px}
+
+/* ---- type ---- */
+.eyebrow{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-soft)}
+h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;
+  line-height:1.08;text-transform:uppercase}
+h2{font-size:clamp(1.55rem,4.6vw,2.25rem);margin:0 0 .12em}
+h3{font-size:1.06rem;font-weight:500;letter-spacing:.05em;color:var(--ink);
+  margin:1.9em 0 .55em;display:flex;align-items:baseline;gap:.55rem}
+h3::after{content:"";flex:1;height:1px;background:var(--rule)}
+p{margin:0 0 1em}
+strong{font-weight:600}
+em{color:var(--ink-soft)}
+a{color:var(--g-ire);text-decoration-thickness:1px;text-underline-offset:2px}
+.lead{font-size:1.07rem}
+
+/* ---- sticky top bar ---- */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(236,229,211,.93);
+  backdrop-filter:saturate(1.1) blur(6px);border-bottom:1px solid var(--rule)}
+.topbar-in{max-width:920px;margin:0 auto;padding:9px 22px;display:flex;
+  align-items:center;gap:14px}
+.tb-title{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;
+  letter-spacing:.06em;font-size:.92rem}
+.tb-title b{color:var(--g-ere)}
+.tb-flag{display:inline-block;width:26px;height:13px;margin-right:9px;vertical-align:-1px;
+  border:1px solid var(--rule);background:linear-gradient(90deg,
+  var(--g-are) 0 33.3%,#f4efe2 33.3% 66.6%,var(--g-ere) 66.6% 100%)}
+details.menu{margin-left:auto;position:relative}
+details.menu>summary{list-style:none;cursor:pointer;font-family:"Cutive Mono",monospace;
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);
+  border:1px solid var(--rule-strong);padding:6px 11px;user-select:none}
+details.menu>summary::-webkit-details-marker{display:none}
+details.menu[open]>summary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.menu-panel{position:absolute;right:0;top:calc(100% + 7px);min-width:230px;
+  background:var(--card);border:1px solid var(--rule-strong);box-shadow:var(--shadow);
+  padding:5px;display:grid;gap:1px}
+.menu-panel a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);
+  padding:9px 11px;font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;
+  font-size:.84rem;letter-spacing:.03em}
+.menu-panel a:hover,.menu-panel a:focus-visible{background:var(--card-2)}
+.menu-panel .n{font-family:"Cutive Mono",monospace;color:var(--g-ere);font-size:.72rem}
+
+/* ---- cover ---- */
+.cover{padding:54px 0 26px;border-bottom:2px solid var(--ink)}
+.stamp{display:inline-block;font-family:"Cutive Mono",monospace;font-size:.68rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--g-ere);
+  border:1.5px solid var(--g-ere);padding:5px 11px;transform:rotate(-2deg);
+  margin-bottom:26px;opacity:.9}
+.cover h1{font-size:clamp(2.5rem,10.5vw,5.2rem);font-weight:700;margin:0;line-height:.9}
+.cover h1 .it{color:var(--g-ere)}
+.cover .sub{font-family:"Oswald",sans-serif;font-weight:400;letter-spacing:.13em;
+  text-transform:uppercase;font-size:clamp(.85rem,2.5vw,1.02rem);color:var(--ink-soft);margin-top:14px}
+.cover .dek{margin-top:24px;max-width:62ch;font-size:1.05rem}
+.meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:28px;padding-top:22px;border-top:1px solid var(--rule)}
+.meta .stat{min-width:108px}
+.meta .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.85rem;line-height:1;color:var(--ink)}
+.meta .lab{font-family:"Cutive Mono",monospace;font-size:.63rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
+
+/* ---- signature: paradigm fan ---- */
+.fan{display:grid;grid-template-columns:auto 1fr;gap:0;margin:34px 0 4px;border:1px solid var(--rule);
+  background:var(--card);box-shadow:var(--shadow)}
+.fan-stem{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:22px 26px;border-right:1px solid var(--rule);background:var(--card-2)}
+.fan-stem .lab{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+.fan-stem .stem{font-family:"Oswald",sans-serif;font-weight:700;font-size:2.4rem;color:var(--g-are);letter-spacing:.02em}
+.fan-rows{display:grid;grid-template-columns:1fr;padding:6px 0}
+.fan-row{display:grid;grid-template-columns:74px 64px 1fr;align-items:baseline;gap:8px;
+  padding:6px 18px;border-bottom:1px solid var(--rule)}
+.fan-row:last-child{border-bottom:none}
+.fan-row .pr{font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+.fan-row .en{font-family:"Cutive Mono",monospace;font-size:.8rem;color:var(--g-are);font-weight:700}
+.fan-row .fm{font-size:1.02rem}
+.fan-cap{font-family:"Cutive Mono",monospace;font-size:.64rem;letter-spacing:.05em;
+  color:var(--ink-soft);margin:.7em 0 0;line-height:1.5}
+
+/* ---- how-to + legend ---- */
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);margin:30px 0 6px}
+.howto .cell{background:var(--card);padding:15px 16px}
+.howto .k{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px}
+.howto p{font-size:.92rem;margin:0;line-height:1.5}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 2px}
+.chip{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:5px 10px;border:1px solid var(--rule);background:var(--card);
+  display:inline-flex;align-items:center;gap:8px}
+.chip .dot{width:11px;height:11px;border-radius:2px;display:inline-block}
+.chip.g-are .dot{background:var(--g-are)} .chip.g-ere .dot{background:var(--g-ere)}
+.chip.g-ire .dot{background:var(--g-ire)} .chip.g-isc .dot{background:var(--g-isc)}
+
+/* ---- parts ---- */
+.part{padding-top:58px;scroll-margin-top:64px}
+.part-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--ink);
+  padding-bottom:11px;margin-bottom:20px}
+.pnum{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(2rem,6.5vw,3.1rem);
+  color:var(--g-ere);line-height:.8}
+.part-titles{flex:1}
+.part-titles .eyebrow{display:block;margin-bottom:4px}
+
+/* ---- conjugation tables ---- */
+.scroller{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);
+  background:var(--card);box-shadow:var(--shadow);margin:14px 0 6px}
+table.conj{border-collapse:collapse;width:100%;min-width:520px}
+table.conj.matrix{min-width:660px}
+table.conj th,table.conj td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--rule);
+  white-space:nowrap}
+table.conj thead th{vertical-align:bottom;border-bottom:2px solid var(--rule-strong);
+  background:var(--card)}
+table.conj .corner{background:var(--card-2);border-bottom:2px solid var(--rule-strong)}
+.vh-it{display:block;font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;
+  font-size:.98rem;letter-spacing:.02em}
+.vh-fr{display:block;font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.06em;
+  color:var(--ink-soft);margin-top:2px;text-transform:lowercase}
+thead th.g-are .vh-it{color:var(--g-are)} thead th.g-are{border-bottom-color:var(--g-are)}
+thead th.g-ere .vh-it{color:var(--g-ere)} thead th.g-ere{border-bottom-color:var(--g-ere)}
+thead th.g-ire .vh-it{color:var(--g-ire)} thead th.g-ire{border-bottom-color:var(--g-ire)}
+thead th.g-isc .vh-it{color:var(--g-isc)} thead th.g-isc{border-bottom-color:var(--g-isc)}
+.isc{font-family:"Cutive Mono",monospace;font-size:.52rem;letter-spacing:.04em;
+  vertical-align:super;margin-left:3px;opacity:.85}
+.ph{font-family:"Cutive Mono",monospace;font-size:.78rem;color:var(--ink-soft);
+  position:sticky;left:0;background:var(--card);z-index:2}
+.ph-col{font-family:"Cutive Mono",monospace;font-size:.74rem;letter-spacing:.04em;
+  color:var(--ink-soft);text-transform:none}
+.rh{position:sticky;left:0;background:var(--card);z-index:2;border-right:1px solid var(--rule)}
+.v-it{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.92rem;letter-spacing:.02em}
+.v-fr{font-family:"Cutive Mono",monospace;font-size:.58rem;color:var(--ink-soft)}
+.dag{color:var(--g-are);font-size:.7em}
+table.conj td{font-size:1.01rem}
+table.conj tbody tr:hover td{background:var(--card-2)}
+table.conj tbody tr:hover .ph,table.conj tbody tr:hover .rh{background:var(--card-2)}
+table.conj td sup{color:var(--g-ere);font-size:.65em}
+.fnote{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.03em;
+  color:var(--ink-soft);line-height:1.55;margin:.4em 0 1.2em}
+
+/* ---- examples ---- */
+.ex{display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem;font-size:.96rem;
+  margin:.5em 0 .9em;padding-left:13px;border-left:2px solid var(--g-are)}
+.ex .it{font-style:italic;color:var(--ink)}
+.ex .arrow{color:var(--ink-soft)}
+.ex .fr{color:var(--ink-soft)}
+
+/* ---- callouts ---- */
+.note{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--gold);
+  padding:14px 16px;margin:16px 0;font-size:.95rem;box-shadow:var(--shadow)}
+.note--piege{border-left-color:var(--g-ere)}
+.note--ortho{border-left-color:var(--g-ire)}
+.note--retenir{border-left-color:var(--g-are)}
+.note--reflexe{border-left-color:var(--gold);background:var(--card-2)}
+.note-lab{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;display:block;margin-bottom:6px}
+.note--piege .note-lab{color:var(--g-ere)} .note--ortho .note-lab{color:var(--g-ire)}
+.note--retenir .note-lab{color:var(--g-are)} .note--reflexe .note-lab{color:var(--gold)}
+.note-body p:last-child{margin-bottom:0}
+.note-body p{margin:0 0 .55em}
+.note ol{margin:.2em 0 0;padding-left:1.2em} .note li{margin:.3em 0}
+.kbd{font-family:"Cutive Mono",monospace;font-size:.88em;background:var(--paper);
+  border:1px solid var(--rule);padding:0 5px;border-radius:2px}
+
+/* ---- back-to-top link ---- */
+.totop{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);text-decoration:none;display:inline-block;margin-top:26px}
+.totop:hover{color:var(--ink)}
+
+/* ---- footer ---- */
+footer{margin-top:74px;padding-top:24px;border-top:2px solid var(--ink);
+  font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.05em;
+  color:var(--ink-soft);line-height:1.75}
+footer a{color:var(--ink-soft)}
+
+/* ---- a11y + motion ---- */
+:focus-visible{outline:2.5px solid var(--g-ire);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* ---- responsive ---- */
+.scroll-hint{display:none}
+@media(max-width:680px){
+  body{font-size:17px}
+  .meta{gap:16px}
+  .fan{grid-template-columns:1fr}
+  .fan-stem{border-right:none;border-bottom:1px solid var(--rule);padding:16px}
+  .fan-row{grid-template-columns:66px 56px 1fr;padding:6px 14px}
+  .tb-title{font-size:.8rem}
+  .tb-flag{width:22px;height:11px;margin-right:6px}
+  .scroll-hint{display:block;font-family:"Cutive Mono",monospace;font-size:.6rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:14px 0 -2px}
+}
+
+/* ===== mood colour tokens (this sheet's signature) ===== */
+:root{ --c-sub:#3B6E55; --c-ind:#2E5C72; --c-trig:#9C3A2A; --rc:var(--ink); }
+.a-sub{--rc:var(--c-sub)} .a-trig{--rc:var(--c-trig)} .a-ind{--rc:var(--c-ind)}
+.hl{color:var(--rc);font-weight:600;font-style:normal}
+.sub{color:var(--c-sub);font-weight:600} .ind{color:var(--c-ind);font-weight:600} .trig{color:var(--c-trig);font-weight:600}
+.part.has-accent .pnum{color:var(--rc)}
+.part.has-accent h2{color:var(--rc)}
+
+/* ===== trigger -> congiuntivo hero cards ===== */
+.trg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:32px 0 4px}
+.trg{background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--rule-strong);
+  box-shadow:var(--shadow);padding:15px 14px;text-align:center}
+.trg .cat{font-family:"Cutive Mono",monospace;font-size:.58rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--c-trig);margin-bottom:9px}
+.trg .sent{font-family:"Spectral",serif;font-style:italic;font-size:1.16rem;color:var(--ink);line-height:1.4}
+.trg .g2{font-family:"Cutive Mono",monospace;font-size:.62rem;color:var(--ink-soft);margin-top:9px;
+  border-top:1px solid var(--rule);padding-top:8px;letter-spacing:.02em}
+
+/* legend dots */
+.chip.a-trig .dot{background:var(--c-trig)} .chip.a-sub .dot{background:var(--c-sub)}
+.chip.a-ind .dot{background:var(--c-ind)}
+
+/* ===== usage / reference table ===== */
+table.ref{border-collapse:collapse;width:100%;background:var(--card);border:1px solid var(--rule);box-shadow:var(--shadow)}
+table.ref th,table.ref td{padding:9px 13px;text-align:left;border-bottom:1px solid var(--rule);
+  vertical-align:top;font-size:.95rem;line-height:1.5}
+table.ref thead th{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-soft);border-bottom:2px solid var(--rule-strong);background:var(--card)}
+table.ref td.k{font-family:"Cutive Mono",monospace;font-weight:700;white-space:nowrap;color:var(--ink)}
+table.ref .it{font-style:italic;color:var(--ink)}
+table.ref tbody tr:hover td{background:var(--card-2)}
+
+/* ===== contrast pairs (indicativo vs congiuntivo) ===== */
+.pair{background:var(--card);border:1px solid var(--rule);box-shadow:var(--shadow);padding:6px 15px 12px;margin:0 0 14px}
+.pair .v{padding:9px 0 9px 12px;border-left:3px solid}
+.pair .v.ind{border-color:var(--c-ind);--rc:var(--c-ind)}
+.pair .v.sub{border-color:var(--c-sub);--rc:var(--c-sub)}
+.pair .v .it{font-style:italic;color:var(--ink);display:block}
+.pair .v .fr{color:var(--ink-soft);font-size:.88rem;display:block;margin-top:1px}
+.pair .why{font-family:"Cutive Mono",monospace;font-size:.58rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:9px;border-top:1px dotted var(--rule);padding-top:7px;line-height:1.5}
+
+/* ===== false-friend swap cards ===== */
+.swap-wrap{columns:2;column-gap:16px;margin:8px 0 4px}
+.swap{break-inside:avoid;-webkit-column-break-inside:avoid;display:inline-block;width:100%;
+  background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--c-trig);
+  box-shadow:var(--shadow);padding:12px 15px;margin:0 0 14px}
+.swap .srow{display:flex;gap:9px;align-items:baseline;margin-bottom:3px}
+.swap .mk{font-family:"Cutive Mono",monospace;font-weight:700;min-width:16px}
+.swap .mk.x{color:var(--c-trig)} .swap .mk.v{color:var(--c-sub)}
+.swap .ko{color:var(--ink-soft);text-decoration:line-through;font-style:italic}
+.swap .ok{color:var(--ink);font-style:italic}
+.swap .ok b{color:var(--c-sub);font-weight:600;font-style:normal}
+.swap .swhy{font-family:"Cutive Mono",monospace;font-size:.58rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:7px;border-top:1px dotted var(--rule);padding-top:6px}
+.swap .sfr{color:var(--ink-soft);font-size:.84rem;font-style:italic;margin-top:4px}
+.swap .kw{color:var(--c-trig);font-weight:600}
+
+/* ===== conjunction chips ===== */
+.colloc{margin:0 0 16px}
+.colloc .ch{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--c-trig);margin-bottom:8px;display:block}
+.colloc-list{display:flex;flex-wrap:wrap;gap:7px}
+.ci{font-family:"Cutive Mono",monospace;font-size:.82rem;border:1px solid var(--rule);
+  border-left:2px solid var(--c-trig);background:var(--card);padding:4px 9px;color:var(--ink)}
+
+@media(max-width:680px){
+  .swap-wrap{columns:1}
+  .trg .sent{font-size:1.08rem}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><span class="tb-title"><span class="tb-flag" aria-hidden="true"></span>Le subjonctif <b>italien</b></span><details class="menu"><summary>Sommaire ▾</summary><div class="menu-panel"><a href="#principio"><span class="n">1</span>Le principe</a><a href="#trigger"><span class="n">2</span>Les déclencheurs</a><a href="#congiunz"><span class="n">3</span>Les conjonctions</a><a href="#trappole"><span class="n">4</span>Les pièges franco-italiens</a><a href="#concordanza"><span class="n">5</span>La concordance des temps</a><a href="#ipotesi"><span class="n">6</span>L’hypothèse (se + congiuntivo)</a><a href="#memo"><span class="n">7</span>Mémo</a></div></details></div></div>
+<div class="wrap">
+<header class="cover" id="top"><span class="stamp">Grammaire italienne · Le subjonctif · quand l’employer · Fiche de référence</span><h1>Le subjonctif<br><span class="it">italien</span></h1><div class="sub">Il congiuntivo · quando si usa · i verbi che lo reggono, le congiunzioni, la concordanza</div><p class="dek">Tu as les formes ; reste à savoir quand. Le <span class="sub">congiuntivo</span> n’est jamais un choix libre : il est <em>déclenché</em> par la principale — opinion, volonté, émotion, doute, possibilité. Ici, le <span class="trig">déclencheur</span> en terracotta, le <span class="sub">subjonctif</span> en vert, et l’<span class="ind">indicatif</span> en bleu pour les cas où il ne faut <em>pas</em> de subjonctif.</p><div class="trg-grid"><div class="trg"><div class="cat">Opinion</div><div class="sent"><span class="trig">Penso che</span> <span class="sub">sia</span> vero</div><div class="g2">je pense que c’est vrai</div></div><div class="trg"><div class="cat">Volonté</div><div class="sent"><span class="trig">Voglio che</span> tu <span class="sub">venga</span></div><div class="g2">je veux que tu viennes</div></div><div class="trg"><div class="cat">Concession</div><div class="sent"><span class="trig">Benché</span> <span class="sub">sia</span> tardi, esco</div><div class="g2">bien qu’il soit tard, je sors</div></div><div class="trg"><div class="cat">Possibilité</div><div class="sent"><span class="trig">È possibile che</span> <span class="sub">piova</span></div><div class="g2">il est possible qu’il pleuve</div></div></div><p class="fan-cap">Ces expressions <em>tirent</em> le subjonctif. Les familles complètes sont au &sect;2.</p><div class="meta"><div class="stat"><div class="num">5</div><div class="lab">Familles de déclencheurs</div></div><div class="stat"><div class="num">4</div><div class="lab">Temps du subjonctif</div></div><div class="stat"><div class="num">1</div><div class="lab">Règle des deux sujets</div></div></div><div class="howto"><div class="cell"><span class="k">La couleur = le mécanisme</span><p><span class="trig">déclencheur</span> (terracotta) → <span class="sub">congiuntivo</span> (vert). L’<span class="ind">indicatif</span> (bleu) marque le fait, la certitude.</p></div><div class="cell"><span class="k">La règle des deux sujets</span><p><em>che</em> + subjonctif si le sujet change ; même sujet → <em>di</em> + infinitif (<em>penso di avere…</em>).</p></div><div class="cell"><span class="k">Le piège français</span><p>« je pense / j’espère que » prend l’indicatif en français, le subjonctif en italien. Le &sect;4.</p></div><div class="cell"><span class="k">Quel temps ?</span><p>Selon la principale : <em>penso che sia</em> / <em>pensavo che fosse</em>. La concordance au &sect;5.</p></div></div><div class="legend"><span class="chip a-trig"><span class="dot"></span>déclencheur · ce qui l’impose</span><span class="chip a-sub"><span class="dot"></span>congiuntivo · le subjonctif</span><span class="chip a-ind"><span class="dot"></span>indicatif · le fait, la certitude</span></div></header><section class="part" id="principio"><div class="part-head"><div class="pnum">1</div><div class="part-titles"><span class="eyebrow">Indicatif ou subjonctif</span><h2>Le principe</h2></div></div><p class="lead">L’<span class="ind">indicatif</span> énonce un fait, une certitude. Le <span class="sub">congiuntivo</span> exprime la subjectivité : opinion, volonté, émotion, doute, possibilité. Il vit dans la subordonnée, appelé par la principale.</p><div class="pair"><div class="v ind"><span class="it">So che <span class="hl">parte</span> domani</span><span class="fr">je sais qu’il part demain (certitude)</span></div><div class="v sub"><span class="it">Credo che <span class="hl">parta</span> domani</span><span class="fr">je crois qu’il part demain (opinion)</span></div><div class="why">fait certain → indicatif / opinion, doute → subjonctif</div></div><div class="pair"><div class="v ind"><span class="it">È vero che <span class="hl">sei</span> stanco</span><span class="fr">c’est vrai que tu es fatigué (fait)</span></div><div class="v sub"><span class="it">Può darsi che tu <span class="hl">sia</span> stanco</span><span class="fr">il se peut que tu sois fatigué (possibilité)</span></div><div class="why">constat objectif → indicatif / possibilité → subjonctif</div></div><aside class="note note--reflexe"><span class="note-lab">La règle des deux sujets</span><div class="note-body"><p>Le subjonctif n’apparaît qu’avec <strong>che</strong> et un <strong>changement de sujet</strong>. Si le sujet est le même, on emploie <em>di</em> + infinitif : <em>Penso <strong>di avere</strong> ragione</em> (je pense avoir raison) vs <em>Penso <strong>che lui abbia</strong> ragione</em> (je pense qu’il a raison). De même : <em>Voglio partire</em> / <em>Voglio che tu parta</em>.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="trigger"><div class="part-head"><div class="pnum">2</div><div class="part-titles"><span class="eyebrow">Ce qui force le subjonctif</span><h2>Les déclencheurs</h2></div></div><p class="lead">Le subjonctif n’est jamais un choix libre : il est <em>déclenché</em> par la principale. Voici les grandes familles — le déclencheur en terracotta, le <span class="sub">congiuntivo</span> en vert.</p><div class="scroller"><table class="ref" style="min-width:640px"><thead><tr><th>Catégorie</th><th>Déclencheurs</th><th>Exemple</th></tr></thead><tbody><tr><td class="k">Opinion, pensée</td><td><span class="trig">pensare, credere, ritenere, immaginare, supporre</span></td><td><span class="it">Penso che <span class="sub">sia</span> vero</span></td></tr><tr><td class="k">Volonté, désir</td><td><span class="trig">volere, desiderare, preferire, esigere, pretendere</span></td><td><span class="it">Voglio che tu <span class="sub">venga</span></span></td></tr><tr><td class="k">Émotion, sentiment</td><td><span class="trig">essere contento, dispiacere, temere, sperare, stupirsi</span></td><td><span class="it">Sono contento che tu <span class="sub">sia</span> qui</span></td></tr><tr><td class="k">Doute, incertitude</td><td><span class="trig">dubitare, non essere sicuro, non sapere se</span></td><td><span class="it">Dubito che <span class="sub">sia</span> vero</span></td></tr><tr><td class="k">Expressions impersonnelles</td><td><span class="trig">è necessario / possibile / importante / probabile, bisogna, può darsi, sembra, pare</span></td><td><span class="it">È importante che tu <span class="sub">studi</span></span></td></tr></tbody></table></div><aside class="note note--piege"><span class="note-lab">Deux verbes à retenir à part</span><div class="note-body"><p><strong>sperare che</strong> veut le subjonctif en italien (<em>Spero che <span class="sub">venga</span></em>) alors que le français « espérer que » prend l’indicatif. <strong>pensare / credere</strong> aussi (<em>Penso che <span class="sub">sia</span></em>) — c’est le piège n° 1, détaillé au &sect;4.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="congiunz"><div class="part-head"><div class="pnum">3</div><div class="part-titles"><span class="eyebrow">Les mots qui l’imposent</span><h2>Les conjonctions</h2></div></div><p class="lead">Certaines conjonctions appellent <strong>toujours</strong> le subjonctif, quel que soit le verbe.</p><div class="colloc"><span class="ch">Opposition, concession</span><div class="colloc-list"><span class="ci">benché</span><span class="ci">sebbene</span><span class="ci">nonostante</span><span class="ci">malgrado</span><span class="ci">per quanto</span></div></div><div class="colloc"><span class="ch">But, condition, temps</span><div class="colloc-list"><span class="ci">affinché</span><span class="ci">perché (= pour que)</span><span class="ci">purché</span><span class="ci">a patto che</span><span class="ci">a condizione che</span><span class="ci">a meno che (non)</span><span class="ci">prima che</span><span class="ci">senza che</span><span class="ci">qualora</span><span class="ci">nel caso che</span></div></div><aside class="note note--piege"><span class="note-lab">Deux pièges de conjonction</span><div class="note-body"><p><strong>perché</strong> est ambigu : + indicatif = « parce que » (cause) ; + subjonctif = « pour que » (but). <em>Studio perché <span class="sub">tu sia</span> contento</em> (pour que) vs <em>Studio perché <span class="ind">voglio</span> imparare</em> (parce que).</p><p><strong>prima che</strong> + subjonctif, mais si le sujet est le même → <em>prima di</em> + infinitif : <em>Esco prima che <span class="sub">piova</span></em> / <em>Mangio prima di <strong>uscire</strong></em>.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part a-trig has-accent" id="trappole"><div class="part-head"><div class="pnum">4</div><div class="part-titles"><span class="eyebrow">Là où le français trompe</span><h2>Les pièges franco-italiens</h2></div></div><p class="lead">Les cas où l’instinct français mène à l’erreur — dans les deux sens.</p><div class="swap-wrap"><div class="swap"><div class="srow"><span class="mk x">✗</span><span class="ko">Penso che  <span class='kw'>è</span> vero</span></div><div class="srow"><span class="mk v">✓</span><span class="ok">Penso che <b>sia</b> vero</span></div><div class="swhy">penser / croire → subjonctif (≠ français)</div><div class="sfr">je pense que c’est vrai</div></div><div class="swap"><div class="srow"><span class="mk x">✗</span><span class="ko">Spero che  <span class='kw'>vieni</span></span></div><div class="srow"><span class="mk v">✓</span><span class="ok">Spero che tu <b>venga</b></span></div><div class="swhy">espérer → subjonctif (≠ français)</div><div class="sfr">j’espère que tu viens</div></div><div class="swap"><div class="srow"><span class="mk x">✗</span><span class="ko">Se  <span class='kw'>avevo</span> tempo,  <span class='kw'>venivo</span></span></div><div class="srow"><span class="mk v">✓</span><span class="ok">Se <b>avessi</b> tempo, <b>verrei</b></span></div><div class="swhy">hypothèse irréelle : se + subj. imparfait</div><div class="sfr">si j’avais le temps, je viendrais</div></div><div class="swap"><div class="srow"><span class="mk x">✗</span><span class="ko">Voglio che tu  <span class='kw'>vieni</span></span></div><div class="srow"><span class="mk v">✓</span><span class="ok">Voglio che tu <b>venga</b></span></div><div class="swhy">volonté → subjonctif</div><div class="sfr">je veux que tu viennes</div></div><div class="swap"><div class="srow"><span class="mk x">✗</span><span class="ko">So che  <span class='kw'>sia</span> vero</span></div><div class="srow"><span class="mk v">✓</span><span class="ok">So che <b>è</b> vero</span></div><div class="swhy">certitude → indicatif, pas subjonctif !</div><div class="sfr">je sais que c’est vrai</div></div><div class="swap"><div class="srow"><span class="mk x">✗</span><span class="ko">Penso che io  <span class='kw'>abbia</span> ragione</span></div><div class="srow"><span class="mk v">✓</span><span class="ok">Penso <b>di avere</b> ragione</span></div><div class="swhy">même sujet → di + infinitif</div><div class="sfr">je pense avoir raison</div></div></div><aside class="note note--reflexe"><span class="note-lab">Le réflexe à inverser</span><div class="note-body"><p>En français, « je pense que » et « j’espère que » prennent l’indicatif ; en italien, le subjonctif. À l’inverse, après « si » le français met l’imparfait de l’indicatif (« si j’avais »), l’italien le <strong>subjonctif imparfait</strong> (« se avessi »). Et la certitude (<em>so che, è certo che, è chiaro che</em>) reste à l’indicatif.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="concordanza"><div class="part-head"><div class="pnum">5</div><div class="part-titles"><span class="eyebrow">Quel temps du subjonctif</span><h2>La concordance des temps</h2></div></div><p class="lead">Une fois le subjonctif décidé, son temps dépend de la principale et du moment de l’action.</p><div class="scroller"><table class="ref" style="min-width:640px"><thead><tr><th>Verbe principal</th><th>Action simultanée / postérieure</th><th>Action antérieure</th></tr></thead><tbody><tr><td class="k">Présent / futur<br><span class="it">Penso che…</span></td><td><span class="sub">cong. présent</span><br><span class="it">… sia / venga</span></td><td><span class="sub">cong. passé</span><br><span class="it">… sia stato / abbia fatto</span></td></tr><tr><td class="k">Passé / conditionnel<br><span class="it">Pensavo che…</span></td><td><span class="sub">cong. imparfait</span><br><span class="it">… fosse / venisse</span></td><td><span class="sub">cong. plus-que-parfait</span><br><span class="it">… fosse stato / avesse fatto</span></td></tr></tbody></table></div><aside class="note note--ortho"><span class="note-lab">Les deux axes</span><div class="note-body"><p>D’abord la <strong>principale</strong> : au présent/futur → subjonctif présent ou passé ; au passé/conditionnel → subjonctif imparfait ou plus-que-parfait. Ensuite le <strong>moment</strong> : en même temps → forme simple ; avant → forme composée.</p><p><em>Penso che <span class="sub">sia</span> partito</em> (je pense qu’il est parti) · <em>Pensavo che <span class="sub">fosse</span> partito</em> (je pensais qu’il était parti).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="ipotesi"><div class="part-head"><div class="pnum">6</div><div class="part-titles"><span class="eyebrow">Le « si » italien</span><h2>L’hypothèse (se + congiuntivo)</h2></div></div><p class="lead">Pour une hypothèse irréelle, l’italien met le subjonctif après <em>se</em> — là où le français garde l’indicatif.</p><div class="scroller"><table class="ref" style="min-width:620px"><thead><tr><th>Type</th><th>Construction</th><th>Exemple</th></tr></thead><tbody><tr><td class="k">Réel, possible</td><td><span class="it">se + <span class="ind">indicatif</span> → présent / futur</span></td><td><span class="it">Se <span class="ind">piove</span>, resto a casa</span></td></tr><tr><td class="k">Irréel du présent</td><td><span class="it">se + <span class="sub">subj. imparfait</span> → conditionnel</span></td><td><span class="it">Se <span class="sub">fossi</span> ricco, comprerei una casa</span></td></tr><tr><td class="k">Irréel du passé</td><td><span class="it">se + <span class="sub">subj. plus-que-parfait</span> → cond. passé</span></td><td><span class="it">Se <span class="sub">avessi</span> studiato, avrei superato l’esame</span></td></tr></tbody></table></div><aside class="note note--piege"><span class="note-lab">Le piège « si » / « se »</span><div class="note-body"><p>Français : « <strong>si j’avais</strong> le temps » (imparfait de l’indicatif). Italien : « <strong>se <span class="sub">avessi</span></strong> tempo » (subjonctif imparfait). Et au passé : « si j’<strong>avais eu</strong> » → « se <span class="sub">avessi avuto</span> ». Jamais de subjonctif <em>après</em> « se » pour une hypothèse simplement possible : <em>Se <span class="ind">piove</span></em>.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="memo"><div class="part-head"><div class="pnum">7</div><div class="part-titles"><span class="eyebrow">L’essentiel en quatre points</span><h2>Mémo</h2></div></div><aside class="note note--reflexe"><span class="note-lab">Les quatre réflexes</span><div class="note-body"><p><strong>1. Subjectivité</strong> — opinion, volonté, émotion, doute, possibilité → <span class="sub">congiuntivo</span>. Fait, certitude → <span class="ind">indicatif</span>.</p><p><strong>2. Deux sujets</strong> — <em>che</em> + subjonctif seulement si le sujet change ; même sujet → <em>di</em> + infinitif (<em>penso di avere ragione</em>).</p><p><strong>3. Le piège français</strong> — « je pense / j’espère que » → subjonctif en italien ; « si j’avais » → <em>se <span class="sub">avessi</span></em>.</p><p><strong>4. Concordance</strong> — principale au présent → subj. présent/passé ; au passé → subj. imparfait/plus-que-parfait (<em>penso che sia</em> / <em>pensavo che fosse</em>).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><footer>Fiche de référence — le subjonctif italien · déclencheurs, conjonctions, concordance et hypothèse.<br>Pour chaque cas : un exemple traduit. Révision sur écran, ordinateur ou téléphone.</footer>
+</div>
+<script>
+document.querySelectorAll('.menu-panel a').forEach(function(a){
+  a.addEventListener('click', function(){
+    var d = document.querySelector('details.menu'); if (d) d.open = false;
+  });
+});
+document.addEventListener('click', function(e){
+  var d = document.querySelector('details.menu');
+  if (d && d.open && !d.contains(e.target)) d.open = false;
+});
+</script>
+</body>
+</html>
