@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passato prossimo vs imperfetto · le choix du temps · Fiche de référence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ECE5D3; --card:#F4EFE2; --card-2:#E7DEC9;
+  --ink:#23221C; --ink-soft:#595645;
+  --g-are:#3B6E55; --g-ere:#9C3A2A; --g-ire:#2E5C72; --g-isc:#2F6D76;
+  --gold:#8C6E1C; --rule:rgba(35,34,28,.16); --rule-strong:rgba(35,34,28,.34);
+  --shadow:0 1px 0 rgba(35,34,28,.05), 0 10px 26px -18px rgba(35,34,28,.55);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Spectral",Georgia,serif; font-size:18px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px 120px}
+
+/* ---- type ---- */
+.eyebrow{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-soft)}
+h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;
+  line-height:1.08;text-transform:uppercase}
+h2{font-size:clamp(1.55rem,4.6vw,2.25rem);margin:0 0 .12em}
+h3{font-size:1.06rem;font-weight:500;letter-spacing:.05em;color:var(--ink);
+  margin:1.9em 0 .55em;display:flex;align-items:baseline;gap:.55rem}
+h3::after{content:"";flex:1;height:1px;background:var(--rule)}
+p{margin:0 0 1em}
+strong{font-weight:600}
+em{color:var(--ink-soft)}
+a{color:var(--g-ire);text-decoration-thickness:1px;text-underline-offset:2px}
+.lead{font-size:1.07rem}
+
+/* ---- sticky top bar ---- */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(236,229,211,.93);
+  backdrop-filter:saturate(1.1) blur(6px);border-bottom:1px solid var(--rule)}
+.topbar-in{max-width:920px;margin:0 auto;padding:9px 22px;display:flex;
+  align-items:center;gap:14px}
+.tb-title{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;
+  letter-spacing:.06em;font-size:.92rem}
+.tb-title b{color:var(--g-ere)}
+.tb-flag{display:inline-block;width:26px;height:13px;margin-right:9px;vertical-align:-1px;
+  border:1px solid var(--rule);background:linear-gradient(90deg,
+  var(--g-are) 0 33.3%,#f4efe2 33.3% 66.6%,var(--g-ere) 66.6% 100%)}
+details.menu{margin-left:auto;position:relative}
+details.menu>summary{list-style:none;cursor:pointer;font-family:"Cutive Mono",monospace;
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);
+  border:1px solid var(--rule-strong);padding:6px 11px;user-select:none}
+details.menu>summary::-webkit-details-marker{display:none}
+details.menu[open]>summary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.menu-panel{position:absolute;right:0;top:calc(100% + 7px);min-width:230px;
+  background:var(--card);border:1px solid var(--rule-strong);box-shadow:var(--shadow);
+  padding:5px;display:grid;gap:1px}
+.menu-panel a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);
+  padding:9px 11px;font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;
+  font-size:.84rem;letter-spacing:.03em}
+.menu-panel a:hover,.menu-panel a:focus-visible{background:var(--card-2)}
+.menu-panel .n{font-family:"Cutive Mono",monospace;color:var(--g-ere);font-size:.72rem}
+
+/* ---- cover ---- */
+.cover{padding:54px 0 26px;border-bottom:2px solid var(--ink)}
+.stamp{display:inline-block;font-family:"Cutive Mono",monospace;font-size:.68rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--g-ere);
+  border:1.5px solid var(--g-ere);padding:5px 11px;transform:rotate(-2deg);
+  margin-bottom:26px;opacity:.9}
+.cover h1{font-size:clamp(2.5rem,10.5vw,5.2rem);font-weight:700;margin:0;line-height:.9}
+.cover h1 .it{color:var(--g-ere)}
+.cover .sub{font-family:"Oswald",sans-serif;font-weight:400;letter-spacing:.13em;
+  text-transform:uppercase;font-size:clamp(.85rem,2.5vw,1.02rem);color:var(--ink-soft);margin-top:14px}
+.cover .dek{margin-top:24px;max-width:62ch;font-size:1.05rem}
+.meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:28px;padding-top:22px;border-top:1px solid var(--rule)}
+.meta .stat{min-width:108px}
+.meta .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.85rem;line-height:1;color:var(--ink)}
+.meta .lab{font-family:"Cutive Mono",monospace;font-size:.63rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
+
+/* ---- signature: paradigm fan ---- */
+.fan{display:grid;grid-template-columns:auto 1fr;gap:0;margin:34px 0 4px;border:1px solid var(--rule);
+  background:var(--card);box-shadow:var(--shadow)}
+.fan-stem{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:22px 26px;border-right:1px solid var(--rule);background:var(--card-2)}
+.fan-stem .lab{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+.fan-stem .stem{font-family:"Oswald",sans-serif;font-weight:700;font-size:2.4rem;color:var(--g-are);letter-spacing:.02em}
+.fan-rows{display:grid;grid-template-columns:1fr;padding:6px 0}
+.fan-row{display:grid;grid-template-columns:74px 64px 1fr;align-items:baseline;gap:8px;
+  padding:6px 18px;border-bottom:1px solid var(--rule)}
+.fan-row:last-child{border-bottom:none}
+.fan-row .pr{font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+.fan-row .en{font-family:"Cutive Mono",monospace;font-size:.8rem;color:var(--g-are);font-weight:700}
+.fan-row .fm{font-size:1.02rem}
+.fan-cap{font-family:"Cutive Mono",monospace;font-size:.64rem;letter-spacing:.05em;
+  color:var(--ink-soft);margin:.7em 0 0;line-height:1.5}
+
+/* ---- how-to + legend ---- */
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);margin:30px 0 6px}
+.howto .cell{background:var(--card);padding:15px 16px}
+.howto .k{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px}
+.howto p{font-size:.92rem;margin:0;line-height:1.5}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 2px}
+.chip{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:5px 10px;border:1px solid var(--rule);background:var(--card);
+  display:inline-flex;align-items:center;gap:8px}
+.chip .dot{width:11px;height:11px;border-radius:2px;display:inline-block}
+.chip.g-are .dot{background:var(--g-are)} .chip.g-ere .dot{background:var(--g-ere)}
+.chip.g-ire .dot{background:var(--g-ire)} .chip.g-isc .dot{background:var(--g-isc)}
+
+/* ---- parts ---- */
+.part{padding-top:58px;scroll-margin-top:64px}
+.part-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--ink);
+  padding-bottom:11px;margin-bottom:20px}
+.pnum{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(2rem,6.5vw,3.1rem);
+  color:var(--g-ere);line-height:.8}
+.part-titles{flex:1}
+.part-titles .eyebrow{display:block;margin-bottom:4px}
+
+/* ---- conjugation tables ---- */
+.scroller{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);
+  background:var(--card);box-shadow:var(--shadow);margin:14px 0 6px}
+table.conj{border-collapse:collapse;width:100%;min-width:520px}
+table.conj.matrix{min-width:660px}
+table.conj th,table.conj td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--rule);
+  white-space:nowrap}
+table.conj thead th{vertical-align:bottom;border-bottom:2px solid var(--rule-strong);
+  background:var(--card)}
+table.conj .corner{background:var(--card-2);border-bottom:2px solid var(--rule-strong)}
+.vh-it{display:block;font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;
+  font-size:.98rem;letter-spacing:.02em}
+.vh-fr{display:block;font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.06em;
+  color:var(--ink-soft);margin-top:2px;text-transform:lowercase}
+thead th.g-are .vh-it{color:var(--g-are)} thead th.g-are{border-bottom-color:var(--g-are)}
+thead th.g-ere .vh-it{color:var(--g-ere)} thead th.g-ere{border-bottom-color:var(--g-ere)}
+thead th.g-ire .vh-it{color:var(--g-ire)} thead th.g-ire{border-bottom-color:var(--g-ire)}
+thead th.g-isc .vh-it{color:var(--g-isc)} thead th.g-isc{border-bottom-color:var(--g-isc)}
+.isc{font-family:"Cutive Mono",monospace;font-size:.52rem;letter-spacing:.04em;
+  vertical-align:super;margin-left:3px;opacity:.85}
+.ph{font-family:"Cutive Mono",monospace;font-size:.78rem;color:var(--ink-soft);
+  position:sticky;left:0;background:var(--card);z-index:2}
+.ph-col{font-family:"Cutive Mono",monospace;font-size:.74rem;letter-spacing:.04em;
+  color:var(--ink-soft);text-transform:none}
+.rh{position:sticky;left:0;background:var(--card);z-index:2;border-right:1px solid var(--rule)}
+.v-it{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.92rem;letter-spacing:.02em}
+.v-fr{font-family:"Cutive Mono",monospace;font-size:.58rem;color:var(--ink-soft)}
+.dag{color:var(--g-are);font-size:.7em}
+table.conj td{font-size:1.01rem}
+table.conj tbody tr:hover td{background:var(--card-2)}
+table.conj tbody tr:hover .ph,table.conj tbody tr:hover .rh{background:var(--card-2)}
+table.conj td sup{color:var(--g-ere);font-size:.65em}
+.fnote{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.03em;
+  color:var(--ink-soft);line-height:1.55;margin:.4em 0 1.2em}
+
+/* ---- examples ---- */
+.ex{display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem;font-size:.96rem;
+  margin:.5em 0 .9em;padding-left:13px;border-left:2px solid var(--g-are)}
+.ex .it{font-style:italic;color:var(--ink)}
+.ex .arrow{color:var(--ink-soft)}
+.ex .fr{color:var(--ink-soft)}
+
+/* ---- callouts ---- */
+.note{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--gold);
+  padding:14px 16px;margin:16px 0;font-size:.95rem;box-shadow:var(--shadow)}
+.note--piege{border-left-color:var(--g-ere)}
+.note--ortho{border-left-color:var(--g-ire)}
+.note--retenir{border-left-color:var(--g-are)}
+.note--reflexe{border-left-color:var(--gold);background:var(--card-2)}
+.note-lab{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;display:block;margin-bottom:6px}
+.note--piege .note-lab{color:var(--g-ere)} .note--ortho .note-lab{color:var(--g-ire)}
+.note--retenir .note-lab{color:var(--g-are)} .note--reflexe .note-lab{color:var(--gold)}
+.note-body p:last-child{margin-bottom:0}
+.note-body p{margin:0 0 .55em}
+.note ol{margin:.2em 0 0;padding-left:1.2em} .note li{margin:.3em 0}
+.kbd{font-family:"Cutive Mono",monospace;font-size:.88em;background:var(--paper);
+  border:1px solid var(--rule);padding:0 5px;border-radius:2px}
+
+/* ---- back-to-top link ---- */
+.totop{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);text-decoration:none;display:inline-block;margin-top:26px}
+.totop:hover{color:var(--ink)}
+
+/* ---- footer ---- */
+footer{margin-top:74px;padding-top:24px;border-top:2px solid var(--ink);
+  font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.05em;
+  color:var(--ink-soft);line-height:1.75}
+footer a{color:var(--ink-soft)}
+
+/* ---- a11y + motion ---- */
+:focus-visible{outline:2.5px solid var(--g-ire);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* ---- responsive ---- */
+.scroll-hint{display:none}
+@media(max-width:680px){
+  body{font-size:17px}
+  .meta{gap:16px}
+  .fan{grid-template-columns:1fr}
+  .fan-stem{border-right:none;border-bottom:1px solid var(--rule);padding:16px}
+  .fan-row{grid-template-columns:66px 56px 1fr;padding:6px 14px}
+  .tb-title{font-size:.8rem}
+  .tb-flag{width:22px;height:11px;margin-right:6px}
+  .scroll-hint{display:block;font-family:"Cutive Mono",monospace;font-size:.6rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:14px 0 -2px}
+}
+
+/* ===== tense colour tokens (this sheet's signature) ===== */
+:root{ --t-pp:#9C3A2A; --t-imp:#2E5C72; --rc:var(--ink); }
+.a-pp{--rc:var(--t-pp)} .a-imp{--rc:var(--t-imp)}
+.hl{color:var(--rc);font-weight:600;font-style:normal}
+.pp{color:var(--t-pp);font-weight:600} .imp{color:var(--t-imp);font-weight:600}
+.part.has-accent .pnum{color:var(--rc)}
+.part.has-accent h2{color:var(--rc)}
+
+/* ===== SVG timeline hero ===== */
+.htl{margin:30px 0 4px;background:var(--card);border:1px solid var(--rule);box-shadow:var(--shadow);padding:16px 14px 8px}
+.htl svg{display:block;width:100%;height:auto}
+.tl-band{fill:var(--t-imp);opacity:.14}
+.tl-wave{stroke:var(--t-imp);stroke-width:3;fill:none;stroke-linecap:round}
+.tl-axis{stroke:var(--rule-strong);stroke-width:1.5}
+.tl-arrow{fill:var(--rule-strong)}
+.tl-dot{fill:var(--t-pp)}
+.tl-tick{stroke:var(--t-pp);stroke-width:2.5;stroke-linecap:round}
+.tl-key{font-family:"Oswald",sans-serif;font-weight:600;font-size:16px}
+.tl-key.imp{fill:var(--t-imp)} .tl-key.pp{fill:var(--t-pp)}
+.tl-sub{font-family:"Cutive Mono",monospace;font-size:11px;fill:var(--ink-soft);letter-spacing:.04em}
+.tl-time{font-family:"Cutive Mono",monospace;font-size:11px;fill:var(--ink-soft)}
+
+/* legend dots */
+.chip.a-pp .dot{background:var(--t-pp)} .chip.a-imp .dot{background:var(--t-imp)}
+
+/* ===== usage list ===== */
+.prep-card{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--rc);
+  box-shadow:var(--shadow);padding:4px 0 2px;margin:10px 0 6px}
+.use{display:grid;grid-template-columns:180px 1fr;gap:12px;padding:10px 16px;
+  border-bottom:1px solid var(--rule);align-items:baseline}
+.use:last-child{border-bottom:none}
+.use .fn{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--rc);line-height:1.5}
+.use .ex2 .it{font-style:italic;color:var(--ink);display:block}
+.use .ex2 .fr{color:var(--ink-soft);font-size:.88rem;display:block;margin-top:1px}
+
+/* ===== contrast pairs ===== */
+.pair{background:var(--card);border:1px solid var(--rule);box-shadow:var(--shadow);padding:6px 15px 12px;margin:0 0 14px}
+.pair .v{padding:9px 0 9px 12px;border-left:3px solid}
+.pair .v.imp{border-color:var(--t-imp);--rc:var(--t-imp)}
+.pair .v.pp{border-color:var(--t-pp);--rc:var(--t-pp)}
+.pair .v .it{font-style:italic;color:var(--ink);display:block}
+.pair .v .fr{color:var(--ink-soft);font-size:.88rem;display:block;margin-top:1px}
+.pair .why{font-family:"Cutive Mono",monospace;font-size:.58rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:9px;border-top:1px dotted var(--rule);padding-top:7px;line-height:1.5}
+
+/* ===== reference table ===== */
+table.ref{border-collapse:collapse;width:100%;background:var(--card);border:1px solid var(--rule);box-shadow:var(--shadow)}
+table.ref th,table.ref td{padding:9px 13px;text-align:left;border-bottom:1px solid var(--rule);
+  vertical-align:top;font-size:.95rem;line-height:1.5}
+table.ref thead th{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-soft);border-bottom:2px solid var(--rule-strong);background:var(--card)}
+table.ref td.k{font-family:"Cutive Mono",monospace;font-weight:700;white-space:nowrap;color:var(--ink)}
+table.ref .it{font-style:italic;color:var(--ink)}
+table.ref tbody tr:hover td{background:var(--card-2)}
+
+/* ===== marker chips ===== */
+.colloc{margin:0 0 16px}
+.colloc .ch{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--rc);margin-bottom:8px;display:block}
+.colloc-list{display:flex;flex-wrap:wrap;gap:7px}
+.ci{font-family:"Cutive Mono",monospace;font-size:.82rem;border:1px solid var(--rule);
+  border-left:2px solid var(--rc);background:var(--card);padding:4px 9px;color:var(--ink)}
+
+@media(max-width:680px){
+  .use{grid-template-columns:1fr;gap:2px;padding:9px 14px}
+  .use .fn{font-size:.58rem}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><span class="tb-title"><span class="tb-flag" aria-hidden="true"></span>Passato prossimo <b>vs imperfetto</b></span><details class="menu"><summary>Sommaire ▾</summary><div class="menu-panel"><a href="#principio"><span class="n">1</span>Le principe</a><a href="#prossimo"><span class="n">2</span>Passato prossimo</a><a href="#imperfetto"><span class="n">3</span>Imperfetto</a><a href="#faccia"><span class="n">4</span>Le face-à-face</a><a href="#verbi"><span class="n">5</span>Les verbes qui changent de sens</a><a href="#memo"><span class="n">6</span>Mémo</a></div></details></div></div>
+<div class="wrap">
+<header class="cover" id="top"><span class="stamp">Grammaire italienne · Passato prossimo vs imperfetto · le choix du temps · Fiche de référence</span><h1>Passato prossimo<br><span class="it">vs imperfetto</span></h1><div class="sub">Passato prossimo o imperfetto · l’evento contro lo sfondo · quale tempo scegliere</div><p class="dek">Tu as déjà les formes ; reste à choisir. La règle tient en une image : <span class="imp">l’imperfetto</span> est la <em>ligne</em> (ce qui durait, le décor, l’habitude), <span class="pp">le passato prossimo</span> est le <em>point</em> (ce qui s’est passé, ponctuel et achevé).</p><div class="htl"><svg viewBox="0 0 720 250" role="img" aria-label="Frise : imperfetto la ligne continue, passato prossimo les points"><text class="tl-key imp" x="60" y="40">imperfetto</text><text class="tl-sub" x="186" y="39">la ligne — ce qui durait, le décor, l’habitude</text><rect class="tl-band" x="60" y="78" width="600" height="22" rx="11"/><path class="tl-wave" d="M60 89 C 110 71,160 107,210 89 S 310 71,360 89 S 460 107,510 89 S 610 71,660 89"/><text class="tl-key pp" x="60" y="162">passato prossimo</text><text class="tl-sub" x="246" y="161">les points — ce qui s’est passé, ponctuel, achevé</text><line class="tl-axis" x1="60" y1="208" x2="672" y2="208"/><path class="tl-arrow" d="M672 208 l-9 -4.5 v9 z"/><g><line class="tl-tick" x1="190" y1="208" x2="190" y2="192"/><circle class="tl-dot" cx="190" cy="190" r="8"/><line class="tl-tick" x1="370" y1="208" x2="370" y2="192"/><circle class="tl-dot" cx="370" cy="190" r="8"/><line class="tl-tick" x1="540" y1="208" x2="540" y2="192"/><circle class="tl-dot" cx="540" cy="190" r="8"/></g><text class="tl-time" x="668" y="230" text-anchor="end">tempo →</text></svg></div><p class="fan-cap"><span class="imp">Era sera e pioveva</span> ; a un tratto, <span class="pp">ho sentito un rumore</span>. — Il faisait nuit et il pleuvait ; soudain, j’ai entendu un bruit.</p><div class="meta"><div class="stat"><div class="num">2</div><div class="lab">Temps opposés</div></div><div class="stat"><div class="num">5</div><div class="lab">Verbes qui changent de sens</div></div><div class="stat"><div class="num">1</div><div class="lab">Question test</div></div></div><div class="howto"><div class="cell"><span class="k">La couleur = le temps</span><p><span class="pp">passato prossimo</span> (terracotta, l’événement) vs <span class="imp">imperfetto</span> (bleu, le décor). Chaque exemple les oppose en couleur.</p></div><div class="cell"><span class="k">La question test</span><p>« Qu’est-ce qui s’est passé ? » → passato prossimo. « Quel était le décor ? » → imperfetto.</p></div><div class="cell"><span class="k">Ton français t’aide</span><p>≈ passé composé / imparfait. L’intuition transfère à ~90 % ; le &sect;5 règle le reste.</p></div><div class="cell"><span class="k">Le schéma roi</span><p>Décor en cours + événement qui surgit : <em>dormivo quando è suonato…</em> Le &sect;4.</p></div></div><div class="legend"><span class="chip a-pp"><span class="dot"></span>passato prossimo · l’événement</span><span class="chip a-imp"><span class="dot"></span>imperfetto · le décor</span></div></header><section class="part" id="principio"><div class="part-head"><div class="pnum">1</div><div class="part-titles"><span class="eyebrow">L’opposition de base</span><h2>Le principe</h2></div></div><p class="lead">Une seule question à se poser. <span class="pp">Passato prossimo</span> = l’événement, ce qui s’est passé (le <em>point</em>). <span class="imp">Imperfetto</span> = le décor, ce qui durait ou se répétait (la <em>ligne</em>).</p><table class="ref"><thead><tr><th>Tu te demandes…</th><th>Temps</th></tr></thead><tbody><tr><td class="k">Qu’est-ce qui s’est passé ?</td><td><span class="pp">passato prossimo</span></td></tr><tr><td class="k">Quel était le décor, qu’est-ce qui se passait ?</td><td><span class="imp">imperfetto</span></td></tr><tr><td class="k">Une habitude, ça se répétait ?</td><td><span class="imp">imperfetto</span></td></tr><tr><td class="k">Un événement ponctuel, une fois, achevé ?</td><td><span class="pp">passato prossimo</span></td></tr></tbody></table><h3>Les mots qui te mettent sur la voie</h3><p>Certains marqueurs temporels appellent presque toujours l’un ou l’autre :</p><div class="colloc a-pp"><span class="ch">Signaux du passato prossimo</span><div class="colloc-list"><span class="ci">ieri</span><span class="ci">stamattina</span><span class="ci">l’altro ieri</span><span class="ci">una volta</span><span class="ci">due volte</span><span class="ci">di colpo</span><span class="ci">all’improvviso</span><span class="ci">a un tratto</span><span class="ci">finalmente</span><span class="ci">poi</span><span class="ci">subito</span><span class="ci">nel 2020</span></div></div><div class="colloc a-imp"><span class="ch">Signaux de l’imperfetto</span><div class="colloc-list"><span class="ci">sempre</span><span class="ci">di solito</span><span class="ci">ogni giorno</span><span class="ci">spesso</span><span class="ci">mentre</span><span class="ci">tutti i giorni</span><span class="ci">da bambino</span><span class="ci">quando ero piccolo</span><span class="ci">in quel periodo</span><span class="ci">allora</span></div></div><aside class="note note--retenir"><span class="note-lab">Bonne nouvelle pour un francophone</span><div class="note-body"><p>L’opposition recouvre presque exactement le <strong>passé composé</strong> (≈ passato prossimo) et l’<strong>imparfait</strong> (≈ imperfetto). Ton intuition française te porte à ~90 % ; cette fiche sert à fiabiliser le reste — et à régler les quelques verbes qui changent de sens.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part a-pp has-accent" id="prossimo"><div class="part-head"><div class="pnum">2</div><div class="part-titles"><span class="eyebrow">L’événement</span><h2>Passato prossimo</h2></div></div><p class="lead">Ce qui s’est passé : une action achevée, bornée, qui fait avancer le récit.</p><div class="prep-card"><div class="use"><span class="fn">Action ponctuelle achevée</span><span class="ex2"><span class="it">Ieri <span class="hl">ho mangiato</span> una pizza</span><span class="fr">hier, j’ai mangé une pizza</span></span></div><div class="use"><span class="fn">Succession d’actions</span><span class="ex2"><span class="it"><span class="hl">Sono entrato</span>, <span class="hl">ho acceso</span> la luce e <span class="hl">mi sono seduto</span></span><span class="fr">je suis entré, j’ai allumé et je me suis assis</span></span></div><div class="use"><span class="fn">Durée délimitée</span><span class="ex2"><span class="it"><span class="hl">Ho vissuto</span> a Roma per tre anni</span><span class="fr">j’ai vécu à Rome pendant trois ans</span></span></div><div class="use"><span class="fn">Nombre défini de fois</span><span class="ex2"><span class="it"><span class="hl">L’ho visto</span> tre volte</span><span class="fr">je l’ai vu trois fois</span></span></div><div class="use"><span class="fn">Action soudaine</span><span class="ex2"><span class="it">All’improvviso <span class="hl">è squillato</span> il telefono</span><span class="fr">tout à coup, le téléphone a sonné</span></span></div></div><aside class="note note--ortho"><span class="note-lab">Une durée peut être au passato prossimo</span><div class="note-body"><p>Si la durée est <strong>bornée et terminée</strong>, c’est le passato prossimo, même longue : <em>Ho lavorato lì per dieci anni</em> (j’y ai travaillé dix ans — c’est fini). L’imperfetto, lui, ne borne pas : <em>Lavoravo lì</em> (j’y travaillais — à l’époque, sans fin précise).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part a-imp has-accent" id="imperfetto"><div class="part-head"><div class="pnum">3</div><div class="part-titles"><span class="eyebrow">Le décor</span><h2>Imperfetto</h2></div></div><p class="lead">Ce qui se passait : l’arrière-plan, l’habitude, la description — sans début ni fin marqués.</p><div class="prep-card"><div class="use"><span class="fn">Action en cours</span><span class="ex2"><span class="it">Mentre <span class="hl">mangiavo</span>, <span class="hl">guardavo</span> la TV</span><span class="fr">pendant que je mangeais, je regardais la télé</span></span></div><div class="use"><span class="fn">Habitude, répétition</span><span class="ex2"><span class="it">Da bambino <span class="hl">giocavo</span> a calcio ogni giorno</span><span class="fr">enfant, je jouais au foot tous les jours</span></span></div><div class="use"><span class="fn">Description, décor</span><span class="ex2"><span class="it"><span class="hl">Era</span> una bella giornata, il sole <span class="hl">splendeva</span></span><span class="fr">c’était une belle journée, le soleil brillait</span></span></div><div class="use"><span class="fn">État (physique, mental, âge)</span><span class="ex2"><span class="it"><span class="hl">Ero</span> stanco, <span class="hl">avevo</span> vent’anni</span><span class="fr">j’étais fatigué, j’avais vingt ans</span></span></div><div class="use"><span class="fn">Heure, date</span><span class="ex2"><span class="it"><span class="hl">Erano</span> le tre di notte</span><span class="fr">il était trois heures du matin</span></span></div><div class="use"><span class="fn">Deux actions simultanées</span><span class="ex2"><span class="it">Mentre lui <span class="hl">leggeva</span>, lei <span class="hl">dormiva</span></span><span class="fr">pendant qu’il lisait, elle dormait</span></span></div></div><aside class="note note--retenir"><span class="note-lab">Le réflexe « description »</span><div class="note-body"><p>Dès qu’on <strong>plante le décor</strong> — le temps qu’il faisait, l’apparence de quelqu’un, un état d’esprit, l’heure — c’est l’imperfetto. <em>Aveva i capelli lunghi e sembrava triste</em> (elle avait les cheveux longs et semblait triste).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="faccia"><div class="part-head"><div class="pnum">4</div><div class="part-titles"><span class="eyebrow">Le même contexte, deux temps</span><h2>Le face-à-face</h2></div></div><p class="lead">Les mêmes mots changent de sens selon le temps. Le décor en bleu, l’événement en terracotta.</p><div class="pair"><div class="v imp"><span class="it">Andavo <span class="hl">sempre</span> al mare</span><span class="fr">j’allais toujours à la mer (habitude)</span></div><div class="v pp"><span class="it">Quell’estate <span class="hl">sono andato</span> al mare</span><span class="fr">cet été-là, je suis allé à la mer (une fois)</span></div><div class="why">habitude qui se répète → imperfetto / fait unique achevé → passato prossimo</div></div><div class="pair"><div class="v imp"><span class="it">Da bambino <span class="hl">avevo</span> un cane</span><span class="fr">enfant, j’avais un chien (état qui dure)</span></div><div class="v pp"><span class="it">Ieri <span class="hl">ho avuto</span> un’idea</span><span class="fr">hier, j’ai eu une idée (survenue ponctuelle)</span></div><div class="why">état qui dure → imperfetto / événement ponctuel → passato prossimo</div></div><div class="pair"><div class="v imp"><span class="it"><span class="hl">Faceva</span> freddo e <span class="hl">nevicava</span></span><span class="fr">il faisait froid et il neigeait (décor en cours)</span></div><div class="v pp"><span class="it"><span class="hl">È nevicato</span> tutta la notte</span><span class="fr">il a neigé toute la nuit (fait global, borné)</span></div><div class="why">description en cours → imperfetto / fait délimité → passato prossimo</div></div><div class="pair"><div class="v imp"><span class="it">Mentre <span class="hl">cucinavo</span>, <span class="hl">ascoltavo</span> la radio</span><span class="fr">pendant que je cuisinais, j’écoutais la radio</span></div><div class="v pp"><span class="it"><span class="hl">Ho cucinato</span> e poi <span class="hl">ho mangiato</span></span><span class="fr">j’ai cuisiné puis j’ai mangé</span></div><div class="why">deux actions simultanées en cours → imperfetto / succession d’actions achevées → passato prossimo</div></div><aside class="note note--reflexe"><span class="note-lab">Le schéma roi · décor + événement</span><div class="note-body"><p>Le cas le plus fréquent : une action <span class="imp">en cours</span> (le décor) interrompue par une action <span class="pp">ponctuelle</span> (l’événement).</p><p><em><span class="imp">Dormivo</span> quando <span class="pp">è suonato</span> il telefono</em> — je dormais (décor) quand le téléphone a sonné (événement). <em>Mentre <span class="imp">uscivo</span>, <span class="pp">ho incontrato</span> Luca</em>.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="verbi"><div class="part-head"><div class="pnum">5</div><div class="part-titles"><span class="eyebrow">L’aspect change le sens</span><h2>Les verbes qui changent de sens</h2></div></div><p class="lead">Quelques verbes ne traduisent pas la même chose selon le temps. C’est là que se joue la précision.</p><div class="scroller"><table class="ref" style="min-width:600px"><thead><tr><th>Verbe</th><th><span class="imp">Imperfetto</span></th><th><span class="pp">Passato prossimo</span></th></tr></thead><tbody><tr><td class="k">sapere</td><td><span class="imp">sapevo</span> — je savais (état)</td><td><span class="pp">ho saputo</span> — j’ai appris (à ce moment)</td></tr><tr><td class="k">conoscere</td><td><span class="imp">conoscevo</span> — je connaissais</td><td><span class="pp">ho conosciuto</span> — j’ai rencontré / fait connaissance</td></tr><tr><td class="k">volere</td><td><span class="imp">volevo</span> — je voulais</td><td><span class="pp">ho voluto</span> — j’ai voulu, décidé (non ho voluto = j’ai refusé)</td></tr><tr><td class="k">potere</td><td><span class="imp">potevo</span> — je pouvais (capacité)</td><td><span class="pp">ho potuto</span> — j’ai réussi (effectivement)</td></tr><tr><td class="k">dovere</td><td><span class="imp">dovevo</span> — je devais (obligation)</td><td><span class="pp">ho dovuto</span> — j’ai dû — et je l’ai fait</td></tr></tbody></table></div><aside class="note note--retenir"><span class="note-lab">Là encore, le français t’aide</span><div class="note-body"><p>Ces verbes font la même distinction en français : « je savais » / « j’ai su », « je connaissais » / « j’ai connu », « je pouvais » / « j’ai pu ». L’imperfetto décrit l’<strong>état</strong>, le passato prossimo marque le <strong>moment</strong> où ça bascule.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="memo"><div class="part-head"><div class="pnum">6</div><div class="part-titles"><span class="eyebrow">L’essentiel en trois points</span><h2>Mémo</h2></div></div><aside class="note note--reflexe"><span class="note-lab">Les trois réflexes</span><div class="note-body"><p><strong>1. La question test</strong> — « qu’est-ce qui <span class="pp">s’est passé</span> ? » (passato prossimo) vs « qu’est-ce qui <span class="imp">se passait</span> / quel était le décor ? » (imperfetto).</p><p><strong>2. Ligne ou point</strong> — <span class="imp">imperfetto</span> = la ligne (durée, habitude, description) ; <span class="pp">passato prossimo</span> = le point (événement ponctuel, achevé).</p><p><strong>3. Le schéma roi</strong> — décor en cours (<span class="imp">imperfetto</span>) + événement qui surgit (<span class="pp">passato prossimo</span>) : <em>dormivo quando è suonato il telefono</em>.</p></div></aside><aside class="note note--retenir"><span class="note-lab">Et le passato remoto ?</span><div class="note-body"><p>À l’écrit (et à l’oral dans le Sud), le <em>passato remoto</em> remplace souvent le passato prossimo pour un fait lointain et révolu (<em>andai, feci, fu</em>). Mais l’opposition avec l’imperfetto reste <strong>identique</strong> : c’est toujours l’événement contre le décor.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><footer>Fiche de référence — passato prossimo vs imperfetto · le choix du temps dans le passé.<br>Pour chaque emploi : un exemple traduit. Révision sur écran, ordinateur ou téléphone.</footer>
+</div>
+<script>
+document.querySelectorAll('.menu-panel a').forEach(function(a){
+  a.addEventListener('click', function(){
+    var d = document.querySelector('details.menu'); if (d) d.open = false;
+  });
+});
+document.addEventListener('click', function(e){
+  var d = document.querySelector('details.menu');
+  if (d && d.open && !d.contains(e.target)) d.open = false;
+});
+</script>
+</body>
+</html>

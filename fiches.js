@@ -85,6 +85,38 @@ window.FICHES = [
     categorie: "Langues",
     description: "di, a, da, in, su, con, per, tra/fra et toutes leurs formes contractées (nel, sul, della, agli…) dans un tableau couleur. Emplois de chaque préposition avec exemple, et le chapitre qui règle le casse-tête : article ou pas (a Roma, in Italia, nel Lazio).",
     date: "2026-06"
+  },
+
+  {
+    titre: "Le gérondif (stare + gerundio, essendo/avendo)",
+    fichier: "gerondif-italien.html",
+    categorie: "Langues",
+    description: "Les trois constructions du gérondif — stare + gerundio (en train de), gérondif simple (en -ant) et composé (essendo/avendo + participe) — chacune avec ses emplois et un exemple. Et surtout le piège franco-italien : quand le français dit « -ant » mais que l'italien refuse le gérondif.",
+    date: "2026-06"
+  },
+
+  {
+    titre: "Les pronoms (COD, COI, combinés, ci & ne)",
+    fichier: "pronoms-italien.html",
+    categorie: "Langues",
+    description: "Les quatre séries de pronoms — directs, indirects, toniques, plus ci et ne — chacune avec sa couleur et ses emplois. Le tableau des formes combinées (me lo, glielo, te ne) décomposées en deux morceaux colorés, le piège gli/le, et les règles de place. Le cœur de la difficulté italienne.",
+    date: "2026-06"
+  },
+
+  {
+    titre: "Passato prossimo vs imperfetto (le choix du temps)",
+    fichier: "passato-imperfetto-italien.html",
+    categorie: "Langues",
+    description: "Non pas les formes mais le choix : l'événement (passato prossimo, en terracotta) contre le décor (imperfetto, en bleu). Les emplois de chacun, des paires minimales qui font basculer le sens, les verbes qui changent de sens (sapevo / ho saputo), et la frise « ligne vs points ».",
+    date: "2026-06"
+  },
+
+  {
+    titre: "Le subjonctif : quand l'employer (congiuntivo)",
+    fichier: "subjonctif-italien.html",
+    categorie: "Langues",
+    description: "Non pas les formes mais le déclenchement : le déclencheur (terracotta) qui impose le congiuntivo (vert), face à l'indicatif (bleu) du fait certain. Les familles de déclencheurs, les conjonctions, les pièges franco-italiens (penso che + subjonctif !), la concordance des temps et l'hypothèse en se + congiuntivo.",
+    date: "2026-06"
   }
 
   // ,{ titre: "...", fichier: "...", categorie: "...", description: "...", date: "..." }

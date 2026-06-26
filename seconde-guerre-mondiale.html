@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1939–1945 — La Seconde Guerre mondiale · Dossier complet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E4DBC5; --card:#EFE8D6; --card-2:#E9E0CB;
+  --ink:#232820; --ink-soft:#56594B;
+  --central:#5C6A50; --allied:#8A3324; --slate:#3C5A68; --brass:#947726;
+  --rule:rgba(35,40,32,.18); --rule-strong:rgba(35,40,32,.4);
+  --shadow:0 1px 0 rgba(35,40,32,.06), 0 8px 24px -16px rgba(35,40,32,.5);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Spectral",Georgia,serif;font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
+.contours{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5}
+.wrap{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:0 22px 120px}
+
+.eyebrow{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;line-height:1.08;text-transform:uppercase}
+h2{font-size:clamp(1.5rem,4.4vw,2.15rem);margin:0 0 .15em}
+h3{font-size:1.18rem;font-weight:500;letter-spacing:.04em;margin:1.7em 0 .4em}
+p{margin:0 0 1em}
+a{color:var(--slate);text-decoration-thickness:1px;text-underline-offset:2px}
+strong{font-weight:600}
+em{color:var(--ink-soft)}
+.lead{font-size:1.08rem}
+
+.cover{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
+.stamp{display:inline-block;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--allied);border:1.5px solid var(--allied);padding:5px 11px;transform:rotate(-2.5deg);margin-bottom:26px;opacity:.85}
+.cover h1{font-size:clamp(2.3rem,8.5vw,4.6rem);font-weight:700;margin:0;line-height:.95}
+.cover .years{color:var(--allied)}
+.cover .sub{font-family:"Oswald",sans-serif;font-weight:400;letter-spacing:.16em;text-transform:uppercase;font-size:clamp(.85rem,2.6vw,1.05rem);color:var(--ink-soft);margin-top:14px}
+.cover .dek{margin-top:26px;max-width:60ch;font-size:1.06rem}
+.metarow{display:flex;flex-wrap:wrap;gap:26px;margin-top:30px;padding-top:22px;border-top:1px solid var(--rule)}
+.metarow .stat{min-width:118px}
+.metarow .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.9rem;line-height:1;color:var(--ink)}
+.metarow .lab{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
+
+.toc{margin:34px 0 8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.toc a{background:var(--card);text-decoration:none;color:var(--ink);padding:16px 16px;display:block;transition:background .15s}
+.toc a:hover,.toc a:focus-visible{background:var(--card-2)}
+.toc .n{font-family:"Cutive Mono",monospace;color:var(--allied);font-size:.75rem;letter-spacing:.1em}
+.toc .t{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.95rem;letter-spacing:.03em;display:block;margin-top:4px}
+
+.part{padding-top:56px;scroll-margin-top:16px}
+.part-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:22px}
+.part-num{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(2.2rem,7vw,3.4rem);color:var(--allied);line-height:.8}
+.part-titles{flex:1}
+.part-titles .eyebrow{display:block;margin-bottom:4px}
+
+details.dossier{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--central);margin:14px 0;box-shadow:var(--shadow)}
+details.dossier[data-side="allied"]{border-left-color:var(--allied)}
+details.dossier[data-side="slate"]{border-left-color:var(--slate)}
+details.dossier[data-side="brass"]{border-left-color:var(--brass)}
+details.dossier>summary{cursor:pointer;list-style:none;padding:15px 18px;display:flex;align-items:center;gap:12px;font-family:"Oswald",sans-serif;font-weight:500;letter-spacing:.03em;font-size:1.05rem;text-transform:uppercase}
+details.dossier>summary::-webkit-details-marker{display:none}
+details.dossier>summary .chev{margin-left:auto;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.12em;color:var(--ink-soft);border:1px solid var(--rule);padding:3px 8px;white-space:nowrap;transition:.18s}
+details.dossier[open]>summary .chev{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+details.dossier>summary .tag{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;color:#fff;background:var(--central)}
+details.dossier[data-side="allied"]>summary .tag{background:var(--allied)}
+details.dossier[data-side="slate"]>summary .tag{background:var(--slate)}
+details.dossier[data-side="brass"]>summary .tag{background:var(--brass)}
+.dossier-body{padding:2px 18px 18px;border-top:1px solid var(--rule)}
+.dossier-body p:first-child{margin-top:14px}
+
+.timeline{position:relative;margin:30px 0 10px;padding:8px 0}
+.timeline::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:0;border-left:2px dashed var(--rule-strong);transform:translateX(-50%)}
+.tl-year{position:relative;text-align:center;margin:26px 0 14px;z-index:2}
+.tl-year span{font-family:"Oswald",sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.12em;background:var(--ink);color:var(--paper);padding:5px 16px;display:inline-block}
+.tl-event{position:relative;width:50%;padding:0 30px 0 0;margin:10px 0;z-index:2}
+.tl-event.right{margin-left:50%;padding:0 0 0 30px}
+.tl-event::before{content:"";position:absolute;top:18px;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2.5px solid var(--central)}
+.tl-event.left::before{right:-6px}
+.tl-event.right::before{left:-6px}
+.tl-event[data-c="allied"]::before{border-color:var(--allied)}
+.tl-event[data-c="slate"]::before{border-color:var(--slate)}
+.tl-card{background:var(--card);border:1px solid var(--rule);padding:0;box-shadow:var(--shadow)}
+.tl-card>summary{list-style:none;cursor:pointer;padding:12px 14px;display:block}
+.tl-card>summary::-webkit-details-marker{display:none}
+.tl-card .date{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;color:var(--allied);text-transform:uppercase}
+.tl-card .ti{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.98rem;letter-spacing:.02em;margin-top:3px;display:block}
+.tl-card .detail{padding:0 14px 14px;font-size:.94rem;line-height:1.55;color:var(--ink)}
+.tl-card[open] .ti{color:var(--allied)}
+
+.regimes{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:14px;margin:22px 0}
+.regime{background:var(--card);border:1px solid var(--rule);border-top:4px solid var(--brass);padding:17px 16px;box-shadow:var(--shadow)}
+.regime[data-c="allied"]{border-top-color:var(--allied)}
+.regime[data-c="central"]{border-top-color:var(--central)}
+.regime[data-c="slate"]{border-top-color:var(--slate)}
+.regime .rname{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;font-size:1.08rem;letter-spacing:.03em}
+.regime .rmeta{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin:5px 0 11px;line-height:1.5}
+.regime ul{margin:0;padding-left:1.05em;font-size:.9rem;line-height:1.5}
+.regime li{margin:.3em 0}
+
+.chart{margin:22px 0;border:1px solid var(--rule);background:var(--card);padding:20px 18px;box-shadow:var(--shadow)}
+.bar-row{display:grid;grid-template-columns:118px 1fr 70px;align-items:center;gap:10px;margin:9px 0;font-size:.9rem}
+.bar-row .name{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.04em;text-align:right;color:var(--ink)}
+.bar-track{height:18px;background:var(--card-2);position:relative;border:1px solid var(--rule)}
+.bar-fill{height:100%;background:var(--allied);width:0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.bar-row .val{font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+.chart .ctitle{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.03em;font-size:1rem;margin-bottom:14px}
+.chart .note{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.05em;color:var(--ink-soft);margin-top:14px;line-height:1.5}
+
+.note-box{background:var(--card-2);border-left:4px solid var(--brass);padding:14px 16px;margin:16px 0;font-size:.96rem}
+.note-box .lab{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:5px}
+.note-box.grave{border-left-color:var(--allied)}
+.note-box.grave .lab{color:var(--allied)}
+
+.quiz{background:var(--card);border:1px dashed var(--rule-strong);padding:20px 18px;margin:26px 0;box-shadow:var(--shadow)}
+.quiz-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.quiz-head .lab{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--allied)}
+.quiz-head .score{margin-left:auto;font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+.q{margin:18px 0;padding-top:16px;border-top:1px solid var(--rule)}
+.q:first-of-type{border-top:none;padding-top:4px}
+.q .qtext{font-family:"Oswald",sans-serif;font-weight:400;font-size:1.04rem;letter-spacing:.01em;margin-bottom:11px;text-transform:none}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{text-align:left;font-family:"Spectral",serif;font-size:.96rem;color:var(--ink);background:var(--paper);border:1px solid var(--rule);padding:10px 13px;cursor:pointer;transition:.12s;line-height:1.4}
+.opt:hover:not(:disabled){border-color:var(--ink);background:var(--card-2)}
+.opt:disabled{cursor:default}
+.opt.correct{background:#5C6A50;color:#fff;border-color:#4a553f}
+.opt.wrong{background:#8A3324;color:#fff;border-color:#6f2a1d}
+.opt.dim{opacity:.5}
+.explain{display:none;margin-top:11px;padding:11px 13px;background:var(--card-2);border-left:3px solid var(--brass);font-size:.9rem;line-height:1.55}
+.explain.show{display:block}
+.explain .e-lab{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
+
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:22px 0}
+.flip{background:var(--card);border:1px solid var(--rule);padding:0;cursor:pointer;min-height:118px;display:flex;flex-direction:column;box-shadow:var(--shadow);text-align:left;font-family:inherit;color:inherit}
+.flip .face{padding:15px 15px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.flip .q-face{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.98rem;letter-spacing:.02em}
+.flip .a-face{display:none;font-size:.9rem;line-height:1.5}
+.flip.flipped .q-face{display:none}
+.flip.flipped .a-face{display:block}
+.flip .hint{font-family:"Cutive Mono",monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding:8px 15px;border-top:1px solid var(--rule)}
+.flip.flipped .hint{color:var(--brass)}
+
+footer{margin-top:72px;padding-top:24px;border-top:2px solid var(--ink);font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.06em;color:var(--ink-soft);line-height:1.7}
+
+:focus-visible{outline:2.5px solid var(--slate);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+@media(max-width:640px){
+  body{font-size:17px}
+  .timeline::before{left:13px}
+  .tl-event,.tl-event.right{width:100%;margin-left:0;padding:0 0 0 34px}
+  .tl-event.left::before,.tl-event.right::before{left:8px;right:auto}
+  .tl-year{text-align:left}
+  .bar-row{grid-template-columns:92px 1fr 58px}
+  .bar-row .name{font-size:.64rem}
+  .metarow{gap:18px}
+}
+</style>
+</head>
+<body>
+
+<svg class="contours" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g fill="none" stroke="#232820" stroke-width="1" opacity="0.06">
+    <path d="M-50,200 C200,140 380,300 600,250 S1000,140 1260,230"/>
+    <path d="M-50,260 C220,210 400,360 620,310 S1010,210 1260,300"/>
+    <path d="M-50,520 C180,460 420,600 640,540 S1030,440 1260,520"/>
+    <path d="M-50,580 C200,540 430,660 650,610 S1040,520 1260,600"/>
+    <path d="M-50,900 C240,840 400,980 620,930 S1010,830 1260,910"/>
+    <path d="M-50,960 C220,920 420,1040 640,1000 S1030,900 1260,980"/>
+    <path d="M-50,1240 C200,1180 410,1320 630,1270 S1020,1180 1260,1260"/>
+    <path d="M-50,1300 C220,1260 430,1380 650,1340 S1040,1250 1260,1330"/>
+    <circle cx="600" cy="400" r="120"/><circle cx="600" cy="400" r="180"/><circle cx="600" cy="400" r="250"/>
+  </g>
+</svg>
+
+<div class="wrap">
+
+  <!-- COVER -->
+  <header class="cover">
+    <span class="stamp">Dossier · Histoire &amp; Géopolitique · Fiche de révision</span>
+    <h1>La Seconde Guerre<br>mondiale <span class="years">1939–1945</span></h1>
+    <div class="sub">La guerre la plus meurtrière de l'histoire</div>
+    <p class="dek">Six années d'un conflit planétaire, total et idéologique, bien plus meurtrier que le précédent&nbsp;: plus de 60 millions de morts, en majorité des civils. Une guerre d'anéantissement marquée par la Shoah, qui s'achève sur un monde bouleversé — deux superpuissances, un nouvel ordre international, et l'entrée dans l'âge nucléaire. Ce dossier consacre une <strong>partie entière à la France</strong> dans la tourmente.</p>
+    <div class="metarow">
+      <div class="stat"><div class="num">6</div><div class="lab">Années de guerre</div></div>
+      <div class="stat"><div class="num">~60 M</div><div class="lab">Morts (estim.)</div></div>
+      <div class="stat"><div class="num">6 M</div><div class="lab">Victimes de la Shoah</div></div>
+      <div class="stat"><div class="num">2</div><div class="lab">Superpuissances</div></div>
+    </div>
+
+    <nav class="toc" aria-label="Sommaire">
+      <a href="#p1"><span class="n">PARTIE I</span><span class="t">L'embrasement · 1939–42</span></a>
+      <a href="#p2"><span class="n">PARTIE II</span><span class="t">Tournant &amp; victoire</span></a>
+      <a href="#p3"><span class="n">PARTIE III</span><span class="t">Guerre d'anéantissement</span></a>
+      <a href="#p4"><span class="n">PARTIE IV</span><span class="t">La France dans la tourmente</span></a>
+      <a href="#p5"><span class="n">PARTIE V</span><span class="t">Bilan &amp; nouvel ordre</span></a>
+    </nav>
+  </header>
+
+  <!-- PARTIE I -->
+  <section class="part" id="p1">
+    <div class="part-head">
+      <div class="part-num">I</div>
+      <div class="part-titles">
+        <span class="eyebrow">1939–1942</span>
+        <h2>L'embrasement&nbsp;: une guerre mondiale et totale</h2>
+      </div>
+    </div>
+
+    <p class="lead">Là où la Grande Guerre fut surtout européenne, la Seconde est d'emblée <strong>planétaire</strong>, <strong>totale</strong> et <strong>idéologique</strong>. Pendant trois ans, les puissances de l'<strong>Axe</strong> (Allemagne, Italie, Japon) semblent invincibles et dominent l'Europe et l'Asie. Comprendre cette première phase, c'est comprendre comment une guerre déclenchée en Pologne est devenue mondiale.</p>
+
+    <h3>La guerre éclair (1939–1940)</h3>
+    <details class="dossier" data-side="central">
+      <summary><span class="tag">1939–40</span> Le Blitzkrieg&nbsp;: l'Axe à l'offensive <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>L'Allemagne inaugure une nouvelle manière de combattre&nbsp;: la <strong>Blitzkrieg</strong> («&nbsp;guerre éclair&nbsp;»), fondée sur la rapidité des chars et de l'aviation. La <strong>Pologne</strong> tombe en quelques semaines (sept. 1939). Après une «&nbsp;<strong>drôle de guerre</strong>&nbsp;» de plusieurs mois sans combats majeurs à l'Ouest, l'offensive de mai-juin 1940 écrase les Pays-Bas, la Belgique et la <strong>France</strong> (voir partie IV).</p>
+        <p>Seul le Royaume-Uni résiste. Lors de la <strong>bataille d'Angleterre</strong> (été 1940), la RAF repousse l'aviation allemande&nbsp;: c'est le <strong>premier échec d'Hitler</strong>. L'invasion de l'île est abandonnée.</p>
+      </div>
+    </details>
+
+    <h3>La mondialisation du conflit (1941)</h3>
+    <details class="dossier" data-side="central">
+      <summary><span class="tag">Juin 1941</span> Barbarossa&nbsp;: l'Allemagne attaque l'URSS <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Rompant le pacte de 1939, Hitler lance l'<strong>opération Barbarossa</strong> contre l'URSS&nbsp;: la plus grande invasion de l'histoire. Les Allemands progressent jusqu'aux portes de Moscou, mais l'<strong>immensité du territoire</strong>, l'<strong>hiver russe</strong> et la résistance soviétique enrayent l'offensive. Le front de l'Est deviendra le plus meurtrier de toute la guerre.</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">Déc. 1941</span> Pearl Harbor&nbsp;: l'entrée des États-Unis <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Le 7 décembre 1941, le <strong>Japon attaque par surprise</strong> la base américaine de <strong>Pearl Harbor</strong> (Hawaï). Les États-Unis, jusque-là neutres, entrent aussitôt en guerre. Le conflit est désormais <strong>réellement mondial</strong>&nbsp;: l'Axe (Allemagne, Italie, Japon) affronte les <strong>Alliés</strong> (Royaume-Uni, URSS, États-Unis et leurs partenaires).</p>
+      </div>
+    </details>
+
+    <div class="note-box">
+      <span class="lab">À retenir</span>
+      Trois bascules font de 1941 l'année charnière de la première phase&nbsp;: l'Allemagne s'enlise à l'<strong>Est</strong> (URSS), et l'entrée des <strong>États-Unis</strong> donne aux Alliés une puissance industrielle décisive. En 1942, l'Axe est à son <strong>apogée</strong> territorial… mais les forces qui le vaincront sont désormais toutes en guerre.
+    </div>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie I</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Qu'est-ce que la Blitzkrieg&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Une ligne de tranchées fortifiées</button>
+          <button class="opt">Une « guerre éclair » fondée sur la vitesse des chars et de l'aviation</button>
+          <button class="opt">Un traité de paix germano-soviétique</button>
+          <button class="opt">Le plan de débarquement allié</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>La Blitzkrieg mise sur la rapidité et la coordination chars-aviation pour percer et encercler. Elle permet à l'Allemagne d'écraser la Pologne, puis la France, en quelques semaines.</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Quel événement fait entrer les États-Unis dans la guerre&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">L'attaque japonaise de Pearl Harbor (déc. 1941)</button>
+          <button class="opt">L'invasion de la Pologne</button>
+          <button class="opt">La bataille de Stalingrad</button>
+          <button class="opt">Le débarquement de Normandie</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Le 7 décembre 1941, le Japon attaque Pearl Harbor. Les États-Unis entrent en guerre&nbsp;: le conflit devient pleinement mondial.</div>
+      </div>
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Que marque la bataille d'Angleterre (1940)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">La capitulation britannique</button>
+          <button class="opt">L'entrée en guerre de l'URSS</button>
+          <button class="opt">Le premier échec d'Hitler</button>
+          <button class="opt">La fin de la guerre</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>La RAF repousse la Luftwaffe&nbsp;: Hitler renonce à envahir l'île. C'est son premier vrai revers, et le Royaume-Uni reste un point d'appui essentiel pour les Alliés.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIE II -->
+  <section class="part" id="p2">
+    <div class="part-head">
+      <div class="part-num">II</div>
+      <div class="part-titles">
+        <span class="eyebrow">1942–1945</span>
+        <h2>Le tournant et la victoire alliée</h2>
+      </div>
+    </div>
+
+    <p class="lead">À partir de 1942, la machine s'inverse. Sur tous les fronts, l'Axe est stoppé puis refoulé. La <strong>supériorité industrielle</strong> des Alliés (l'Amérique, «&nbsp;arsenal des démocraties&nbsp;») et la <strong>résistance soviétique</strong> font la différence. De Stalingrad à Hiroshima, voici la chronologie de la victoire.</p>
+
+    <h3>La chronologie de la guerre</h3>
+    <p>Touche un événement pour en déplier le détail. <span class="eyebrow">Marqueurs&nbsp;: <span style="color:var(--central)">●</span> Axe · <span style="color:var(--allied)">●</span> Alliés · <span style="color:var(--slate)">●</span> Bascule mondiale &amp; diplomatie</span></p>
+
+    <div class="timeline">
+      <div class="tl-year"><span>1939–40</span></div>
+      <div class="tl-event left" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">Sept. 1939</span><span class="ti">Invasion de la Pologne</span></summary>
+          <div class="detail">L'Allemagne envahit la Pologne&nbsp;; la France et le Royaume-Uni déclarent la guerre. Le conflit commence.</div>
+        </details>
+      </div>
+      <div class="tl-event right" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">Mai–juin 1940</span><span class="ti">La chute de la France</span></summary>
+          <div class="detail">La Blitzkrieg perce à l'Ouest&nbsp;: la France est vaincue en six semaines. L'Europe occidentale passe sous domination allemande.</div>
+        </details>
+      </div>
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">Été 1940</span><span class="ti">Bataille d'Angleterre</span></summary>
+          <div class="detail">La RAF repousse l'aviation allemande&nbsp;: premier échec d'Hitler, le Royaume-Uni tient bon.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1941</span></div>
+      <div class="tl-event right" data-c="central">
+        <details class="tl-card">
+          <summary><span class="date">Juin 1941</span><span class="ti">Opération Barbarossa</span></summary>
+          <div class="detail">L'Allemagne envahit l'URSS et rompt le pacte de 1939. Le front de l'Est sera le plus meurtrier de la guerre.</div>
+        </details>
+      </div>
+      <div class="tl-event left" data-c="slate">
+        <details class="tl-card">
+          <summary><span class="date">Déc. 1941</span><span class="ti">Pearl Harbor</span></summary>
+          <div class="detail">Le Japon attaque les États-Unis, qui entrent en guerre. Le conflit devient pleinement mondial.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1942–43</span></div>
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">Juin 1942</span><span class="ti">Midway</span></summary>
+          <div class="detail">Victoire navale américaine&nbsp;: le <strong>tournant du Pacifique</strong>. Le Japon perd l'initiative.</div>
+        </details>
+      </div>
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">Oct.–nov. 1942</span><span class="ti">El Alamein</span></summary>
+          <div class="detail">En Afrique du Nord, les Britanniques stoppent l'Axe&nbsp;: le tournant du front africain.</div>
+        </details>
+      </div>
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">1942–fév. 1943</span><span class="ti">Stalingrad</span></summary>
+          <div class="detail">La bataille la plus décisive de la guerre. L'armée allemande est encerclée et capitule&nbsp;: c'est le <strong>grand tournant</strong>. Désormais, l'URSS avance vers l'Ouest.</div>
+        </details>
+      </div>
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">1943</span><span class="ti">Capitulation de l'Italie</span></summary>
+          <div class="detail">Débarquement allié en Sicile et en Italie, chute de Mussolini&nbsp;: l'Axe se fissure et l'Italie change de camp.</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1944</span></div>
+      <div class="tl-event right" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">6 juin 1944</span><span class="ti">Débarquement de Normandie (D-Day)</span></summary>
+          <div class="detail">Le plus grand débarquement de l'histoire ouvre un <strong>second front</strong> à l'Ouest. La libération de l'Europe occidentale commence.</div>
+        </details>
+      </div>
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">Août 1944</span><span class="ti">Libération de Paris</span></summary>
+          <div class="detail">Pris en étau entre l'Est soviétique et l'Ouest allié, le Reich recule partout. Paris est libérée (voir partie IV).</div>
+        </details>
+      </div>
+
+      <div class="tl-year"><span>1945</span></div>
+      <div class="tl-event right" data-c="slate">
+        <details class="tl-card">
+          <summary><span class="date">Févr. 1945</span><span class="ti">Conférence de Yalta</span></summary>
+          <div class="detail">Churchill, Roosevelt et Staline préparent l'après-guerre et le partage des zones d'influence&nbsp;: déjà les germes de la guerre froide.</div>
+        </details>
+      </div>
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">8 mai 1945</span><span class="ti">Capitulation de l'Allemagne</span></summary>
+          <div class="detail">Berlin tombe aux mains des Soviétiques, Hitler se suicide. L'Allemagne capitule&nbsp;: c'est la victoire en Europe (V-E Day).</div>
+        </details>
+      </div>
+      <div class="tl-event right" data-c="slate">
+        <details class="tl-card">
+          <summary><span class="date">6 &amp; 9 août 1945</span><span class="ti">Hiroshima &amp; Nagasaki</span></summary>
+          <div class="detail">Les États-Unis larguent deux <strong>bombes atomiques</strong> sur le Japon&nbsp;: une arme nouvelle, des dizaines de milliers de morts, et l'entrée du monde dans l'âge nucléaire.</div>
+        </details>
+      </div>
+      <div class="tl-event left" data-c="allied">
+        <details class="tl-card">
+          <summary><span class="date">2 sept. 1945</span><span class="ti">Capitulation du Japon</span></summary>
+          <div class="detail">Le Japon capitule. La Seconde Guerre mondiale est terminée — après six ans et des dizaines de millions de morts.</div>
+        </details>
+      </div>
+    </div>
+
+    <details class="dossier" data-side="allied">
+      <summary><span class="tag">Analyse</span> Pourquoi les Alliés l'emportent-ils&nbsp;? <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Trois grandes raisons&nbsp;: une <strong>supériorité matérielle et industrielle</strong> écrasante (les usines américaines, intactes, inondent les fronts d'armes et d'équipements)&nbsp;; la <strong>résistance et l'effort démesuré de l'URSS</strong>, qui fixe et détruit l'essentiel de l'armée allemande à l'Est&nbsp;; et la <strong>coordination des Alliés</strong> sur plusieurs fronts à la fois, qui disperse les forces de l'Axe. La guerre se gagne aussi à l'arrière, par l'économie.</p>
+      </div>
+    </details>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie II</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Quelle bataille est considérée comme le grand tournant de la guerre en Europe&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">La bataille d'Angleterre</button>
+          <button class="opt">Le débarquement de Normandie</button>
+          <button class="opt">Stalingrad (1942–43)</button>
+          <button class="opt">El Alamein</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>À Stalingrad, l'armée allemande est encerclée et capitule. Après ce désastre, l'initiative passe à l'URSS, qui avance désormais vers l'Ouest. C'est le tournant majeur du conflit.</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Qu'ouvre le débarquement de Normandie (6 juin 1944)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Un second front à l'Ouest</button>
+          <button class="opt">La guerre froide</button>
+          <button class="opt">La capitulation immédiate de l'Allemagne</button>
+          <button class="opt">L'entrée en guerre des États-Unis</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Le D-Day ouvre un second front à l'Ouest&nbsp;: l'Allemagne, déjà pressée à l'Est par l'URSS, est désormais prise en étau. La libération de l'Europe occidentale commence.</div>
+      </div>
+      <div class="q" data-q data-correct="3">
+        <div class="qtext">Comment se termine la guerre contre le Japon&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Par le débarquement de Provence</button>
+          <button class="opt">Par la conférence de Yalta</button>
+          <button class="opt">Par la bataille de Stalingrad</button>
+          <button class="opt">Par les bombes atomiques d'Hiroshima et Nagasaki, puis la capitulation</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Les bombes atomiques (6 et 9 août 1945) précipitent la capitulation japonaise (2 sept. 1945) et font entrer le monde dans l'âge nucléaire.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIE III -->
+  <section class="part" id="p3">
+    <div class="part-head">
+      <div class="part-num">III</div>
+      <div class="part-titles">
+        <span class="eyebrow">Le paroxysme de la violence</span>
+        <h2>Une guerre d'anéantissement</h2>
+      </div>
+    </div>
+
+    <p class="lead">La Seconde Guerre mondiale n'est pas seulement plus vaste&nbsp;: elle est d'une <strong>violence sans précédent</strong>, visant délibérément des populations civiles entières. Au cœur de cette horreur, le régime nazi met en œuvre un <strong>génocide</strong> planifié&nbsp;: la destruction des Juifs d'Europe.</p>
+
+    <h3>La Shoah&nbsp;: le génocide des Juifs</h3>
+    <details class="dossier" data-side="allied">
+      <summary><span class="tag">1941–1945</span> Les étapes de l'extermination <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>La persécution, ancienne (lois de Nuremberg en 1935, Nuit de Cristal en 1938), bascule dans le meurtre de masse à partir de 1941. Avec l'invasion de l'URSS, des unités mobiles (les <strong>Einsatzgruppen</strong>) fusillent des centaines de milliers de Juifs derrière le front&nbsp;: c'est la «&nbsp;<strong>Shoah par balles</strong>&nbsp;».</p>
+        <p>En janvier 1942, la conférence de <strong>Wannsee</strong> organise la «&nbsp;<strong>Solution finale</strong>&nbsp;»&nbsp;: l'extermination systématique et industrielle. Des <strong>camps d'extermination</strong> (Auschwitz-Birkenau, Treblinka…) sont conçus pour tuer en masse, par le gaz. Environ <strong>six millions de Juifs</strong> sont assassinés — près des deux tiers des Juifs d'Europe.</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="brass">
+      <summary><span class="tag">Distinction clé</span> Camp de concentration ≠ camp d'extermination <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Il faut distinguer deux réalités&nbsp;: le <strong>camp de concentration</strong> (détention, travail forcé, mortalité élevée — ex. Dachau, Buchenwald) et le <strong>camp d'extermination</strong>, uniquement destiné au meurtre de masse immédiat (ex. Treblinka). <strong>Auschwitz</strong> combinait les deux fonctions. Cette distinction est essentielle pour comprendre la nature spécifique de la Shoah.</p>
+      </div>
+    </details>
+
+    <div class="note-box grave">
+      <span class="lab">Une violence qui ne s'arrête pas aux Juifs</span>
+      Le régime nazi a aussi persécuté et exterminé d'autres groupes&nbsp;: le génocide des <strong>Tsiganes</strong> (Roms et Sintis), l'assassinat des <strong>handicapés</strong> (programme « T4 »), la mort de millions de <strong>prisonniers soviétiques</strong>, ainsi que des opposants politiques, des homosexuels et d'autres. Plus largement, la guerre a frappé les civils du monde entier&nbsp;: bombardements de villes, massacres, famines.
+    </div>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie III</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Qu'organise la conférence de Wannsee (janvier 1942)&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">La capitulation de l'Allemagne</button>
+          <button class="opt">La « Solution finale » : l'extermination systématique des Juifs</button>
+          <button class="opt">Le débarquement allié</button>
+          <button class="opt">La création de la SDN</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>À Wannsee, les dignitaires nazis coordonnent l'extermination industrielle des Juifs d'Europe — la « Solution finale ». Elle aboutira au meurtre d'environ six millions de personnes.</div>
+      </div>
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Quelle est la différence entre camp de concentration et camp d'extermination&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Aucune, ce sont des synonymes</button>
+          <button class="opt">Le camp d'extermination sert au travail, le camp de concentration au repos</button>
+          <button class="opt">Le camp d'extermination est conçu pour tuer en masse immédiatement</button>
+          <button class="opt">Le camp de concentration n'existait qu'en URSS</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Le camp de concentration est un lieu de détention et de travail forcé&nbsp;; le camp d'extermination est destiné au meurtre de masse immédiat. Auschwitz cumulait les deux fonctions.</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Qu'appelle-t-on la « Shoah par balles »&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Les fusillades de masse menées par les Einsatzgruppes à partir de 1941</button>
+          <button class="opt">Un type de camp d'extermination</button>
+          <button class="opt">Le bombardement des villes allemandes</button>
+          <button class="opt">La bataille de Stalingrad</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Avec l'invasion de l'URSS (1941), des unités mobiles (Einsatzgruppen) fusillent des centaines de milliers de Juifs derrière le front, avant la généralisation des camps d'extermination.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIE IV — LA FRANCE -->
+  <section class="part" id="p4">
+    <div class="part-head">
+      <div class="part-num">IV</div>
+      <div class="part-titles">
+        <span class="eyebrow">1940–1945 · zoom détaillé</span>
+        <h2>La France dans la tourmente</h2>
+      </div>
+    </div>
+
+    <p class="lead">Pour la France, la guerre est un <strong>déchirement</strong>&nbsp;: une défaite-éclair, l'occupation, un régime qui choisit de collaborer — mais aussi une résistance qui se lève. C'est l'un des chapitres les plus douloureux, et les plus débattus, de l'histoire de France.</p>
+
+    <h3>1940&nbsp;: la défaite et la coupure du pays</h3>
+    <details class="dossier" data-side="central">
+      <summary><span class="tag">Mai–juin 1940</span> La débâcle &amp; l'armistice <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>La Blitzkrieg perce le front à <strong>Sedan</strong> et l'armée française s'effondre en six semaines. Sur les routes, c'est l'<strong>exode</strong>&nbsp;: des millions de civils fuient vers le sud. Le maréchal <strong>Pétain</strong>, héros de Verdun, demande l'<strong>armistice</strong>, signé le <strong>22 juin 1940</strong>.</p>
+        <p>Le pays est coupé en deux par une <strong>ligne de démarcation</strong>&nbsp;: une <strong>zone occupée</strong> au nord et sur la façade atlantique, et une «&nbsp;<strong>zone libre</strong>&nbsp;» au sud, administrée depuis <strong>Vichy</strong>.</p>
+      </div>
+    </details>
+
+    <h3>La France déchirée&nbsp;: trois forces en présence</h3>
+    <div class="regimes">
+      <div class="regime" data-c="central">
+        <div class="rname">Vichy &amp; la Collaboration</div>
+        <div class="rmeta">État français · Pétain · dès juill. 1940</div>
+        <ul>
+          <li>Fin de la République</li>
+          <li>« Travail, Famille, Patrie »</li>
+          <li>Collaboration avec l'Allemagne</li>
+          <li>Antisémitisme d'État</li>
+        </ul>
+      </div>
+      <div class="regime" data-c="allied">
+        <div class="rname">La Résistance intérieure</div>
+        <div class="rmeta">En France · clandestine · dès 1940</div>
+        <ul>
+          <li>Réseaux, maquis, sabotages</li>
+          <li>Presse clandestine</li>
+          <li>Unifiée par Jean Moulin</li>
+          <li>Diverse (gaullistes, communistes…)</li>
+        </ul>
+      </div>
+      <div class="regime" data-c="slate">
+        <div class="rname">La France libre</div>
+        <div class="rmeta">Londres · de Gaulle · dès juin 1940</div>
+        <ul>
+          <li>Appel du 18 juin 1940</li>
+          <li>Forces françaises libres (FFL)</li>
+          <li>Ralliement d'une partie de l'Empire</li>
+          <li>Continuer le combat</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Le régime de Vichy &amp; la Collaboration</h3>
+    <details class="dossier" data-side="central">
+      <summary><span class="tag">Juill. 1940</span> Vichy &amp; la « Révolution nationale » <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Le 10 juillet 1940, l'Assemblée vote les <strong>pleins pouvoirs</strong> à Pétain&nbsp;: c'est la <strong>fin de la III<sup>e</sup> République</strong> et la naissance de l'«&nbsp;<strong>État français</strong>&nbsp;». La devise républicaine est remplacée par «&nbsp;<strong>Travail, Famille, Patrie</strong>&nbsp;».</p>
+        <p>Vichy mène une «&nbsp;<strong>Révolution nationale</strong>&nbsp;»&nbsp;: régime <strong>autoritaire</strong>, traditionaliste, antiparlementaire, fondé sur le <strong>culte du Maréchal</strong>. Loin d'être imposé en tout par l'occupant, ce projet est aussi le choix politique d'une partie des élites françaises.</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="allied">
+      <summary><span class="tag">Grave</span> La responsabilité de Vichy dans la Shoah <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>La collaboration est scellée à <strong>Montoire</strong> (octobre 1940), où Pétain serre la main d'Hitler. Mais Vichy va plus loin que la simple soumission&nbsp;: <strong>de sa propre initiative</strong>, et avant toute exigence allemande, il promulgue les <strong>statuts des Juifs</strong> (octobre 1940), qui les excluent de nombreux métiers.</p>
+        <p>Surtout, la <strong>police française</strong> participe activement aux arrestations. Lors de la <strong>rafle du Vél' d'Hiv'</strong> (16-17 juillet 1942), elle arrête à Paris environ <strong>13 000 Juifs</strong>, dont des milliers d'enfants, livrés à la déportation. Au total, <strong>près de 76 000 Juifs</strong> sont déportés de France vers les camps&nbsp;; très peu reviendront. Vichy crée aussi la <strong>Milice</strong> (1943) pour traquer résistants et Juifs, et impose le <strong>STO</strong> (travail forcé en Allemagne).</p>
+      </div>
+    </details>
+
+    <h3>La Résistance &amp; la France libre</h3>
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">18 juin 1940</span> De Gaulle &amp; l'appel à résister <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Refusant l'armistice, le général <strong>de Gaulle</strong> lance depuis Londres, à la radio (<strong>BBC</strong>), l'<strong>appel du 18 juin 1940</strong>&nbsp;: la France a perdu une bataille, mais pas la guerre. Il fonde la <strong>France libre</strong> et les <strong>Forces françaises libres (FFL)</strong>. Une partie de l'<strong>Empire</strong> colonial le rejoint, offrant une base territoriale pour continuer le combat aux côtés des Alliés.</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="allied">
+      <summary><span class="tag">1943</span> Jean Moulin &amp; l'unification de la Résistance <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>À l'intérieur, la <strong>Résistance</strong> est d'abord dispersée&nbsp;: réseaux de renseignement, sabotages, presse clandestine, <strong>maquis</strong>. Elle est <strong>diverse</strong> (gaullistes, communistes — surtout actifs après juin 1941 — chrétiens, etc.). Envoyé par de Gaulle, <strong>Jean Moulin</strong> parvient à l'<strong>unifier</strong> en créant le <strong>Conseil national de la Résistance (CNR)</strong>, réuni pour la première fois en mai 1943. Arrêté peu après, torturé, Moulin meurt&nbsp;: il devient un symbole. Le <strong>programme du CNR</strong> (1944) préparera de grandes réformes d'après-guerre.</p>
+      </div>
+    </details>
+
+    <h3>La Libération &amp; l'héritage (1944)</h3>
+    <p>En 1944, les débarquements de <strong>Normandie</strong> (juin) puis de <strong>Provence</strong> (août), appuyés par l'action des résistants (<strong>FFI</strong>), permettent de libérer le territoire. <strong>Paris est libérée</strong> en août 1944&nbsp;: de Gaulle y défile et installe un <strong>Gouvernement provisoire (GPRF)</strong>, qui rétablit la République. S'ouvre alors l'<strong>épuration</strong> (jugement des collaborateurs). L'héritage est immense&nbsp;: les réformes du programme du CNR (dont la <strong>Sécurité sociale</strong>) et le <strong>droit de vote accordé aux femmes</strong> (1944).</p>
+
+    <div class="note-box grave">
+      <span class="lab">La mémoire&nbsp;: un passé qui ne passe pas</span>
+      Après-guerre, un mythe domine longtemps&nbsp;: celui d'une France presque unanimement résistante, Vichy n'étant qu'une «&nbsp;parenthèse&nbsp;». À partir des années 1970, les historiens révisent cette image et mettent en lumière la réalité de la Collaboration. Il faudra attendre <strong>1995</strong> pour qu'un président (Jacques Chirac) reconnaisse officiellement la <strong>responsabilité de l'État français</strong> dans la déportation des Juifs.
+    </div>
+
+    <div class="flips" aria-label="Cartes à mémoriser — touche pour révéler">
+      <button class="flip" data-flip><div class="face q-face">Que remplace « Travail, Famille, Patrie »&nbsp;?</div><div class="face a-face">La devise républicaine « Liberté, Égalité, Fraternité ». C'est la devise de l'État français de Vichy.</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">La rafle du Vél' d'Hiv' (1942)&nbsp;?</div><div class="face a-face">L'arrestation de ~13 000 Juifs à Paris par la police française, dont des milliers d'enfants, livrés à la déportation.</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">Qui unifie la Résistance intérieure&nbsp;?</div><div class="face a-face">Jean Moulin, envoyé par de Gaulle&nbsp;: il crée le Conseil national de la Résistance (CNR) en 1943.</div><div class="hint">Toucher pour révéler</div></button>
+      <button class="flip" data-flip><div class="face q-face">Une grande avancée de la Libération&nbsp;?</div><div class="face a-face">Le droit de vote accordé aux femmes (1944) et les réformes du programme du CNR (dont la Sécurité sociale).</div><div class="hint">Toucher pour révéler</div></button>
+    </div>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie IV · La France</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Qui demande l'armistice en juin 1940 et dirige l'État français&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Charles de Gaulle</button>
+          <button class="opt">Jean Moulin</button>
+          <button class="opt">Le maréchal Pétain</button>
+          <button class="opt">Léon Blum</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Pétain demande l'armistice (22 juin 1940) et reçoit les pleins pouvoirs (10 juillet), instaurant l'« État français » à Vichy.</div>
+      </div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">En quoi Vichy va-t-il « plus loin » que la simple soumission, concernant les Juifs&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Il promulgue de lui-même des statuts des Juifs et fait participer sa police aux rafles</button>
+          <button class="opt">Il protège les Juifs de la déportation</button>
+          <button class="opt">Il refuse toute collaboration</button>
+          <button class="opt">Il déclare la guerre à l'Allemagne</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Vichy adopte de sa propre initiative les statuts des Juifs (1940) et sa police organise des rafles (Vél' d'Hiv', 1942). ~76 000 Juifs seront déportés de France. D'où la responsabilité reconnue en 1995.</div>
+      </div>
+      <div class="q" data-q data-correct="3">
+        <div class="qtext">Que lance de Gaulle depuis Londres le 18 juin 1940&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Le programme du CNR</button>
+          <button class="opt">La rafle du Vél' d'Hiv'</button>
+          <button class="opt">La Révolution nationale</button>
+          <button class="opt">Un appel à poursuivre la résistance</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>L'appel du 18 juin 1940, à la BBC, fonde la France libre&nbsp;: « la France a perdu une bataille, mais elle n'a pas perdu la guerre ».</div>
+      </div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Quel rôle joue Jean Moulin&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Il dirige le régime de Vichy</button>
+          <button class="opt">Il unifie la Résistance en créant le CNR (1943)</button>
+          <button class="opt">Il commande le débarquement de Normandie</button>
+          <button class="opt">Il signe l'armistice de 1940</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Mandaté par de Gaulle, Jean Moulin unifie les mouvements de résistance au sein du Conseil national de la Résistance (CNR). Arrêté et torturé, il meurt en 1943 et devient un symbole.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTIE V -->
+  <section class="part" id="p5">
+    <div class="part-head">
+      <div class="part-num">V</div>
+      <div class="part-titles">
+        <span class="eyebrow">1945</span>
+        <h2>Un monde bouleversé&nbsp;: bilan &amp; nouvel ordre</h2>
+      </div>
+    </div>
+
+    <p class="lead">La guerre laisse un monde méconnaissable&nbsp;: des dizaines de millions de morts, une Europe en ruines, et un basculement de la puissance. Deux <strong>superpuissances</strong> émergent, et l'humanité tente de tirer les leçons de l'horreur.</p>
+
+    <h3>Le bilan humain&nbsp;: une hécatombe</h3>
+    <p>Avec plus de <strong>60 millions de morts</strong>, dont une majorité de <strong>civils</strong>, c'est le conflit le plus meurtrier de l'histoire. Le bilan est très inégal&nbsp;: l'URSS et l'Asie ont payé le plus lourd tribut.</p>
+
+    <div class="chart" aria-label="Morts par pays durant la Seconde Guerre mondiale">
+      <div class="ctitle">Morts par pays — militaires &amp; civils (estimations)</div>
+      <div class="bar-row"><span class="name">URSS</span><span class="bar-track"><span class="bar-fill" data-w="100"></span></span><span class="val">~27 M</span></div>
+      <div class="bar-row"><span class="name">Chine</span><span class="bar-track"><span class="bar-fill" data-w="65"></span></span><span class="val">~15–20 M</span></div>
+      <div class="bar-row"><span class="name">Allemagne</span><span class="bar-track"><span class="bar-fill" data-w="26"></span></span><span class="val">~7 M</span></div>
+      <div class="bar-row"><span class="name">Pologne</span><span class="bar-track"><span class="bar-fill" data-w="22"></span></span><span class="val">~6 M</span></div>
+      <div class="bar-row"><span class="name">Japon</span><span class="bar-track"><span class="bar-fill" data-w="11"></span></span><span class="val">~3 M</span></div>
+      <div class="bar-row"><span class="name">France</span><span class="bar-track"><span class="bar-fill" data-w="2.2"></span></span><span class="val">~0,6 M</span></div>
+      <div class="bar-row"><span class="name">Royaume-Uni</span><span class="bar-track"><span class="bar-fill" data-w="1.7"></span></span><span class="val">~0,45 M</span></div>
+      <div class="bar-row"><span class="name">États-Unis</span><span class="bar-track"><span class="bar-fill" data-w="1.5"></span></span><span class="val">~0,42 M</span></div>
+      <div class="note">Estimations arrondies (les chiffres varient selon les sources), civils inclus. La Pologne perd près de 6 millions d'habitants, dont environ la moitié de Juifs. Échelle relative à l'URSS.</div>
+    </div>
+
+    <h3>Un nouvel ordre mondial</h3>
+    <details class="dossier" data-side="slate">
+      <summary><span class="tag">1945</span> Deux superpuissances &amp; les germes de la guerre froide <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>L'Europe, ruinée, perd définitivement sa domination mondiale. Deux géants la dépassent&nbsp;: les <strong>États-Unis</strong> et l'<strong>URSS</strong>. Le monde devient <strong>bipolaire</strong>. Dès les conférences de <strong>Yalta</strong> et de <strong>Potsdam</strong> (1945), les désaccords entre alliés d'hier annoncent la future <strong>guerre froide</strong> et la division de l'Europe.</p>
+      </div>
+    </details>
+
+    <details class="dossier" data-side="brass">
+      <summary><span class="tag">1945–48</span> L'ONU, Nuremberg &amp; les droits de l'homme <span class="chev">Ouvrir ▾</span></summary>
+      <div class="dossier-body">
+        <p>Pour éviter qu'une telle guerre ne se reproduise, l'<strong>ONU</strong> est créée en 1945 (en remplacement de la SDN), avec un Conseil de sécurité. Le <strong>procès de Nuremberg</strong> (1945-46) juge les dignitaires nazis et forge une notion nouvelle&nbsp;: le <strong>crime contre l'humanité</strong>. En 1948, la <strong>Déclaration universelle des droits de l'homme</strong> affirme des principes communs à toute l'humanité.</p>
+      </div>
+    </details>
+
+    <div class="note-box">
+      <span class="lab">Synthèse&nbsp;: ce que change la guerre</span>
+      La Seconde Guerre mondiale est à la fois la <strong>guerre la plus meurtrière</strong> de l'histoire, une <strong>rupture morale</strong> (la Shoah) et la <strong>matrice du monde d'après</strong>&nbsp;: bipolarité USA/URSS et guerre froide, création de l'<strong>ONU</strong>, naissance du droit international des droits humains, début de la <strong>décolonisation</strong> et entrée dans l'<strong>âge nucléaire</strong>.
+    </div>
+
+    <div class="quiz" data-quiz>
+      <div class="quiz-head"><span class="lab">Auto-test · Partie V</span><span class="score" data-score>0 / 0</span></div>
+      <div class="q" data-q data-correct="0">
+        <div class="qtext">Quel pays subit les pertes humaines les plus lourdes&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">L'URSS (~27 millions de morts)</button>
+          <button class="opt">Les États-Unis</button>
+          <button class="opt">Le Royaume-Uni</button>
+          <button class="opt">La France</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>L'URSS perd environ 27 millions de personnes&nbsp;: le front de l'Est et la guerre menée contre les civils en font le pays le plus endeuillé, loin devant les autres.</div>
+      </div>
+      <div class="q" data-q data-correct="2">
+        <div class="qtext">Quelle organisation est créée en 1945 pour maintenir la paix&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">La Société des Nations (SDN)</button>
+          <button class="opt">L'Union européenne</button>
+          <button class="opt">L'Organisation des Nations unies (ONU)</button>
+          <button class="opt">L'OTAN</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>L'ONU remplace la SDN, jugée trop faible. Dotée d'un Conseil de sécurité, elle vise à garantir la paix et la sécurité internationales.</div>
+      </div>
+      <div class="q" data-q data-correct="1">
+        <div class="qtext">Quelle notion juridique nouvelle naît au procès de Nuremberg&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Le droit de vote des femmes</button>
+          <button class="opt">Le crime contre l'humanité</button>
+          <button class="opt">La sécurité collective</button>
+          <button class="opt">Le pacte de non-agression</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>Le procès de Nuremberg (1945-46) juge les responsables nazis et consacre la notion de « crime contre l'humanité », fondement du droit pénal international.</div>
+      </div>
+      <div class="q" data-q data-correct="3">
+        <div class="qtext">Quelle est la grande conséquence géopolitique de 1945&nbsp;?</div>
+        <div class="opts">
+          <button class="opt">Le retour de la domination européenne</button>
+          <button class="opt">La fin de tout conflit dans le monde</button>
+          <button class="opt">La création de la SDN</button>
+          <button class="opt">L'émergence de deux superpuissances (USA, URSS) — un monde bipolaire</button>
+        </div>
+        <div class="explain"><span class="e-lab">Explication</span><br>L'Europe ruinée cède la première place aux États-Unis et à l'URSS. Le monde devient bipolaire&nbsp;: c'est le point de départ de la guerre froide.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    DOSSIER — LA SECONDE GUERRE MONDIALE 1939–1945 · Fiche de révision interactive<br>
+    Histoire &amp; géopolitique · Embrasement ▸ Victoire alliée ▸ Anéantissement ▸ La France ▸ Bilan &amp; nouvel ordre<br>
+    Conçu pour révision à l'écran et sur mobile — sections dépliables, frise cliquable, auto-tests.
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  document.querySelectorAll("[data-quiz]").forEach(function(quiz){
+    var scoreEl = quiz.querySelector("[data-score]");
+    var questions = quiz.querySelectorAll("[data-q]");
+    var total = questions.length;
+    var answered = 0, correctCount = 0;
+    scoreEl.textContent = "0 / " + total;
+    questions.forEach(function(q){
+      var correct = parseInt(q.getAttribute("data-correct"), 10);
+      var opts = Array.prototype.slice.call(q.querySelectorAll(".opt"));
+      var explain = q.querySelector(".explain");
+      var locked = false;
+      opts.forEach(function(opt, idx){
+        opt.addEventListener("click", function(){
+          if (locked) return;
+          locked = true; answered++;
+          if (idx === correct) correctCount++;
+          opts.forEach(function(o, i){
+            o.disabled = true;
+            if (i === correct) o.classList.add("correct");
+            else if (i === idx) o.classList.add("wrong");
+            else o.classList.add("dim");
+          });
+          if (explain) explain.classList.add("show");
+          scoreEl.textContent = correctCount + " / " + total + (answered === total ? "  ✓ terminé" : "");
+        });
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-flip]").forEach(function(card){
+    card.setAttribute("aria-pressed","false");
+    card.addEventListener("click", function(){
+      var on = card.classList.toggle("flipped");
+      card.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  });
+
+  var bars = document.querySelectorAll(".bar-fill");
+  var filled = false;
+  function fill(){ if(filled) return; filled = true; bars.forEach(function(b){ b.style.width = (b.getAttribute("data-w")||0) + "%"; }); }
+  var chart = document.querySelector(".chart");
+  if (chart && "IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ fill(); io.disconnect(); } });
+    }, {threshold:0.12});
+    io.observe(chart);
+    setTimeout(fill, 2000);
+  } else { fill(); }
+})();
+</script>
+</body>
+</html>

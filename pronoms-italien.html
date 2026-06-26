@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les pronoms italiens · directs, indirects, combinés, ci & ne · Fiche de référence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ECE5D3; --card:#F4EFE2; --card-2:#E7DEC9;
+  --ink:#23221C; --ink-soft:#595645;
+  --g-are:#3B6E55; --g-ere:#9C3A2A; --g-ire:#2E5C72; --g-isc:#2F6D76;
+  --gold:#8C6E1C; --rule:rgba(35,34,28,.16); --rule-strong:rgba(35,34,28,.34);
+  --shadow:0 1px 0 rgba(35,34,28,.05), 0 10px 26px -18px rgba(35,34,28,.55);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Spectral",Georgia,serif; font-size:18px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px 120px}
+
+/* ---- type ---- */
+.eyebrow{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-soft)}
+h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;
+  line-height:1.08;text-transform:uppercase}
+h2{font-size:clamp(1.55rem,4.6vw,2.25rem);margin:0 0 .12em}
+h3{font-size:1.06rem;font-weight:500;letter-spacing:.05em;color:var(--ink);
+  margin:1.9em 0 .55em;display:flex;align-items:baseline;gap:.55rem}
+h3::after{content:"";flex:1;height:1px;background:var(--rule)}
+p{margin:0 0 1em}
+strong{font-weight:600}
+em{color:var(--ink-soft)}
+a{color:var(--g-ire);text-decoration-thickness:1px;text-underline-offset:2px}
+.lead{font-size:1.07rem}
+
+/* ---- sticky top bar ---- */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(236,229,211,.93);
+  backdrop-filter:saturate(1.1) blur(6px);border-bottom:1px solid var(--rule)}
+.topbar-in{max-width:920px;margin:0 auto;padding:9px 22px;display:flex;
+  align-items:center;gap:14px}
+.tb-title{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;
+  letter-spacing:.06em;font-size:.92rem}
+.tb-title b{color:var(--g-ere)}
+.tb-flag{display:inline-block;width:26px;height:13px;margin-right:9px;vertical-align:-1px;
+  border:1px solid var(--rule);background:linear-gradient(90deg,
+  var(--g-are) 0 33.3%,#f4efe2 33.3% 66.6%,var(--g-ere) 66.6% 100%)}
+details.menu{margin-left:auto;position:relative}
+details.menu>summary{list-style:none;cursor:pointer;font-family:"Cutive Mono",monospace;
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);
+  border:1px solid var(--rule-strong);padding:6px 11px;user-select:none}
+details.menu>summary::-webkit-details-marker{display:none}
+details.menu[open]>summary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.menu-panel{position:absolute;right:0;top:calc(100% + 7px);min-width:230px;
+  background:var(--card);border:1px solid var(--rule-strong);box-shadow:var(--shadow);
+  padding:5px;display:grid;gap:1px}
+.menu-panel a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);
+  padding:9px 11px;font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;
+  font-size:.84rem;letter-spacing:.03em}
+.menu-panel a:hover,.menu-panel a:focus-visible{background:var(--card-2)}
+.menu-panel .n{font-family:"Cutive Mono",monospace;color:var(--g-ere);font-size:.72rem}
+
+/* ---- cover ---- */
+.cover{padding:54px 0 26px;border-bottom:2px solid var(--ink)}
+.stamp{display:inline-block;font-family:"Cutive Mono",monospace;font-size:.68rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--g-ere);
+  border:1.5px solid var(--g-ere);padding:5px 11px;transform:rotate(-2deg);
+  margin-bottom:26px;opacity:.9}
+.cover h1{font-size:clamp(2.5rem,10.5vw,5.2rem);font-weight:700;margin:0;line-height:.9}
+.cover h1 .it{color:var(--g-ere)}
+.cover .sub{font-family:"Oswald",sans-serif;font-weight:400;letter-spacing:.13em;
+  text-transform:uppercase;font-size:clamp(.85rem,2.5vw,1.02rem);color:var(--ink-soft);margin-top:14px}
+.cover .dek{margin-top:24px;max-width:62ch;font-size:1.05rem}
+.meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:28px;padding-top:22px;border-top:1px solid var(--rule)}
+.meta .stat{min-width:108px}
+.meta .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.85rem;line-height:1;color:var(--ink)}
+.meta .lab{font-family:"Cutive Mono",monospace;font-size:.63rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
+
+/* ---- signature: paradigm fan ---- */
+.fan{display:grid;grid-template-columns:auto 1fr;gap:0;margin:34px 0 4px;border:1px solid var(--rule);
+  background:var(--card);box-shadow:var(--shadow)}
+.fan-stem{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:22px 26px;border-right:1px solid var(--rule);background:var(--card-2)}
+.fan-stem .lab{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+.fan-stem .stem{font-family:"Oswald",sans-serif;font-weight:700;font-size:2.4rem;color:var(--g-are);letter-spacing:.02em}
+.fan-rows{display:grid;grid-template-columns:1fr;padding:6px 0}
+.fan-row{display:grid;grid-template-columns:74px 64px 1fr;align-items:baseline;gap:8px;
+  padding:6px 18px;border-bottom:1px solid var(--rule)}
+.fan-row:last-child{border-bottom:none}
+.fan-row .pr{font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+.fan-row .en{font-family:"Cutive Mono",monospace;font-size:.8rem;color:var(--g-are);font-weight:700}
+.fan-row .fm{font-size:1.02rem}
+.fan-cap{font-family:"Cutive Mono",monospace;font-size:.64rem;letter-spacing:.05em;
+  color:var(--ink-soft);margin:.7em 0 0;line-height:1.5}
+
+/* ---- how-to + legend ---- */
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);margin:30px 0 6px}
+.howto .cell{background:var(--card);padding:15px 16px}
+.howto .k{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px}
+.howto p{font-size:.92rem;margin:0;line-height:1.5}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 2px}
+.chip{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:5px 10px;border:1px solid var(--rule);background:var(--card);
+  display:inline-flex;align-items:center;gap:8px}
+.chip .dot{width:11px;height:11px;border-radius:2px;display:inline-block}
+.chip.g-are .dot{background:var(--g-are)} .chip.g-ere .dot{background:var(--g-ere)}
+.chip.g-ire .dot{background:var(--g-ire)} .chip.g-isc .dot{background:var(--g-isc)}
+
+/* ---- parts ---- */
+.part{padding-top:58px;scroll-margin-top:64px}
+.part-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--ink);
+  padding-bottom:11px;margin-bottom:20px}
+.pnum{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(2rem,6.5vw,3.1rem);
+  color:var(--g-ere);line-height:.8}
+.part-titles{flex:1}
+.part-titles .eyebrow{display:block;margin-bottom:4px}
+
+/* ---- conjugation tables ---- */
+.scroller{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);
+  background:var(--card);box-shadow:var(--shadow);margin:14px 0 6px}
+table.conj{border-collapse:collapse;width:100%;min-width:520px}
+table.conj.matrix{min-width:660px}
+table.conj th,table.conj td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--rule);
+  white-space:nowrap}
+table.conj thead th{vertical-align:bottom;border-bottom:2px solid var(--rule-strong);
+  background:var(--card)}
+table.conj .corner{background:var(--card-2);border-bottom:2px solid var(--rule-strong)}
+.vh-it{display:block;font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;
+  font-size:.98rem;letter-spacing:.02em}
+.vh-fr{display:block;font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.06em;
+  color:var(--ink-soft);margin-top:2px;text-transform:lowercase}
+thead th.g-are .vh-it{color:var(--g-are)} thead th.g-are{border-bottom-color:var(--g-are)}
+thead th.g-ere .vh-it{color:var(--g-ere)} thead th.g-ere{border-bottom-color:var(--g-ere)}
+thead th.g-ire .vh-it{color:var(--g-ire)} thead th.g-ire{border-bottom-color:var(--g-ire)}
+thead th.g-isc .vh-it{color:var(--g-isc)} thead th.g-isc{border-bottom-color:var(--g-isc)}
+.isc{font-family:"Cutive Mono",monospace;font-size:.52rem;letter-spacing:.04em;
+  vertical-align:super;margin-left:3px;opacity:.85}
+.ph{font-family:"Cutive Mono",monospace;font-size:.78rem;color:var(--ink-soft);
+  position:sticky;left:0;background:var(--card);z-index:2}
+.ph-col{font-family:"Cutive Mono",monospace;font-size:.74rem;letter-spacing:.04em;
+  color:var(--ink-soft);text-transform:none}
+.rh{position:sticky;left:0;background:var(--card);z-index:2;border-right:1px solid var(--rule)}
+.v-it{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.92rem;letter-spacing:.02em}
+.v-fr{font-family:"Cutive Mono",monospace;font-size:.58rem;color:var(--ink-soft)}
+.dag{color:var(--g-are);font-size:.7em}
+table.conj td{font-size:1.01rem}
+table.conj tbody tr:hover td{background:var(--card-2)}
+table.conj tbody tr:hover .ph,table.conj tbody tr:hover .rh{background:var(--card-2)}
+table.conj td sup{color:var(--g-ere);font-size:.65em}
+.fnote{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.03em;
+  color:var(--ink-soft);line-height:1.55;margin:.4em 0 1.2em}
+
+/* ---- examples ---- */
+.ex{display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem;font-size:.96rem;
+  margin:.5em 0 .9em;padding-left:13px;border-left:2px solid var(--g-are)}
+.ex .it{font-style:italic;color:var(--ink)}
+.ex .arrow{color:var(--ink-soft)}
+.ex .fr{color:var(--ink-soft)}
+
+/* ---- callouts ---- */
+.note{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--gold);
+  padding:14px 16px;margin:16px 0;font-size:.95rem;box-shadow:var(--shadow)}
+.note--piege{border-left-color:var(--g-ere)}
+.note--ortho{border-left-color:var(--g-ire)}
+.note--retenir{border-left-color:var(--g-are)}
+.note--reflexe{border-left-color:var(--gold);background:var(--card-2)}
+.note-lab{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;display:block;margin-bottom:6px}
+.note--piege .note-lab{color:var(--g-ere)} .note--ortho .note-lab{color:var(--g-ire)}
+.note--retenir .note-lab{color:var(--g-are)} .note--reflexe .note-lab{color:var(--gold)}
+.note-body p:last-child{margin-bottom:0}
+.note-body p{margin:0 0 .55em}
+.note ol{margin:.2em 0 0;padding-left:1.2em} .note li{margin:.3em 0}
+.kbd{font-family:"Cutive Mono",monospace;font-size:.88em;background:var(--paper);
+  border:1px solid var(--rule);padding:0 5px;border-radius:2px}
+
+/* ---- back-to-top link ---- */
+.totop{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);text-decoration:none;display:inline-block;margin-top:26px}
+.totop:hover{color:var(--ink)}
+
+/* ---- footer ---- */
+footer{margin-top:74px;padding-top:24px;border-top:2px solid var(--ink);
+  font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.05em;
+  color:var(--ink-soft);line-height:1.75}
+footer a{color:var(--ink-soft)}
+
+/* ---- a11y + motion ---- */
+:focus-visible{outline:2.5px solid var(--g-ire);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* ---- responsive ---- */
+.scroll-hint{display:none}
+@media(max-width:680px){
+  body{font-size:17px}
+  .meta{gap:16px}
+  .fan{grid-template-columns:1fr}
+  .fan-stem{border-right:none;border-bottom:1px solid var(--rule);padding:16px}
+  .fan-row{grid-template-columns:66px 56px 1fr;padding:6px 14px}
+  .tb-title{font-size:.8rem}
+  .tb-flag{width:22px;height:11px;margin-right:6px}
+  .scroll-hint{display:block;font-family:"Cutive Mono",monospace;font-size:.6rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:14px 0 -2px}
+}
+
+/* ===== role colour tokens (this sheet's signature) ===== */
+:root{ --pr-dir:#3B6E55; --pr-ind:#9C3A2A; --pr-ton:#2E5C72; --pr-cine:#8C6E1C; --rc:var(--ink); }
+.r-dir{--rc:var(--pr-dir)} .r-ind{--rc:var(--pr-ind)} .r-ton{--rc:var(--pr-ton)} .r-cine{--rc:var(--pr-cine)}
+.hl{color:var(--rc);font-weight:600;font-style:normal}
+.dir{color:var(--pr-dir);font-weight:600} .ind{color:var(--pr-ind);font-weight:600}
+.ton{color:var(--pr-ton);font-weight:600} .cine{color:var(--pr-cine);font-weight:600}
+.part.has-accent .pnum{color:var(--rc)}
+.part.has-accent h2{color:var(--rc)}
+
+/* ===== combination hero cards ===== */
+.combo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:32px 0 4px}
+.combo{background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--rule-strong);
+  box-shadow:var(--shadow);padding:14px 12px;text-align:center}
+.combo .calc{font-family:"Cutive Mono",monospace;font-size:.86rem;color:var(--ink-soft);margin-bottom:6px}
+.combo .res{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.7rem;letter-spacing:.01em}
+.combo .g2{font-family:"Cutive Mono",monospace;font-size:.6rem;color:var(--ink-soft);margin-top:5px;letter-spacing:.03em}
+
+/* legend dots */
+.chip.r-dir .dot{background:var(--pr-dir)} .chip.r-ind .dot{background:var(--pr-ind)}
+.chip.r-ton .dot{background:var(--pr-ton)} .chip.r-cine .dot{background:var(--pr-cine)}
+
+/* ===== usage list ===== */
+.prep-card{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--rc);
+  box-shadow:var(--shadow);padding:4px 0 2px;margin:10px 0 6px}
+.use{display:grid;grid-template-columns:170px 1fr;gap:12px;padding:10px 16px;
+  border-bottom:1px solid var(--rule);align-items:baseline}
+.use:last-child{border-bottom:none}
+.use .fn{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--rc);line-height:1.5}
+.use .ex2 .it{font-style:italic;color:var(--ink);display:block}
+.use .ex2 .fr{color:var(--ink-soft);font-size:.88rem;display:block;margin-top:1px}
+.subprep{font-family:"Oswald",sans-serif;font-weight:600;text-transform:lowercase;
+  font-size:1.5rem;letter-spacing:.01em;color:var(--rc);margin:1.4em 0 .1em}
+
+/* ===== reference table ===== */
+table.ref{border-collapse:collapse;width:100%;background:var(--card);border:1px solid var(--rule);box-shadow:var(--shadow)}
+table.ref th,table.ref td{padding:9px 13px;text-align:left;border-bottom:1px solid var(--rule);
+  vertical-align:top;font-size:.95rem;line-height:1.5}
+table.ref thead th{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-soft);border-bottom:2px solid var(--rule-strong);background:var(--card)}
+table.ref td.k{font-family:"Cutive Mono",monospace;font-weight:700;white-space:nowrap;color:var(--ink)}
+table.ref .it{font-style:italic;color:var(--ink)}
+table.ref tbody tr:hover td{background:var(--card-2)}
+
+/* ===== combination grid ===== */
+table.prono{border-collapse:collapse;width:100%;min-width:600px}
+table.prono th,table.prono td{padding:9px 12px;text-align:center;border-bottom:1px solid var(--rule);
+  white-space:nowrap;font-family:"Cutive Mono",monospace;font-size:1.02rem}
+table.prono thead th{font-family:"Oswald",sans-serif;font-weight:600;font-size:1rem;
+  border-bottom:2px solid var(--rule-strong);background:var(--card)}
+table.prono .corner{background:var(--card-2);border-bottom:2px solid var(--rule-strong);color:var(--ink-soft)}
+table.prono .rh{position:sticky;left:0;background:var(--card);z-index:2;text-align:left;
+  font-family:"Oswald",sans-serif;font-weight:600;font-size:1.05rem;border-right:1px solid var(--rule)}
+table.prono tbody tr:hover td,table.prono tbody tr:hover .rh{background:var(--card-2)}
+
+@media(max-width:680px){
+  .use{grid-template-columns:1fr;gap:2px;padding:9px 14px}
+  .use .fn{font-size:.58rem}
+  .combo .res{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><span class="tb-title"><span class="tb-flag" aria-hidden="true"></span>Les pronoms <b>italiens</b></span><details class="menu"><summary>Sommaire ▾</summary><div class="menu-panel"><a href="#panorama"><span class="n">1</span>Panorama</a><a href="#diretti"><span class="n">2</span>Pronoms directs (COD)</a><a href="#indiretti"><span class="n">3</span>Pronoms indirects (COI)</a><a href="#tonici"><span class="n">4</span>Pronoms toniques</a><a href="#ci-ne"><span class="n">5</span>Ci et ne</a><a href="#combinati"><span class="n">6</span>Pronoms combinés</a><a href="#posizione"><span class="n">7</span>La place du pronom</a><a href="#memo"><span class="n">8</span>Mémo</a></div></details></div></div>
+<div class="wrap">
+<header class="cover" id="top"><span class="stamp">Grammaire italienne · Les pronoms · directs, indirects, combinés, ci &amp; ne · Fiche de référence</span><h1>Les pronoms<br><span class="it">italiens</span></h1><div class="sub">I pronomi · diretti, indiretti, tonici, combinati · ci e ne</div><p class="dek">Le cœur de la difficulté italienne. Quatre séries selon la fonction — <span class="dir">direct</span>, <span class="ind">indirect</span>, <span class="ton">tonique</span>, plus <span class="cine">ci / ne</span> — chacune avec sa couleur. Et leur point culminant : les formes combinées (<em>me lo, glielo, te ne</em>), montrées ici en deux morceaux colorés.</p><div class="combo-grid"><div class="combo"><div class="calc"><span class="ind">mi</span> + <span class="dir">lo</span></div><div class="res"><span class="ind">me</span> <span class="dir">lo</span></div><div class="g2">tu me le donnes</div></div><div class="combo"><div class="calc"><span class="ind">gli / le</span> + <span class="dir">la</span></div><div class="res"><span class="ind">glie</span><span class="dir">la</span></div><div class="g2">je la lui donne</div></div><div class="combo"><div class="calc"><span class="ind">ti</span> + <span class="dir">ne</span></div><div class="res"><span class="ind">te</span> <span class="dir">ne</span></div><div class="g2">je t’en parle</div></div><div class="combo"><div class="calc"><span class="ind">ci</span> + <span class="dir">lo</span></div><div class="res"><span class="ind">ce</span> <span class="dir">lo</span></div><div class="g2">il nous le dit</div></div></div><p class="fan-cap">Indirect + direct = une seule forme. Le tableau complet est au &sect;6.</p><div class="meta"><div class="stat"><div class="num">4</div><div class="lab">Séries de pronoms</div></div><div class="stat"><div class="num">25</div><div class="lab">Formes combinées</div></div><div class="stat"><div class="num">1</div><div class="lab">Tableau de référence</div></div></div><div class="howto"><div class="cell"><span class="k">La couleur = la fonction</span><p><span class="dir">direct</span> (vert), <span class="ind">indirect</span> (terracotta), <span class="ton">tonique</span> (bleu), <span class="cine">ci / ne</span> (or). Les mêmes formes changent de couleur selon leur rôle.</p></div><div class="cell"><span class="k">gli ou le ?</span><p>À lui = <em>gli</em>, à elle = <em>le</em>. L’italien marque le genre là où le français dit « lui ». Le &sect;3.</p></div><div class="cell"><span class="k">Indirect + direct = un mot</span><p>mi + lo = <em>me lo</em>, gli + lo = <em>glielo</em>. Toutes les combinaisons au &sect;6.</p></div><div class="cell"><span class="k">Où le placer ?</span><p>Avant le verbe conjugué, collé à l’infinitif, au gérondif et à l’impératif. Le &sect;7.</p></div></div><div class="legend"><span class="chip r-dir"><span class="dot"></span>direct · le, la, les</span><span class="chip r-ind"><span class="dot"></span>indirect · à lui, à elle</span><span class="chip r-ton"><span class="dot"></span>tonique · moi, lui</span><span class="chip r-cine"><span class="dot"></span>ci / ne · y, en</span></div></header><section class="part" id="panorama"><div class="part-head"><div class="pnum">1</div><div class="part-titles"><span class="eyebrow">Le système en un coup d'œil</span><h2>Panorama</h2></div></div><p class="lead">Quatre séries de pronoms, une par fonction. La couleur attribuée ici à chacune revient partout, y compris dans la grille des combinaisons.</p><div class="scroller"><table class="ref" style="min-width:560px"><thead><tr><th>Personne</th><th>Sujet</th><th><span class="dir">Direct</span></th><th><span class="ind">Indirect</span></th><th><span class="ton">Tonique</span></th></tr></thead><tbody><tr><td class="k">je</td><td>io</td><td><span class="dir">mi</span></td><td><span class="ind">mi</span></td><td><span class="ton">me</span></td></tr><tr><td class="k">tu</td><td>tu</td><td><span class="dir">ti</span></td><td><span class="ind">ti</span></td><td><span class="ton">te</span></td></tr><tr><td class="k">il</td><td>lui</td><td><span class="dir">lo</span></td><td><span class="ind">gli</span></td><td><span class="ton">lui</span></td></tr><tr><td class="k">elle</td><td>lei</td><td><span class="dir">la</span></td><td><span class="ind">le</span></td><td><span class="ton">lei</span></td></tr><tr><td class="k">nous</td><td>noi</td><td><span class="dir">ci</span></td><td><span class="ind">ci</span></td><td><span class="ton">noi</span></td></tr><tr><td class="k">vous</td><td>voi</td><td><span class="dir">vi</span></td><td><span class="ind">vi</span></td><td><span class="ton">voi</span></td></tr><tr><td class="k">ils / elles</td><td>loro</td><td><span class="dir">li / le</span></td><td><span class="ind">gli</span></td><td><span class="ton">loro</span></td></tr></tbody></table></div><aside class="note note--retenir"><span class="note-lab">Les mêmes formes, deux rôles</span><div class="note-body"><p><strong>mi, ti, ci, vi</strong> servent à la fois de direct (me, te…) et d’indirect (à moi, à toi…) : la couleur indique à chaque fois le rôle. C’est seulement à la 3ᵉ personne que tout se distingue : <span class="dir">lo / la / li / le</span> (direct) vs <span class="ind">gli / le</span> (indirect) vs <span class="ton">lui / lei / loro</span> (tonique).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part r-dir has-accent" id="diretti"><div class="part-head"><div class="pnum">2</div><div class="part-titles"><span class="eyebrow">Le complément d'objet direct</span><h2>Pronoms directs (COD)</h2></div></div><p class="lead">Ils remplacent un objet direct (sans préposition) : <em>le, la, les…</em></p><div class="prep-card"><div class="use"><span class="fn">me, te, nous, vous</span><span class="ex2"><span class="it"><span class="hl">Mi</span> chiami stasera?</span><span class="fr">tu m’appelles ce soir ?</span></span></div><div class="use"><span class="fn">le (lui, une chose)</span><span class="ex2"><span class="it">Conosci Marco? Sì, <span class="hl">lo</span> conosco</span><span class="fr">tu connais Marco ? oui, je le connais</span></span></div><div class="use"><span class="fn">la (elle, une chose)</span><span class="ex2"><span class="it">Vedi la macchina? <span class="hl">La</span> vedo</span><span class="fr">tu vois la voiture ? je la vois</span></span></div><div class="use"><span class="fn">les</span><span class="ex2"><span class="it">Compro i biglietti e <span class="hl">li</span> prendo</span><span class="fr">j’achète les billets et je les prends</span></span></div><div class="use"><span class="fn">« lo » neutre</span><span class="ex2"><span class="it"><span class="hl">Lo</span> so; non <span class="hl">lo</span> capisco</span><span class="fr">je le sais ; je ne le comprends pas</span></span></div></div><aside class="note note--ortho"><span class="note-lab">Accord du participe avec lo / la / li / le</span><div class="note-body"><p>Devant l’auxiliaire <em>avere</em>, le participe s’accorde avec le pronom direct : <em>L’ho vist<strong>a</strong></em> (la = elle), <em>Li ho vist<strong>i</strong></em>, <em>Le ho vist<strong>e</strong></em>. Avec mi / ti / ci / vi, l’accord est facultatif. (lo et la deviennent <em>l’</em> devant voyelle : <em>l’ho visto</em>.)</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part r-ind has-accent" id="indiretti"><div class="part-head"><div class="pnum">3</div><div class="part-titles"><span class="eyebrow">Le complément indirect</span><h2>Pronoms indirects (COI)</h2></div></div><p class="lead">Ils répondent à « à qui ? » — le destinataire (à + personne).</p><div class="prep-card"><div class="use"><span class="fn">à moi, à toi…</span><span class="ex2"><span class="it"><span class="hl">Mi</span> dai una mano?</span><span class="fr">tu me donnes un coup de main ?</span></span></div><div class="use"><span class="fn">à lui</span><span class="ex2"><span class="it">Telefono a Marco → <span class="hl">gli</span> telefono</span><span class="fr">je lui téléphone (à lui)</span></span></div><div class="use"><span class="fn">à elle</span><span class="ex2"><span class="it">Telefono a Maria → <span class="hl">le</span> telefono</span><span class="fr">je lui téléphone (à elle)</span></span></div><div class="use"><span class="fn">à eux / à elles</span><span class="ex2"><span class="it">Parlo ai ragazzi → <span class="hl">gli</span> parlo</span><span class="fr">je leur parle</span></span></div><div class="use"><span class="fn">verbes à datif</span><span class="ex2"><span class="it"><span class="hl">Mi</span> piace; <span class="hl">gli</span> ho chiesto; <span class="hl">le</span> ho risposto</span><span class="fr">ça me plaît ; je lui ai demandé ; je lui ai répondu</span></span></div></div><aside class="note note--piege"><span class="note-lab">Piège franco-italien · gli ou le ?</span><div class="note-body"><p>Là où le français dit « lui » sans distinction, l’italien marque le genre du destinataire : <strong>gli</strong> = à lui, <strong>le</strong> = à elle. <em>Gli parlo</em> (à un homme) / <em>Le parlo</em> (à une femme). C’est l’erreur n° 1 des francophones.</p><p>À l’oral, <strong>gli</strong> sert aussi pour « à eux / à elles » (<em>gli ho detto</em> = je leur ai dit). La forme soignée est <em>ho detto loro</em>, placée <em>après</em> le verbe. Et l’indirect ne déclenche jamais d’accord du participe.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part r-ton has-accent" id="tonici"><div class="part-head"><div class="pnum">4</div><div class="part-titles"><span class="eyebrow">Les pronoms accentués</span><h2>Pronoms toniques</h2></div></div><p class="lead">Autonomes et accentués : après une préposition, ou pour insister.</p><div class="prep-card"><div class="use"><span class="fn">après préposition</span><span class="ex2"><span class="it">con <span class="hl">me</span>, per <span class="hl">te</span>, a <span class="hl">lui</span>, da <span class="hl">lei</span></span><span class="fr">avec moi, pour toi, à lui, chez elle</span></span></div><div class="use"><span class="fn">emphase / contraste</span><span class="ex2"><span class="it">Cercano <span class="hl">me</span>, non <span class="hl">te</span></span><span class="fr">c’est moi qu’ils cherchent, pas toi</span></span></div><div class="use"><span class="fn">comparaison</span><span class="ex2"><span class="it">è più alto di <span class="hl">lui</span></span><span class="fr">il est plus grand que lui</span></span></div><div class="use"><span class="fn">après anche / neanche</span><span class="ex2"><span class="it">Anche <span class="hl">noi</span>; neanche <span class="hl">loro</span></span><span class="fr">nous aussi ; eux non plus</span></span></div></div><aside class="note note--retenir"><span class="note-lab">Atone ou tonique ?</span><div class="note-body"><p><strong>Atone</strong> (mi, lo, gli…) = collé au verbe, neutre : <em>lo vedo</em>. <strong>Tonique</strong> (me, lui…) = autonome, accentué, après préposition ou pour insister : <em>vedo lui</em>. Le réfléchi tonique est <em>sé</em> : <em>pensa solo a sé</em> (il ne pense qu’à lui-même).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="ci-ne"><div class="part-head"><div class="pnum">5</div><div class="part-titles"><span class="eyebrow">Les deux particules</span><h2>Ci et ne</h2></div></div><p class="lead">Deux petits mots qui rendent service partout — grosso modo <em>ci</em> ≈ « y » et <em>ne</em> ≈ « en ».</p><div class="r-cine"><div class="subprep">ci</div><div class="prep-card"><div class="use"><span class="fn">lieu (y, là)</span><span class="ex2"><span class="it">Vai a Roma? Sì, <span class="hl">ci</span> vado</span><span class="fr">tu vas à Rome ? oui, j’y vais</span></span></div><div class="use"><span class="fn">à cela (verbes)</span><span class="ex2"><span class="it">Pensi all’esame? <span class="hl">Ci</span> penso</span><span class="fr">tu penses à l’examen ? j’y pense</span></span></div><div class="use"><span class="fn">nous</span><span class="ex2"><span class="it"><span class="hl">Ci</span> vediamo domani</span><span class="fr">on se voit demain</span></span></div><div class="use"><span class="fn">« il y a »</span><span class="ex2"><span class="it"><span class="hl">C’è</span> un problema; <span class="hl">ci</span> sono novità</span><span class="fr">il y a un problème ; il y a du nouveau</span></span></div></div></div><div class="r-cine"><div class="subprep">ne</div><div class="prep-card"><div class="use"><span class="fn">« en » partitif</span><span class="ex2"><span class="it">Quanti ne vuoi? <span class="hl">Ne</span> voglio due</span><span class="fr">combien en veux-tu ? j’en veux deux</span></span></div><div class="use"><span class="fn">de cela</span><span class="ex2"><span class="it">Parli del film? <span class="hl">Ne</span> parlo</span><span class="fr">tu parles du film ? j’en parle</span></span></div><div class="use"><span class="fn">« en » (provenance)</span><span class="ex2"><span class="it">Esci dall’ufficio? <span class="hl">Ne</span> esco ora</span><span class="fr">tu sors du bureau ? j’en sors maintenant</span></span></div></div></div><aside class="note note--piege"><span class="note-lab">ci ou ne ?</span><div class="note-body"><p><strong>ci</strong> remplace un lieu où l’on va / une chose à laquelle on pense (« y ») : <em>ci vado, ci penso</em>. <strong>ne</strong> remplace « de cela » ou une quantité (« en ») : <em>ne parlo, ne voglio due</em>.</p><p><strong>ne</strong> déclenche l’accord du participe : <em>Ne ho vist<strong>e</strong> due</em> (j’en ai vu deux — des choses féminines).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="combinati"><div class="part-head"><div class="pnum">6</div><div class="part-titles"><span class="eyebrow">Le tableau maître</span><h2>Pronoms combinés</h2></div></div><p class="lead">Quand un indirect et un direct se rencontrent, l’<span class="ind">indirect</span> passe devant et se transforme. Chaque forme se lit en deux morceaux colorés.</p><div class="scroller"><table class="prono"><thead><tr><th class="corner">+</th><th><span class="dir">lo</span></th><th><span class="dir">la</span></th><th><span class="dir">li</span></th><th><span class="dir">le</span></th><th><span class="dir">ne</span></th></tr></thead><tbody><tr><th class="rh"><span class="ind">mi</span></th><td><span class="ind">me</span>&nbsp;<span class="dir">lo</span></td><td><span class="ind">me</span>&nbsp;<span class="dir">la</span></td><td><span class="ind">me</span>&nbsp;<span class="dir">li</span></td><td><span class="ind">me</span>&nbsp;<span class="dir">le</span></td><td><span class="ind">me</span>&nbsp;<span class="dir">ne</span></td></tr><tr><th class="rh"><span class="ind">ti</span></th><td><span class="ind">te</span>&nbsp;<span class="dir">lo</span></td><td><span class="ind">te</span>&nbsp;<span class="dir">la</span></td><td><span class="ind">te</span>&nbsp;<span class="dir">li</span></td><td><span class="ind">te</span>&nbsp;<span class="dir">le</span></td><td><span class="ind">te</span>&nbsp;<span class="dir">ne</span></td></tr><tr><th class="rh"><span class="ind">gli / le</span></th><td><span class="ind">glie</span><span class="dir">lo</span></td><td><span class="ind">glie</span><span class="dir">la</span></td><td><span class="ind">glie</span><span class="dir">li</span></td><td><span class="ind">glie</span><span class="dir">le</span></td><td><span class="ind">glie</span><span class="dir">ne</span></td></tr><tr><th class="rh"><span class="ind">ci</span></th><td><span class="ind">ce</span>&nbsp;<span class="dir">lo</span></td><td><span class="ind">ce</span>&nbsp;<span class="dir">la</span></td><td><span class="ind">ce</span>&nbsp;<span class="dir">li</span></td><td><span class="ind">ce</span>&nbsp;<span class="dir">le</span></td><td><span class="ind">ce</span>&nbsp;<span class="dir">ne</span></td></tr><tr><th class="rh"><span class="ind">vi</span></th><td><span class="ind">ve</span>&nbsp;<span class="dir">lo</span></td><td><span class="ind">ve</span>&nbsp;<span class="dir">la</span></td><td><span class="ind">ve</span>&nbsp;<span class="dir">li</span></td><td><span class="ind">ve</span>&nbsp;<span class="dir">le</span></td><td><span class="ind">ve</span>&nbsp;<span class="dir">ne</span></td></tr></tbody></table></div><aside class="note note--ortho"><span class="note-lab">Les deux transformations</span><div class="note-body"><p><strong>1.</strong> <span class="ind">mi, ti, ci, vi</span> → <em>me, te, ce, ve</em> (le i final devient e) : <em>mi lo dà</em> → <strong>me lo</strong> dà.</p><p><strong>2.</strong> <span class="ind">gli</span> et <span class="ind">le</span> → <em>glie-</em>, soudé en un seul mot : <strong>glielo, gliela, glieli, gliele, gliene</strong>. Le genre du destinataire disparaît : <em>glielo do</em> = je le lui donne (à lui <em>ou</em> à elle).</p></div></aside><aside class="note note--retenir"><span class="note-lab">En contexte</span><div class="note-body"><p><em>Me lo dai?</em> (tu me le donnes ?) · <em>Glielo spiego</em> (je le lui explique) · <em>Te ne parlo domani</em> (je t’en parle demain) · <em>Ce l’ha detto</em> (il nous l’a dit). Les deux pronoms restent toujours ensemble et se déplacent en bloc : <em>voglio dirtelo</em>, <em>dammelo!</em></p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="posizione"><div class="part-head"><div class="pnum">7</div><div class="part-titles"><span class="eyebrow">Avant ou collé ?</span><h2>La place du pronom</h2></div></div><p class="lead">La règle de position, cas par cas.</p><div class="scroller"><table class="ref" style="min-width:560px"><thead><tr><th>Cas</th><th>Position</th><th>Exemple</th></tr></thead><tbody><tr><td class="k">Verbe conjugué</td><td>avant le verbe</td><td><span class="it"><b>lo</b> vedo</span></td></tr><tr><td class="k">Infinitif</td><td>collé à la fin</td><td><span class="it">voglio veder<b>lo</b></span></td></tr><tr><td class="k">Gérondif</td><td>collé à la fin</td><td><span class="it">vedendo<b>lo</b></span></td></tr><tr><td class="k">Impératif (tu, noi, voi)</td><td>collé à la fin</td><td><span class="it">guarda<b>lo</b>! dam<b>melo</b>!</span></td></tr><tr><td class="k">Impératif négatif</td><td>avant <em>ou</em> collé</td><td><span class="it">non <b>lo</b> fare / non far<b>lo</b></span></td></tr><tr><td class="k">Vouvoiement (Lei)</td><td>avant le verbe</td><td><span class="it"><b>lo</b> guardi! mi dica!</span></td></tr><tr><td class="k">Verbe modal</td><td>les deux</td><td><span class="it"><b>lo</b> voglio fare / voglio far<b>lo</b></span></td></tr><tr><td class="k">Ecco</td><td>collé à la fin</td><td><span class="it">ecco<b>lo</b>!</span></td></tr></tbody></table></div><aside class="note note--retenir"><span class="note-lab">L’impératif qui double la consonne</span><div class="note-body"><p>À l’impératif <em>tu</em>, le pronom se colle — et après les formes courtes <em>da’, fa’, di’, va’, sta’</em>, la consonne du pronom double : <em>da’ + mi → <strong>dammi</strong></em>, <em>fa’ + lo → <strong>fallo</strong></em>, <em>di’ + mi → <strong>dimmi</strong></em>, <em>va’ + ci → <strong>vacci</strong></em>. Avec un combiné : <em>da’ + me + lo → <strong>dammelo</strong></em>.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="memo"><div class="part-head"><div class="pnum">8</div><div class="part-titles"><span class="eyebrow">L’essentiel en quatre points</span><h2>Mémo</h2></div></div><aside class="note note--reflexe"><span class="note-lab">Les quatre réflexes</span><div class="note-body"><p><strong>1. Quatre séries</strong> — <span class="dir">direct</span> (lo/la/li/le), <span class="ind">indirect</span> (gli/le), <span class="ton">tonique</span> (lui/lei), et <span class="cine">ci / ne</span>.</p><p><strong>2. gli ou le</strong> — à lui (gli) vs à elle (le) : le français ne marque pas le genre, l’italien si.</p><p><strong>3. Combinés</strong> — l’indirect passe devant ; mi/ti/ci/vi → me/te/ce/ve, et gli/le → glie- (<em>glielo</em>).</p><p><strong>4. Place</strong> — avant le verbe conjugué, collé à l’infinitif / gérondif / impératif (<em>dammelo</em>).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><footer>Fiche de référence — les pronoms italiens · directs, indirects, toniques, combinés, ci &amp; ne.<br>Pour chaque série : ses emplois et un exemple. Révision sur écran, ordinateur ou téléphone.</footer>
+</div>
+<script>
+document.querySelectorAll('.menu-panel a').forEach(function(a){
+  a.addEventListener('click', function(){
+    var d = document.querySelector('details.menu'); if (d) d.open = false;
+  });
+});
+document.addEventListener('click', function(e){
+  var d = document.querySelector('details.menu');
+  if (d && d.open && !d.contains(e.target)) d.open = false;
+});
+</script>
+</body>
+</html>
