@@ -20,6 +20,24 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Spectral",Georgia,serif;font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
 .contours{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5}
 .wrap{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:0 22px 120px}
+/* ---- banniere : barre superieure collante ---- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(228,219,197,.93);backdrop-filter:saturate(1.1) blur(6px);border-bottom:1px solid var(--rule)}
+.topbar-in{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:9px 22px;display:flex;align-items:center;gap:14px}
+.tb-home{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border:1px solid var(--rule-strong);padding:6px 10px;white-space:nowrap;transition:background .15s,color .15s}
+.tb-home:hover,.tb-home:focus-visible{background:var(--ink);color:var(--paper);border-color:var(--ink);outline:none}
+.tb-home .ar{font-size:.95rem;line-height:1}
+.tb-title{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.92rem;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb-title b{color:var(--allied)}
+.tb-mark{display:inline-block;width:24px;height:13px;margin-right:9px;vertical-align:-1px;border:1px solid var(--rule);background:linear-gradient(90deg,var(--allied) 0 33.3%,var(--card) 33.3% 66.6%,var(--slate) 66.6% 100%)}
+details.menu{margin-left:auto;position:relative}
+details.menu>summary{list-style:none;cursor:pointer;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);border:1px solid var(--rule-strong);padding:6px 11px;user-select:none;white-space:nowrap}
+details.menu>summary::-webkit-details-marker{display:none}
+details.menu[open]>summary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.menu-panel{position:absolute;right:0;top:calc(100% + 7px);min-width:260px;background:var(--card);border:1px solid var(--rule-strong);box-shadow:var(--shadow);padding:5px;display:grid;gap:1px;z-index:60}
+.menu-panel a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);padding:9px 11px;font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.82rem;letter-spacing:.03em;line-height:1.2}
+.menu-panel a:hover,.menu-panel a:focus-visible{background:var(--card-2);outline:none}
+.menu-panel .n{font-family:"Cutive Mono",monospace;color:var(--allied);font-size:.72rem;min-width:1.4ch}
+@media(max-width:560px){.tb-title .tb-mark{display:none}.tb-home .lbl{display:none}.tb-title{font-size:.8rem}}
 
 .eyebrow{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
 h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;line-height:1.08;text-transform:uppercase}
@@ -171,6 +189,8 @@ footer{margin-top:72px;padding-top:24px;border-top:2px solid var(--ink);font-fam
   </g>
 </svg>
 
+<!-- banniere -->
+<div class="topbar"><div class="topbar-in"><a class="tb-home" href="index.html"><span class="ar" aria-hidden="true">←</span><span class="lbl">Le Cabinet</span></a><span class="tb-title"><span class="tb-mark" aria-hidden="true"></span>Le <b>Monde</b> depuis 1945</span><details class="menu"><summary>Sommaire ▾</summary><div class="menu-panel"><a href="#p1"><span class="n">1</span>1945 : la naissance de deux blocs</a><a href="#p2"><span class="n">2</span>La guerre froide : un monde bipolaire</a><a href="#p3"><span class="n">3</span>USA & URSS : deux modèles face à face</a><a href="#p4"><span class="n">4</span>La construction européenne</a><a href="#p5"><span class="n">5</span>La fin de la guerre froide & le monde d’après</a></div></details></div></div>
 <div class="wrap">
 
   <!-- COVER -->
