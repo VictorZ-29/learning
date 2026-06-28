@@ -1,0 +1,15 @@
+/* ============================================================================
+   base.css — universal plumbing shared by EVERY page (theme-agnostic).
+   The visual identity (palette, fonts, layout, components) lives in the
+   per-family theme files: theme-histoire.css and theme-langues.css.
+   Keep this file tiny: only put here what is true regardless of how a
+   family chooses to look.
+   ============================================================================ */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+p{margin:0 0 1em}
+
+/* Respect users who prefer reduced motion (applies on every page). */
+@media (prefers-reduced-motion: reduce){
+  *{ scroll-behavior:auto !important; transition:none !important; animation:none !important; }
+}

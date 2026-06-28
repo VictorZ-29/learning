@@ -7,223 +7,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/theme-langues.css">
 <style>
-:root{
-  --paper:#ECE5D3; --card:#F4EFE2; --card-2:#E7DEC9;
-  --ink:#23221C; --ink-soft:#595645;
-  --g-are:#3B6E55; --g-ere:#9C3A2A; --g-ire:#2E5C72; --g-isc:#2F6D76;
-  --gold:#8C6E1C; --rule:rgba(35,34,28,.16); --rule-strong:rgba(35,34,28,.34);
-  --shadow:0 1px 0 rgba(35,34,28,.05), 0 10px 26px -18px rgba(35,34,28,.55);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0; background:var(--paper); color:var(--ink);
-  font-family:"Spectral",Georgia,serif; font-size:18px; line-height:1.6;
-  -webkit-font-smoothing:antialiased; overflow-x:hidden;
-}
-.wrap{max-width:920px;margin:0 auto;padding:0 22px 120px}
-
-/* ---- type ---- */
-.eyebrow{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--ink-soft)}
-h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;
-  line-height:1.08;text-transform:uppercase}
-h2{font-size:clamp(1.55rem,4.6vw,2.25rem);margin:0 0 .12em}
-h3{font-size:1.06rem;font-weight:500;letter-spacing:.05em;color:var(--ink);
-  margin:1.9em 0 .55em;display:flex;align-items:baseline;gap:.55rem}
-h3::after{content:"";flex:1;height:1px;background:var(--rule)}
-p{margin:0 0 1em}
-strong{font-weight:600}
-em{color:var(--ink-soft)}
-a{color:var(--g-ire);text-decoration-thickness:1px;text-underline-offset:2px}
-.lead{font-size:1.07rem}
-
-/* ---- sticky top bar ---- */
-.topbar{position:sticky;top:0;z-index:40;background:rgba(236,229,211,.93);
-  backdrop-filter:saturate(1.1) blur(6px);border-bottom:1px solid var(--rule)}
-.topbar-in{max-width:920px;margin:0 auto;padding:9px 22px;display:flex;
-  align-items:center;gap:14px}
-.tb-title{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;
-  letter-spacing:.06em;font-size:.92rem}
-.tb-title b{color:var(--g-ere)}
-.tb-flag{display:inline-block;width:26px;height:13px;margin-right:9px;vertical-align:-1px;
-  border:1px solid var(--rule);background:linear-gradient(90deg,
-  var(--g-are) 0 33.3%,#f4efe2 33.3% 66.6%,var(--g-ere) 66.6% 100%)}
+/* Page-specific styles for this fiche only. Shared rules live in ../assets/. */
 .tb-home{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border:1px solid var(--rule-strong);padding:6px 10px;white-space:nowrap;transition:background .15s,color .15s}
 .tb-home:hover,.tb-home:focus-visible{background:var(--ink);color:var(--paper);border-color:var(--ink);outline:none}
 .tb-home .ar{font-size:.95rem;line-height:1}
 @media(max-width:560px){.tb-home .lbl{display:none}}
-details.menu{margin-left:auto;position:relative}
-details.menu>summary{list-style:none;cursor:pointer;font-family:"Cutive Mono",monospace;
-  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);
-  border:1px solid var(--rule-strong);padding:6px 11px;user-select:none}
-details.menu>summary::-webkit-details-marker{display:none}
-details.menu[open]>summary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.menu-panel{position:absolute;right:0;top:calc(100% + 7px);min-width:230px;
-  background:var(--card);border:1px solid var(--rule-strong);box-shadow:var(--shadow);
-  padding:5px;display:grid;gap:1px}
-.menu-panel a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);
-  padding:9px 11px;font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;
-  font-size:.84rem;letter-spacing:.03em}
-.menu-panel a:hover,.menu-panel a:focus-visible{background:var(--card-2)}
-.menu-panel .n{font-family:"Cutive Mono",monospace;color:var(--g-ere);font-size:.72rem}
-
-/* ---- cover ---- */
-.cover{padding:54px 0 26px;border-bottom:2px solid var(--ink)}
-.stamp{display:inline-block;font-family:"Cutive Mono",monospace;font-size:.68rem;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--g-ere);
-  border:1.5px solid var(--g-ere);padding:5px 11px;transform:rotate(-2deg);
-  margin-bottom:26px;opacity:.9}
-.cover h1{font-size:clamp(2.5rem,10.5vw,5.2rem);font-weight:700;margin:0;line-height:.9}
-.cover h1 .it{color:var(--g-ere)}
-.cover .sub{font-family:"Oswald",sans-serif;font-weight:400;letter-spacing:.13em;
-  text-transform:uppercase;font-size:clamp(.85rem,2.5vw,1.02rem);color:var(--ink-soft);margin-top:14px}
-.cover .dek{margin-top:24px;max-width:62ch;font-size:1.05rem}
-.meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:28px;padding-top:22px;border-top:1px solid var(--rule)}
-.meta .stat{min-width:108px}
-.meta .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.85rem;line-height:1;color:var(--ink)}
-.meta .lab{font-family:"Cutive Mono",monospace;font-size:.63rem;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
-
-/* ---- signature: paradigm fan ---- */
-.fan{display:grid;grid-template-columns:auto 1fr;gap:0;margin:34px 0 4px;border:1px solid var(--rule);
-  background:var(--card);box-shadow:var(--shadow)}
-.fan-stem{display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:22px 26px;border-right:1px solid var(--rule);background:var(--card-2)}
-.fan-stem .lab{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
-.fan-stem .stem{font-family:"Oswald",sans-serif;font-weight:700;font-size:2.4rem;color:var(--g-are);letter-spacing:.02em}
-.fan-rows{display:grid;grid-template-columns:1fr;padding:6px 0}
-.fan-row{display:grid;grid-template-columns:74px 64px 1fr;align-items:baseline;gap:8px;
-  padding:6px 18px;border-bottom:1px solid var(--rule)}
-.fan-row:last-child{border-bottom:none}
-.fan-row .pr{font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
-.fan-row .en{font-family:"Cutive Mono",monospace;font-size:.8rem;color:var(--g-are);font-weight:700}
-.fan-row .fm{font-size:1.02rem}
-.fan-cap{font-family:"Cutive Mono",monospace;font-size:.64rem;letter-spacing:.05em;
-  color:var(--ink-soft);margin:.7em 0 0;line-height:1.5}
-
-/* ---- how-to + legend ---- */
-.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
-  background:var(--rule);border:1px solid var(--rule);margin:30px 0 6px}
-.howto .cell{background:var(--card);padding:15px 16px}
-.howto .k{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px}
-.howto p{font-size:.92rem;margin:0;line-height:1.5}
-.legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 2px}
-.chip{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.06em;
-  text-transform:uppercase;padding:5px 10px;border:1px solid var(--rule);background:var(--card);
-  display:inline-flex;align-items:center;gap:8px}
-.chip .dot{width:11px;height:11px;border-radius:2px;display:inline-block}
-.chip.g-are .dot{background:var(--g-are)} .chip.g-ere .dot{background:var(--g-ere)}
-.chip.g-ire .dot{background:var(--g-ire)} .chip.g-isc .dot{background:var(--g-isc)}
-
-/* ---- parts ---- */
-.part{padding-top:58px;scroll-margin-top:64px}
-.part-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--ink);
-  padding-bottom:11px;margin-bottom:20px}
-.pnum{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(2rem,6.5vw,3.1rem);
-  color:var(--g-ere);line-height:.8}
-.part-titles{flex:1}
-.part-titles .eyebrow{display:block;margin-bottom:4px}
-
-/* ---- conjugation tables ---- */
-.scroller{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);
-  background:var(--card);box-shadow:var(--shadow);margin:14px 0 6px}
-table.conj{border-collapse:collapse;width:100%;min-width:520px}
-table.conj.matrix{min-width:660px}
-table.conj th,table.conj td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--rule);
-  white-space:nowrap}
-table.conj thead th{vertical-align:bottom;border-bottom:2px solid var(--rule-strong);
-  background:var(--card)}
-table.conj .corner{background:var(--card-2);border-bottom:2px solid var(--rule-strong)}
-.vh-it{display:block;font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;
-  font-size:.98rem;letter-spacing:.02em}
-.vh-fr{display:block;font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.06em;
-  color:var(--ink-soft);margin-top:2px;text-transform:lowercase}
-thead th.g-are .vh-it{color:var(--g-are)} thead th.g-are{border-bottom-color:var(--g-are)}
-thead th.g-ere .vh-it{color:var(--g-ere)} thead th.g-ere{border-bottom-color:var(--g-ere)}
-thead th.g-ire .vh-it{color:var(--g-ire)} thead th.g-ire{border-bottom-color:var(--g-ire)}
-thead th.g-isc .vh-it{color:var(--g-isc)} thead th.g-isc{border-bottom-color:var(--g-isc)}
-.isc{font-family:"Cutive Mono",monospace;font-size:.52rem;letter-spacing:.04em;
-  vertical-align:super;margin-left:3px;opacity:.85}
-.ph{font-family:"Cutive Mono",monospace;font-size:.78rem;color:var(--ink-soft);
-  position:sticky;left:0;background:var(--card);z-index:2}
-.ph-col{font-family:"Cutive Mono",monospace;font-size:.74rem;letter-spacing:.04em;
-  color:var(--ink-soft);text-transform:none}
-.rh{position:sticky;left:0;background:var(--card);z-index:2;border-right:1px solid var(--rule)}
-.v-it{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.92rem;letter-spacing:.02em}
-.v-fr{font-family:"Cutive Mono",monospace;font-size:.58rem;color:var(--ink-soft)}
-.dag{color:var(--g-are);font-size:.7em}
-table.conj td{font-size:1.01rem}
-table.conj tbody tr:hover td{background:var(--card-2)}
-table.conj tbody tr:hover .ph,table.conj tbody tr:hover .rh{background:var(--card-2)}
-table.conj td sup{color:var(--g-ere);font-size:.65em}
-.fnote{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.03em;
-  color:var(--ink-soft);line-height:1.55;margin:.4em 0 1.2em}
-
-/* ---- examples ---- */
-.ex{display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem;font-size:.96rem;
-  margin:.5em 0 .9em;padding-left:13px;border-left:2px solid var(--g-are)}
-.ex .it{font-style:italic;color:var(--ink)}
-.ex .arrow{color:var(--ink-soft)}
-.ex .fr{color:var(--ink-soft)}
-
-/* ---- callouts ---- */
-.note{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--gold);
-  padding:14px 16px;margin:16px 0;font-size:.95rem;box-shadow:var(--shadow)}
-.note--piege{border-left-color:var(--g-ere)}
-.note--ortho{border-left-color:var(--g-ire)}
-.note--retenir{border-left-color:var(--g-are)}
-.note--reflexe{border-left-color:var(--gold);background:var(--card-2)}
-.note-lab{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.14em;
-  text-transform:uppercase;display:block;margin-bottom:6px}
-.note--piege .note-lab{color:var(--g-ere)} .note--ortho .note-lab{color:var(--g-ire)}
-.note--retenir .note-lab{color:var(--g-are)} .note--reflexe .note-lab{color:var(--gold)}
-.note-body p:last-child{margin-bottom:0}
-.note-body p{margin:0 0 .55em}
-.note ol{margin:.2em 0 0;padding-left:1.2em} .note li{margin:.3em 0}
-.kbd{font-family:"Cutive Mono",monospace;font-size:.88em;background:var(--paper);
-  border:1px solid var(--rule);padding:0 5px;border-radius:2px}
-
-/* ---- back-to-top link ---- */
-.totop{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--ink-soft);text-decoration:none;display:inline-block;margin-top:26px}
-.totop:hover{color:var(--ink)}
-
-/* ---- footer ---- */
-footer{margin-top:74px;padding-top:24px;border-top:2px solid var(--ink);
-  font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.05em;
-  color:var(--ink-soft);line-height:1.75}
-footer a{color:var(--ink-soft)}
-
-/* ---- a11y + motion ---- */
-:focus-visible{outline:2.5px solid var(--g-ire);outline-offset:2px}
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-
-/* ---- responsive ---- */
-.scroll-hint{display:none}
-@media(max-width:680px){
-  body{font-size:17px}
-  .meta{gap:16px}
-  .fan{grid-template-columns:1fr}
-  .fan-stem{border-right:none;border-bottom:1px solid var(--rule);padding:16px}
-  .fan-row{grid-template-columns:66px 56px 1fr;padding:6px 14px}
-  .tb-title{font-size:.8rem}
-  .tb-flag{width:22px;height:11px;margin-right:6px}
-  .scroll-hint{display:block;font-family:"Cutive Mono",monospace;font-size:.6rem;
-    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:14px 0 -2px}
-}
-
-/* ===== construction colour tokens (this sheet's signature) ===== */
 :root{ --g-simp:#3B6E55; --g-prog:#2E5C72; --g-comp:#8C6E1C; --g-stop:#9C3A2A; }
-.c-simp{--gc:var(--g-simp)} .c-prog{--gc:var(--g-prog)} .c-comp{--gc:var(--g-comp)} .c-stop{--gc:var(--g-stop)}
+.c-simp{--gc:var(--g-simp)}
+.c-prog{--gc:var(--g-prog)}
+.c-comp{--gc:var(--g-comp)}
+.c-stop{--gc:var(--g-stop)}
 .hl{color:var(--gc);font-weight:600;font-style:normal}
 .part.has-accent .pnum{color:var(--gc)}
 .part.has-accent h2{color:var(--gc)}
-
-/* ===== construction hero cards ===== */
 .cstr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:32px 0 4px}
 .cstr{background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--gc);
   box-shadow:var(--shadow);padding:15px 14px;text-align:center}
@@ -233,12 +32,10 @@ footer a{color:var(--ink-soft)}
 .cstr .g2{font-family:"Cutive Mono",monospace;font-size:.62rem;color:var(--ink-soft);margin-top:4px;letter-spacing:.03em}
 .cstr .mex{font-style:italic;color:var(--ink-soft);font-size:.85rem;margin-top:9px;
   border-top:1px solid var(--rule);padding-top:8px}
-
-/* legend dots */
-.chip.c-simp .dot{background:var(--g-simp)} .chip.c-prog .dot{background:var(--g-prog)}
-.chip.c-comp .dot{background:var(--g-comp)} .chip.c-stop .dot{background:var(--g-stop)}
-
-/* ===== usage list ===== */
+.chip.c-simp .dot{background:var(--g-simp)}
+.chip.c-prog .dot{background:var(--g-prog)}
+.chip.c-comp .dot{background:var(--g-comp)}
+.chip.c-stop .dot{background:var(--g-stop)}
 .prep-card{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--gc);
   box-shadow:var(--shadow);padding:4px 0 2px;margin:10px 0 6px}
 .use{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:10px 16px;
@@ -248,8 +45,6 @@ footer a{color:var(--ink-soft)}
   text-transform:uppercase;color:var(--gc);line-height:1.5}
 .use .ex2 .it{font-style:italic;color:var(--ink);display:block}
 .use .ex2 .fr{color:var(--ink-soft);font-size:.88rem;display:block;margin-top:1px}
-
-/* ===== reference table ===== */
 table.ref{border-collapse:collapse;width:100%;background:var(--card);border:1px solid var(--rule);box-shadow:var(--shadow)}
 table.ref th,table.ref td{padding:9px 13px;text-align:left;border-bottom:1px solid var(--rule);
   vertical-align:top;font-size:.95rem;line-height:1.5}
@@ -258,28 +53,24 @@ table.ref thead th{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-sp
 table.ref td.k{font-family:"Cutive Mono",monospace;font-weight:700;white-space:nowrap;color:var(--ink)}
 table.ref .it{font-style:italic;color:var(--ink)}
 table.ref tbody tr:hover td{background:var(--card-2)}
-
-/* ===== stare present strip ===== */
 .stare-strip{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}
 .stare-strip .si{font-family:"Cutive Mono",monospace;font-size:.84rem;border:1px solid var(--rule);
   border-left:2px solid var(--g-prog);background:var(--card);padding:5px 10px;color:var(--ink)}
 .stare-strip .si b{color:var(--g-prog)}
-
-/* ===== false-friend swap cards ===== */
 .swap-wrap{columns:2;column-gap:16px;margin:8px 0 4px}
 .swap{break-inside:avoid;-webkit-column-break-inside:avoid;display:inline-block;width:100%;
   background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--g-stop);
   box-shadow:var(--shadow);padding:12px 15px;margin:0 0 14px}
 .swap .srow{display:flex;gap:9px;align-items:baseline;margin-bottom:3px}
 .swap .mk{font-family:"Cutive Mono",monospace;font-weight:700;min-width:16px}
-.swap .mk.x{color:var(--g-stop)} .swap .mk.v{color:var(--g-simp)}
+.swap .mk.x{color:var(--g-stop)}
+.swap .mk.v{color:var(--g-simp)}
 .swap .ko{color:var(--ink-soft);text-decoration:line-through;font-style:italic}
 .swap .ok{color:var(--ink);font-style:italic}
 .swap .ok b{color:var(--g-simp);font-weight:600;font-style:normal}
 .swap .swhy{font-family:"Cutive Mono",monospace;font-size:.58rem;letter-spacing:.08em;
   text-transform:uppercase;color:var(--ink-soft);margin-top:7px;border-top:1px dotted var(--rule);padding-top:6px}
 .swap .sfr{color:var(--ink-soft);font-size:.84rem;font-style:italic;margin-top:4px}
-
 @media(max-width:680px){
   .use{grid-template-columns:1fr;gap:2px;padding:9px 14px}
   .use .fn{font-size:.58rem}
@@ -289,7 +80,7 @@ table.ref tbody tr:hover td{background:var(--card-2)}
 </style>
 </head>
 <body>
-<div class="topbar"><div class="topbar-in"><a class="tb-home" href="index.html"><span class="ar" aria-hidden="true">←</span><span class="lbl">Le Cabinet</span></a><span class="tb-title"><span class="tb-flag" aria-hidden="true"></span>Le gérondif <b>italien</b></span><details class="menu"><summary>Sommaire ▾</summary><div class="menu-panel"><a href="#formazione"><span class="n">1</span>Formation</a><a href="#progressivo"><span class="n">2</span>Stare + gerundio</a><a href="#semplice"><span class="n">3</span>Le gérondif simple</a><a href="#composto"><span class="n">4</span>Le gérondif composé</a><a href="#falsi-amici"><span class="n">5</span>Le piège du « -ant »</a><a href="#memo"><span class="n">6</span>Mémo</a></div></details></div></div>
+<div class="topbar"><div class="topbar-in"><a class="tb-home" href="../index.html"><span class="ar" aria-hidden="true">←</span><span class="lbl">Le Cabinet</span></a><span class="tb-title"><span class="tb-flag" aria-hidden="true"></span>Le gérondif <b>italien</b></span><details class="menu"><summary>Sommaire ▾</summary><div class="menu-panel"><a href="#formazione"><span class="n">1</span>Formation</a><a href="#progressivo"><span class="n">2</span>Stare + gerundio</a><a href="#semplice"><span class="n">3</span>Le gérondif simple</a><a href="#composto"><span class="n">4</span>Le gérondif composé</a><a href="#falsi-amici"><span class="n">5</span>Le piège du « -ant »</a><a href="#memo"><span class="n">6</span>Mémo</a></div></details></div></div>
 <div class="wrap">
 <header class="cover" id="top"><span class="stamp">Grammaire italienne · Le gérondif · stare + gerundio, essendo &amp; avendo · Fiche de référence</span><h1>Le gérondif<br><span class="it">italien</span></h1><div class="sub">Il gerundio · semplice, progressivo (stare + gerundio) e composto (essendo / avendo)</div><p class="dek">Le « -ant » et le « en… » français se posent partout ; l’italien, lui, est bien plus économe. Cette fiche montre les trois emplois du gérondif — <em>sto parlando</em>, <em>parlando</em>, <em>avendo parlato</em> — et, surtout, quand le français dit « -ant » mais que l’italien refuse le gérondif.</p><div class="cstr-grid"><div class="cstr c-simp"><div class="tag">Gerundio semplice</div><div class="form">parlando</div><div class="g2">en parlant</div><div class="mex">Sbagliando si impara</div></div><div class="cstr c-prog"><div class="tag">Stare + gerundio</div><div class="form">sto parlando</div><div class="g2">je suis en train de parler</div><div class="mex">Sto studiando adesso</div></div><div class="cstr c-comp"><div class="tag">Gerundio composto</div><div class="form">avendo parlato</div><div class="g2">ayant parlé</div><div class="mex">Avendo finito, è uscito</div></div></div><p class="fan-cap">Un même verbe, trois constructions. La couleur distingue les trois dans toute la fiche.</p><div class="meta"><div class="stat"><div class="num">3</div><div class="lab">Constructions</div></div><div class="stat"><div class="num">5</div><div class="lab">Valeurs du gérondif simple</div></div><div class="stat"><div class="num">1</div><div class="lab">Règle d’or (même sujet)</div></div></div><div class="howto"><div class="cell"><span class="k">La couleur = la construction</span><p>gérondif simple (vert), stare + gerundio (bleu), gérondif composé (or). Le <strong>rouge</strong> signale ce qu’il ne faut <em>pas</em> dire.</p></div><div class="cell"><span class="k">La règle d’or : même sujet</span><p>Le gérondif et le verbe principal partagent le sujet. Sinon → relative ou <em>mentre</em>.</p></div><div class="cell"><span class="k">Lire les exemples</span><p>La phrase en italien, puis sa traduction en plus clair juste en dessous.</p></div><div class="cell"><span class="k">Quand l’italien refuse</span><p>Le &sect;5 règle les cas où le français met « -ant » mais pas l’italien.</p></div></div><div class="legend"><span class="chip c-simp"><span class="dot"></span>gerundio semplice · en -ant</span><span class="chip c-prog"><span class="dot"></span>stare + gerundio · en train de</span><span class="chip c-comp"><span class="dot"></span>gerundio composto · ayant…</span><span class="chip c-stop"><span class="dot"></span>à éviter · faux-ami</span></div></header><section class="part" id="formazione"><div class="part-head"><div class="pnum">1</div><div class="part-titles"><span class="eyebrow">Comment on le forme</span><h2>Formation</h2></div></div><p class="lead">Une seule terminaison à retenir par groupe — et le gérondif est <strong>invariable</strong>.</p><table class="ref"><thead><tr><th>Groupe</th><th>Terminaison</th><th>Exemple</th></tr></thead><tbody><tr><td class="k">-are</td><td>-ando</td><td><span class="it">parlare → parlando</span></td></tr><tr><td class="k">-ere</td><td>-endo</td><td><span class="it">credere → credendo</span></td></tr><tr><td class="k">-ire</td><td>-endo</td><td><span class="it">partire → partendo</span></td></tr></tbody></table><h3>Quelques irréguliers</h3><p>Ils se forment sur l’ancien radical latin (le même que pour l’imparfait) :</p><table class="ref"><thead><tr><th>Infinitif</th><th>Gérondif</th></tr></thead><tbody><tr><td class="k">fare</td><td><span class="it">facendo</span></td></tr><tr><td class="k">dire</td><td><span class="it">dicendo</span></td></tr><tr><td class="k">bere</td><td><span class="it">bevendo</span></td></tr><tr><td class="k">porre</td><td><span class="it">ponendo</span></td></tr><tr><td class="k">tradurre</td><td><span class="it">traducendo</span> (et -durre)</td></tr></tbody></table><h3>Le gérondif composé</h3><p><strong>essendo</strong> ou <strong>avendo</strong> + participe passé, exactement comme on choisit l’auxiliaire au passato prossimo : <span class="it">avendo <strong>parlato</strong></span>, <span class="it">essendo <strong>partito</strong></span>.</p><aside class="note note--retenir"><span class="note-lab">Invariable — sauf au composé avec essere</span><div class="note-body"><p>Le gérondif simple ne s’accorde jamais : une seule forme pour tout le monde. Au composé avec <em>essere</em>, c’est le participe qui s’accorde : <em>essendo partit<strong>a</strong></em>, <em>essendo arrivat<strong>i</strong></em>.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part c-prog has-accent" id="progressivo"><div class="part-head"><div class="pnum">2</div><div class="part-titles"><span class="eyebrow">L’action en cours</span><h2>Stare + gerundio</h2></div></div><p class="lead">Le « en train de » : une action qui se déroule au moment dont on parle.</p><div class="stare-strip"><span class="si"><b>sto</b> + gerundio</span><span class="si"><b>stai</b> + gerundio</span><span class="si"><b>sta</b> + gerundio</span><span class="si"><b>stiamo</b> + gerundio</span><span class="si"><b>state</b> + gerundio</span><span class="si"><b>stanno</b> + gerundio</span></div><p class="fnote">Au passé, on emploie l’imparfait de stare : <em>stavo, stavi, stava… + gerundio</em> (<em>stavo dormendo</em> = je dormais / j’étais en train de dormir).</p><div class="prep-card"><div class="use"><span class="fn">Présent en cours</span><span class="ex2"><span class="it"><span class="hl">Sto</span> mangiando, ti richiamo</span><span class="fr">je suis en train de manger, je te rappelle</span></span></div><div class="use"><span class="fn">Passé en cours</span><span class="ex2"><span class="it"><span class="hl">Stavo</span> dormendo quando hai chiamato</span><span class="fr">je dormais quand tu as appelé</span></span></div><div class="use"><span class="fn">Insister sur le déroulé</span><span class="ex2"><span class="it">Le cose <span class="hl">stanno</span> cambiando</span><span class="fr">les choses sont en train de changer</span></span></div></div><aside class="note note--ortho"><span class="note-lab">À surveiller · les limites de stare + gerundio</span><div class="note-body"><p>Seulement pour une action <strong>en cours au moment dont on parle</strong>. Jamais pour un futur proche : « je mange demain » = <em>domani mangio</em>, pas <em>sto mangiando domani</em>.</p><p>Pas avec les verbes d’état (<em>sto sapendo</em>, <em>sto volendo</em> ✗). Et l’italien l’emploie <strong>moins souvent</strong> que le français son « être en train de » : pour une habitude, le présent simple suffit (<em>lavoro a Milano</em>, et non <em>sto lavorando</em> si c’est régulier).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part c-simp has-accent" id="semplice"><div class="part-head"><div class="pnum">3</div><div class="part-titles"><span class="eyebrow">La subordonnée implicite</span><h2>Le gérondif simple</h2></div></div><p class="lead">Le vrai couteau suisse : il remplace une subordonnée de temps, manière, cause ou condition.</p><div class="prep-card"><div class="use"><span class="fn">Temps (pendant que)</span><span class="ex2"><span class="it"><span class="hl">Guardando</span> la TV, si è addormentato</span><span class="fr">en regardant la télé, il s’est endormi</span></span></div><div class="use"><span class="fn">Manière</span><span class="ex2"><span class="it">Rispose <span class="hl">sorridendo</span></span><span class="fr">il répondit en souriant</span></span></div><div class="use"><span class="fn">Moyen (en faisant)</span><span class="ex2"><span class="it">Si impara <span class="hl">sbagliando</span></span><span class="fr">c’est en se trompant qu’on apprend</span></span></div><div class="use"><span class="fn">Cause</span><span class="ex2"><span class="it">Non <span class="hl">sapendo</span> cosa dire, tacque</span><span class="fr">ne sachant que dire, il se tut</span></span></div><div class="use"><span class="fn">Condition</span><span class="ex2"><span class="it"><span class="hl">Volendo</span>, potresti farlo</span><span class="fr">en voulant / si tu voulais, tu pourrais le faire</span></span></div><div class="use"><span class="fn">Concession (pur +)</span><span class="ex2"><span class="it"><span class="hl">Pur</span> essendo stanco, continuò</span><span class="fr">tout en étant fatigué, il continua</span></span></div></div><aside class="note note--reflexe"><span class="note-lab">La règle d’or · même sujet</span><div class="note-body"><p>Le sujet du gérondif doit être <strong>celui du verbe principal</strong>. <em>Tornando a casa, ho incontrato Luca</em> : c’est bien <strong>moi</strong> qui rentre <em>et</em> qui rencontre. Si les sujets diffèrent, le gérondif est faux — on passe à <em>mentre</em> + verbe conjugué.</p></div></aside><aside class="note note--retenir"><span class="note-lab">Les pronoms s’accrochent derrière</span><div class="note-body"><p>Les pronoms se soudent à la fin du gérondif : <em>facendo<strong>lo</strong></em> (en le faisant), <em>vedendo<strong>la</strong></em>, <em>parlando<strong>gli</strong></em>, <em>andando<strong>sene</strong></em> (en s’en allant).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part c-comp has-accent" id="composto"><div class="part-head"><div class="pnum">4</div><div class="part-titles"><span class="eyebrow">L’action antérieure</span><h2>Le gérondif composé</h2></div></div><p class="lead"><em>essendo / avendo</em> + participe : « ayant fait », « une fois fait ». Une action qui en précède une autre.</p><div class="prep-card"><div class="use"><span class="fn">Antériorité (avere)</span><span class="ex2"><span class="it"><span class="hl">Avendo</span> finito i compiti, uscì</span><span class="fr">ayant fini ses devoirs, il sortit</span></span></div><div class="use"><span class="fn">Antériorité (essere)</span><span class="ex2"><span class="it"><span class="hl">Essendo</span> arrivati tardi, persero il treno</span><span class="fr">étant arrivés en retard, ils ratèrent le train</span></span></div><div class="use"><span class="fn">Cause antérieure</span><span class="ex2"><span class="it"><span class="hl">Essendo</span> stato malato, non è venuto</span><span class="fr">ayant été malade, il n’est pas venu</span></span></div></div><aside class="note note--ortho"><span class="note-lab">Le choix essere / avere (comme aux temps composés)</span><div class="note-body"><p>Même logique que le passato prossimo : <em>avendo</em> + verbes à avere (avendo mangiato), <em>essendo</em> + verbes de mouvement, d’état et pronominaux (essendo partito). Avec essere, le participe s’accorde : <em>essendo partit<strong>a</strong></em>, <em>essendo arrivat<strong>i</strong></em>.</p></div></aside><aside class="note note--retenir"><span class="note-lab">À l’oral, on préfère souvent « dopo + infinitif »</span><div class="note-body"><p>Le gérondif composé est un peu littéraire. Au quotidien on dit plutôt <em>dopo aver finito</em> (après avoir fini) ou <em>dopo essere arrivati</em> (après être arrivés).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part c-stop has-accent" id="falsi-amici"><div class="part-head"><div class="pnum">5</div><div class="part-titles"><span class="eyebrow">Quand l’italien refuse le gérondif</span><h2>Le piège du « -ant »</h2></div></div><p class="lead">Le français pose « -ant » et « en… » partout ; l’italien, beaucoup moins. Les cas où il faut <strong>autre chose</strong> :</p><div class="swap-wrap"><div class="swap"><div class="srow"><span class="mk x">✗</span><span class="ko">un uomo parlando italiano</span></div><div class="srow"><span class="mk v">✓</span><span class="ok">un uomo <b>che parla</b> italiano</span></div><div class="swhy">complément du nom → relative</div><div class="sfr">un homme parlant italien</div></div><div class="swap"><div class="srow"><span class="mk x">✗</span><span class="ko">Ho visto Maria uscendo</span></div><div class="srow"><span class="mk v">✓</span><span class="ok">Ho visto Maria <b>che usciva</b> / <b>uscire</b></span></div><div class="swhy">perception → relative ou infinitif</div><div class="sfr">j’ai vu Marie qui sortait / sortir</div></div><div class="swap"><div class="srow"><span class="mk x">✗</span><span class="ko">l’acqua bollendo</span></div><div class="srow"><span class="mk v">✓</span><span class="ok">l’acqua <b>bollente</b></span></div><div class="swhy">épithète → adjectif, pas gérondif</div><div class="sfr">l’eau bouillante</div></div><div class="swap"><div class="srow"><span class="mk x">✗</span><span class="ko">Studiando, mia madre mi ha portato un caffè</span></div><div class="srow"><span class="mk v">✓</span><span class="ok"><b>Mentre studiavo</b>, mia madre mi ha portato un caffè</span></div><div class="swhy">sujets différents → mentre + verbe</div><div class="sfr">pendant que j’étudiais, ma mère m’a apporté un café</div></div><div class="swap"><div class="srow"><span class="mk x">✗</span><span class="ko">Cerco un libro parlando di storia</span></div><div class="srow"><span class="mk v">✓</span><span class="ok">un libro <b>che parla</b> di storia</span></div><div class="swhy">« qui parle de » → relative</div><div class="sfr">un livre parlant d’histoire</div></div></div><aside class="note note--piege"><span class="note-lab">Le « -ant » qui est en fait un adjectif</span><div class="note-body"><p>Beaucoup de mots en <em>-ante / -ente</em> sont devenus de simples adjectifs ou noms : <em>interessante</em> (intéressant), <em>seguente</em> (suivant), <em>cantante</em> (chanteur), <em>sorridente</em> (souriant). Ce n’est <strong>pas</strong> le gérondif et ça s’accorde comme un adjectif : <em>una storia interessant<strong>e</strong></em>, <em>due storie interessant<strong>i</strong></em>.</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><section class="part" id="memo"><div class="part-head"><div class="pnum">6</div><div class="part-titles"><span class="eyebrow">L’essentiel en trois points</span><h2>Mémo</h2></div></div><aside class="note note--reflexe"><span class="note-lab">Les trois réflexes</span><div class="note-body"><p><strong>1. Trois constructions</strong> — <em>parlando</em> (en parlant), <em>sto parlando</em> (en train de parler), <em>avendo parlato</em> (ayant parlé).</p><p><strong>2. Même sujet</strong> — le gérondif partage le sujet du verbe principal ; sinon, <em>mentre</em> + verbe conjugué.</p><p><strong>3. Le faux-ami</strong> — « -ant » épithète ou « qui… » → relative (<em>che parla</em>), pas gérondif. Et beaucoup de « -ant » sont des adjectifs (<em>interessante</em>).</p></div></aside><a class="totop" href="#top">↑ Retour au sommaire</a></section><footer>Fiche de référence — le gérondif italien · stare + gerundio, gérondif simple et composé.<br>Pour chaque emploi : un exemple traduit. Révision sur écran, ordinateur ou téléphone.</footer>
 </div>

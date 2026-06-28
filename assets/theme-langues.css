@@ -1,0 +1,306 @@
+/* ============================================================================
+   theme-langues.css — shared design system for the Langues (Italian) fiches
+   (cover, colour-coded tables, "pièges franco-italiens" call-outs, palette).
+   Loaded by every fiche in fiches/ whose family is "langues".
+   Self-contained: editing this file restyles the whole Languages family
+   without touching the History family.
+   ============================================================================ */
+:root{
+  --paper:#ECE5D3; --card:#F4EFE2; --card-2:#E7DEC9;
+  --ink:#23221C; --ink-soft:#595645;
+  --g-are:#3B6E55; --g-ere:#9C3A2A; --g-ire:#2E5C72; --g-isc:#2F6D76;
+  --gold:#8C6E1C; --rule:rgba(35,34,28,.16); --rule-strong:rgba(35,34,28,.34);
+  --shadow:0 1px 0 rgba(35,34,28,.05), 0 10px 26px -18px rgba(35,34,28,.55);
+}
+
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Spectral",Georgia,serif; font-size:18px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+
+.wrap{max-width:920px;margin:0 auto;padding:0 22px 120px}
+
+.eyebrow{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-soft)}
+
+h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;
+  line-height:1.08;text-transform:uppercase}
+
+h2{font-size:clamp(1.55rem,4.6vw,2.25rem);margin:0 0 .12em}
+
+h3{font-size:1.06rem;font-weight:500;letter-spacing:.05em;color:var(--ink);
+  margin:1.9em 0 .55em;display:flex;align-items:baseline;gap:.55rem}
+
+h3::after{content:"";flex:1;height:1px;background:var(--rule)}
+
+strong{font-weight:600}
+
+em{color:var(--ink-soft)}
+
+a{color:var(--g-ire);text-decoration-thickness:1px;text-underline-offset:2px}
+
+.lead{font-size:1.07rem}
+
+.topbar{position:sticky;top:0;z-index:40;background:rgba(236,229,211,.93);
+  backdrop-filter:saturate(1.1) blur(6px);border-bottom:1px solid var(--rule)}
+
+.topbar-in{max-width:920px;margin:0 auto;padding:9px 22px;display:flex;
+  align-items:center;gap:14px}
+
+.tb-title{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;
+  letter-spacing:.06em;font-size:.92rem}
+
+.tb-title b{color:var(--g-ere)}
+
+.tb-flag{display:inline-block;width:26px;height:13px;margin-right:9px;vertical-align:-1px;
+  border:1px solid var(--rule);background:linear-gradient(90deg,
+  var(--g-are) 0 33.3%,#f4efe2 33.3% 66.6%,var(--g-ere) 66.6% 100%)}
+
+details.menu{margin-left:auto;position:relative}
+
+details.menu>summary{list-style:none;cursor:pointer;font-family:"Cutive Mono",monospace;
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);
+  border:1px solid var(--rule-strong);padding:6px 11px;user-select:none}
+
+details.menu>summary::-webkit-details-marker{display:none}
+
+details.menu[open]>summary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.menu-panel{position:absolute;right:0;top:calc(100% + 7px);min-width:230px;
+  background:var(--card);border:1px solid var(--rule-strong);box-shadow:var(--shadow);
+  padding:5px;display:grid;gap:1px}
+
+.menu-panel a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);
+  padding:9px 11px;font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;
+  font-size:.84rem;letter-spacing:.03em}
+
+.menu-panel a:hover,.menu-panel a:focus-visible{background:var(--card-2)}
+
+.menu-panel .n{font-family:"Cutive Mono",monospace;color:var(--g-ere);font-size:.72rem}
+
+.cover{padding:54px 0 26px;border-bottom:2px solid var(--ink)}
+
+.stamp{display:inline-block;font-family:"Cutive Mono",monospace;font-size:.68rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--g-ere);
+  border:1.5px solid var(--g-ere);padding:5px 11px;transform:rotate(-2deg);
+  margin-bottom:26px;opacity:.9}
+
+.cover h1{font-size:clamp(2.5rem,10.5vw,5.2rem);font-weight:700;margin:0;line-height:.9}
+
+.cover h1 .it{color:var(--g-ere)}
+
+.cover .sub{font-family:"Oswald",sans-serif;font-weight:400;letter-spacing:.13em;
+  text-transform:uppercase;font-size:clamp(.85rem,2.5vw,1.02rem);color:var(--ink-soft);margin-top:14px}
+
+.cover .dek{margin-top:24px;max-width:62ch;font-size:1.05rem}
+
+.meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:28px;padding-top:22px;border-top:1px solid var(--rule)}
+
+.meta .stat{min-width:108px}
+
+.meta .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.85rem;line-height:1;color:var(--ink)}
+
+.meta .lab{font-family:"Cutive Mono",monospace;font-size:.63rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
+
+.fan{display:grid;grid-template-columns:auto 1fr;gap:0;margin:34px 0 4px;border:1px solid var(--rule);
+  background:var(--card);box-shadow:var(--shadow)}
+
+.fan-stem{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:22px 26px;border-right:1px solid var(--rule);background:var(--card-2)}
+
+.fan-stem .lab{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+
+.fan-stem .stem{font-family:"Oswald",sans-serif;font-weight:700;font-size:2.4rem;color:var(--g-are);letter-spacing:.02em}
+
+.fan-rows{display:grid;grid-template-columns:1fr;padding:6px 0}
+
+.fan-row{display:grid;grid-template-columns:74px 64px 1fr;align-items:baseline;gap:8px;
+  padding:6px 18px;border-bottom:1px solid var(--rule)}
+
+.fan-row:last-child{border-bottom:none}
+
+.fan-row .pr{font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+
+.fan-row .en{font-family:"Cutive Mono",monospace;font-size:.8rem;color:var(--g-are);font-weight:700}
+
+.fan-row .fm{font-size:1.02rem}
+
+.fan-cap{font-family:"Cutive Mono",monospace;font-size:.64rem;letter-spacing:.05em;
+  color:var(--ink-soft);margin:.7em 0 0;line-height:1.5}
+
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);margin:30px 0 6px}
+
+.howto .cell{background:var(--card);padding:15px 16px}
+
+.howto .k{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px}
+
+.howto p{font-size:.92rem;margin:0;line-height:1.5}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 2px}
+
+.chip{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:5px 10px;border:1px solid var(--rule);background:var(--card);
+  display:inline-flex;align-items:center;gap:8px}
+
+.chip .dot{width:11px;height:11px;border-radius:2px;display:inline-block}
+
+.chip.g-are .dot{background:var(--g-are)}
+
+.chip.g-ere .dot{background:var(--g-ere)}
+
+.chip.g-ire .dot{background:var(--g-ire)}
+
+.chip.g-isc .dot{background:var(--g-isc)}
+
+.part{padding-top:58px;scroll-margin-top:64px}
+
+.part-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--ink);
+  padding-bottom:11px;margin-bottom:20px}
+
+.pnum{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(2rem,6.5vw,3.1rem);
+  color:var(--g-ere);line-height:.8}
+
+.part-titles{flex:1}
+
+.part-titles .eyebrow{display:block;margin-bottom:4px}
+
+.scroller{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);
+  background:var(--card);box-shadow:var(--shadow);margin:14px 0 6px}
+
+table.conj{border-collapse:collapse;width:100%;min-width:520px}
+
+table.conj.matrix{min-width:660px}
+
+table.conj th,table.conj td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--rule);
+  white-space:nowrap}
+
+table.conj thead th{vertical-align:bottom;border-bottom:2px solid var(--rule-strong);
+  background:var(--card)}
+
+table.conj .corner{background:var(--card-2);border-bottom:2px solid var(--rule-strong)}
+
+.vh-it{display:block;font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;
+  font-size:.98rem;letter-spacing:.02em}
+
+.vh-fr{display:block;font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.06em;
+  color:var(--ink-soft);margin-top:2px;text-transform:lowercase}
+
+thead th.g-are .vh-it{color:var(--g-are)}
+
+thead th.g-are{border-bottom-color:var(--g-are)}
+
+thead th.g-ere .vh-it{color:var(--g-ere)}
+
+thead th.g-ere{border-bottom-color:var(--g-ere)}
+
+thead th.g-ire .vh-it{color:var(--g-ire)}
+
+thead th.g-ire{border-bottom-color:var(--g-ire)}
+
+thead th.g-isc .vh-it{color:var(--g-isc)}
+
+thead th.g-isc{border-bottom-color:var(--g-isc)}
+
+.isc{font-family:"Cutive Mono",monospace;font-size:.52rem;letter-spacing:.04em;
+  vertical-align:super;margin-left:3px;opacity:.85}
+
+.ph{font-family:"Cutive Mono",monospace;font-size:.78rem;color:var(--ink-soft);
+  position:sticky;left:0;background:var(--card);z-index:2}
+
+.ph-col{font-family:"Cutive Mono",monospace;font-size:.74rem;letter-spacing:.04em;
+  color:var(--ink-soft);text-transform:none}
+
+.rh{position:sticky;left:0;background:var(--card);z-index:2;border-right:1px solid var(--rule)}
+
+.v-it{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.92rem;letter-spacing:.02em}
+
+.v-fr{font-family:"Cutive Mono",monospace;font-size:.58rem;color:var(--ink-soft)}
+
+.dag{color:var(--g-are);font-size:.7em}
+
+table.conj td{font-size:1.01rem}
+
+table.conj tbody tr:hover td{background:var(--card-2)}
+
+table.conj tbody tr:hover .ph,table.conj tbody tr:hover .rh{background:var(--card-2)}
+
+table.conj td sup{color:var(--g-ere);font-size:.65em}
+
+.fnote{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.03em;
+  color:var(--ink-soft);line-height:1.55;margin:.4em 0 1.2em}
+
+.ex{display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem;font-size:.96rem;
+  margin:.5em 0 .9em;padding-left:13px;border-left:2px solid var(--g-are)}
+
+.ex .it{font-style:italic;color:var(--ink)}
+
+.ex .arrow{color:var(--ink-soft)}
+
+.ex .fr{color:var(--ink-soft)}
+
+.note{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--gold);
+  padding:14px 16px;margin:16px 0;font-size:.95rem;box-shadow:var(--shadow)}
+
+.note--piege{border-left-color:var(--g-ere)}
+
+.note--ortho{border-left-color:var(--g-ire)}
+
+.note--retenir{border-left-color:var(--g-are)}
+
+.note--reflexe{border-left-color:var(--gold);background:var(--card-2)}
+
+.note-lab{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;display:block;margin-bottom:6px}
+
+.note--piege .note-lab{color:var(--g-ere)}
+
+.note--ortho .note-lab{color:var(--g-ire)}
+
+.note--retenir .note-lab{color:var(--g-are)}
+
+.note--reflexe .note-lab{color:var(--gold)}
+
+.note-body p:last-child{margin-bottom:0}
+
+.note-body p{margin:0 0 .55em}
+
+.note ol{margin:.2em 0 0;padding-left:1.2em}
+
+.note li{margin:.3em 0}
+
+.kbd{font-family:"Cutive Mono",monospace;font-size:.88em;background:var(--paper);
+  border:1px solid var(--rule);padding:0 5px;border-radius:2px}
+
+.totop{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-soft);text-decoration:none;display:inline-block;margin-top:26px}
+
+.totop:hover{color:var(--ink)}
+
+footer{margin-top:74px;padding-top:24px;border-top:2px solid var(--ink);
+  font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.05em;
+  color:var(--ink-soft);line-height:1.75}
+
+footer a{color:var(--ink-soft)}
+
+:focus-visible{outline:2.5px solid var(--g-ire);outline-offset:2px}
+
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.scroll-hint{display:none}
+
+@media(max-width:680px){
+  body{font-size:17px}
+  .meta{gap:16px}
+  .fan{grid-template-columns:1fr}
+  .fan-stem{border-right:none;border-bottom:1px solid var(--rule);padding:16px}
+  .fan-row{grid-template-columns:66px 56px 1fr;padding:6px 14px}
+  .tb-title{font-size:.8rem}
+  .tb-flag{width:22px;height:11px;margin-right:6px}
+  .scroll-hint{display:block;font-family:"Cutive Mono",monospace;font-size:.6rem;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:14px 0 -2px}
+}

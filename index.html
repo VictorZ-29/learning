@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Cutive+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/base.css">
 <style>
 :root{
   --paper:#E4DBC5; --card:#EFE8D6; --card-2:#E9E0CB;
@@ -15,17 +16,11 @@
   --rule:rgba(35,40,32,.18); --rule-strong:rgba(35,40,32,.4);
   --shadow:0 1px 0 rgba(35,40,32,.06), 0 8px 24px -16px rgba(35,40,32,.5);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Spectral",Georgia,serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden}
 .contours{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5}
 .wrap{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:0 22px 120px}
-
 .eyebrow{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
 h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;line-height:1.08;text-transform:uppercase}
-p{margin:0 0 1em}
-
-/* ---------- cover ---------- */
 .cover{padding:62px 0 26px;border-bottom:2px solid var(--ink)}
 .stamp{display:inline-block;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--allied);border:1.5px solid var(--allied);padding:5px 11px;transform:rotate(-2.5deg);margin-bottom:24px;opacity:.85}
 .cover h1{font-size:clamp(2.8rem,12vw,5.6rem);font-weight:700;margin:0;line-height:.92}
@@ -35,8 +30,6 @@ p{margin:0 0 1em}
 .metarow{display:flex;flex-wrap:wrap;gap:30px;margin-top:28px;padding-top:22px;border-top:1px solid var(--rule)}
 .metarow .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.9rem;line-height:1}
 .metarow .lab{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
-
-/* ---------- search ---------- */
 .search{margin-top:28px;position:relative}
 .search input{
   width:100%;font-family:"Spectral",serif;font-size:1rem;color:var(--ink);
@@ -45,14 +38,10 @@ p{margin:0 0 1em}
 .search input::placeholder{color:var(--ink-soft)}
 .search .ic{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink-soft);font-family:"Cutive Mono",monospace;font-size:.95rem}
 .search input:focus{outline:2.5px solid var(--slate);outline-offset:2px}
-
-/* ---------- category section ---------- */
 .cat-section{padding-top:42px}
 .cat-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--rule);padding-bottom:8px;margin-bottom:18px}
 .cat-head h2{font-size:1.15rem;font-weight:500;letter-spacing:.05em}
 .cat-head .count{font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.1em;color:var(--ink-soft);margin-left:auto}
-
-/* ---------- cards ---------- */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
 .card{
   display:flex;flex-direction:column;background:var(--card);border:1px solid var(--rule);
@@ -74,15 +63,11 @@ p{margin:0 0 1em}
 .card .date{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.08em;color:var(--ink-soft)}
 .card .open{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
 .card:hover .open,.card:focus-visible .open{color:var(--allied)}
-
-/* ---------- empty / error states ---------- */
 .state{margin-top:42px;background:var(--card-2);border-left:4px solid var(--brass);padding:20px 20px;font-size:.96rem}
 .state .lab{font-family:"Cutive Mono",monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:7px}
 .state code{font-family:"Cutive Mono",monospace;font-size:.82rem;background:var(--paper);padding:1px 5px;border:1px solid var(--rule)}
 .hidden{display:none!important}
-
 footer{margin-top:72px;padding-top:24px;border-top:2px solid var(--ink);font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.06em;color:var(--ink-soft);line-height:1.8}
-
 :focus-visible{outline:2.5px solid var(--slate);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 @media(max-width:560px){body{font-size:17px}.metarow{gap:20px}}
@@ -123,7 +108,7 @@ footer{margin-top:72px;padding-top:24px;border-top:2px solid var(--ink);font-fam
 
   <footer>
     LE CABINET — INDEX DES FICHES DE RÉVISION<br>
-    Pour ajouter une fiche : déposer le fichier .html dans le dossier, puis ajouter une entrée dans fiches.js
+    Pour ajouter une fiche : déposer le .html dans fiches/ et ajouter une entrée dans fiches.js (voir CLAUDE.md)
   </footer>
 </div>
 

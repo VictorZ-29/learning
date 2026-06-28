@@ -1,0 +1,194 @@
+/* ============================================================================
+   theme-histoire.css — shared design system for the History / Géopolitique
+   fiches (cover, sticky top-bar, menu, timelines, quiz, palette).
+   Loaded by every fiche in fiches/ whose family is "histoire".
+   Self-contained: editing this file restyles the whole History family
+   without touching the Languages family.
+   ============================================================================ */
+:root{
+  --paper:#E4DBC5; --card:#EFE8D6; --card-2:#E9E0CB;
+  --ink:#232820; --ink-soft:#56594B;
+  --central:#5C6A50; --allied:#8A3324; --slate:#3C5A68; --brass:#947726;
+  --rule:rgba(35,40,32,.18); --rule-strong:rgba(35,40,32,.4);
+  --shadow:0 1px 0 rgba(35,40,32,.06), 0 8px 24px -16px rgba(35,40,32,.5);
+}
+
+.wrap{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:0 22px 120px}
+
+.topbar{position:sticky;top:0;z-index:50;background:rgba(228,219,197,.93);backdrop-filter:saturate(1.1) blur(6px);border-bottom:1px solid var(--rule)}
+
+.topbar-in{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:9px 22px;display:flex;align-items:center;gap:14px}
+
+.tb-home{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border:1px solid var(--rule-strong);padding:6px 10px;white-space:nowrap;transition:background .15s,color .15s}
+
+.tb-home:hover,.tb-home:focus-visible{background:var(--ink);color:var(--paper);border-color:var(--ink);outline:none}
+
+.tb-home .ar{font-size:.95rem;line-height:1}
+
+.tb-title{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.92rem;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.tb-title b{color:var(--allied)}
+
+.tb-mark{display:inline-block;width:24px;height:13px;margin-right:9px;vertical-align:-1px;border:1px solid var(--rule);background:linear-gradient(90deg,var(--allied) 0 33.3%,var(--card) 33.3% 66.6%,var(--slate) 66.6% 100%)}
+
+details.menu{margin-left:auto;position:relative}
+
+details.menu>summary{list-style:none;cursor:pointer;font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);border:1px solid var(--rule-strong);padding:6px 11px;user-select:none;white-space:nowrap}
+
+details.menu>summary::-webkit-details-marker{display:none}
+
+details.menu[open]>summary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.menu-panel{position:absolute;right:0;top:calc(100% + 7px);min-width:260px;background:var(--card);border:1px solid var(--rule-strong);box-shadow:var(--shadow);padding:5px;display:grid;gap:1px;z-index:60}
+
+.menu-panel a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);padding:9px 11px;font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.82rem;letter-spacing:.03em;line-height:1.2}
+
+.menu-panel a:hover,.menu-panel a:focus-visible{background:var(--card-2);outline:none}
+
+.menu-panel .n{font-family:"Cutive Mono",monospace;color:var(--allied);font-size:.72rem;min-width:1.4ch}
+
+@media(max-width:560px){.tb-title .tb-mark{display:none}.tb-home .lbl{display:none}.tb-title{font-size:.8rem}}
+
+h1,h2,h3,.display{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.01em;line-height:1.08;text-transform:uppercase}
+
+h2{font-size:clamp(1.5rem,4.4vw,2.15rem);margin:0 0 .15em}
+
+h3{font-size:1.18rem;font-weight:500;letter-spacing:.04em;margin:1.7em 0 .4em}
+
+a{color:var(--slate);text-decoration-thickness:1px;text-underline-offset:2px}
+
+strong{font-weight:600}
+
+em{color:var(--ink-soft)}
+
+.lead{font-size:1.08rem}
+
+.cover{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
+
+.cover .years{color:var(--allied)}
+
+.cover .dek{margin-top:26px;max-width:60ch;font-size:1.06rem}
+
+.metarow .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:1.9rem;line-height:1;color:var(--ink)}
+
+.metarow .lab{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
+
+.toc a:hover,.toc a:focus-visible{background:var(--card-2)}
+
+.toc .n{font-family:"Cutive Mono",monospace;color:var(--allied);font-size:.75rem;letter-spacing:.1em}
+
+.part{padding-top:56px;scroll-margin-top:16px}
+
+.part-head{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:22px}
+
+.part-num{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(2.2rem,7vw,3.4rem);color:var(--allied);line-height:.8}
+
+.part-titles{flex:1}
+
+.part-titles .eyebrow{display:block;margin-bottom:4px}
+
+details.dossier[data-side="allied"]{border-left-color:var(--allied)}
+
+details.dossier[data-side="slate"]{border-left-color:var(--slate)}
+
+details.dossier>summary::-webkit-details-marker{display:none}
+
+details.dossier[open]>summary .chev{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+details.dossier[data-side="allied"]>summary .tag{background:var(--allied)}
+
+details.dossier[data-side="slate"]>summary .tag{background:var(--slate)}
+
+.dossier-body{padding:2px 18px 18px;border-top:1px solid var(--rule)}
+
+.dossier-body p:first-child{margin-top:14px}
+
+.timeline{position:relative;margin:30px 0 10px;padding:8px 0}
+
+.tl-event{position:relative;width:50%;padding:0 30px 0 0;margin:10px 0;z-index:2}
+
+.tl-event.right{margin-left:50%;padding:0 0 0 30px}
+
+.tl-event.left::before{right:-6px}
+
+.tl-event.right::before{left:-6px}
+
+.tl-event[data-c="allied"]::before{border-color:var(--allied)}
+
+.tl-event[data-c="slate"]::before{border-color:var(--slate)}
+
+.tl-card>summary::-webkit-details-marker{display:none}
+
+.tl-card .date{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.1em;color:var(--allied);text-transform:uppercase}
+
+.tl-card .ti{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.98rem;letter-spacing:.02em;margin-top:3px;display:block}
+
+.tl-card .detail{padding:0 14px 14px;font-size:.94rem;line-height:1.55;color:var(--ink)}
+
+.tl-card[open] .ti{color:var(--allied)}
+
+.chart{margin:22px 0;border:1px solid var(--rule);background:var(--card);padding:20px 18px;box-shadow:var(--shadow)}
+
+.bar-row .name{font-family:"Cutive Mono",monospace;font-size:.72rem;letter-spacing:.04em;text-align:right;color:var(--ink)}
+
+.bar-track{height:18px;background:var(--card-2);position:relative;border:1px solid var(--rule)}
+
+.bar-row .val{font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+
+.chart .note{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.05em;color:var(--ink-soft);margin-top:14px;line-height:1.5}
+
+.note-box{background:var(--card-2);border-left:4px solid var(--brass);padding:14px 16px;margin:16px 0;font-size:.96rem}
+
+.note-box .lab{font-family:"Cutive Mono",monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:5px}
+
+.quiz{background:var(--card);border:1px dashed var(--rule-strong);padding:20px 18px;margin:26px 0;box-shadow:var(--shadow)}
+
+.quiz-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+
+.quiz-head .lab{font-family:"Cutive Mono",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--allied)}
+
+.quiz-head .score{margin-left:auto;font-family:"Cutive Mono",monospace;font-size:.74rem;color:var(--ink-soft)}
+
+.q{margin:18px 0;padding-top:16px;border-top:1px solid var(--rule)}
+
+.q:first-of-type{border-top:none;padding-top:4px}
+
+.q .qtext{font-family:"Oswald",sans-serif;font-weight:400;font-size:1.04rem;letter-spacing:.01em;margin-bottom:11px;text-transform:none}
+
+.opts{display:flex;flex-direction:column;gap:8px}
+
+.opt:hover:not(:disabled){border-color:var(--ink);background:var(--card-2)}
+
+.opt:disabled{cursor:default}
+
+.opt.correct{background:#5C6A50;color:#fff;border-color:#4a553f}
+
+.opt.wrong{background:#8A3324;color:#fff;border-color:#6f2a1d}
+
+.opt.dim{opacity:.5}
+
+.explain{display:none;margin-top:11px;padding:11px 13px;background:var(--card-2);border-left:3px solid var(--brass);font-size:.9rem;line-height:1.55}
+
+.explain.show{display:block}
+
+.explain .e-lab{font-family:"Cutive Mono",monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
+
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:22px 0}
+
+.flip .face{padding:15px 15px;flex:1;display:flex;flex-direction:column;justify-content:center}
+
+.flip .q-face{font-family:"Oswald",sans-serif;font-weight:500;text-transform:uppercase;font-size:.98rem;letter-spacing:.02em}
+
+.flip .a-face{display:none;font-size:.9rem;line-height:1.5}
+
+.flip.flipped .q-face{display:none}
+
+.flip.flipped .a-face{display:block}
+
+.flip .hint{font-family:"Cutive Mono",monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);padding:8px 15px;border-top:1px solid var(--rule)}
+
+.flip.flipped .hint{color:var(--brass)}
+
+footer{margin-top:72px;padding-top:24px;border-top:2px solid var(--ink);font-family:"Cutive Mono",monospace;font-size:.7rem;letter-spacing:.06em;color:var(--ink-soft);line-height:1.7}
+
+:focus-visible{outline:2.5px solid var(--slate);outline-offset:2px}
